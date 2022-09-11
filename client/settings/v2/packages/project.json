@@ -1,0 +1,36 @@
+{
+  "__version__": "1.0.2",
+  "fbx": {
+    "legacyFbxImporter": {
+      "visible": true
+    }
+  },
+  "general": {
+    "designResolution": {
+      "width": 1334,
+      "height": 720
+    }
+  },
+  "physics": {
+    "collisionGroups": [
+      {
+        "index": 1,
+        "name": "mario"
+      },
+      {
+        "index": 2,
+        "name": "brick"
+      },
+      {
+        "index": 3,
+        "name": "why"
+      }
+    ],
+    "collisionMatrix": {
+      "0": 7,
+      "1": 13,
+      "2": 3,
+      "3": 2
+    }
+  }
+}
