@@ -1,0 +1,481 @@
+@import "buybg-spr.less";
+@import "mybg-spr.less";
+@import "share-spr.less";
+@import "share-video-spr.less";
+@import "checkin-spr.less";
+@import "buy-video-spr.less";
+@import "notice-tips-spr.less";
+
+
+* {
+    box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+:root {
+    --swiper-theme-color: @active-color  !important;
+}
+
+html.desktop {
+    font-size: 48px !important;
+}
+
+html.tablet,
+html.desktop {
+    &.in-app{
+        max-width: 460px;
+
+        * {
+            max-width: 460px;
+        }
+    }
+} 
+
+html,
+body {
+    overflow: hidden;
+    margin: 0 auto;
+}
+
+html {
+    height: 100vh;
+}
+
+html {
+    background-color: @bottom-bar-color;
+}
+
+html.mobile {
+    background-color: @theme-color;
+    body {
+        // background-color: @theme-color;
+    }
+}
+
+body,
+#__nuxt,
+#__layout {
+    height: 100%;
+}
+
+
+#__nuxt,
+#__layout {
+    // background-color: @theme-color  !important;
+}
+
+.transparent-bg-color {
+    background: transparent !important;
+}
+
+.safe-top {
+    // padding-top: constant(safe-area-inset-top);
+    // padding-top: env(safe-area-inset-top);
+    padding-top: var(--safe-top)
+}
+
+.safe-bottom {
+    // padding-bottom: constant(safe-area-inset-bottom);
+    // padding-bottom: env(safe-area-inset-bottom);
+    padding-bottom: var(--safe-bottom)
+}
+
+.flex-container {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+
+    >.top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    >.content {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+        // overflow-y: overlay;
+    }
+
+    >.bottom {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
+
+.full-container {
+    height: 100%;
+    width: 100%;
+}
+
+.scroll-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    overflow-y: overlay;
+    -webkit-overflow-scrolling: touch;
+}
+
+
+.x-scroll-container {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    overflow-x: overlay;
+    -webkit-overflow-scrolling: touch;
+}
+
+.mt-10 {
+    margin-top: 10px;
+}
+
+/*  
+.container {
+    margin-bottom: calc(50px, constant(safe-area-inset-bottom));
+    margin-bottom: calc(50px, env(safe-area-inset-bottom));
+} */
+
+/*设置IOS页面长按不可复制粘贴，但是IOS上出现input、textarea不能输入，因此将使用-webkit-user-select:auto;*/
+* {
+    -webkit-touch-callout: none;
+    /*系统默认菜单被禁用*/
+    -webkit-user-select: none;
+    /*webkit浏览器*/
+    -khtml-user-select: none;
+    /*早期浏览器*/
+    -moz-user-select: none;
+    /*火狐*/
+    -ms-user-select: none;
+    /*IE10*/
+    user-select: none;
+}
+
+input,
+textarea {
+    -webkit-user-select: auto;
+    /*webkit浏览器*/
+    outline: none;
+}
+
+video {
+
+    object-fit: contain;
+}
+
+video[poster] {
+
+    object-fit: cover;
+}
+
+.van-tab {
+    font-size: 0.39rem !important;
+}
+
+.two {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.msubtitle {
+    font-size: .37rem;
+    color: @text-color;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.2rem 0.25rem;
+}
+
+.more {
+    font-size: .35rem;
+    color: @common-color2;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.title {
+    font-family: Quicksand, 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
+        'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    display: block;
+    font-weight: 300;
+    font-size: 100px;
+    color: #35495e;
+    letter-spacing: 1px;
+}
+
+.subtitle {
+    font-weight: 300;
+    font-size: 42px;
+    color: #526488;
+    word-spacing: 5px;
+    padding-bottom: 15px;
+}
+
+.links {
+    padding-top: 15px;
+}
+
+
+.my-swipe .van-swipe-item {
+    color: black;
+    width: 100%;
+    height: 100%;
+    /* background-color: #39a9ed; */
+}
+
+.my-van-tab {
+    // color: #646566;
+    margin-top: 1.6rem;
+}
+
+.comomAvater {
+    width: 1.2rem;
+    height: 1.2rem;
+    align-self: center;
+}
+
+
+.shortBt {
+    padding-bottom: 0.7rem;
+}
+
+.van-popover__content {
+    color: #000;
+}
+
+.active-sort {
+    color: @active-color;
+}
+
+.dropDown .van-dropdown-menu__title {
+    color: @active-color;
+    font-size: .3rem;
+}
+
+.dropDown .van-dropdown-menu__bar {
+    background: @content-color;
+}
+
+.dropDown .van-popup {
+    background: @theme-color;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 8px;
+    background-color: #333;
+    /* or add it to the track */
+}
+
+/* Add a thumb */
+::-webkit-scrollbar-thumb {
+    border-radius: 2.5px;
+    background: #666;
+}
+
+
+.van-sticky {
+    left: auto !important;
+    right: auto !important;
+    width: 100%;
+}
+
+// .van-icon {
+//     color: @active-color;
+// }
+
+.my-index {
+    .toolbox .van-icon {
+        color: @active-color;
+    }
+
+    .toolbox .van-grid-item__text {
+        color: @text-color;
+        font-size: 13px;
+    }
+}
+
+#nuxt-loading {
+    left: auto !important;
+    right: auto !important;
+    width: 100%;
+}
+
+.van-tabs__line {
+    background-color: @tab-active-text-color  !important;
+}
+
+.van-tabbar-item--active {
+    font-weight: 500;
+    color: @active-color  !important;
+}
+
+[class*='van-hairline']::after {
+    border: unset !important;
+}
+
+// .van-notice-bar {
+//     color: @active-color  !important;
+// }
+
+.viptabbox {
+    .van-tab {
+        flex: none;
+        margin-right: 0.4rem;
+        font-size: 0.3rem;
+    }
+}
+
+.van-dialog {
+    .van-button--default {
+        color: #4a4a4a;
+    }
+
+    .van-dialog__confirm {
+        color: @active-color ;
+    }
+}
+
+.van-overlay {
+    right: 0;
+    margin: 0 auto;
+}
+
+.short-view {
+    color: #fff;
+
+    .van-icon {
+        // color: #fff;
+    }
+
+    .tabbar {
+        background-color: @short-bg-color  !important;
+
+        .van-tabbar-item--active {
+            background-color: @short-bg-color  !important;
+        }
+    }
+
+    .flex-safe-bottom {
+        background: @short-bg-color  !important;
+    }
+
+    .fistDialog {
+        color: black;
+    }
+}
+
+/* 可以设置不同的进入和离开动画 */
+/* 设置持续时间和动画函数 */
+.fade-enter-active,
+.fade-leave-active {
+    transition: opacity 3s
+}
+
+/* .fade-leave-active, 2.1.8 版本以下 */
+.fade-enter,
+.fade-leave-to,
+.fade-enter-from,
+.fade-leave-to {
+    opacity: 0
+}
+
+.bounce-enter-active {
+    animation: bounce-in .3s;
+}
+
+.bounce-leave-active {
+    animation: bounce-in .3s reverse;
+}
+
+@keyframes bounce-in {
+    0% {
+        transform: scale(0);
+    }
+
+    50% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+
+
+
+.slide-right-enter-active,
+.slide-right-leave-active,
+.slide-left-enter-active,
+.slide-left-leave-active {
+    position: absolute; // 需要注意的地方
+    width: 100%; // 需要注意的地方，否则会出现页面渲染卡顿现象
+    will-change: transform;
+    transition: all 0.3s ease-out;
+}
+
+.slide-right-enter {
+    opacity: 0;
+    transform: translate(-100%, 0);
+}
+
+.slide-right-leave-active {
+    opacity: 0;
+    transform: translate(0%, 0);
+}
+
+.slide-left-enter {
+    opacity: 0;
+    transform: translate(100%, 0);
+}
+
+
+@-webkit-keyframes bounce {
+    0%,to {
+        -webkit-animation-timing-function: cubic-bezier(.8,0,1,1);
+        animation-timing-function: cubic-bezier(.8,0,1,1);
+        -webkit-transform: translateY(-25%);
+        transform: translateY(-25%)
+    }
+
+    50% {
+        -webkit-animation-timing-function: cubic-bezier(0,0,.2,1);
+        animation-timing-function: cubic-bezier(0,0,.2,1);
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+@keyframes bounce {
+    0%,to {
+        -webkit-animation-timing-function: cubic-bezier(.8,0,1,1);
+        animation-timing-function: cubic-bezier(.8,0,1,1);
+        -webkit-transform: translateY(-25%);
+        transform: translateY(-25%)
+    }
+
+    50% {
+        -webkit-animation-timing-function: cubic-bezier(0,0,.2,1);
+        animation-timing-function: cubic-bezier(0,0,.2,1);
+        -webkit-transform: none;
+        transform: none
+    }
+}
+
+.animate-bounce{
+    -webkit-animation: bounce 1s infinite;
+    animation: bounce 1s infinite;
+}

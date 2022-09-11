@@ -1,0 +1,43 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-hot-code-push-plugin": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-camera": {
+      "ANDROIDX_CORE_VERSION": "1.6.+",
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-apkupdater": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-base64-to-gallery": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.zq.douying"
+    }
+  },
+  "dependent_plugins": {}
+}

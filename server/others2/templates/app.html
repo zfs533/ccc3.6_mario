@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }} class="safe-top safe-bottom">
+
+<head {{ HEAD_ATTRS }}>
+    {{ HEAD }}
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica, Segoe UI, Arial, Roboto, 'PingFang SC', miui, 'Hiragino Sans GB', 'Microsoft Yahei', sans-serif;
+        }
+        
+        .appLoading {
+            visibility: hidden;
+        }
+        
+        .in-app .appLoading {
+            background-color: <%=backgroundColor %>;
+            background-image: url(<%=backgroundImage %>);
+            height: 100%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            margin: 0 auto;
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 'cover';
+        }
+        
+        .in-app .appLoading .logo {
+            background-image: url(<%=logo %>);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: <%=logoSize %>;
+            margin: 0 auto;
+            height: 180px;
+            top: 25%;
+            position: relative;
+        }
+        
+        .in-app .footer {
+            color: #c8c9cc;
+            position: absolute;
+            bottom: 0;
+            font-size: 15px;
+            width: 100%;
+            padding: 20px 0px;
+        }
+        
+        .in-app .footer .link {
+            display: flex;
+            justify-content: center;
+        }
+        
+        .in-app .footer .link a {
+            margin: 0 10px;
+            color: #c8c9cc;
+        }
+        
+        .in-app .appLoading {
+            visibility: visible;
+        }
+        
+        #nuxt-loading {
+            position: unset !important;
+            background: none !important;
+        }
+        
+        #nuxt-loading>div,
+        #nuxt-loading>div:after {
+            border-radius: 50% !important;
+            width: 30px !important;
+            height: 30px !important
+        }
+        
+        #nuxt-loading>div {
+            border: .18rem solid #fff !important;
+            border-left: .18rem solid #010101 !important;
+        }
+        
+        #nuxt-loading.error>div {
+            border: 0.18rem solid #ff4500 !important;
+            border-left: 0.18rem solid #010101 ! important;
+        }
+        
+        #nuxt-loading>.text {
+            font-size: 15px;
+            color: rgb(255, 255, 255);
+            margin: 8px 0 0;
+        }
+        
+        #nuxt-loading {
+            animation: unset !important;
+            -webkit-animation: unset !important;
+            opacity: unset !important;
+            visibility: unset !important;
+        }
+    </style>
+    <script>
+        var loading;
+
+        function injectLoading() {
+            loading = document.querySelector("#nuxt-loading");
+            if (loading) {
+                loading.innerHTML = '';
+            } else {
+                setTimeout(injectLoading, 10);
+            }
+        }
+        (function() {
+            setTimeout(injectLoading, 10);
+        })();
+    </script>
+</head>
+
+<body {{ BODY_ATTRS }}>
+    <div class="appLoading">
+        <% if(logo) { %>
+            <div class="logo animate-bounce"></div>
+            <% } %>
+                <div class="footer">
+                    <div class="link">
+                        <a href="<%=officialWeb%>" target="_blank">备用地址</a>
+                    </div>
+                </div>
+    </div>
+    {{ APP }}
+</body>
+
+</html>

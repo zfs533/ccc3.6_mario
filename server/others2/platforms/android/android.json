@@ -1,0 +1,326 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {
+      "app/src/main/AndroidManifest.xml": {
+        "parents": {
+          "/manifest/application": [
+            {
+              "xml": "<application android:theme=\"@style/AppTheme\" />",
+              "count": 2,
+              "mode": "merge",
+              "id": "config.xml",
+              "oldAttrib": {
+                "android:hardwareAccelerated": "true",
+                "android:icon": "@mipmap/ic_launcher",
+                "android:label": "@string/app_name",
+                "android:supportsRtl": "true",
+                "android:theme": "@style/AppTheme",
+                "android:usesCleartextTraffic": "true"
+              }
+            },
+            {
+              "xml": "<application android:usesCleartextTraffic=\"true\" />",
+              "count": 1,
+              "mode": "merge",
+              "id": "config.xml",
+              "oldAttrib": {
+                "android:hardwareAccelerated": "true",
+                "android:icon": "@mipmap/ic_launcher",
+                "android:label": "@string/app_name",
+                "android:supportsRtl": "true",
+                "android:theme": "@style/AppTheme",
+                "android:usesCleartextTraffic": "true"
+              }
+            }
+          ]
+        }
+      },
+      "config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<preference name=\"loadUrlTimeoutValue\" value=\"60000\" />",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"AndroidXEnabled\" value=\"true\" />",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "res/xml/config.xml": {
+        "parents": {
+          "/*": [
+            {
+              "xml": "<feature name=\"HotCodePush\"><param name=\"android-package\" value=\"com.nordnetab.chcp.main.HotCodePushPlugin\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Camera\"><param name=\"android-package\" value=\"org.apache.cordova.camera.CameraLauncher\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"SplashScreen\"><param name=\"android-package\" value=\"org.apache.cordova.splashscreen.SplashScreen\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"ApkUpdater\"><param name=\"android-package\" value=\"de.kolbasa.apkupdater.ApkUpdater\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"InAppBrowser\"><param name=\"android-package\" value=\"org.apache.cordova.inappbrowser.InAppBrowser\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"Base64ToGallery\"><param name=\"android-package\" value=\"it.nexxa.base64ToGallery.Base64ToGallery\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"CDVOrientation\"><param name=\"android-package\" value=\"cordova.plugins.screenorientation.CDVOrientation\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<feature name=\"StatusBar\"><param name=\"android-package\" value=\"org.apache.cordova.statusbar.StatusBar\" /><param name=\"onload\" value=\"true\" /></feature>",
+              "count": 1
+            },
+            {
+              "xml": "<preference name=\"StatusBarOverlaysWebView\" value=\"true\" />",
+              "count": 1
+            }
+          ]
+        }
+      },
+      "AndroidManifest.xml": {
+        "parents": {
+          "/manifest": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_NETWORK_STATE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.READ_EXTERNAL_STORAGE\" />",
+              "count": 1
+            }
+          ],
+          "/*": [
+            {
+              "xml": "<uses-permission android:name=\"android.permission.WRITE_EXTERNAL_STORAGE\" />",
+              "count": 2
+            },
+            {
+              "xml": "<queries><intent><action android:name=\"android.media.action.IMAGE_CAPTURE\" /></intent><intent><action android:name=\"android.intent.action.GET_CONTENT\" /></intent><intent><action android:name=\"android.intent.action.PICK\" /></intent><intent><action android:name=\"com.android.camera.action.CROP\" /><data android:mimeType=\"image/*\" android:scheme=\"content\" /></intent></queries>",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.INTERNET\" />",
+              "count": 1
+            },
+            {
+              "xml": "<uses-permission android:name=\"android.permission.REQUEST_INSTALL_PACKAGES\" />",
+              "count": 1
+            }
+          ],
+          "application": [
+            {
+              "xml": "<provider android:authorities=\"${applicationId}.cordova.plugin.camera.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"org.apache.cordova.camera.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/camera_provider_paths\" /></provider>",
+              "count": 1
+            },
+            {
+              "xml": "<provider android:authorities=\"${applicationId}.apkupdater.provider\" android:exported=\"false\" android:grantUriPermissions=\"true\" android:name=\"de.kolbasa.apkupdater.tools.FileProvider\"><meta-data android:name=\"android.support.FILE_PROVIDER_PATHS\" android:resource=\"@xml/apkupdater_paths\"></meta-data></provider>",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:description=\"@string/app_name\" android:exported=\"false\" android:label=\"@string/app_name\" android:name=\"de.kolbasa.apkupdater.tools.DAReceiver\" android:permission=\"android.permission.BIND_DEVICE_ADMIN\"><meta-data android:name=\"android.app.device_admin\" android:resource=\"@xml/device_admin\"></meta-data><intent-filter><action android:name=\"android.app.action.DEVICE_ADMIN_ENABLED\" /></intent-filter></receiver>",
+              "count": 1
+            },
+            {
+              "xml": "<receiver android:description=\"@string/app_name\" android:exported=\"false\" android:label=\"@string/app_name\" android:name=\"de.kolbasa.apkupdater.tools.PackageReplacedReceiver\"><intent-filter><action android:name=\"android.intent.action.MY_PACKAGE_REPLACED\" /></intent-filter></receiver>",
+              "count": 1
+            }
+          ]
+        }
+      }
+    }
+  },
+  "installed_plugins": {
+    "cordova-hot-code-push-plugin": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-camera": {
+      "ANDROIDX_CORE_VERSION": "1.6.+",
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-apkupdater": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-inappbrowser": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-base64-to-gallery": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "es6-promise-plugin": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-screen-orientation": {
+      "PACKAGE_NAME": "com.zq.douying"
+    },
+    "cordova-plugin-statusbar": {
+      "PACKAGE_NAME": "com.zq.douying"
+    }
+  },
+  "dependent_plugins": {},
+  "modules": [
+    {
+      "id": "cordova-hot-code-push-plugin.chcp",
+      "file": "plugins/cordova-hot-code-push-plugin/www/chcp.js",
+      "pluginId": "cordova-hot-code-push-plugin",
+      "clobbers": [
+        "chcp"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.Camera",
+      "file": "plugins/cordova-plugin-camera/www/CameraConstants.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "Camera"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.CameraPopoverOptions",
+      "file": "plugins/cordova-plugin-camera/www/CameraPopoverOptions.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "CameraPopoverOptions"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.camera",
+      "file": "plugins/cordova-plugin-camera/www/Camera.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "navigator.camera"
+      ]
+    },
+    {
+      "id": "cordova-plugin-camera.CameraPopoverHandle",
+      "file": "plugins/cordova-plugin-camera/www/CameraPopoverHandle.js",
+      "pluginId": "cordova-plugin-camera",
+      "clobbers": [
+        "CameraPopoverHandle"
+      ]
+    },
+    {
+      "id": "cordova-plugin-device.device",
+      "file": "plugins/cordova-plugin-device/www/device.js",
+      "pluginId": "cordova-plugin-device",
+      "clobbers": [
+        "device"
+      ]
+    },
+    {
+      "id": "cordova-plugin-splashscreen.SplashScreen",
+      "file": "plugins/cordova-plugin-splashscreen/www/splashscreen.js",
+      "pluginId": "cordova-plugin-splashscreen",
+      "clobbers": [
+        "navigator.splashscreen"
+      ]
+    },
+    {
+      "id": "cordova-plugin-apkupdater.ApkUpdater",
+      "file": "plugins/cordova-plugin-apkupdater/www/ApkUpdater.js",
+      "pluginId": "cordova-plugin-apkupdater",
+      "clobbers": [
+        "window.ApkUpdater"
+      ]
+    },
+    {
+      "id": "cordova-plugin-apkupdater.API",
+      "file": "plugins/cordova-plugin-apkupdater/www/API.js",
+      "pluginId": "cordova-plugin-apkupdater"
+    },
+    {
+      "id": "cordova-plugin-inappbrowser.inappbrowser",
+      "file": "plugins/cordova-plugin-inappbrowser/www/inappbrowser.js",
+      "pluginId": "cordova-plugin-inappbrowser",
+      "clobbers": [
+        "cordova.InAppBrowser.open"
+      ]
+    },
+    {
+      "id": "cordova-base64-to-gallery.object.assign-polyfill",
+      "file": "plugins/cordova-base64-to-gallery/www/object.assign-polyfill.js",
+      "pluginId": "cordova-base64-to-gallery"
+    },
+    {
+      "id": "cordova-base64-to-gallery.base64ToGallery",
+      "file": "plugins/cordova-base64-to-gallery/www/base64ToGallery.js",
+      "pluginId": "cordova-base64-to-gallery",
+      "clobbers": [
+        "cordova.base64ToGallery"
+      ]
+    },
+    {
+      "id": "es6-promise-plugin.Promise",
+      "file": "plugins/es6-promise-plugin/www/promise.js",
+      "pluginId": "es6-promise-plugin",
+      "runs": true
+    },
+    {
+      "id": "cordova-plugin-screen-orientation.screenorientation",
+      "file": "plugins/cordova-plugin-screen-orientation/www/screenorientation.js",
+      "pluginId": "cordova-plugin-screen-orientation",
+      "clobbers": [
+        "cordova.plugins.screenorientation"
+      ]
+    },
+    {
+      "id": "cordova-plugin-statusbar.statusbar",
+      "file": "plugins/cordova-plugin-statusbar/www/statusbar.js",
+      "pluginId": "cordova-plugin-statusbar",
+      "clobbers": [
+        "window.StatusBar"
+      ]
+    }
+  ],
+  "plugin_metadata": {
+    "cordova-hot-code-push-plugin": "1.5.3",
+    "cordova-plugin-camera": "6.0.0",
+    "cordova-plugin-device": "2.1.0",
+    "cordova-plugin-splashscreen": "6.0.1",
+    "cordova-plugin-apkupdater": "4.0.0",
+    "cordova-plugin-inappbrowser": "5.0.0",
+    "cordova-base64-to-gallery": "4.1.3",
+    "es6-promise-plugin": "4.2.2",
+    "cordova-plugin-screen-orientation": "3.0.2",
+    "cordova-plugin-statusbar": "3.0.0"
+  }
+}

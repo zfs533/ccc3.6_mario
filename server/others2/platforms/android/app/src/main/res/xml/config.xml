@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget android-versionCode="1" id="com.zq.douying" ios-CFBundleVersion="1" version="1.1.3" xmlns="http://www.w3.org/ns/widgets" xmlns:android="http://schemas.android.com/apk/res/android" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <feature name="HotCodePush">
+        <param name="android-package" value="com.nordnetab.chcp.main.HotCodePushPlugin" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="Camera">
+        <param name="android-package" value="org.apache.cordova.camera.CameraLauncher" />
+    </feature>
+    <feature name="Device">
+        <param name="android-package" value="org.apache.cordova.device.Device" />
+    </feature>
+    <feature name="SplashScreen">
+        <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
+        <param name="onload" value="true" />
+    </feature>
+    <feature name="ApkUpdater">
+        <param name="android-package" value="de.kolbasa.apkupdater.ApkUpdater" />
+    </feature>
+    <feature name="InAppBrowser">
+        <param name="android-package" value="org.apache.cordova.inappbrowser.InAppBrowser" />
+    </feature>
+    <feature name="Base64ToGallery">
+        <param name="android-package" value="it.nexxa.base64ToGallery.Base64ToGallery" />
+    </feature>
+    <feature name="CDVOrientation">
+        <param name="android-package" value="cordova.plugins.screenorientation.CDVOrientation" />
+    </feature>
+    <feature name="StatusBar">
+        <param name="android-package" value="org.apache.cordova.statusbar.StatusBar" />
+        <param name="onload" value="true" />
+    </feature>
+    <name>抖荫短视频</name>
+    <description>探索性世界</description>
+    <icon src="build/pids/A/dy-icon.png" />
+    <author email="">
+        zq group
+    </author>
+    <content src="/" />
+    <allow-intent href="*://*/*" />
+    <allow-intent href="tel:*" />
+    <allow-intent href="sms:*" />
+    <allow-intent href="mailto:*" />
+    <allow-intent href="tg:*" />
+    <allow-intent href="zhihu:*" />
+    <allow-intent href="weixin:*" />
+    <allow-intent href="momochat:*" />
+    <allow-intent href="alipays:*" />
+    <allow-navigation href="*://*/*" />
+    <access origin="*" />
+    <chcp>
+        <auto-download enabled="false" />
+        <auto-install enabled="false" />
+        <native-interface version="1" />
+    </chcp>
+    <edit-config file="app/src/main/AndroidManifest.xml" mode="merge" target="/manifest/application">
+        <application android:theme="@style/AppTheme" />
+        <application android:usesCleartextTraffic="true" />
+    </edit-config>
+    <preference name="loglevel" value="DEBUG" />
+    <preference name="loadUrlTimeoutValue" value="60000" />
+    <preference name="AndroidXEnabled" value="true" />
+    <preference name="AllowedSchemes" value="weixin,alipays" />
+    <preference name="BackgroundColor" value="0xffffff" />
+    <preference name="Fullscreen" value="false" />
+    <preference name="Orientation" value="portrait" />
+    <preference name="DisallowOverscroll" value="true" />
+    <preference name="AppendUserAgent" value="NitiveApp/1.0" />
+    <preference name="KeepRunning" value="false" />
+    <preference name="InAppBrowserStorageEnabled" value="true" />
+    <preference name="StatusBarOverlaysWebView" value="true" />
+    <preference name="StatusBarBackgroundColor" value="#00000000" />
+</widget>

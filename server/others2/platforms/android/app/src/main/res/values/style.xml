@@ -1,0 +1,9 @@
+<resources>
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="QMUI.Compat.NoActionBar">
+<!--        <item name="colorAccent">#110f1d</item>-->
+<!--        <item name="colorPrimary">#110f1d</item>-->
+        <item name="colorPrimaryDark">#110f1d</item>
+        <item name="android:windowBackground">#110f1d</item>
+    </style>
+</resources>

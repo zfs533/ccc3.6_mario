@@ -1,0 +1,1606 @@
+<template>
+    <el-card>
+        <el-form :inline="true" class="demo-form-inline">
+            <el-form-item label="视频id">
+                <el-input v-model="search.id" placeholder="请输入"></el-input>
+            </el-form-item>
+            <el-form-item label="视频fromId">
+                <el-tooltip class="item" effect="dark" content="仓库内容Id;资源仓库Id" placement="top">
+                    <el-input v-model="search.fromId" placeholder="请输入"></el-input>
+                </el-tooltip>
+            </el-form-item>
+            <el-form-item label="视频名称">
+                <el-input v-model="search.name" placeholder="请输入"></el-input>
+            </el-form-item>
+            <el-form-item label="上传人">
+                <el-input v-model="search.uploadId" placeholder="请输入"></el-input>
+            </el-form-item>
+            <el-form-item label="发布人">
+                <el-select v-model="search.publisherId" filterable placeholder="请选择">
+                    <el-option-group v-for="group in searchPublisherArr" :key="group.value" :label="group.label">
+                        <el-option v-for="item in group.children" :key="item.uid" :label="item.name" :value="item.uid">
+                        </el-option>
+                    </el-option-group>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="视频审核人">
+                <el-input v-model="search.opt" placeholder="请输入"></el-input>
+            </el-form-item>
+            <el-form-item label="视频来源">
+                <el-select v-model="search.from" filterable allow-create default-first-option placeholder="请输入">
+                    <el-option label="全部" :value="undefined">
+                    </el-option>
+                    <el-option label="来源缺失" value="none">
+                    </el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="视频分类">
+                <el-cascader v-model="search.categorie" :options="[{ name: '全部', id: undefined },{ name: '分类缺失', id: 'none' },...categorieList]" :props="{ expandTrigger: 'hover',value:'id',label:'name',checkStrictly:true }" @change="handleChange"></el-cascader>
+            </el-form-item>
+            <el-form-item label="视频标签">
+                <el-select filterable v-model="search.tags" placeholder="请选择" style="width:160px">
+                    <el-option label="全部" :value="undefined"></el-option>
+                    <el-option label="标签缺失" value="none"></el-option>
+                    <el-option v-for="item in tagsList" :key="item.value" :label="item.label" :value="item.value">
+                    </el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="排序方式">
+                <el-select v-model="search.sort" placeholder="请选择" style="width:160px">
+                    <el-option v-for="item in sortList" :key="item.value" :label="item.label" :value="item.value">
+                    </el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="付费方式">
+                <el-select v-model="search.payType" placeholder="请选择" style="width:160px">
+                    <el-option label="全部" :value="undefined"></el-option>
+                    <el-option v-for="item in payTypeList" :key="item.value" :label="item.label" :value="item.value">
+                    </el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="长短类型">
+                <el-select v-model="search.timeType" placeholder="请选择" style="width:160px">
+                    <el-option label="全部" :value="undefined"></el-option>
+                    <el-option v-for="item in timeTypeList" :key="item.value" :label="item.label" :value="item.value">
+                    </el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="视频状态">
+                <el-select v-model="search.state" placeholder="请选择" style="width:160px">
+                    <el-option label="全部" :value="undefined"></el-option>
+                    <el-option v-for="item in stateList" :key="item.value" :label="item.label" :value="item.value">
+                    </el-option>
+                </el-select>
+            </el-form-item>
+            <el-form-item label="是否推送">
+                <el-select v-model="search.isPull" placeholder="请选择" style="width:160px">
+                    <el-option label="全部" :value="undefined"></el-option>
+                    <el-option label="是" :value="true"></el-option>
+                    <el-option label="否" :value="false"></el-option>
+                </el-select>
+            </el-form-item>
+
+            <el-form-item label="价格范围">
+                <div class="zoneBox">
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.priceMin" placeholder="起" style="width:120px">
+                        </el-input>
+                    </div>
+                    <div class="line">—</div>
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.priceMax" placeholder="止" style="width:120px">
+                        </el-input>
+                    </div>
+                </div>
+            </el-form-item>
+            <el-form-item label="时长范围(秒)">
+                <div class="zoneBox">
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.timeMin" placeholder="起" style="width:120px"></el-input>
+                    </div>
+                    <div class="line">—</div>
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.timeMax" placeholder="止" style="width:120px"></el-input>
+                    </div>
+                </div>
+            </el-form-item>
+            <el-form-item label="体积范围(M)">
+                <div class="zoneBox">
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.sizeMin" placeholder="起" style="width:120px"></el-input>
+                    </div>
+                    <div class="line">—</div>
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.sizeMax" placeholder="止" style="width:120px"></el-input>
+                    </div>
+                </div>
+            </el-form-item>
+            <el-form-item label="播放量范围">
+                <div class="zoneBox">
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.playCntMin" placeholder="起" style="width:120px">
+                        </el-input>
+                    </div>
+                    <div class="line">—</div>
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.playCntMax" placeholder="止" style="width:120px">
+                        </el-input>
+                    </div>
+                </div>
+            </el-form-item>
+            <el-form-item label="点赞范围">
+                <div class="zoneBox">
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.likedCntMin" placeholder="起" style="width:120px">
+                        </el-input>
+                    </div>
+                    <div class="line">—</div>
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.likedCntMax" placeholder="止" style="width:120px">
+                        </el-input>
+                    </div>
+                </div>
+            </el-form-item>
+            <el-form-item label="热度范围">
+                <div class="zoneBox">
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.hotMin" placeholder="起" style="width:120px"></el-input>
+                    </div>
+                    <div class="line">—</div>
+                    <div class="inputs">
+                        <el-input type="number" v-model="search.hotMax" placeholder="止" style="width:120px"></el-input>
+                    </div>
+                </div>
+            </el-form-item>
+            <el-form-item label="创建时间">
+                <el-date-picker v-model="dateArr1" type="datetimerange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间"></el-date-picker>
+            </el-form-item>
+            <el-form-item label="审核时间">
+                <el-date-picker v-model="dateArr2" type="datetimerange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间"></el-date-picker>
+            </el-form-item>
+            <el-form-item label="上线时间">
+                <el-date-picker v-model="dateArr3" type="datetimerange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间"></el-date-picker>
+            </el-form-item>
+            <el-form-item label="修改时间">
+                <el-date-picker v-model="dateArr4" type="datetimerange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间"></el-date-picker>
+            </el-form-item>
+            <el-form-item>
+                <el-button type="primary" @click="searchData">查询</el-button>
+                <el-button v-if="!isMaterial" type="primary" @click="exportData">导出</el-button>
+                <el-button v-if="!isMaterial" type="primary" @click="refreshData">刷新</el-button>
+            </el-form-item>
+        </el-form>
+        <div class="showColumns">
+            <h4>表格显示列</h4>
+            <el-checkbox :indeterminate="isIndeterminate" v-model="checkAll" @change="handleCheckAllChange">全选
+            </el-checkbox>
+            <el-checkbox-group v-model="showColumns" @change="handleCheckedCitiesChange">
+                <el-checkbox class="checkbox" v-for="(item,index) in columns" :label="item.value" :key="index">
+                    {{item.label}}</el-checkbox>
+            </el-checkbox-group>
+        </div>
+
+        <div style="margin: 5px 0px; padding:0 0px 10px;">
+            <el-button type="primary" @click="showAddVideo">添加视频</el-button>
+            <el-button v-if="!isMaterial" type="primary" @click="bulkEdit">批量编辑</el-button>
+            <el-button type="danger" @click="clearSelect()" style="padding-left:20px">清空选中</el-button>
+            <el-badge :value="selectList.length" class="item" type="primary" style="padding-left:20px">
+                <el-popover ref="popover" placement="right" width="1000px" trigger="click">
+                    <el-container>
+                        <el-header style="text-align: center; font-size: 25px; color: burlywood;">
+                            <el-page-header @back="goBack" :content="`选中内容列表(数量:${selectList.length})`"></el-page-header>
+                        </el-header>
+                        <el-main style="height: 660px;">
+                            <el-table :data="selectList">
+                                <el-table-column width="300px" property="_id" label="视频id"></el-table-column>
+                                <el-table-column width="500px" property="name" label="视频名称"></el-table-column>
+                                <el-table-column fixed="right" label="操作" width="150" align="center">
+                                    <template slot-scope="scope" style="margin: 5px 0; padding:20px;">
+                                        <!-- <el-button type="text" style="margin:0 10px 0 0" @click="play(scope.row.playURL)">播放</el-button> -->
+                                        <el-button type="text" style="margin:0 10px 0 0" @click="delSelect(scope.row._id)">删除</el-button>
+                                    </template>
+                                </el-table-column>
+                            </el-table>
+                        </el-main>
+                    </el-container>
+                    <el-button slot="reference">查看选中视频</el-button>
+                </el-popover>
+            </el-badge>
+        </div>
+
+        <el-table :data="pageData" :border="true" min-width="100%" ref="table" @header-click="handleHeaderClick" @selection-change="handleSelectionChange" max-height="800px">
+            <el-table-column type="selection" width="55" fixed="left">
+            </el-table-column>
+            <el-table-column v-if="showColumns.includes('pid')" fixed prop="pid" label="项目" align="center" :formatter="$pidFormat" min-width="80"></el-table-column>
+            <el-table-column v-if="showColumns.includes('_id')" prop="_id" label="视频id" align="center" min-width="220" fixed="left"></el-table-column>
+            <el-table-column v-if="showColumns.includes('createdDate')" prop="createdDate" label="创建时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('optCreate')" prop="optCreate" label="审核时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('releaseDate')" prop="releaseDate" label="前端上线时间" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('updatedDate')" prop="updatedDate" label="修改时间" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('name')" prop="name" label="视频名称" align="center" min-width="160"></el-table-column>
+            <el-table-column v-if="showColumns.includes('summary')" prop="summary" label="简介" align="center" min-width="200"></el-table-column>
+            <el-table-column v-if="showColumns.includes('coverURL')" prop="coverURL" label="封面" align="center" min-width="150">
+                <template slot-scope="scope">
+                    <el-image v-if="scope.row.coverURLView" :src="scope.row.coverURLView" :preview-src-list="[scope.row.coverURLView]">
+                        <div slot="error" class="image-slot">
+                            加载失败
+                        </div>
+                    </el-image>
+                    <div style="max-width: 100px; max-height: 100px;background:#ccc;display: inline-block;" v-else v-loading="true" :element-loading-text="`图片加载中..`" element-loading-spinner="el-icon-loading">
+                    </div>
+                </template>
+            </el-table-column>
+            <el-table-column v-if="showColumns.includes('state')" prop="state" label="状态" align="center" :formatter="stateFormat">
+                <!--  <template slot-scope="scope">
+                    <el-button type="text" style="margin:0 10px 0 0" @click="checkState(scope.row)">{{stateFormat(null,null,scope.row.state)}}</el-button>
+                </template> -->
+            </el-table-column>
+            <el-table-column v-if="showColumns.includes('publisherId')" prop="publisherId" label="发布人" align="center" :formatter="publisherIdFormat">
+            </el-table-column>
+            <el-table-column v-if="showColumns.includes('uploadId')" prop="uploadId" label="上传人" align="center">
+            </el-table-column>
+            <el-table-column v-if="showColumns.includes('time')" prop="time" label="时长" align="center" :formatter="secondFormat" min-width="120"></el-table-column>
+            <el-table-column v-if="showColumns.includes('size')" prop="size" label="体积大小" align="center" :formatter="sizeFormat" min-width="120"></el-table-column>
+            <el-table-column v-if="showColumns.includes('price')" prop="price" label="价格" align="center">
+            </el-table-column>
+            <el-table-column v-if="showColumns.includes('payType')" prop="payType" label="付费类型" align="center" :formatter="payTypeFormat"></el-table-column>
+            <el-table-column v-if="showColumns.includes('timeType')" prop="timeType" label="长短类型" align="center" :formatter="timeTypeFormat"></el-table-column>
+            <el-table-column v-if="showColumns.includes('playURL')" prop="playURL" label="播放地址" align="center" min-width="300" :formatter="urlFormat"></el-table-column>
+            <el-table-column v-if="showColumns.includes('playCnt')" prop="playCnt" label="播放次数" align="center">
+            </el-table-column>
+            <el-table-column v-if="showColumns.includes('collectedCnt')" prop="collectedCnt" label="收藏数量" align="center"></el-table-column>
+            <el-table-column v-if="showColumns.includes('likedCnt')" prop="likedCnt" label="点赞次数" align="center">
+            </el-table-column>
+            <el-table-column v-if="showColumns.includes('hot')" prop="hot" label="热度" align="center"></el-table-column>
+            <el-table-column v-if="showColumns.includes('commentCnt')" prop="commentCnt" label="评论数" align="center">
+            </el-table-column>
+
+            <el-table-column v-if="showColumns.includes('opt')" prop="opt" label="审核人" align="center"></el-table-column>
+
+            <el-table-column show-overflow-tooltip v-if="showColumns.includes('categorie')" prop="categorie" label="分类" align="center" :formatter="categorieFormat" min-width="200"></el-table-column>
+            <el-table-column v-if="showColumns.includes('pullCategorie')" prop="pullCategorie" label="推送分类" align="center" :formatter="arrFormat" min-width="200"></el-table-column>
+            <el-table-column v-if="showColumns.includes('tags')" prop="tags" label="标签" align="center" :formatter="tagsFormat" min-width="200"></el-table-column>
+            <el-table-column v-if="showColumns.includes('from')" prop="from" label="视频来源" align="center"></el-table-column>
+            <el-table-column v-if="showColumns.includes('fromId')" prop="fromId" label="资源仓库id" align="center" min-width="200"></el-table-column>
+            <el-table-column v-if="showColumns.includes('htmlContent')" prop="htmlContent" label="内容" align="center" min-width="100"></el-table-column>
+            <el-table-column v-if="showColumns.includes('index')" prop="index" label="排序索引" align="center" min-width="100"></el-table-column>
+            <el-table-column fixed="right" label="操作" width="150" align="center">
+                <template slot-scope="scope">
+                    <el-button type="text" style="margin:0 10px 0 0" @click="play(scope.row.playURL)">播放</el-button>
+                    <el-button type="text" :disabled=(!scope.row.m3u8Preview) style="margin:0 10px 0 0" @click="play(scope.row.m3u8Preview)">播放预览</el-button>
+                    <el-button type="text" style="margin:0 10px 0 0" @click="editLine(scope.row)">编辑</el-button>
+                    <!-- <el-button type="text" style="margin:0 10px 0 0" @click="checkState(scope.row)">状态</el-button> -->
+                    <!-- <el-button type="text" style="margin:0 10px 0 0" @click="delLine(scope.row)">删除</el-button> -->
+                    <el-button type="text" style="margin:0 10px 0 0" @click="downVideo(scope.row)">下载</el-button>
+                    <!-- <el-button type="text" style="margin:0 10px 0 0" @click="cloneOne(scope.row)">克隆</el-button> -->
+                </template>
+            </el-table-column>
+        </el-table>
+        <el-col class="toolbar2">
+            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag" @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page" :page-sizes="[10,20,30,50,100,200,500]" :page-size="count" :total="totalCount"></el-pagination>
+        </el-col>
+        <el-dialog title="视频播放" @keyup.native.27="dialogVideo=false" :visible.sync="dialogVideo" width="790px" :close-on-click-modal="true" @close="closePlayer">
+            <Video ref="video" :url="videoUrl" />
+        </el-dialog>
+        <el-dialog title="编辑信息" :visible.sync="dialogVisible" width="600px" top="30px">
+            <el-form label-width="80px" :inline="true">
+                <el-form-item label="视频名称">
+                    <el-input v-model="formObj.name" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="付费方式">
+                    <el-select v-model="formObj.payType" placeholder="请选择" style="width:160px">
+                        <el-option v-for="item in payTypeList" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="视频价格" v-if="formObj.payType===4">
+                    <el-input type="number" v-model="formObj.price" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="排序" v-if="formObj.payType==4||formObj.payType==3">
+                    <el-input type="number" v-model="formObj.index" placeholder="不填则使用默认排序"></el-input>
+                </el-form-item>
+                <el-form-item label="html内容">
+                    <el-input type="text" v-model="formObj.htmlContent" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="发布城市">
+                    <el-input v-model="formObj.location" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="视频分类">
+                    <el-cascader v-model="formObj.categorie" :options="categorieList" :props="{ expandTrigger: 'hover',multiple: true,checkStrictly:true,value:'id',label:'name' }" @change="handleChange"></el-cascader>
+                </el-form-item>
+                <!-- <el-form-item label="视频标签">
+                    <el-select multiple filterable v-model="formObj.tags" placeholder="请选择" style="width:300px">
+                        <el-option v-for="item in tagsList" :key="item.value" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item> -->
+
+                <el-form-item label="视频标签">
+                    <div class="el-input-tag input-tag-wrapper" :class="[size ? 'el-input-tag--' + size : '']" @click="focusTagInput">
+                        <el-tag v-for="(tag, idx) in innerTags" v-bind="$attrs" :key="tag" :size="size" :closable="!readOnly" :disable-transitions="false" @close="remove(idx)">
+                            {{tag}}
+                        </el-tag>
+                    </div>
+                    <div :border="true" style=" display: inline-block !important;margin: 5px 0px;border:1px solid #ddd;width:100%">
+                        <input style="margin:0 10px" ref="tagInput" v-if="!readOnly" class="tag-input" placeholder="请输入" @input="inputTag" :value="newTag" @keydown="inputKeydown" @keydown.delete.stop="removeLastTag" />
+                        <el-switch v-model="isshowTags" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
+                        <el-switch style="margin:0 30px" v-model="isshowAllTags" inactive-text="展示全部标签" @change="showAllChiange" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
+                    </div>
+                </el-form-item>
+
+                <div v-if="isshowTags" style="height:300px;width:100%;overflow:auto;">
+                    <el-checkbox-group v-model="mtagsgroup" @change="handleCheckedCitiesChange1">
+                        <el-checkbox class="checkbox" v-for="(item,index) in mtags" :label="item.value" :key="index">
+                            {{item.label}}</el-checkbox>
+                    </el-checkbox-group>
+                </div>
+
+                <el-form-item label="长短类型">
+                    <el-select v-model="formObj.timeType" placeholder="请选择" style="width:160px">
+                        <el-option v-for="item in timeTypeList" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="视频来源">
+                    <el-input type="text" v-model="formObj.from" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="状态">
+                    <el-radio-group v-model="formObj.state" style="width:300px">
+                        <el-radio :label="1">上架</el-radio>
+                        <el-radio :label="2">下架</el-radio>
+                        <el-radio :label="3">等待复审</el-radio>
+                    </el-radio-group>
+                </el-form-item>
+                <br>
+                <el-form-item label="发布人">
+                    <el-select v-model="formObj.publisherId" filterable placeholder="请选择">
+                        <el-option-group v-for="group in restaurants" :key="group.value" :label="group.label">
+                            <el-option v-for="item in group.children" :key="item.uid" :label="item.name" :value="item.uid">
+                            </el-option>
+                        </el-option-group>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="封面图(点图上传)" label-width="150px">
+                    <ImgUpload :imageUrl="formObj.coverURLView" :path="UploadPath.VideoImage" :isCompress="true" @success="uploaded" />
+                </el-form-item>
+                <el-form-item label="简介">
+                    <el-input type="textarea" style="width:300px" :rows="5" v-model="formObj.summary" placeholder="请输入">
+                    </el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogVisible = false">取 消</el-button>
+                <el-button type="primary" @click="submitForm">确 定</el-button>
+            </div>
+        </el-dialog>
+
+        <el-dialog title="修改封面图" :visible.sync="dialogVisible2" width="600px">
+            <el-form label-width="80px" :inline="true">
+                <el-form-item label="视频名称">
+                    <el-input readonly v-model="formObj.name" placeholder="请输入"></el-input>
+                </el-form-item>
+
+                <el-form-item label="付费方式">
+                    <el-select disabled v-model="formObj.payType" placeholder="请选择" style="width:160px">
+                        <el-option v-for="item in payTypeList" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="视频价格" v-if="formObj.payType===4">
+                    <el-input readonly type="number" v-model="formObj.price" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="排序" v-if="formObj.payType==4||formObj.payType==3">
+                    <el-input readonly type="number" v-model="formObj.index" placeholder="不填则使用默认排序"></el-input>
+                </el-form-item>
+                <el-form-item label="视频地址">
+                    <el-input disabled v-model="formObj.location" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="视频分类">
+                    <el-cascader disabled v-model="formObj.categorie" :options="categorieList" :props="{ expandTrigger: 'hover',multiple: true,checkStrictly:true,value:'id',label:'name' }" @change="handleChange"></el-cascader>
+                </el-form-item>
+                <el-form-item label="视频标签">
+                    <el-select disabled multiple filterable v-model="formObj.tags" placeholder="请选择" style="width:300px">
+                        <el-option v-for="item in tagsList" :key="item.value" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="长短类型">
+                    <el-select disabled v-model="formObj.timeType" placeholder="请选择" style="width:160px">
+                        <el-option v-for="item in timeTypeList" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                    </el-select>
+                </el-form-item>
+
+                <el-form-item label="发布人">
+                    <el-input readonly class="inline-input" v-model="formObj.publisherId" value-key="label" placeholder="请输入内容"></el-input>
+                </el-form-item>
+                <el-form-item label="封面图(点图上传)" label-width="150px">
+                    <ImgUpload :imageUrl="formObj.coverURLView" :path="UploadPath.VideoImage" :isCompress="true" @success="uploaded" />
+                </el-form-item>
+                <el-form-item label="简介">
+                    <el-input readonly type="textarea" style="width:300px" :rows="5" v-model="formObj.summary" placeholder="请输入"></el-input>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogVisible2 = false">取 消</el-button>
+                <el-button type="primary" @click="submitForm2">确 定</el-button>
+            </div>
+        </el-dialog>
+
+        <el-dialog title="批量编辑" :visible.sync="blukDialogVisible" width="800px" @close="closeBlukView">
+            <el-form label-width="80px" :inline="true">
+                <el-form-item label="付费方式">
+                    <el-select v-model="blukEditObj.payType" placeholder="请选择" style="width:300px">
+                        <el-option v-for="item in payTypeList" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                    </el-select>
+                    <el-button type="primary" @click="updatePayType('1')" style="margin-left:20px">修改付费方式</el-button>
+                </el-form-item>
+                <el-form-item label="视频价格" v-if="blukEditObj.payType===4">
+                    <el-input type="number" v-model="blukEditObj.price" placeholder="请输入" style="width:300px">
+                    </el-input>
+                </el-form-item>
+                <br>
+                <el-form-item label="视频分类">
+                    <el-cascader v-model="blukEditObj.categorie" style="width:300px" :options="categorieList" :props="{ expandTrigger: 'hover',multiple: true,checkStrictly:true,value:'id',label:'name' }">
+                    </el-cascader>
+                    <el-button type="primary" @click="updatePayType('2')" style="margin-left:20px">修改视频分类</el-button>
+                </el-form-item>
+                <el-form-item label="视频标签">
+                    <el-select multiple filterable v-model="blukEditObj.tags" placeholder="请选择" style="width:300px">
+                        <el-option v-for="item in tagsList" :key="item.value" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                    <el-button type="primary" @click="updatePayType('3')" style="margin-left:20px">修改视频标签</el-button>
+                </el-form-item>
+                <el-form-item label="长短类型">
+                    <el-select v-model="blukEditObj.timeType" placeholder="请选择" style="width:300px">
+                        <el-option v-for="item in timeTypeList" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                    </el-select>
+                    <el-button type="primary" @click="updatePayType('4')" style="margin-left:20px">修改长短类型</el-button>
+                </el-form-item>
+                <el-form-item label="状态">
+                    <el-radio-group v-model="blukEditObj.state" style="width:300px">
+                        <el-radio :label="1">上架</el-radio>
+                        <el-radio :label="2">下架</el-radio>
+                        <el-radio :label="3">等待复审</el-radio>
+                    </el-radio-group>
+                    <el-button type="primary" @click="updatePayType('5')" style="margin-left:20px">修改视频状态</el-button>
+                </el-form-item>
+                <el-form-item label="发布人">
+                    <el-select v-model="blukEditObj.publisherId" filterable placeholder="请选择">
+                        <el-option-group v-for="group in restaurants" :key="group.value" :label="group.label">
+                            <el-option v-for="item in group.children" :key="item.uid" :label="item.name" :value="item.uid">
+                            </el-option>
+                        </el-option-group>
+                    </el-select>
+                    <el-button type="primary" @click="updatePayType('6')" style="margin-left:20px;width:126px">修改发布人
+                    </el-button>
+                </el-form-item>
+                <el-form-item label="视频来源">
+                    <el-input type="text" v-model="blukEditObj.from" placeholder="请输入" style="width:300px"></el-input>
+                    <el-button type="primary" @click="updatePayType('7')" style="margin-left:20px;width:126px">修改视频来源
+                    </el-button>
+                </el-form-item>
+                <!-- <el-form-item label="批量克隆">
+                    <el-select v-model="blukEditObj.pid" placeholder="请选择项目">
+                        <el-option v-for="item in (pidList.filter(e=>e.pid!==pid))" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
+                    </el-select>
+                    <el-form-item label="上线时间" v-if="blukEditObj.pid">
+                        <el-date-picker v-model="blukEditObj.releaseDate" type="datetime" value-format="yyyy-MM-dd HH:mm:ss">
+                        </el-date-picker>
+                    </el-form-item>
+                    <el-button type="primary" @click="updatePayType('8')" style="margin-left:20px;width:126px">克隆到其他平台</el-button>
+                </el-form-item> -->
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="blukDialogVisible = false">取 消</el-button>
+            </div>
+        </el-dialog>
+        <el-dialog title="克隆内容" :visible.sync="cloneDialogVisible" width="800px">
+            <h5>克隆内容不存在分类和标签关联</h5>
+            <el-form>
+                <el-form-item label="项目">
+                    <el-select v-model="formObj.pid" placeholder="请选择项目">
+                        <el-option v-for="item in (pidList.filter(e=>e.pid!==pid))" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="上线时间">
+                    <el-date-picker v-model="formObj.releaseDate" type="datetime" value-format="yyyy-MM-dd HH:mm:ss">
+                    </el-date-picker>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="cloneDialogVisible = false">取 消</el-button>
+                <el-button type="primary" @click="submitClone">克隆</el-button>
+            </div>
+        </el-dialog>
+
+        <el-dialog title="视频列表" top="30px" left :visible.sync="dialogVideoVisible" width="90%">
+            <el-form :inline="true" class="demo-form-inline">
+                <el-form-item label="视频id">
+                    <el-input v-model="search.id" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="视频名称">
+                    <el-input v-model="search.name" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="视频来源">
+                    <el-select v-model="search.from" filterable allow-create default-first-option placeholder="请输入">
+                        <el-option label="全部" :value="undefined">
+                        </el-option>
+                        <el-option label="来源缺失" value="none">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="视频审核人">
+                    <el-input v-model="search.opt" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="排序方式">
+                    <el-select v-model="search.sort" placeholder="请选择" style="width:160px">
+                        <el-option label="全部" :value="undefined"></el-option>
+                        <el-option v-for="item in sortList" :key="item.value" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="审核状态">
+                    <el-select v-model="search.status" placeholder="请选择" style="width:160px">
+                        <el-option label="全部" :value="undefined"></el-option>
+                        <el-option v-for="item in statusList" :key="item.value" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="时长范围(秒)">
+                    <div class="zoneBox">
+                        <div class="inputs">
+                            <el-input type="number" v-model="search.timeMin" placeholder="起" style="width:120px"></el-input>
+                        </div>
+                        <div class="line">—</div>
+                        <div class="inputs">
+                            <el-input type="number" v-model="search.timeMax" placeholder="止" style="width:120px"></el-input>
+                        </div>
+                    </div>
+                </el-form-item>
+                <el-form-item label="体积范围(M)">
+                    <div class="zoneBox">
+                        <div class="inputs">
+                            <el-input type="number" v-model="search.sizeMin" placeholder="起" style="width:120px"></el-input>
+                        </div>
+                        <div class="line">—</div>
+                        <div class="inputs">
+                            <el-input type="number" v-model="search.sizeMax" placeholder="止" style="width:120px"></el-input>
+                        </div>
+                    </div>
+                </el-form-item>
+                <el-form-item label="创建时间">
+                    <el-date-picker v-model="dateArr1" type="datetimerange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间"></el-date-picker>
+                </el-form-item>
+                <el-form-item label="审核时间">
+                    <el-date-picker v-model="dateArr2" type="datetimerange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间"></el-date-picker>
+                </el-form-item>
+                <el-form-item>
+                    <el-button type="primary" @click="searchData1">查询全部</el-button>
+                </el-form-item>
+                <br />
+            </el-form>
+            <div class="x-flex-container" style="display:flex;  justify-content:space-between;">
+                <div style="width:84.8%;!important">
+                    <el-table :data="pageData1" :border="true" min-width="100%" ref="table" @selection-change="handleSelectionChange1" max-height="500px">
+                        <el-table-column type="selection" width="55" fixed="left">
+                        </el-table-column>
+                        <el-table-column v-if="showColumns.includes('name')" prop="name" fixed label="名称" align="center" min-width="160"></el-table-column>
+                        <el-table-column v-if="showColumns.includes('_id')" prop="_id" label="仓库内容id" align="center" min-width="200">
+                        </el-table-column>
+                        <el-table-column v-if="showColumns.includes('createdDate')" prop="createdDate" label="创建时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+                        <el-table-column v-if="showColumns.includes('summary')" prop="summary" label="简介" align="center" min-width="200"></el-table-column>
+                        <el-table-column v-if="showColumns.includes('coverURL')" prop="coverURL" label="封面" align="center" min-width="150">
+                            <template slot-scope="scope">
+                                <el-image v-if="scope.row.coverURLView" :src="scope.row.coverURLView" :preview-src-list="[scope.row.coverURLView]">
+                                    <div slot="error" class="image-slot">
+                                        加载失败
+                                    </div>
+                                </el-image>
+                                <div style="max-width: 100px; max-height: 100px;background:#ccc;display: inline-block;" v-else v-loading="true" :element-loading-text="`图片加载中..`" element-loading-spinner="el-icon-loading">
+                                </div>
+                            </template>
+                        </el-table-column>
+                        <el-table-column v-if="showColumns.includes('publisherId')" prop="publisherId" label="发布人" align="center">
+                        </el-table-column>
+                        <el-table-column v-if="showColumns.includes('uploadId')" prop="uploadId" label="上传人" align="center">
+                        </el-table-column>
+                        <el-table-column v-if="showColumns.includes('time')" prop="time" label="时长" align="center" :formatter="secondFormat" min-width="120"></el-table-column>
+                        <el-table-column v-if="showColumns.includes('size')" prop="size" label="体积大小" align="center" :formatter="sizeFormat" min-width="120"></el-table-column>
+                        <el-table-column v-if="showColumns.includes('timeType')" prop="timeType" label="长短类型" align="center" :formatter="timeTypeFormat"></el-table-column>
+                        <el-table-column v-if="showColumns.includes('tags')" prop="tags" label="标签" align="center" :formatter="tagsFormat" min-width="200"></el-table-column>
+                        <el-table-column v-if="showColumns.includes('from')" prop="from" label="视频来源" align="center">
+                        </el-table-column>
+                        <el-table-column v-if="showColumns.includes('status')" prop="status" label="状态" align="center" :formatter="statusFormat"></el-table-column>
+                        <el-table-column v-if="showColumns.includes('opt')" prop="opt" label="审核人" align="center"></el-table-column>
+                        <el-table-column v-if="showColumns.includes('reason')" prop="reason" label="审核拒绝原因" align="center" min-width="200"></el-table-column>
+                        <el-table-column fixed="right" label="操作" width="100" align="center">
+                            <template slot-scope="scope">
+
+                                <el-button type="primary" style="width:60px;padding:12px 10px;margin:3px;" @click="play(scope.row.playURL)">播放</el-button>
+
+                            </template>
+                        </el-table-column>
+                    </el-table>
+                </div>
+                <div style="width:15%;!important;overflow:auto;height:500px;border: 1px solid #dcdfe6">
+                    已选择视频：
+                    <template v-for="(item,index) in selectedVideos">
+                        <el-tag :key="index" closable :disable-transitions="false" @close="handleClose(item)">
+                            {{item.name.substr(0,5)}}
+                        </el-tag>
+                    </template>
+                </div>
+            </div>
+            <el-col class="toolbar2">
+                <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag" @current-change="handleCurrentChange1" @size-change="handleSizeChange1" :current-page="page1" :page-sizes="[10,20,30,50,100,200,500]" :page-size="count1" :total="totalCount1"></el-pagination>
+            </el-col>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogVideoVisible = false">取 消</el-button>
+                <el-button type="primary" @click="submitFormAddVideo">确 定</el-button>
+            </div>
+        </el-dialog>
+
+    </el-card>
+</template>
+<script>
+import { blukUpdateVideos, cloneContent, downVideo, getManyVerifyVideos, getManyVideos, getPublisher, updateCoverURL, updatePlist, updateState, updateVideos, videosExcel } from '@/api/videoManager';
+import imgUpload from '@/components/imgUpload.vue';
+import { getSession } from '@/utils/auth';
+import { auditStateList, payTypeList, pidList, sortList, timeTypeList, UploadPath, UserTypeNew, videoStateList } from '@/utils/baseConst';
+import { getRandomCityList } from '@/utils/city';
+import { dateStartTimeFm, deepClone, getCategories, getWholeCategorieLabelArr, secToString, setImgView, sizeFormat } from '@/utils/formatter';
+import video from './video';
+export default {
+    components: {
+        Video: video,
+        ImgUpload: imgUpload
+    },
+    props: {
+        value: {
+            type: Array,
+            default: () => []
+        },
+        readOnly: {
+            type: Boolean,
+            default: false
+        },
+        size: String,
+        pid: String,
+    },
+    data() {
+        return {
+            isshowTags: true,
+            isshowAllTags: false,
+            UploadPath: UploadPath,
+            mtags: [],
+            origintags: [],
+            mtagsgroup: [],
+            newTag: '',
+            innerTags: [...this.value],
+            checked: 1,
+            page: 1,
+            page1: 1,
+            count: 10,
+            count1: 10,
+            totalCount: 0,
+            totalCount1: 0,
+            search: {},
+            dateArr1: [],
+            dateArr2: [],
+            dateArr3: [],
+            dateArr4: [],
+            pageData: [],
+            pageData1: [],
+            formObj: {},
+            dialogVisible: false,
+            dialogVisible2: false,
+            dialogVideo: false,
+            videoUrl: '',
+            sortList: sortList,
+            pidList,
+            UserTypeNew,
+            payTypeList: payTypeList,
+            timeTypeList: timeTypeList,
+            stateList: videoStateList,
+            columns: [],
+            isMaterial: false,
+            showColumns: [
+                "pid",
+                '_id',
+                'createdDate',
+                'optCreate',
+                'name',
+                'summary',
+                'coverURL',
+                'publisherId',
+                'uploadId',
+                'time',
+                'size',
+                'price',
+                'payType',
+                'timeType',
+                'playURL',
+                'playCnt',
+                'likedCnt',
+                'hot',
+                'commentCnt',
+                'state',
+                'opt',
+                'categorie',
+                'tags',
+                'releaseDate',
+                'updatedDate',
+                'pullCategorie',
+                'from',
+                'fromId',
+                'htmlContent',
+                'index',
+                'collectedCnt',
+
+                'summary',
+
+
+                'status',
+
+                'timeType',
+                'reason',
+                'opt',
+                'tags',
+            ],
+            blukDialogVisible: false,
+            blukEditObj: {},
+            isIndeterminate: false,
+            checkAll: true,
+            restaurants: [],
+            isCheckedTags: true,
+            searchPublisherArr: [],
+            sortT: {},
+            selectList: [],
+            isUpdateSelect: true,
+            cloneDialogVisible: false,
+            tempSelectedVideos: [],
+            selectedVideos: [],
+            vidsArr: [],
+            dialogVideoVisible: false,
+            statusList: auditStateList,
+        };
+    },
+    computed: {
+        categorieList() {
+            return this.$store.getters.categorieList.filter(e => e.id === this.pid);
+        },
+        tagsList() {
+            if (this.origintags.length < 1) {
+                let list = this.$store.getters.tagsList;
+                this.mtags.splice(0);
+                for (let i = 0; i < list.length; i++) {
+                    let item = list[i];
+                    // this.mtags.push(item);
+                    this.origintags.push(item);
+                }
+                this.showAllChiange();
+            }
+            return this.$store.getters.tagsList;
+        }
+    },
+    async created() {
+        this.isMaterial = this.$route.name.includes('material');
+        this.loadData();
+        this.loadUsers();
+    },
+    watch: {
+        value() {
+            this.innerTags = [...this.value];
+        }
+    },
+    mounted() {
+        for (let i of this.$refs.table.columns) {
+            if (i.property && i.label) {
+                this.columns.push({ value: i.property, label: i.label });
+            }
+        }
+        this.showColumns = this.columns.map(i => i.value);
+    },
+    methods: {
+        statusFormat(row, column, cellValue) {
+            let item = auditStateList.find(i => i.value === cellValue);
+            return item ? item.label : cellValue;
+        },
+        async submitFormAddVideo() {
+            this.vidsArr.splice(0);
+            for (let i = 0; i < this.selectedVideos.length; i++) {
+                this.vidsArr.push(this.selectedVideos[i]._id);
+            }
+            if (this.vidsArr.length < 1) {
+                this.$message.error("视频ID不能为空");
+            }
+            this.addVideoToCategorie(this.vidsArr);
+        },
+        async addVideoToCategorie(idArr) {
+            let updateModel = { ids: idArr };
+            let citys = getRandomCityList(20);
+            updateModel.pid = this.pid;
+            updateModel.releaseDate = dateStartTimeFm(new Date());
+            updateModel.location = citys;
+            let res = await this.$http(updatePlist, updateModel);
+            if (res.code === 200) {
+                this.$message.success("添加成功");
+                this.dialogVideoVisible = false;
+            }
+        },
+        handleCurrentChange1(val) {
+            this.page1 = val;
+            this.loadVideoData();
+        },
+        handleSizeChange1(val) {
+            this.count1 = val;
+            this.loadVideoData();
+        },
+        handleClose(item) {
+            for (let i = 0; i < this.selectedVideos.length; i++) {
+                if (this.selectedVideos[i]._id == item._id) {
+                    this.selectedVideos.splice(i, 1);
+                    return;
+                }
+            }
+        },
+        handleHeaderClick1() {
+
+        },
+        handleSelectionChange1(val) {
+            this.selectData = val;
+            var page = this.page1;
+            var item = { idx: page, list: val };
+            var bool = false;
+            for (let i = 0; i < this.tempSelectedVideos.length; i++) {
+                if (item.idx == this.tempSelectedVideos[i].idx) {
+                    this.tempSelectedVideos[i].list = val;
+                    bool = true;
+                }
+            }
+            if (!bool) {
+                this.tempSelectedVideos.push(item);
+            }
+
+            this.setSelectedData();
+        },
+        setSelectedData(item) {
+            this.selectedVideos.splice(0);
+            var list = this.tempSelectedVideos;
+            for (let i = 0; i < list.length; i++) {
+                for (let j = 0; j < list[i].list.length; j++) {
+                    this.selectedVideos.push(list[i].list[j]);
+                }
+            }
+        },
+        showAddVideo() {
+            this.search = {};
+            this.loadVideoData();
+            this.dialogVideoVisible = true;
+            this.tempSelectedVideos = [];
+            this.selectedVideos = [];
+        },
+
+        async loadVideoData() {
+
+            let res = await this.$http(getManyVerifyVideos, { pid: this.pid, page: this.page1, count: this.count1, type: "video", ...this.getQuery() }, true);
+            if (res.code === 200) {
+                this.pageData1 = res.msg.pageData;
+                this.totalCount1 = res.msg.totalCount;
+                this.pageData1 = deepClone(await setImgView(res.msg.pageData, "coverURL"));
+            }
+        },
+
+        async refreshData() {
+            await this.loadData();
+        },
+        focusTagInput() {
+            if (this.readOnly || !this.$el.querySelector('.tag-input')) {
+                return;
+            } else {
+                this.$el.querySelector('.tag-input').focus();
+            }
+        },
+        inputTag(ev) {
+            this.newTag = ev.target.value;
+            let value = ev.target.value;
+            if (value.length > 0) {
+                let tags = [];
+                for (let i = 0; i < this.origintags.length; i++) {
+                    if (this.origintags[i].label.includes(value)) {
+                        tags.push(this.origintags[i]);
+                    }
+                }
+                this.mtags = tags;
+            }
+            else {
+                // this.mtags = this.origintags;
+                this.showAllChiange();
+            }
+
+        },
+        showAllChiange() {
+            if (this.isshowAllTags) {
+                this.mtags = this.origintags;
+            }
+            else {
+                this.mtags = this.origintags.slice(0, 80);
+            }
+        },
+        addTag(tag) {
+            tag = tag.trim();
+            if (tag && !this.innerTags.includes(tag)) {
+                this.innerTags.push(tag);
+                return true;
+            }
+            return false;
+        },
+        remove(index) {
+            let item = this.getItemTagByLabel(this.innerTags[index]);
+            this.removeTagByValue(item.value);
+            this.innerTags.splice(index, 1);
+            this.tagChange();
+
+        },
+        removeLastTag() {
+            // if (this.newTag) {
+            //     return;
+            // }
+            // let item = this.getItemTagByLabel(this.innerTags[this.innerTags.length - 1]);
+            // this.removeTagByValue(item.value);
+            // this.innerTags.pop();
+            // this.tagChange();
+        },
+        inputKeydown(e) {
+            if (e.key == "Enter") {
+                let item = this.getItemTagByLabel(this.newTag);
+                if (item) {
+                    this.mtagsgroup.push(item.value);
+                    this.innerTags.push(item.label);
+                    this.newTag = "";
+                    this.showAllChiange();
+                    this.$refs.tagInput.focus();
+                }
+            }
+        },
+        removeTagByValue(value) {
+            let list = this.mtagsgroup;
+            for (let i = 0; i < list.length; i++) {
+                if (value == list[i]) {
+                    list.splice(i, 1);
+                    break;
+                }
+            }
+        },
+        tagChange() {
+            this.$emit('input', this.innerTags);
+        },
+
+        searchData() {
+            this.page = 1;
+            this.loadData();
+        },
+        searchData1() {
+            this.page1 = 1;
+            this.loadVideoData();
+        },
+        getQuery() {
+            let query = { ...this.search };
+            query.sizeMin = query.sizeMin ? query.sizeMin * 1024 * 1024 : undefined;
+            query.sizeMax = query.sizeMax ? query.sizeMax * 1024 * 1024 : undefined;
+            query.categorie = query.categorie ? query.categorie[query.categorie.length - 1] : undefined;
+            query.publisherId = query.publisherId;
+            if (this.dateArr1 && this.dateArr1.length > 1) {
+                query.createdDateStart = this.dateArr1[0];
+                query.createdDateEnd = this.dateArr1[1];
+            }
+            if (this.dateArr2 && this.dateArr2.length > 1) {
+                query.optCreateStart = this.dateArr2[0];
+                query.optCreateEnd = this.dateArr2[1];
+            }
+            if (this.dateArr3 && this.dateArr3.length > 1) {
+                query.releaseDateStart = this.dateArr3[0];
+                query.releaseDateEnd = this.dateArr3[1];
+            }
+            if (this.dateArr4 && this.dateArr4.length > 1) {
+                query.updateDateStart = this.dateArr4[0];
+                query.updateDateEnd = this.dateArr4[1];
+            }
+            return query;
+        },
+        handleHeaderClick(column, event) {
+            this.sortT = {};
+            switch (column.property) {
+                case "createdDate":
+                    if (column.order == "ascending") {
+                        this.sortT.sort = this.sortList[4].value;
+                    } else if (column.order == "descending") {
+                        this.sortT.sort = this.sortList[5].value;
+                    }
+                    this.loadData2();
+                    break;
+                case "optCreate":
+                    if (column.order == "ascending") {
+                        this.sortT.sort = this.sortList[12].value;
+                    }
+                    else if (column.order == "descending") {
+                        this.sortT.sort = this.sortList[13].value;
+                    }
+                    this.loadData2();
+                    break;
+            }
+        },
+        async loadData2() {
+            let res = await this.$http(getManyVideos, { type: "video", page: this.page, pid: this.pid, count: this.count, ...this.sortT });
+            if (res.code === 200) {
+                this.isCheckedTags = false;
+                this.pageData = res.msg.pageData;
+                this.totalCount = res.msg.totalCount;
+                this.pageData = deepClone(await setImgView(res.msg.pageData, "coverURL"));
+            }
+        },
+        async loadData() {
+            let res = await this.$http(getManyVideos, { type: "video", page: this.page, pid: this.pid, count: this.count, ...this.getQuery() });
+            if (res?.code === 200) {
+                this.isCheckedTags = false;
+                this.isUpdateSelect = false;
+                this.pageData = res.msg.pageData;
+                this.totalCount = res.msg.totalCount;
+                this.pageData = deepClone(await setImgView(res.msg.pageData, "coverURL"));
+                this.$nextTick(() => {
+                    // 指定选中状态
+                    if (this.selectList.length) {
+                        let selectItems = [];
+                        this.pageData.forEach(e => {
+                            let find = this.selectList.find(s => s._id === e._id);
+                            if (find) {
+                                selectItems.push(e);
+                            }
+                        });
+                        if (selectItems.length) {
+                            selectItems.forEach(e => {
+                                this.$refs.table.toggleRowSelection(e, true);
+                            });
+                        }
+                    }
+                    this.isUpdateSelect = true;
+                });
+            }
+        },
+        async exportData() {
+            let res = await this.$http(videosExcel, { pid: this.pid, page: this.page, count: this.count, ...this.getQuery() });
+            if (res.code === 200) {
+                this.$message.success("导出任务创建成功");
+                // await this.$confirm('导出任务创建成功，是否跳转到任务管理页面下载', '提示', {
+                //     confirmButtonText: '跳转',
+                //     cancelButtonText: '取消',
+                //     type: 'warning'
+                // });
+                // this.$router.push({ path: '/index' });
+            }
+        },
+        handleChange(val) { console.log(val, this.formObj.categorie); },
+        handleCurrentChange(val) {
+            this.page = val;
+            this.loadData();
+        },
+        //每页显示数据量变更
+        handleSizeChange(val) {
+            this.count = val;
+            this.loadData();
+        },
+
+        handleCheckAllChange(val) {
+            this.showColumns = val ? this.columns.map(i => i.value) : [];
+            this.isIndeterminate = false;
+        },
+        handleCheckedCitiesChange(value) {
+            let checkedCount = value.length;
+            this.checkAll = checkedCount === this.columns.length;
+            this.isIndeterminate = checkedCount > 0 && checkedCount < this.columns.length;
+        },
+
+        initSelectCheckBox() {
+            this.mtagsgroup.splice(0);
+        },
+
+        handleCheckedCitiesChange1(value) {
+            this.newTag = "";
+            this.showAllChiange();
+            this.$refs.tagInput.focus();
+            this.innerTags.splice(0);
+            for (let i = 0; i < value.length; i++) {
+                let item = this.getItemTag(value[i]);
+                this.innerTags.push(item.label);
+            }
+        },
+        getItemTag(value) {
+            var list = this.origintags;
+            for (let i = 0; i < list.length; i++) {
+                if (list[i].value == value) {
+                    return list[i];
+                }
+            }
+            return null;
+        },
+        getItemTagByLabel(label) {
+            var list = this.origintags;
+            for (let i = 0; i < list.length; i++) {
+                if (list[i].label == label) {
+                    return list[i];
+                }
+            }
+            return null;
+        },
+        sizeFormat(row, column, cellValue) {
+            return sizeFormat(cellValue);
+        },
+        payTypeFormat(row, column, cellValue) {
+            let item = this.payTypeList.find(i => i.value === cellValue);
+            return item ? item.label : cellValue;
+        },
+        timeTypeFormat(row, column, cellValue) {
+            let item = this.timeTypeList.find(i => i.value === cellValue);
+            return item ? item.label : cellValue;
+        },
+        stateFormat(row, column, cellValue) {
+            let item = this.stateList.find(i => i.value === cellValue);
+            return item ? item.label : cellValue;
+        },
+        secondFormat(row, column, cellValue) {
+            return cellValue ? secToString(cellValue) : cellValue;
+        },
+        categorieFormat(row, column, cellValue) {
+            let v = getCategories(cellValue, this.categorieList);
+            v = getWholeCategorieLabelArr(v, this.categorieList);
+            return v;
+        },
+        // categorieFormat(row, column, cellValue) {
+        //     if (Array.isArray(cellValue) && cellValue.length != 0) {
+        //         let v = getWholeCategorieLabelByIds(cellValue, this.categorieList);
+        //         return v;
+        //     }
+        // },
+        arrFormat(row, column, cellValue) {
+            return typeof cellValue == "object" ? cellValue.join('，') : cellValue;
+        },
+        tagsFormat(row, column, cellValue) {
+            let str = '';
+            if (cellValue && cellValue.length > 0) {
+                for (let j of cellValue) {
+                    let item = this.tagsList.find(i => i.value === j);
+                    str += (item ? item.label : j) + " ";
+                    if (!item && !this.isCheckedTags) {
+                        this.isCheckedTags = true;
+                        this.$message('标签未解析，已更新，请重新查询');
+                        this.$store.dispatch("baseData/setTags");
+                    }
+                }
+            }
+            return str ? str : cellValue;
+        },
+        publisherIdFormat(row, column, cellValue) {
+            let name = "";
+            for (let i = 0; i < this.searchPublisherArr.length; i++) {
+                let item = this.searchPublisherArr[i].children.find(i => i.uid === cellValue);
+                if (item) {
+                    name = item.name;
+                    break;
+                }
+            }
+            return name ? name : cellValue;
+        },
+        urlFormat(row, column, cellValue) {
+            return cellValue ? `${getSession("src")[0] || ""}/${cellValue}` : cellValue;
+        },
+        uploaded(path) {
+            this.formObj.coverURL = path;
+        },
+        async submitForm() {
+            this.formObj.tags = this.mtagsgroup;
+            let query = { ...this.formObj };
+            query.categorie = query.categorie ? query.categorie.map(i => i[i.length - 1]) : [];
+            delete query.coverURLView;
+            let res = await this.$http(updateVideos, query);
+            if (res.code === 200) {
+                this.$message.success("修改成功");
+                this.dialogVisible = false;
+                this.loadData();
+            }
+        },
+        async submitClone() {
+            let query = { ...this.formObj };
+            let res = await this.$http(cloneContent, query);
+            if (res.code === 200) {
+                this.$message.success("修改成功");
+                this.cloneDialogVisible = false;
+                this.loadData();
+            }
+        },
+        async submitForm2() {
+            let query = { id: this.formObj.id, coverURL: this.formObj.coverURL };
+            let res = await this.$http(updateCoverURL, query);
+            if (res.code === 200) {
+                this.$message.success("修改成功");
+                this.dialogVisible2 = false;
+                this.loadData();
+            }
+        },
+        editLine(row) {
+
+            this.formObj = {
+                id: row._id,
+                pid: this.pid,
+                pids: row.pids,
+                name: row.name,
+                categorie: getCategories(row.categorie, this.categorieList),
+                tags: row.tags,
+                payType: row.payType,
+                timeType: row.timeType,
+                state: row.state,
+                summary: row.summary,
+                coverURLView: row.coverURLView,
+                coverURL: row.coverURL,
+                publisherId: row.publisherId,
+                from: row.from,
+                price: row.price,
+                location: row.location,
+                htmlContent: row.htmlContent,
+            };
+            if (this.isMaterial) {
+                this.dialogVisible2 = true;
+            }
+            else {
+                this.dialogVisible = true;
+            }
+
+            this.mtagsgroup.splice(0);
+            this.innerTags.splice(0);
+            for (let i = 0; i < this.formObj.tags.length; i++) {
+                let item = this.getItemTag(this.formObj.tags[i]);
+                this.mtagsgroup.push(item.value);
+                this.innerTags.push(item.label);
+            }
+
+        },
+        cloneOne(row) {
+            this.formObj = {
+                id: row._id,
+                releaseDate: dateStartTimeFm(new Date()),
+            };
+            this.cloneDialogVisible = true;
+        },
+        play(url) {
+            this.videoUrl = this.urlFormat(null, null, url);
+            this.dialogVideo = true;
+        },
+        async checkState(row) {
+            let come = row.state == 1 ? 2 : 1;
+            let prompt = await this.$prompt("请输入操作理由", `即将切换该用户状态为 ${this.stateFormat(null, null, come)}，是否确定？`, {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+            });
+            let res = await this.$http(updateState, { id: row._id, state: row.state === 1 ? 2 : 1, reason: prompt.value });
+            if (res.code === 200) {
+                this.$message.success("状态修改成功");
+                this.loadData();
+            }
+        },
+        closePlayer() {
+            this.videoUrl = '';
+            // console.log("关闭弹窗", this.$refs.video, this.dialogVisible);
+        },
+        bulkEdit() {
+            if (this.selectList.length == 0) {
+                this.$message.error("请选择视频资源");
+            }
+            else {
+                this.blukEditObj = { payType: 2, timeType: 3, state: 1, from: "9527", releaseDate: dateStartTimeFm(new Date()) };
+                this.blukDialogVisible = true;
+            }
+        },
+        async updatePayType(action) {
+            let query = { ...this.blukEditObj };
+            let idArr = [];
+            this.selectList.forEach(element => {
+                idArr.push(element._id);
+            });
+            // id去重复
+            idArr = [...new Set(idArr)];
+            let updateModel = { ids: idArr };
+            if (action == 1) {
+                updateModel.payType = query.payType;
+                if (query.payType == 4) {
+                    updateModel.price = query.price;
+                }
+            } else if (action == 2) {
+                query.categorie = query.categorie ? query.categorie.map(i => i[i.length - 1]) : [];
+                await this.$confirm(`视频分类未选择，确认修改吗？`, `提醒`, {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                });
+                updateModel.categorie = query.categorie;
+            }
+            else if (action == 3) {
+                await this.$confirm(`视频标签未选择，确认修改吗？`, `提醒`, {
+                    confirmButtonText: '确定',
+                    cancelButtonText: '取消',
+                });
+                updateModel.tags = query.tags ? query.tags : [];
+            } else if (action == 4) {
+                updateModel.timeType = query.timeType;
+            } else if (action == 5) {
+                updateModel.state = query.state;
+            }
+            else if (action == 6) {
+                updateModel.publisherId = query.publisherId;
+            }
+            else if (action == 7) {
+                updateModel.from = query.from;
+            }
+            else if (action == 8) {
+                updateModel.pid = query.pid;
+                updateModel.releaseDate = query.releaseDate;
+            }
+            updateModel.pid = this.pid;
+            let res = await this.$http(blukUpdateVideos, updateModel);
+            if (res.code === 200) {
+                this.$message.success("修改成功");
+                /*  this.loadData();
+                 this.blukDialogVisible = false; */
+            }
+        },
+        async closeBlukView() {
+            if (!this.selectList.length) {
+                this.loadData();
+                return;
+            };
+            await this.$confirm(`确定清空选中的内容吗？`, `提醒`, {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+            }).then(async () => {
+                // 先处理当前界面被选中的，
+                let curSelect = [];
+                this.pageData.forEach(e => {
+                    let f = this.selectList.find(s => s._id === e._id);
+                    if (f) curSelect.push(e);
+                });
+                // 同步刷新
+                for (let i = 0; i < curSelect.length; i++) {
+                    this.$refs.table.toggleRowSelection(curSelect[i], false);
+                }
+                // 清空
+                this.selectList = [];
+                this.loadData();
+            }).catch(() => {
+                this.$message.info("已取消清空");
+            });
+        },
+        delSelect(id) {
+            // 如果当前页面有选中的也要取消
+            let find = this.pageData.find(e => e._id === id);
+            if (find) {
+                this.$refs.table.toggleRowSelection(find, false);
+            } else {
+                let index = this.selectList.findIndex(s => s._id === id);
+                if (index >= 0) {
+                    this.selectList.splice(index, 1);
+                }
+            }
+        },
+        async clearSelect() {
+            if (!this.selectList.length) {
+                return;
+            };
+            await this.$confirm(`确定清空选中的内容吗？`, `提醒`, {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+            }).then(async () => {
+                // 先处理当前界面被选中的，
+                let curSelect = [];
+                this.pageData.forEach(e => {
+                    let f = this.selectList.find(s => s._id === e._id);
+                    if (f) curSelect.push(e);
+                });
+                // 同步刷新
+                for (let i = 0; i < curSelect.length; i++) {
+                    this.$refs.table.toggleRowSelection(curSelect[i], false);
+                }
+                // 清空
+                this.selectList = [];
+            }).catch(() => {
+                this.$message.info("已取消删除");
+            });
+
+        },
+        goBack() {
+            this.$refs.popover.doClose();
+        },
+        handleSelectionChange(val) {
+            if (!this.isUpdateSelect) return;
+            if (this.selectList.length > 500) {
+                this.$message.error("选中的数量超过500,不能再添加了");
+                return;
+            }
+            let curList = this.pageData.map(e => { return { _id: e._id, name: e.name, playURL: e.playURL }; });
+            if (Array.isArray(val)) {
+                let curSelectIds = this.selectList.map(e => e._id);
+                if (val.length) {
+                    let addIds = new Set();
+                    let lessIds = new Set();
+                    // 新加的
+                    val.forEach(e => {
+                        if (!curSelectIds.includes(e._id)) {
+                            addIds.add(e._id);
+                        }
+                    });
+                    // 取消的
+                    curList.forEach(e => {
+                        // 已存在选中列表
+                        if (curSelectIds.includes(e._id)) {
+                            // 当前是否选中该视频
+                            let find = val.find(choose => choose._id === e._id);
+                            if (!find) {
+                                lessIds.add(e._id);
+                            }
+                        }
+                    });
+                    if (addIds.size) {
+                        addIds.forEach(e => {
+                            let item = val.find(i => i._id === e);
+                            if (item) {
+                                this.selectList.push({ _id: item._id, name: item.name, playURL: item.playURL });
+                            }
+                        });
+                    }
+                    if (lessIds.size) {
+                        lessIds.forEach(e => {
+                            // 删除
+                            let index = this.selectList.findIndex(s => s._id === e);
+                            if (index >= 0) {
+                                this.selectList.splice(index, 1);
+                            }
+                        });
+                    }
+                    console.log("添加选中:" + addIds.size + "取消选中:" + lessIds.size);
+                } else {
+                    // 可能取消全部
+                    let lessIds = new Set();
+                    curList.forEach(e => {
+                        // 已存在选中列表
+                        if (curSelectIds.includes(e._id)) {
+                            lessIds.add(e._id);
+                        }
+                    });
+                    if (lessIds.size) {
+                        lessIds.forEach(e => {
+                            // 删除
+                            let index = this.selectList.findIndex(s => s._id === e);
+                            if (index >= 0) {
+                                this.selectList.splice(index, 1);
+                            }
+                        });
+                    }
+                    // console.log("取消选中:"+lessIds.size);
+                }
+            }
+        },
+        createFilter(queryString) {
+            return (restaurant) => {
+                return (restaurant.label.toString().includes(queryString));
+            };
+        },
+        async loadUsers() {
+            let res = await this.$http(getPublisher, { pid: this.pid }, true);
+            if (res?.code === 200 && res.msg) {
+                this.restaurants = res.msg.map(i => {
+                    let userType = UserTypeNew.find(ut => ut.value === i.type);
+                    return { value: i.type, label: userType.label, children: i.list };
+                });
+                this.restaurants.unshift({ value: -1, label: '随机分配', children: [{ uid: -1, name: "随机分配" }] });
+                this.searchPublisherArr = res.msg.map(i => {
+                    let userType = UserTypeNew.find(ut => ut.value === i.type);
+                    return { value: i.type, label: userType.label, children: i.list };
+                });
+                this.searchPublisherArr.unshift({ value: -1, label: '发布人缺失', children: [{ uid: -1, name: "发布人缺失" }] });
+                this.searchPublisherArr.unshift({ value: 0, label: '不搜索', children: [{ uid: undefined, name: "无" }] });
+            }
+        },
+        async downVideo(row) {
+            await this.$confirm(`确认下载吗？`, `提醒`, {
+                confirmButtonText: '确定',
+                cancelButtonText: '取消',
+            });
+            let res = await this.$http(downVideo, { id: row._id });
+            if (res.code === 200) {
+                let link = document.createElement('a');
+                link.href = res.msg;
+                link.download = res.msg;
+                link.click();
+            }
+        }
+    }
+};
+</script>
+<style lang="scss" scoped>
+.header {
+    margin-bottom: 20px;
+}
+
+.zoneBox {
+    display: flex;
+    width: 280px;
+    align-items: center;
+
+    .inputs {
+        flex: 3;
+        display: flex;
+        justify-content: center;
+    }
+
+    .line {
+        text-align: center;
+        flex: 1;
+    }
+}
+
+.showColumns {
+    margin: 20px 0;
+
+    .checkbox {
+        margin-bottom: 10px;
+    }
+}
+
+.el-form-item.is-error .el-input-tag {
+    border-color: #f56c6c;
+}
+.input-tag-wrapper {
+    position: relative;
+    font-size: 14px;
+    background-color: #fff;
+    background-image: none;
+    border-radius: 4px;
+    border: 1px solid #dcdfe6;
+    box-sizing: border-box;
+    color: #606266;
+    display: inline-block;
+    outline: none;
+    padding: 0 10px 0 5px;
+    transition: border-color 0.2s cubic-bezier(0.645, 0.045, 0.355, 1);
+    width: 100%;
+}
+.el-tag {
+    margin-right: 4px;
+}
+
+.tag-input {
+    background: transparent;
+    border: 0px;
+    font-size: inherit;
+    outline: none;
+    padding-left: 0px;
+    width: 270px;
+}
+
+.tag-idiv {
+    border: 1px;
+}
+
+.el-input-tag {
+    min-height: 42px;
+}
+.el-input-tag--mini {
+    min-height: 28px;
+    line-height: 28px;
+    font-size: 12px;
+}
+
+.el-input-tag--small {
+    min-height: 32px;
+    line-height: 32px;
+}
+
+.el-input-tag--medium {
+    min-height: 36px;
+    line-height: 36px;
+}
+</style>

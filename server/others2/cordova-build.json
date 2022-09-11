@@ -1,0 +1,12 @@
+{
+    "android": {
+        "release": {
+            "keystore": "./build/android-release.keystore",
+            "storePassword": "123123.",
+            "alias": "release-apk",
+            "password": "123123.",
+            "keystoreType": "pkcs12",
+            "packageType": "apk"
+        }
+    }
+}
