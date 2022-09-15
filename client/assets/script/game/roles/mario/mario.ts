@@ -1,11 +1,14 @@
-import { Animation, Component, RigidBody2D, v2, v3, Vec3, _decorator } from 'cc';
+import { Animation, Collider2D, Component, IPhysics2DContact, RigidBody2D, UITransformComponent, v2, v3, Vec3, _decorator } from 'cc';
 import { clientEvent } from '../../../framework/clientEvent';
 import { Constant } from '../../../framework/constant';
 import { AnimMario, MarioStatus } from '../../../framework/enum';
+import { baseCollider } from '../../collider/baseCollider';
+import { brick } from '../../pieces/brick';
+import { whyBrick } from '../../pieces/whyBrick';
 const { ccclass, property } = _decorator;
 
 @ccclass('mario')
-export class mario extends Component {
+export class mario extends baseCollider {
     private _anim: Animation = undefined;
     private _rigidbody2d: RigidBody2D = undefined;
     private _speed: number = -1;
@@ -14,7 +17,9 @@ export class mario extends Component {
     private _isJumping: boolean = false;
     private _jumpPoint: Vec3 = new Vec3();
     private _status: number = 0;
+    private _isDeath: boolean = false;
     start() {
+        super.start();
         this._init();
         this._addListener();
     }
@@ -23,12 +28,14 @@ export class mario extends Component {
         clientEvent.on(Constant.EVENT_TYPE.Move, this._evtStartMove, this);
         clientEvent.on(Constant.EVENT_TYPE.Stop, this._evtStop, this);
         clientEvent.on(Constant.EVENT_TYPE.Jump, this._evtJump, this);
+        clientEvent.on(Constant.EVENT_TYPE.MarioDeath, this._evtPlayMarioDeath, this);
     }
 
     onDestroy() {
         clientEvent.off(Constant.EVENT_TYPE.Move, this._evtStartMove, this);
         clientEvent.off(Constant.EVENT_TYPE.Stop, this._evtStop, this);
         clientEvent.off(Constant.EVENT_TYPE.Jump, this._evtJump, this);
+        clientEvent.off(Constant.EVENT_TYPE.MarioDeath, this._evtPlayMarioDeath, this);
     }
 
     private _init() {
@@ -51,6 +58,7 @@ export class mario extends Component {
     }
 
     update(deltaTime: number) {
+        if (this._isDeath) return;
         //移动状态
         if (this._isMoving) {
             let pos = this.node.getPosition();
@@ -87,6 +95,7 @@ export class mario extends Component {
         }
     }
     async playIdle() {
+        if (this._isDeath) return;
         if (!this._anim) {
             await this._loadAnimComponent();
         }
@@ -95,6 +104,7 @@ export class mario extends Component {
         this._anim.play(AnimMario.idle);
     }
     async playWalk() {
+        if (this._isDeath) return;
         if (this._status == MarioStatus.walk) return;
         if (!this._anim) {
             await this._loadAnimComponent();
@@ -102,14 +112,25 @@ export class mario extends Component {
         this._status = MarioStatus.walk;
         this._anim.play(AnimMario.walk);
     }
-    async playDeath() {
+    async _evtPlayMarioDeath() {
+        if (this._isDeath) return;
         if (!this._anim) {
             await this._loadAnimComponent();
         }
         this._status = MarioStatus.death;
         this._anim.play(AnimMario.death);
+        this._isDeath = true;
+        let pos = this.node.getPosition();
+        this.node.setPosition(v3(pos.x, pos.y + 2, pos.z));
+        this._rigidbody2d.applyForce(v2(0, 1600), v2(0, 0), true);
+        //先让他复活
+        this.scheduleOnce(() => {
+            this._isDeath = false;
+            this.playIdle();
+        }, 3);
     }
     async playSwim() {
+        if (this._isDeath) return;
         if (!this._anim) {
             await this._loadAnimComponent();
         }
@@ -118,6 +139,7 @@ export class mario extends Component {
     }
 
     async playJump() {
+        if (this._isDeath) return;
         if (!this._anim) {
             await this._loadAnimComponent();
         }
@@ -174,7 +196,70 @@ export class mario extends Component {
         else {
             this.playIdle();
         }
+    }
 
+    /**
+     * 碰撞检测
+     * @param selfCollider  
+     * @param otherCollider 
+     * @param contact 
+     */
+    public onBeginContact(selfCollider: Collider2D, otherCollider: Collider2D, contact: IPhysics2DContact | null) {
+        // 只在两个碰撞体开始接触时被调用一次
+        let name1 = selfCollider.node.name;
+        let name2 = otherCollider.node.name;
+        if (name1.includes("mario") && name2.includes("wall")) {
+            let bk: brick = otherCollider.node.getComponent(brick);
+            let points = contact.getWorldManifold().points;
+            if (bk) {
+                if (points.length > 0) {
+                    let cPos = points[0];
+                    let bPos = otherCollider.node.getWorldPosition();
+                    if (cPos.y <= bPos.y - 8) {
+                        clientEvent.dispatchEvent(Constant.EVENT_TYPE.BrickMove + bk.index, bk.index);
+                    }
+                    else if (cPos.y >= bPos.y + 8) {
+                        let mar = selfCollider.node.getComponent(mario);
+                        mar.handleColliderUp();
+                    }
+                }
+            }
+        }
+        else if (name1.includes("mario") && name2.includes("coin")) {
+            let bk: whyBrick = otherCollider.node.getComponent(whyBrick);
+            let points = contact.getWorldManifold().points;
+            if (bk) {
+                if (points.length > 0) {
+                    let cPos = points[0];
+                    let bPos = otherCollider.node.getWorldPosition();
+                    if (cPos.y <= bPos.y - 8) {
+                        clientEvent.dispatchEvent(Constant.EVENT_TYPE.TopWhy + bk.index, bk.index);
+                    }
+                    else if (cPos.y >= bPos.y + 8) {
+                        let mar = selfCollider.node.getComponent(mario);
+                        mar.handleColliderUp();
+                    }
+                }
+            }
+        }
+        else if (name1.includes("mario") && name2.includes("hole")) {
+            let ut = otherCollider.node.getComponent(UITransformComponent);
+            let points = contact.getWorldManifold().points;
+            if (ut) {
+                if (points.length > 0) {
+                    let cPos = points[0];
+                    let bPos = otherCollider.node.getWorldPosition();
+                    if (cPos.y >= bPos.y + ut.height / 2) {
+                        let mar = selfCollider.node.getComponent(mario);
+                        mar.handleColliderUp();
+                    }
+                }
+            }
+        }
+        else if (name1.includes("mario") && name2.includes("ladder")) {
+            let mar = selfCollider.node.getComponent(mario);
+            mar.handleColliderUp();
+        }
     }
 }
 

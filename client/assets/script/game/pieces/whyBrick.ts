@@ -1,7 +1,7 @@
-import { _decorator, Component, Node, Vec3, tween, v3, SpriteFrame, SpriteComponent, Sprite, instantiate } from 'cc';
+import { _decorator, Component, Node, Vec3, tween, v3, SpriteFrame, SpriteComponent, Sprite, instantiate, Enum } from 'cc';
 import { clientEvent } from '../../framework/clientEvent';
 import { Constant } from '../../framework/constant';
-import { ResourcePath } from '../../framework/enum';
+import { ResourcePath, whyType } from '../../framework/enum';
 import { resourceUtil } from '../../framework/resourceUtil';
 import { getBrickIndex } from '../../net/util';
 import { coin } from './coin';
@@ -9,6 +9,9 @@ const { ccclass, property } = _decorator;
 
 @ccclass('whyBrick')
 export class whyBrick extends Component {
+    @property({ type: Enum(whyType) })
+    type: whyType = whyType.normal;
+
     public index: number = 0;
     private _isGot: boolean = false;//是否已经顶过了
     start() {
@@ -26,10 +29,27 @@ export class whyBrick extends Component {
 
     private _evtTopWhy(idx) {
         if (idx == this.index && !this._isGot) {
-            this._playMoveUp();
+            switch (this.type) {
+                case whyType.normal:
+                    this._playMoveUp();
+                    break;
+
+                case whyType.mushroom:
+                    this._loadMushroom();
+                    break;
+            }
         }
     }
 
+    private async _loadMushroom() {
+        this._isGot = true;
+        let pre = await resourceUtil.loadPiecesPriefabRes("mushroom")
+        if (pre) {
+            //加载金币并发送消除金币事件
+            let node = instantiate(pre) as Node;
+            this.node.addChild(node);
+        }
+    }
     private async _playMoveUp() {
         this._isGot = true;
         resourceUtil.setSpriteFrame(ResourcePath.textureBrick + "whyDown", this.node.getComponent(Sprite), () => { });

@@ -10,6 +10,7 @@ export class Constant {
         BrickMove: "brickMove",
         TopWhy: "TopWhy",
         CoinRemove: "CoinRemove",
+        MarioDeath: "MarioDeath",
     }
 
     public static MoveSpeed: number = 10;

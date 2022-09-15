@@ -14,7 +14,16 @@ export enum MarioStatus {
     jump = 4,
 }
 
-
 export enum ResourcePath {
     textureBrick = "textures/brick/",
+}
+
+export enum whyType {
+    normal = 0,
+    mushroom = 1,
+}
+
+export enum RoleEnum {
+    mario = "mario",
+    enemyBlack = "enemyBlack",
 }

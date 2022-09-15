@@ -23,9 +23,7 @@ export class joystick extends Component {
         this.node.on(Node.EventType.TOUCH_END, this._touchEnd, this);
         this.node.on(Node.EventType.TOUCH_CANCEL, this._touchEnd, this);
         this._originPos.set(this.joystickBg.getPosition().x, this.joystickBg.getPosition().y, 0);
-
-
-
+        //键盘事件test
         input.on(Input.EventType.KEY_DOWN, this._onKeyDown, this);
         input.on(Input.EventType.KEY_UP, this._onKeyUp, this);
     }
@@ -88,7 +86,6 @@ export class joystick extends Component {
                 clientEvent.dispatchEvent(Constant.EVENT_TYPE.Move, new Vec3(1, 0, 0));
                 break;
             case KeyCode.SPACE:
-                // clientEvent.dispatchEvent(Constant.EVENT_TYPE.Jump);
                 this.jump();
                 break;
         }
