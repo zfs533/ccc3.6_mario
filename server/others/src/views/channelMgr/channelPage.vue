@@ -1,12 +1,12 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="渠道名称">
                 <el-input v-model="search.channel" placeholder="请输入"></el-input>
             </el-form-item>
@@ -47,24 +47,24 @@
         </el-form>
 
         <el-table :data="pageData" :border="true" min-width="100%">
-            <el-table-column prop="pid" label="项目" min-width="80" align="center" :formatter="$pidFormat" />
-            <el-table-column prop="channel" label="渠道名称" align="center" />
-            <el-table-column prop="type" label="渠道类型" align="center" :formatter="typeFormat" />
-            <el-table-column prop="urls" label="web访问地址" align="center" width="270px">
+            <!-- <el-table-column prop="pid" label="项目" min-width="80" align="center" :formatter="$pidFormat" /> -->
+            <el-table-column prop="channel" label="渠道名称" align="center" width="150px" />
+            <el-table-column prop="type" label="渠道类型" align="center" width="150px" :formatter="typeFormat" />
+            <!-- <el-table-column prop="urls" label="web访问地址" align="center" width="270px">
                 <template slot-scope="scope">
                     <div v-for="(item, index) in scope.row.h5Urls" :key="index">
                         <p>{{ item.longUrl }}</p>
                     </div>
                 </template>
-            </el-table-column>
-            <el-table-column prop="urls" label="跳转域名" align="center" width="270px">
+            </el-table-column> -->
+            <el-table-column prop="urls" label="跳转域名" align="center" min-width="270px">
                 <template slot-scope="scope">
                     <div v-for="(item, index) in scope.row.dlUrls" :key="index">
                         <p>{{ item }}</p>
                     </div>
                 </template>
             </el-table-column>
-            <el-table-column prop="qrUrls" label="入口地址" align="center" width="270px">
+            <el-table-column prop="qrUrls" label="入口地址" align="center" min-width="270px">
                 <template slot-scope="scope">
                     <div v-for="(item, index) in scope.row.qrUrls" :key="index">
                         <!--  <p>域名：{{item.url}}</p> -->
@@ -127,9 +127,9 @@
 
         <el-dialog :visible.sync="dialogAdd" @close="dialogAdd = false" width="700px">
             <el-form :inline="false" class="small-space" label-position="left" label-width="160px" style="width:500px; margin-left:30px;">
-                <el-form-item label="项目:">
+                <!-- <el-form-item label="项目:">
                     <span>{{ $pidFormat(curRowInfo.pid) }}</span>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="渠道类型:">
                     <span>{{ typeFormat(curRowInfo) }}</span>
                 </el-form-item>
@@ -166,18 +166,18 @@
 
         <el-dialog :visible.sync="dialogEditVisible" width="600px" @close="dialogEditVisible = false">
             <el-form :inline="true" class="small-space" label-position="left" label-width="120px" style="width: 100%;">
-                <el-form-item label="项目">
+                <!-- <el-form-item label="项目">
                     <el-select v-model="form_dialog.pid" disabled placeholder="请选择项目">
                         <el-option :label="$pidFormat(curRowInfo.pid)" :value="form_dialog.pid"></el-option>
-                        <!-- <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option> -->
+                       <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                     </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="渠道名称">
                     <span>{{ $channelFormat(curRowInfo.channel) }}</span>
                 </el-form-item>
-                <el-form-item label="h5域名">
+                <!-- <el-form-item label="h5域名">
                     <el-input type="textarea" :rows="3" v-model="form_dialog.h5Urls"></el-input>以英文逗号分隔
-                </el-form-item>
+                </el-form-item> -->
                 <el-button type="primary" @click="editUrl(1, form_dialog.h5Urls)">修改h5域名</el-button>
                 <el-form-item label="入口域名">
                     <el-input type="textarea" :rows="3" v-model="form_dialog.qrUrls"></el-input>以英文逗号分隔
@@ -192,14 +192,14 @@
 
         <el-dialog title="批量修改" :visible.sync="dialogUpdate" width="500px" @close="closeView">
             <el-form>
-                <el-form-item label="项目" label-width="100px">
+                <!-- <el-form-item label="项目" label-width="100px">
                     <el-select v-model="addArr.pid" placeholder="请选择项目" @change="onPidChange">
                         <template v-for="item in pidList">
                             <el-option :key="item.pid" :label="item.name" :value="item.pid" v-if="item.pid != undefined">
                             </el-option>
                         </template>
                     </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="域名类型" label-width="100px">
                     <el-select v-model="addArr.type" placeholder="请选择域名类型" @change="typeChange">
                         <template v-for="item in ChannelPageUrlType">
@@ -243,7 +243,7 @@ import { addDlInfo, changeDlInfo, delDlInfo, getDlTmpList, getManyChannelPage, g
 import { ChannelPageUrlType } from '@/utils/baseConst';
 import { ChannelTypeList, pidList } from '@/utils/channelShield';
 import { deepClone } from '@/utils/formatter';
-
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -284,7 +284,7 @@ export default {
             this.loadData();
         },
         async loadData() {
-            let res = await this.$http(getManyChannelPage, { page: this.page, count: this.count, ...this.search });
+            let res = await this.$http(getManyChannelPage, { pid: CURRENTPID, page: this.page, count: this.count, ...this.search });
             if (res.code === 200) {
                 this.pageData = res.msg.pageData;
                 this.totalCount = res.msg.totalCount;
@@ -355,7 +355,7 @@ export default {
                     <h5>1.老模版名称全匹配</h5>
                     <h5>2.新模版直接替换设置的老模版地址</h5>
                 </div>`;
-            }else if (type === "7") {
+            } else if (type === "7") {
                 msg = `
                 <div>
                     <h3>跳转域名:</h3>
@@ -534,10 +534,10 @@ export default {
             } else if (type == 4 || type == 5) {
                 updateModel.oldVal = this.addArr.oldVal;
                 updateModel.newVal = this.addArr.newVal;
-            } else if(type == 6){
+            } else if (type == 6) {
                 updateModel.oldVal = this.addArr.dlTmpl;
                 updateModel.newVal = this.addArr.newDlTmpl;
-            }else if(type == 7){
+            } else if (type == 7) {
                 updateModel.oldVal = this.addArr.oldVal;
                 updateModel.newVal = this.addArr.gdDomain;
             }
@@ -572,13 +572,13 @@ export default {
                             this.data_url_general = data[i].list;
                             break;
                         case 'dl':
-                            this.data_url_dl= data[i].list;
+                            this.data_url_dl = data[i].list;
                             break;
                     }
             }
         },
         typeChange(type) {
-            if (type == 1 || type == 2 || type == 3||type == 7) {
+            if (type == 1 || type == 2 || type == 3 || type == 7) {
                 this.gdDomainDialog = true;
                 this.oldValDialog = true;
                 this.dlTmplDialog = false;
@@ -605,7 +605,7 @@ export default {
                 this.gdDomainDialog = false;
                 this.newValDialog = false;
                 this.newDlTmplDialog = true;
-            }else if (type == 7) {
+            } else if (type == 7) {
                 this.dateArr2 = this.data_url_dl;
             }
         },

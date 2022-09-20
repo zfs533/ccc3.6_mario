@@ -1,12 +1,12 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid" placeholder="请选择项目">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="是否使用">
                 <el-select v-model="search.used">
                     <el-option label="全部" :value="undefined"></el-option>
@@ -41,12 +41,12 @@
             </el-form-item>
         </el-form>
         <el-table :data="pageData" :border="true" min-width="100%">
-            <el-table-column prop="pid" label="项目" align="center" :formatter="$pidFormat"></el-table-column>
+            <!-- <el-table-column prop="pid" label="项目" align="center" :formatter="$pidFormat"></el-table-column> -->
             <el-table-column prop="createdDate" label="创建时间" align="center" :formatter="$dateTimeFm"></el-table-column>
             <el-table-column prop="code" label="兑换码" align="center"></el-table-column>
             <el-table-column prop="rewardType" label="奖励类型" align="center" :formatter="typeFormat"></el-table-column>
             <el-table-column prop="vipLevel" label="vip特权等级" align="center" :formatter="vipInfoFomat"></el-table-column>
-            <el-table-column prop="rewardCount" label="奖励数量(个钻石/天vip/券)" align="center"></el-table-column>
+            <el-table-column prop="rewardCount" label="奖励数量" align="center" :formatter="countFromType"></el-table-column>
             <el-table-column prop="codeType" label="兑换码类型" align="center" :formatter="typeFormat"></el-table-column>
             <el-table-column prop="used" label="是否使用" align="center" :formatter="formatBoolean"></el-table-column>
             <el-table-column prop="opt" label="操作人" align="center"></el-table-column>
@@ -61,18 +61,18 @@
         </el-col>
         <el-dialog title="新增兑换码" :visible.sync="dialogVisible" width="400px">
             <el-form label-width="100px">
-                <el-form-item label="项目">
+                <!-- <el-form-item label="项目">
                     <el-select v-model="formObj.pid" placeholder="请选择项目">
                         <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                     </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="兑换码个数">
                     <el-input v-model="formObj.codeCount" placeholder="请输入"></el-input>
                 </el-form-item>
                 <el-form-item label="兑换码长度">
                     <el-input v-model="formObj.codeLength" placeholder="请输入"></el-input>
                 </el-form-item>
-               
+
                 <el-form-item label="兑换码类型">
                     <el-select v-model="formObj.codeType">
                         <el-option v-for="item in ExchangeCodeType" :key="item.value" :label="item.label" :value="item.value">
@@ -93,7 +93,7 @@
                         <el-option v-for="item in (viplevelInfoList).filter(e=>e.pid===formObj.pid)" :key="item.vipLevel" :label="item.pid+'_'+item.name" :value="item.vipLevel">
                         </el-option>
                     </el-select>
-                </el-form-item>    
+                </el-form-item>
                 <el-form-item :label="getCountNameByType(formObj.rewardType)">
                     <el-input v-model="formObj.rewardCount" placeholder="请输入"></el-input>
                 </el-form-item>
@@ -114,7 +114,7 @@
 <script>
 import { addExchangeCode, delExchangeCode, getExchangeCode, getExchangeCodeExcel, getVipLevelPrivileges } from '@/api/serverConfigure';
 import { codeTypes, exchangeTypes, pidList } from '@/utils/baseConst';
-
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -129,12 +129,12 @@ export default {
             codeTypes: codeTypes,
             ExchangeCodeType: exchangeTypes,
             dialogVisible: false,
-            codeTypeForCount:[
-                {value:"diamond",label:"钻石数量"},
-                {value:"vip",label:"vip天数"},
-                {value:"watchTicket",label:"观影券数"},
+            codeTypeForCount: [
+                { value: "diamond", label: "钻石数量" },
+                { value: "vip", label: "vip天数" },
+                { value: "watchTicket", label: "观影券数" },
             ],
-            viplevelInfoList:[],
+            viplevelInfoList: [],
         };
     },
     async created() {
@@ -153,12 +153,13 @@ export default {
             }
         },
         showAdd() {
-            this.formObj={};
+            this.formObj = {pid:CURRENTPID};
             this.formObj.used = false;
             this.dialogVisible = true;
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.createDateStart = this.dateArr1[0];
                 query.createDateEnd = this.dateArr1[1];
@@ -166,18 +167,18 @@ export default {
             return query;
         },
         async loadData() {
-            let ret=await Promise.all([
+            let ret = await Promise.all([
                 this.$http(getExchangeCode, { page: this.page, count: this.count, ...this.getQuery() }),
-                this.$http(getVipLevelPrivileges,{},true),
+                this.$http(getVipLevelPrivileges, { pid: CURRENTPID }, true),
             ]);
             // let res = await this.$http(getExchangeCode, { page: this.page, count: this.count, ...this.getQuery() });
             if (ret[0].code === 200) {
                 this.pageData = ret[0].msg.pageData;
                 this.totalCount = ret[0].msg.totalCount;
             }
-            if(ret[1].code===200){
-               this.viplevelInfoList=(ret[1].msg.pageData||[]).map(e=>{return {pid:e.pid,name:e.name,vipLevel:e.vipLevel}});
-            } 
+            if (ret[1].code === 200) {
+                this.viplevelInfoList = (ret[1].msg.pageData || []).map(e => { return { pid: e.pid, name: e.name, vipLevel: e.vipLevel }; });
+            }
         },
         handleCurrentChange(val) {
             this.page = val;
@@ -188,8 +189,19 @@ export default {
             this.loadData();
         },
         vipInfoFomat(row, column, cellValue) {
-            let vipInfo=this.viplevelInfoList.find(e=>e.pid===row.pid&&e.vipLevel===cellValue)
-            return vipInfo?vipInfo.pid+"_"+vipInfo.name:cellValue===0?"-":cellValue;
+            let vipInfo = this.viplevelInfoList.find(e => e.pid === row.pid && e.vipLevel === cellValue);
+            return vipInfo ?  vipInfo.name : cellValue ? cellValue :"-" ;
+        },
+        countFromType(row, column, cellValue) {
+            if(row.rewardType==='diamond'){
+                return `${cellValue} 钻石`
+            }else if(row.rewardType==='vip'){
+                return `${cellValue} 天vip`
+            }else if(row.rewardType==='watchTicket'){
+                return `${cellValue} 张`
+            }else{
+                return cellValue
+            }
         },
         formatBoolean(row, column, cellValue) {
             let ret = '';
@@ -205,9 +217,9 @@ export default {
             let item = this.codeTypes.find(i => i.value === cellValue);
             return item ? item.label : cellValue;
         },
-        getCountNameByType(type){
-            let find=this.codeTypeForCount.find(e=>e.value=== type);
-            return find?find.label:"数量";
+        getCountNameByType(type) {
+            let find = this.codeTypeForCount.find(e => e.value === type);
+            return find ? find.label : "数量";
         },
         async submitForm() {
             let query = { ...this.formObj };

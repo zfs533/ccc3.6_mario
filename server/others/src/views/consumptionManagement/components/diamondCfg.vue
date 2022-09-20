@@ -1,11 +1,11 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid">
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="名称">
                 <el-input v-model="search.name" placeholder="请输入"></el-input>
             </el-form-item>
@@ -22,7 +22,7 @@
             </el-form-item>
         </el-form>
         <el-table :data="pageData" :border="true" min-width="100%">
-            <el-table-column prop="pid" label="项目" align="center" width="100" :formatter="$pidFormat"></el-table-column>
+            <!-- <el-table-column prop="pid" label="项目" align="center" width="100" :formatter="$pidFormat"></el-table-column> -->
             <el-table-column prop="index" label="排序" align="center" width="50"></el-table-column>
             <el-table-column prop="name" label="名称" align="center"></el-table-column>
             <el-table-column prop="payType" label="充值类型" align="center" :formatter="payTypeFormat"></el-table-column>
@@ -45,13 +45,13 @@
         </el-col>
         <el-dialog :title="dialogTitle" :visible.sync="dialogVisible" width="1200px">
             <el-form :model="formObj" ref="forms" :inline="true">
-                <el-form-item v-if="!isUpdate" prop="pid" :rules="{ required: true, message: '项目必选', trigger: 'blur' }"
+                <!-- <el-form-item v-if="!isUpdate" prop="pid" :rules="{ required: true, message: '项目必选', trigger: 'blur' }"
                     label="项目">
                     <el-select v-model="formObj.pid" placeholder="请选择" style="width:300px">
                         <el-option v-for="item in pidList" :key="item.value" :label="item.name" :value="item.pid">
                         </el-option>
                     </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item prop="payType" :rules="{ required: true, message: '充值方式必选', trigger: 'blur' }"
                     label="充值方式">
                     <el-select multiple v-model="formObj.payType" placeholder="请选择" style="width:300px">
@@ -100,7 +100,7 @@
 import { addOne_diamond, getManyPayCfg_diamond, updateOne_diamond } from '@/api/consumptionManagement';
 import { goodsType, goodsTypeList, pidList, vipTypeList } from '@/utils/baseConst';
 import { deepClone } from '@/utils/formatter';
-
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     props: {
         payTypes: Array
@@ -127,7 +127,7 @@ export default {
         };
     },
     created() {
-        this.search.pid = "A";
+        this.search.pid = CURRENTPID;
         this.loadData();
     },
     methods: {
@@ -176,6 +176,7 @@ export default {
         async submitForm() {
             await this.$refs.forms.validate();
             let query = deepClone(this.formObj);
+            query.pid = CURRENTPID;
             let res = {};
             if (query.id) {
                 res = await this.$http(updateOne_diamond, query);

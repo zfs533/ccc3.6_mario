@@ -1,4 +1,4 @@
-import { _decorator, Animation, Node, Collider2D, IPhysics2DContact } from 'cc';
+import { _decorator, Animation, Node, Collider2D, IPhysics2DContact, RigidBody2D, BoxCollider2D } from 'cc';
 import { baseCollider } from '../../collider/baseCollider';
 const { ccclass, property } = _decorator;
 /**

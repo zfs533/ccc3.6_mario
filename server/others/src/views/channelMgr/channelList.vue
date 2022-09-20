@@ -1,12 +1,12 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="渠道">
                 <el-input v-model="search.channel" placeholder="请输入"></el-input>
             </el-form-item>
@@ -44,7 +44,7 @@
             <br />
         </div>
         <el-table :data="pageData" :border="true" min-width="100%">
-            <el-table-column prop="pid" label="项目" min-width="80" align="center" :formatter="$pidFormat" />
+            <!-- <el-table-column prop="pid" label="项目" min-width="80" align="center" :formatter="$pidFormat" /> -->
             <el-table-column prop="channel" label="渠道" min-width="100" align="center" :formatter="$channelFormat" />
             <el-table-column prop="web" label="主页" min-width="280" align="center" />
             <el-table-column prop="enableTyShield" label="天御" min-width="100" align="center" :formatter="tYStateFormat" />
@@ -75,10 +75,10 @@
         </el-col>
         <el-dialog :visible.sync="dialogEditVisible">
             <el-form :inline="true" class="small-space" style="width: 600px; margin-left:50px;">
-                <el-form-item label="项目" style="margin-right:30px">
-                    <!-- <el-select disabled placeholder="请选择项目" /> -->
+                <!-- <el-form-item label="项目" style="margin-right:30px">
+                 <el-select disabled placeholder="请选择项目" /> 
                     {{$pidFormat(formObj.pid)}}
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="渠道">
                     <span>{{$channelFormat(formObj.channel)}}</span>
                 </el-form-item>
@@ -120,11 +120,11 @@
 
         <el-dialog :visible.sync="dialogBatch">
             <el-form :inline="true" class="small-space" label-position="left" label-width="120px" style="width:800px; margin-left:30px;">
-                <el-form-item label="项目">
+                <!-- <el-form-item label="项目">
                     <el-select v-model="formObj.pid" placeholder="请选择项目">
                         <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                     </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="渠道">
                     <el-input type="textarea" :rows="20" v-model="formObj.channel" style="width:600px; margin:0 10px" placeholder="多个渠道用英文逗号分开，使用all修改全部渠道" />
                 </el-form-item>
@@ -164,8 +164,9 @@
     </el-card>
 </template>
 <script>
-import { getManyChannelInfo, batchChangeWeb, updateOne, deleteOne, batchChangeByChannels, batchDelWeb } from '@/api/channel';
-import { channelStatusList, CurChannelStates, pidList, ChannelTypeList } from '@/utils/channelShield';
+import { batchChangeByChannels, batchChangeWeb, batchDelWeb, deleteOne, getManyChannelInfo, updateOne } from '@/api/channel';
+import { channelStatusList, ChannelTypeList, CurChannelStates, pidList } from '@/utils/channelShield';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -192,7 +193,7 @@ export default {
         };
     },
     created() {
-
+        this.search.pid=CURRENTPID;
         this.loadData();
     },
     methods: {
@@ -202,13 +203,11 @@ export default {
         },
         //批量处理
         isDbatch() {
-
             this.formObj = {};
             this.dialogBatch = true;
         },
         async loadData() {
             let res = await this.$http(getManyChannelInfo, { page: this.page, count: this.count, ...this.search });
-
             if (res.code === 200) {
                 this.pageData = res.msg.pageData;
                 this.totalCount = res.msg.totalCount;

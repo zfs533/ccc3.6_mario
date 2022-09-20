@@ -93,10 +93,9 @@ import tinymce from '@/components/Tinymce/serverConfigIndex.vue';
 import { setSession } from "@/utils/auth";
 import { UploadPath } from '@/utils/baseConst';
 import { deepClone, setImgView } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     props: {
-        resData: {},
-        pid: '',
     },
     // watch: {
     //     resData(newVal) {
@@ -129,31 +128,34 @@ export default {
         return {
             formObj: {},
             content: '',
-            UploadPath:UploadPath,
+            UploadPath: UploadPath,
             officialUrl: [
                 { validator: checkHttps, trigger: 'blur' },
             ],
         };
     },
     created() {
-        this.dataFormart(this.resData);
+        // console.log('----'+this.resData)
+        // this.dataFormart(this.resData);
         // this.formObj = this.data_form;
-        // this.loadData();
+        this.pid=CURRENTPID;
+        this.searchData();
 
     },
     methods: {
         searchData() {
             this.loadData();
-
         },
         async loadData() {
-            let res = await this.$http(secretMgrGet, { pid: this.pid });
+            let res = await this.$http(secretMgrGet, { pid: CURRENTPID });
             if (res.code === 200 && res.msg) {
                 let data = res.msg?.data || [];
-                this.dataFormart(data[0]);
-                // 刷新pid的session
-                let pidList = (res.msg?.pidList || []);
-                setSession("pidList", pidList);
+                if(data.length){
+                    this.dataFormart(data[0]);
+                    // 刷新pid的session
+                    let pidList = (res.msg?.pidList || []);
+                    setSession("pidList", pidList);
+                }
             }
         },
         async delData() {

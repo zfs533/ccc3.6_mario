@@ -253,7 +253,7 @@ export const asyncRouterMap = [
                 path: 'videoManager_resourceAtlas',
                 component: () => import('@/views/videoManager/resourceAtlas.vue'),
                 name: 'videoManager_resourceAtlas',
-                meta: { title: '图集资源' }
+                meta: { title: '线上图集' }
             },
 
             {

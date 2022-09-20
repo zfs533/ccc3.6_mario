@@ -1,11 +1,11 @@
 <template>
     <el-card>
         <el-form :inline="false" class="demo-form-inline" style="width:500px">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="formObj.pids" multiple placeholder="请选择">
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="任务名称">
                 <el-select v-model="formObj.taskIds" multiple placeholder="请选择">
                     <el-option v-for="item in taskList" :key="item._id" :label="item.name" :value="item._id"></el-option>

@@ -3,18 +3,12 @@
         <el-form-item label="角色名">
             <el-input v-model="name" placeholder="请输入" style="width:200px"></el-input>
         </el-form-item>
-        <el-form-item label="项目">
-            <el-select v-model="pidArr" multiple>
-                <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-            </el-select>
-        </el-form-item>
         <el-form-item label="数据限制开关">
             <el-switch v-model="dataAuth"></el-switch>
         </el-form-item>
         <h3 style="margin-left:40px">权限设置</h3>
         <el-form-item>
-            <el-tree ref="tree" show-checkbox node-key="id" :check-strictly="true" default-expand-all
-                :props="defaultProps" :default-checked-keys="defaultKeys" :data="data"></el-tree>
+            <el-tree ref="tree" show-checkbox node-key="id" :check-strictly="true" default-expand-all :props="defaultProps" :default-checked-keys="defaultKeys" :data="data"></el-tree>
         </el-form-item>
         <el-form-item>
             <el-button type="primary" @click="submitRole">提交</el-button>
@@ -149,7 +143,6 @@ export default {
                 name: this.name,
                 // parentName: parentName || undefined,
                 pages: JSON.stringify(newRoles),
-                pidList: this.pidArr,
                 dataAuth: this.dataAuth
             };
             let res = {};

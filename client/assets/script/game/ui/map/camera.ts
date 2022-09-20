@@ -1,6 +1,7 @@
-import { _decorator, Component, Node, view } from 'cc';
+import { _decorator, Component, Node, view, v3 } from 'cc';
 import { clientEvent } from '../../../framework/clientEvent';
 import { Constant } from '../../../framework/constant';
+import { roleManager } from '../../roles/roleManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('camera')
@@ -49,6 +50,8 @@ export class camera extends Component {
         pos.x += offset;
         this.node.setPosition(pos);
         clientEvent.dispatchEvent(Constant.EVENT_TYPE.MoveJoystick, offset);
+        let rPos = v3(pos.x + this._winSize.width / 4, 700, 0);
+        roleManager.Inst.setInitRolePos(rPos);
     }
     private _evtStopCamera() {
 

@@ -1,12 +1,12 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="渠道">
                 <el-input v-model="search.channel" placeholder="请输入"></el-input>
             </el-form-item>
@@ -56,6 +56,7 @@
 <script>
 import { exchangeCodeRecord, getExchangeCodeRecord } from '@/api/logsManager';
 import { codeTypes, exchangeTypes, pidList } from '@/utils/baseConst';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -89,6 +90,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.createdDateStart = this.dateArr1[0];
                 query.createdDateEnd = this.dateArr1[1];

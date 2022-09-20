@@ -9,7 +9,7 @@ export class roleManager {
     private _map: map;
     private _initRolePos = new Vec3(200, 750, 0);//角色初始化默认位置
     private _initEnemyPos = new Vec3(1000, 20.5, 0);//角色初始化默认位置
-    private static _instance: roleManager
+    private static _instance: roleManager;
     public static get Inst(): roleManager {
         if (!this._instance) {
             this._instance = new roleManager();
@@ -18,6 +18,10 @@ export class roleManager {
     }
     public init(map: map) {
         this._map = map;
+    }
+
+    public setInitRolePos(pos: Vec3) {
+        this._initRolePos = pos;
     }
 
     /**

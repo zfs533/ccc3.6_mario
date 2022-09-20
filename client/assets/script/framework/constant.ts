@@ -1,3 +1,5 @@
+import { map } from "../game/ui/map/map";
+
 export class Constant {
     //事件列表
     public static EVENT_TYPE = {
@@ -11,8 +13,10 @@ export class Constant {
         TopWhy: "TopWhy",
         CoinRemove: "CoinRemove",
         MarioDeath: "MarioDeath",
+        AddToMap: "AddToMap"
     }
 
     public static MoveSpeed: number = 10;
-    public static MapScale: number = 1;
+    public static MapScale: number = 2.5;
+    public static CurMap: map = null;
 }

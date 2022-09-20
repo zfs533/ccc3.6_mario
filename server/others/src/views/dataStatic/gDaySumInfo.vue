@@ -2,7 +2,7 @@
 
     <el-card>
         <el-tabs v-model="activeName">
-            <el-tab-pane label="全部数据" name="all">
+            <!-- <el-tab-pane label="全部数据" name="all">
                 <el-form :inline="true" style="width:100%">
                     <el-form-item label="周期数据:">
                         <el-date-picker v-model="sumDate" type="daterange" value-format="yyyy-MM-dd HH:mm:ss"
@@ -95,8 +95,8 @@
                         @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page"
                         :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
                 </el-col>
-            </el-tab-pane>
-            <el-tab-pane label="平台数据" name="second">
+            </el-tab-pane> -->
+            <el-tab-pane label="平台数据" name="pid">
                 <dayDataInfo> </dayDataInfo>
             </el-tab-pane>
         </el-tabs>
@@ -107,7 +107,7 @@
 <script>
 
 import { exportGDaySum, getGDaySum } from '@/api/dataStatic';
-import { dateFm } from '@/utils/formatter';
+import { dateFm, pidFormat } from '@/utils/formatter';
 import { isArray } from '@/utils/validate';
 import dayDataInfo from './components/dayDataInfo.vue';
 export default {
@@ -125,14 +125,13 @@ export default {
             formObj: {},
             pageData: [],
             sumDate: [],
-
-            activeName: 'all',
+            pidFormat,
+            activeName: 'pid',
             totalData: []
         };
     },
 
     methods: {
-
 
 
         handleCurrentChange(val) {

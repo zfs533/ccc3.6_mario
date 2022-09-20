@@ -1,12 +1,6 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
-                <el-select v-model="search.pid" placeholder="请选择项目">
-                    <el-option label="全部" :value="undefined"></el-option>
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="用户id">
                 <el-input v-model="search.uid" placeholder="请输入"></el-input>
             </el-form-item>
@@ -52,20 +46,19 @@
             </el-form-item>
         </el-form>
         <el-table :data="pageData" :border="true" min-width="100%">
-            <el-table-column prop="pid" label="项目" align="center" width="150" :formatter="$pidFormat"></el-table-column>
-
-            <el-table-column prop="uid" label="用户id" align="center" width="160"></el-table-column>
+            <el-table-column prop="pid" label="项目" align="center" width="80" :formatter="$pidFormat"></el-table-column>
+            <el-table-column prop="uid" label="用户id" align="center" width="100"></el-table-column>
             <el-table-column prop="vid" label="视频id" align="center" width="210"></el-table-column>
             <el-table-column prop="logDate" label="记录时间" align="center" width="170" :formatter="$dateTimeFm"></el-table-column>
-            <el-table-column prop="name" label="视频名称" align="center"></el-table-column>
+            <el-table-column prop="name" show-overflow-tooltip label="视频名称" align="center" min-width="170"></el-table-column>
             <el-table-column prop="publisherId" label="发布人id" align="center" width="160"></el-table-column>
             <el-table-column prop="time" label="视频时长" align="center" :formatter="secondFormat" width="120"></el-table-column>
-            <el-table-column prop="price" label="购买价格" align="center" width="120"></el-table-column>
-            <el-table-column prop="watchedTime" label="视频停留时长" sortable align="center" width="150" :formatter="secondFormat"></el-table-column>
-            <el-table-column prop="payType" label="付费类型" align="center" :formatter="payTypeFormat" width="100"></el-table-column>
+            <el-table-column prop="price" label="购买价格" align="center" width="80"></el-table-column>
+            <el-table-column prop="watchedTime" label="视频停留时长" sortable align="center" width="100" :formatter="secondFormat"></el-table-column>
+            <el-table-column prop="payType" label="付费类型" align="center" :formatter="payTypeFormat" width="80"></el-table-column>
             <el-table-column prop="timeType" label="长短类型" align="center" :formatter="timeTypeFormat" width="100"></el-table-column>
-            <el-table-column prop="categories" label="分类" align="center" :formatter="nameFormat"></el-table-column>
-            <el-table-column prop="tags" label="标签" align="center" :formatter="nameFormat"></el-table-column>
+            <el-table-column prop="categories" show-overflow-tooltip label="分类" align="center" :formatter="nameFormat"></el-table-column>
+            <el-table-column prop="tags" show-overflow-tooltip label="标签" align="center" :formatter="nameFormat"></el-table-column>
             <el-table-column prop="channel" label="渠道" align="center" width="120">
                 <template slot-scope="scope">
                     {{scope.row.channel?scope.row.channel:"官方"}}
@@ -79,8 +72,9 @@
 </template>
 <script>
 import { getVideoHistory, videoHistoryLogExcel } from '@/api/usersManager';
-import { payTypeList, timeTypeList, pidList } from '@/utils/baseConst';
-import { secToString, sizeFormat } from '@/utils/formatter';
+import { payTypeList, pidList, timeTypeList } from '@/utils/baseConst';
+import { secToString } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -116,6 +110,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             console.log(query.categorie);
             query.categorie = query.categorie ? query.categorie[query.categorie.length - 1] : undefined;
 
@@ -177,7 +172,7 @@ export default {
                     if (!item && !this.isCheckedTags) {
                         this.isCheckedTags = true;
                         this.$message('标签未解析，已更新，请重新查询');
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags",CURRENTPID);
                     }
                 }
             }

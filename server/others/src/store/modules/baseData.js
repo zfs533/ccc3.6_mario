@@ -18,11 +18,10 @@ const mutations = {
 
 const actions = {
 
-    async setCategories({ commit }) {
-        let res = await myAsyncFn(categoriesMany, {}, true);
+    async setCategories({ commit },pid) {
+        let res = await myAsyncFn(categoriesMany, {pid}, true);
         if (res.code === 200) {
             let arr = [];
-            let pidList = getSession("pidList");
             for (let i = 0; i < res.msg.length; i++) {
                 let item = {};
                 item.pid = res.msg[i].id;
@@ -75,8 +74,8 @@ const actions = {
             setSession('categories', arr);
         }
     },
-    async setTags({ commit }) {
-        let res = await myAsyncFn(getManyTags, {}, true);
+    async setTags({ commit },pid) {
+        let res = await myAsyncFn(getManyTags, {pid}, true);
         if (res.code === 200) {
             let data = res.msg.pageData.map(item => {
                 return { label: item.name, value: item._id };

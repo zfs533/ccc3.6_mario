@@ -6,12 +6,12 @@
             <span class="title">域名维护</span>
         </el-col>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="域名">
                 <el-input v-model="search.url" placeholder="请输入"></el-input>
             </el-form-item>
@@ -37,7 +37,7 @@
         </el-form>
         <el-table :data="pageData" border tooltip-effect="dark" @selection-change="handleSelectionChange" cell-class-name="tableTd" header-cell-class-name="tableTh">
             <el-table-column type="selection" width="55"></el-table-column>
-            <el-table-column prop="pid" fixed label="项目" align="center" :formatter="$pidFormat"></el-table-column>
+            <!-- <el-table-column prop="pid" fixed label="项目" align="center" :formatter="$pidFormat"></el-table-column> -->
             <el-table-column prop="domain" fixed label="主域名" align="center"></el-table-column>
             <el-table-column prop="state" label="使用状态" :formatter="statusFormat" align="center"></el-table-column>
             <el-table-column prop="channelsNum" label="使用个数" align="center"></el-table-column>
@@ -58,13 +58,13 @@
 
         <el-dialog title="批量新增" :visible.sync="dialogAdd" width="500px">
             <el-form>
-                <el-form-item label="项目" label-width="80px">
+                <!-- <el-form-item label="项目" label-width="80px">
                     <el-select v-model="addArr.pid" placeholder="请选择pid" style="width:110px">
                         <template v-for="item in pidList">
                             <el-option :key="item.pid" :label="item.name" :value="item.pid" v-if="item.pid!=undefined"></el-option>
                         </template>
                     </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="域名" label-width="80px">
                     <el-input type="textarea" v-model="addArr.urls" :rows="2" placeholder="请输入域名，多个域名用英文逗号(,)隔开"></el-input>
                 </el-form-item>
@@ -98,7 +98,7 @@
 <script>
 import { delUrlMaintenance, getUrlMaintenance, insertUrlMaintenance, invalidOne, updateUrlMaintenance } from '@/api/channel';
 import { pidList, UrlStateList, UrlTypeList } from '@/utils/channelShield';
-
+import { CURRENTPID } from '@/utils/myAsyncFn';
 
 export default {
 
@@ -131,6 +131,7 @@ export default {
 
 
     created() {
+        this.search.pid=CURRENTPID;
         this.loadData();
     },
 
@@ -172,12 +173,12 @@ export default {
 
         async addFuc() {
             let queryItem = { ...this.addArr };
+            queryItem.pid = CURRENTPID;
             if (queryItem.urls.trim() == "") {
                 this.$message.error("域名不能为空");
                 return;
             }
             queryItem.urls = queryItem.urls.split(",");
-
             function checkDuplicationNormal(arr) {
                 return arr.some((val, idx) => {
                     return arr.includes(val, idx + 1);

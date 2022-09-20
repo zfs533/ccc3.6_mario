@@ -2,10 +2,10 @@
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
             <el-form-item>
-                <el-select style="margin: 5px" v-model="pid" placeholder="请选择项目">
+                <!-- <el-select style="margin: 5px" v-model="pid" placeholder="请选择项目">
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid">
                     </el-option>
-                </el-select>
+                </el-select> -->
                 <el-button type="primary" @click="searchData">刷新</el-button>
                 <el-button type="primary" @click="showAdd">创建标签</el-button>
                 <el-button type="primary" @click="submitIndex">提交排序</el-button>
@@ -100,6 +100,9 @@
             <el-form label-width="80px">
                 <el-form-item label="标签名">
                     <el-input v-model="formObj.name" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="封面图(点图上传)" label-width="150px">
+                    <ImgUpload :imageUrl="formObj.coverURLView" :path="UploadPath.TagsallImage" :isCompress="true" @success="uploaded" />
                 </el-form-item>
                 <el-form-item label="简介">
                     <el-input type="textarea" :rows="3" v-model="formObj.summary" placeholder="请输入"></el-input>
@@ -352,12 +355,15 @@
     </el-card>
 </template>
 <script>
-import { getManyTags, insertTags, updateTags, getManyVideos, updateVideos, getPublisher, blukUpdateVideos, deleteTags, sortManyTags } from '@/api/videoManager';
-import draggable from 'vuedraggable';
-import { deepClone, getCategories, getWholeCategorieLabelArr, secToString, setImgView, sizeFormat } from '@/utils/formatter';
-import { payTypeList, sortList, timeTypeList, UploadPath, videoStateList, pidList } from '@/utils/baseConst';
+import { clientEvent } from '@/api/eventManager';
+import { blukUpdateVideos, deleteTags, getManyTags, getManyVideos, getPublisher, insertTags, sortManyTags, updateTags, updateVideos } from '@/api/videoManager';
 import imgUpload from '@/components/imgUpload.vue';
 import { getSession } from '@/utils/auth';
+import { payTypeList, pidList, sortList, timeTypeList, UploadPath, videoStateList } from '@/utils/baseConst';
+import { deepClone, getCategories, getWholeCategorieLabelArr, secToString, setImgView, sizeFormat } from '@/utils/formatter';
+import { jiemi } from '@/utils/getFile';
+import { CURRENTPID } from '@/utils/myAsyncFn';
+import draggable from 'vuedraggable';
 import video from './video';
 export default {
     components: {
@@ -438,7 +444,7 @@ export default {
             searchT: {},
             formObj: {},
             pidList: pidList,
-            pid: "A",
+            pid: CURRENTPID,
         };
     },
     mounted() {
@@ -456,10 +462,18 @@ export default {
         }
     },
     created() {
+        this.pid = CURRENTPID;
         this.loadData();
         this.loadUsers();
+        clientEvent.off(clientEvent.EVENT_TYPE.changePid);
+        clientEvent.on(clientEvent.EVENT_TYPE.changePid, () => {
+            this.loadData();
+        }, this);
     },
     methods: {
+        uploaded(path) {
+            this.formObj.coverURL = path;
+        },
         publisherSearch(queryString, cb) {
             var searchPublisherArr = this.searchPublisherArr;
             var results = queryString ? searchPublisherArr.filter(this.createFilter(queryString)) : searchPublisherArr;
@@ -471,6 +485,7 @@ export default {
             this.loadTagVideoData();
         },
         async loadTagVideoData() {
+            this.pid = CURRENTPID;
             this.pageData2.splice(0);
             var obj = { type: "video", pid: this.pid, page: this.page2, count: this.count2, tags: this.currentTag._id, ...this.searchT };
             console.log(obj);
@@ -507,7 +522,8 @@ export default {
                 publisherId: row.publisherId,
                 from: row.from,
                 price: row.price,
-                location: row.location
+                location: row.location,
+                pid: CURRENTPID,
             };
             let res = await this.$http(updateVideos, query);
             if (res.code === 200) {
@@ -526,6 +542,7 @@ export default {
             this.selectedVideos = [];
         },
         async loadVideoData() {
+            this.pid = CURRENTPID;
             let res = await this.$http(getManyVideos, { pid: this.pid, type: "video", page: this.page3, count: this.count3, ...this.getQuery(), ...this.sortT });
             if (res.code === 200) {
                 this.pageData3 = res.msg.pageData;
@@ -605,7 +622,8 @@ export default {
             this.loadData();
         },
         async loadData() {
-            let res = await this.$http(getManyTags, { pid: this.pid }, true);
+            this.pid = CURRENTPID;
+            let res = await this.$http(getManyTags, { pid: CURRENTPID }, true);
             if (res.code === 200) {
                 res.msg.pageData.sort(function (a, b) {
                     return a.index - b.index;
@@ -630,7 +648,7 @@ export default {
             if (res.code === 200) {
                 this.$message.success("删除成功");
                 this.loadData();
-                this.$store.dispatch("baseData/setTags");
+                this.$store.dispatch("baseData/setTags",CURRENTPID);
                 if (row._id == this.currentTag._id) {
                     this.loadTagVideoData();
                 }
@@ -651,7 +669,7 @@ export default {
                 if (res.code === 200) {
                     this.$message.success("添加成功");
                     this.loadData();
-                    this.$store.dispatch("baseData/setTags");
+                    this.$store.dispatch("baseData/setTags",CURRENTPID);
                 }
             }
             this.inputVisible = false;
@@ -664,7 +682,7 @@ export default {
                 this.$message.success("编辑成功");
                 this.dialogUpdate = false;
                 this.loadData();
-                this.$store.dispatch("baseData/setTags");
+                this.$store.dispatch("baseData/setTags",CURRENTPID);
             }
         },
         async submitMany() {
@@ -682,13 +700,15 @@ export default {
                 this.$message.success("添加成功");
                 this.dialogVisible = false;
                 this.loadData();
-                this.$store.dispatch("baseData/setTags");
+                this.$store.dispatch("baseData/setTags",CURRENTPID);
             }
         },
-        editLine(row) {
+        async editLine(row) {
             if (row._id == this.currentTag._id) {
-                this.formObj = { id: row._id, name: row.name, summary: row.summary };
-                this.dialogUpdate = true;
+                jiemi(row.coverUrl).then((value) => {
+                    this.formObj = { id: row._id, coverURLView: value, name: row.name, summary: row.summary };
+                    this.dialogUpdate = true;
+                });
             }
             else {
                 this.currentTag = row;
@@ -712,7 +732,7 @@ export default {
                     if (res.code === 200) {
                         this.$message.success("操作成功");
                         this.loadData();
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags",CURRENTPID);
                     }
                 })
                 .catch(() => {
@@ -762,7 +782,7 @@ export default {
                     if (!item && !this.isCheckedTags) {
                         this.isCheckedTags = true;
                         this.$message('标签未解析，已更新，请重新查询');
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags",CURRENTPID);
                     }
                 }
             }
@@ -784,8 +804,9 @@ export default {
                 this.$message.error("视频ID不能为空");
                 return;
             }
+            this.pid = CURRENTPID;
             let updateModel = {
-                pid: this.pid,
+                pid: CURRENTPID,
                 tags: [this.currentTag._id],
                 ids: vidsArr,
             };

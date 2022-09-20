@@ -1,11 +1,6 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
-                <el-select v-model="search.pid" placeholder="请选择项目">
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="合作方式">
                 <el-select v-model="search.cooperationType" placeholder="请选择合作方式">
                     <el-option label="全部" :value="undefined"></el-option>
@@ -67,13 +62,14 @@ import { ChannelCooperationTypeList, pidList, ChannelLevel } from '@/utils/chann
 import { platFormType } from '@/utils/baseConst';
 import { dateFm } from '@/utils/formatter';
 import { getBeforeDate } from '@/utils/dateTime';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
             page: 1,
             count: 10,
             totalCount: 0,
-            search: { pid: 'A', isDiscount: false },
+            search: { pid: CURRENTPID, isDiscount: false },
             pageData: [],
             totalData: [],
             formObj: {},
@@ -91,6 +87,7 @@ export default {
     methods: {
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.sumDateBegin = this.dateArr1[0];
                 query.sumDateEnd = this.dateArr1[1];

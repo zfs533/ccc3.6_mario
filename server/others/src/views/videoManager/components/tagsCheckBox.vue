@@ -17,7 +17,7 @@ export default {
     },
     computed: {
         tagsList() {
-            return this.$store.getters.tagsList;
+            return this.$store.getters.tagsList || [];
         }
     },
     created() {

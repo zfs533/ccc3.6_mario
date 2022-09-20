@@ -1,11 +1,11 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="serach.pid" placeholder="请选择">
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <!-- <el-form-item label="奖励类型">
                 <el-select v-model="serach.rewardType" placeholder="请选择">
                     <el-option v-for="item in RewardType" :key="item.value" :label="item.label" :value="item.value">
@@ -26,8 +26,8 @@
             </el-form-item>
         </el-form>
         <el-table :data="pageData" :border="true" min-width="100%" max-height="800">
-            <el-table-column prop="pid" label="项目" width="100px" align="center" :formatter="$pidFormat">
-            </el-table-column>
+            <!-- <el-table-column prop="pid" label="项目" width="100px" align="center" :formatter="$pidFormat">
+            </el-table-column> -->
             <el-table-column prop="name" label="活动名称" width="300px" align="center"></el-table-column>
             <el-table-column prop="active" width="100px" label="开关" align="center" :formatter="boolFormat">
             </el-table-column>
@@ -50,12 +50,12 @@
         </el-col>
         <el-dialog :title="this.title" :visible.sync="dialogVisible" width="600px">
             <el-form label-position="top" label-width="100px">
-                <el-form-item label="项目" v-if="!isUpdate">
+                <!-- <el-form-item label="项目" v-if="!isUpdate">
                     <el-select v-model="formObj.pid" placeholder="请选择项目">
                         <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid">
                         </el-option>
                     </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="名称">
                     <el-input v-model="formObj.name"></el-input>
                 </el-form-item>
@@ -73,7 +73,7 @@
                         <el-option v-for="item in (viplevelInfoList).filter(e=>e.pid===formObj.pid)" :key="item.vipLevel" :label="item.pid+'_'+item.name" :value="item.vipLevel">
                         </el-option>
                     </el-select>
-                </el-form-item> 
+                </el-form-item>
                 <el-form-item label="奖励列表(多个按逗号,分开,只能设置7个)">
                     <el-input type="textarea" :autosize="{ minRows: 2 }" v-model="formObj.rewardCntArr"></el-input>
                 </el-form-item>
@@ -89,6 +89,7 @@
 import { addSignIn, getSignIn, updateSignIn } from '@/api/activity';
 import { getVipLevelPrivileges } from '@/api/serverConfigure';
 import { pidList, RewardType } from '@/utils/baseConst';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -115,8 +116,8 @@ export default {
         },
         async loadData() {
             let ret=await Promise.all([
-                this.$http(getSignIn, { pid:this.serach.pid, page: this.page, count: this.count }, true),
-                this.$http(getVipLevelPrivileges,{},true),
+                this.$http(getSignIn, { pid:CURRENTPID, page: this.page, count: this.count }, true),
+                this.$http(getVipLevelPrivileges,{pid:CURRENTPID},true),
             ]);
             // let res = await this.$http(getSignIn, { pid:this.serach.pid, page: this.page, count: this.count }, true);
             if (ret[0].code === 200) {
@@ -125,10 +126,11 @@ export default {
             }
             if(ret[1].code===200){
                this.viplevelInfoList=(ret[1].msg.pageData||[]).map(e=>{return {pid:e.pid,name:e.name,vipLevel:e.vipLevel}});
-            } 
+            }
         },
         async submitForm() {
             let query = { ...this.formObj };
+            query.pid = CURRENTPID;
             query.rewardCntArr = this.$splitStr(query.rewardCntArr);
             if (this.isUpdate) {
                 let res = await this.$http(updateSignIn, query);
@@ -184,7 +186,7 @@ export default {
         },
         addOne() {
             this.title = "新增配置";
-            this.formObj = {};
+            this.formObj = {pid:CURRENTPID};
             this.isUpdate = false;
             this.dialogVisible = true;
         },

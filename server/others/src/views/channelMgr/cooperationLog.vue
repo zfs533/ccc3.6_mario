@@ -6,12 +6,12 @@
             <span class="title">合作配置修改记录</span>
         </el-col>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="渠道名称">
                 <el-input v-model="search.channel"></el-input>
             </el-form-item>
@@ -130,8 +130,9 @@
 </template>
 
 <script>
-import { accountTypes, pidList } from '@/utils/baseConst';
 import { getCooperationLog } from '@/api/channel';
+import { accountTypes, pidList } from '@/utils/baseConst';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import showCooperationDialog from './showCooperation.vue';
 export default {
     components: {
@@ -190,6 +191,7 @@ export default {
 
         getQuery() {
             let query = { ...this.search };
+            query.pid= CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.logDateBegin = this.dateArr1[0];
                 query.logDateEnd = this.dateArr1[1];

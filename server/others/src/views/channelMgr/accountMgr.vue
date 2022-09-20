@@ -7,11 +7,11 @@
         </el-col>
 
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid" style="width:120px">
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="渠道账号">
                 <el-input v-model="search.act" placeholder="请输入"></el-input>
             </el-form-item>
@@ -106,11 +106,11 @@
         <el-dialog title="新增渠道" :visible.sync="dialog2Visible" width="1200px" @close="closeInsertView">
             <div class="mmain" style="width: 100%;display:flex;justify-content:space-between">
                 <el-form :model="form_add" label-width="100px" class="left">
-                    <el-form-item label="app">
+                    <!-- <el-form-item label="app">
                         <el-select v-model="form_add.pid" @change="onPidChange" :disabled="!!form_add.parentChannel">
                             <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                         </el-select>
-                    </el-form-item>
+                    </el-form-item> -->
 
                     <el-form-item label="账号">
                         <el-input v-model="form_add.act" placeholder=""></el-input>
@@ -226,11 +226,10 @@
 </template>
 
 <script>
-import { getChannelActLeaders, getChannelActMembers, updateUser, getPartnerMany, getCooperation, getUrlByType, insertChannelAct, updateCooperation } from '@/api/channel';
-import { ChannelCooperationTypeList, ChannelCooperationType, pidList, ChannelLevel } from '@/utils/channelShield';
+import { getChannelActLeaders, getChannelActMembers, getCooperation, getPartnerMany, getUrlByType, insertChannelAct, updateCooperation, updateUser } from '@/api/channel';
+import { ChannelCooperationType, ChannelCooperationTypeList, ChannelLevel, pidList } from '@/utils/channelShield';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import showCooperationDialog from './showCooperation.vue';
-import { string } from 'clipboard';
-
 export default {
     components: {
         showCooperationDialog,
@@ -244,7 +243,7 @@ export default {
 
             pidList: pidList,
             ChannelLevel: ChannelLevel,
-            search: { pid: 'A' },
+            search: { },
             pageData: [],
 
             dialogVisible: false,
@@ -281,6 +280,7 @@ export default {
     },
 
     created() {
+        this.search.pid=CURRENTPID;
         this.loadData();
     },
 
@@ -362,7 +362,7 @@ export default {
             this.data_url_h5domain = [];
             this.data_patner = [];
             this.form_add.parentChannel = undefined;
-            this.form_add = { allowSetSub: true, channelState: true, pid: 'A' };
+            this.form_add = { allowSetSub: true, channelState: true, pid: CURRENTPID };
 
             if (parChannel) {
                 this.form_add.pid = this.curData.pid;
@@ -492,7 +492,7 @@ export default {
         },
 
         async loaddata_patner() {
-            let res = await this.$http(getPartnerMany, {}, true);
+            let res = await this.$http(getPartnerMany, {pid:CURRENTPID}, true);
             if (res.code === 200) {
                 this.data_patner = res.msg.pageData;
             }
@@ -505,7 +505,7 @@ export default {
         },
 
         async loaddata_url() {
-            let res = await this.$http(getUrlByType, { pid: this.addInfo_curPid }, true);
+            let res = await this.$http(getUrlByType, { pid: CURRENTPID }, true);
             if (res.code === 200) {
                 let data = this.sortUrl(res);
                 for (let i = 0; i < data.length; i++)

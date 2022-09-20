@@ -141,14 +141,13 @@
     </el-card>
 </template>
 <script>
-import { getAllSort, getManyVideos, addManySort, updateSortSort, deleteOneSort, getStatisticsSort, videoDeleteMany } from '@/api/videoManager';
-import { timeTypeList, payTypeList } from '@/utils/baseConst';
-import draggable from 'vuedraggable';
-import { getCategorieLabel } from '@/utils/formatter';
+import { addManySort, deleteOneSort, getAllSort, getManyVideos, getStatisticsSort, updateSortSort, videoDeleteMany } from '@/api/videoManager';
 import { getSession } from '@/utils/auth';
+import { payTypeList, timeTypeList } from '@/utils/baseConst';
+import { deepClone, getCategorieLabel, getCategories, getWholeCategorieLabelArr, secToString, setImgView, sizeFormat } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
+import draggable from 'vuedraggable';
 import video from './components/video';
-import { deepClone, secToString, setImgView } from '@/utils/formatter';
-import { sizeFormat, getCategories, getWholeCategorieLabelArr } from '@/utils/formatter';
 export default {
     components: {
         draggable,
@@ -249,7 +248,7 @@ export default {
                     if (!item && !this.isCheckedTags) {
                         this.isCheckedTags = true;
                         this.$message('标签未解析，已更新，请重新查询');
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags",CURRENTPID);
                     }
                 }
             }

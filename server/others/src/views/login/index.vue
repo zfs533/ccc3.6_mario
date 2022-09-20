@@ -41,9 +41,10 @@
 
 <script>
 import { login } from '@/api/user';
-import { setSession } from '@/utils/auth';
-import QRCode from "qrcode";
 import AuthCode from '@/components/AuthCode.vue';
+import { setSession } from '@/utils/auth';
+import { setCurrentPid } from '@/utils/myAsyncFn';
+import QRCode from "qrcode";
 
 export default {
     name: 'Login',
@@ -138,9 +139,11 @@ export default {
                 setSession("src", res.msg.sul);
                 setSession("pidList", res.msg.pid);
                 setSession("dataAuth", res.msg.role.dataAuth);
-                this.$store.dispatch("baseData/setCategories");
-                this.$store.dispatch("baseData/setTags");
-                this.$router.push({ path: this.redirect || '/index', query: this.otherQuery });
+                let curpid=res.msg.pid[0].pid
+                setCurrentPid(curpid);
+                this.$store.dispatch("baseData/setCategories",curpid);
+                this.$store.dispatch("baseData/setTags",curpid);
+                this.$router.push({ path:'/index' });
             }
         },
         getOtherQuery(query) {

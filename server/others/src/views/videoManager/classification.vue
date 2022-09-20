@@ -3,12 +3,6 @@
         <div class="flex-container">
             <div class="top">
                 <el-form :inline="true" class="demo-form-inline">
-                    <el-form-item label="项目">
-                        <el-select v-model="pid" placeholder="请选择项目">
-                            <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid">
-                            </el-option>
-                        </el-select>
-                    </el-form-item>
                     <el-form-item>
                         <el-button type="primary" @click="searchData">查询</el-button>
                         <el-button type="primary" @click="showAdd">添加分类</el-button>
@@ -97,7 +91,7 @@
                     <span>{{ parentData.name }}</span>
                 </el-form-item>
                 <el-form-item label="项目" v-if="!parentData.name && !isUpdate">
-                    <el-select v-model="formObj.pid" placeholder="请选择项目">
+                    <el-select disabled="true" v-model="formObj.pid" placeholder="请选择项目">
                         <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid">
                         </el-option>
                     </el-select>
@@ -566,6 +560,7 @@ import imgUpload from '@/components/imgUpload.vue';
 import { getSession } from '@/utils/auth';
 import { categoryImgLocation, CategoryType, payTypeList, pidList, sortList, timeTypeList, UploadPath, videoStateList } from '@/utils/baseConst';
 import { deepClone, getCategories, getWholeCategorieLabelArr, secToString, setImgView, sizeFormat } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import video from './components/video';
 export default {
     components: {
@@ -725,7 +720,7 @@ export default {
             this.addVideoToCategorie(this.vidsArr);
         },
         async addVideoToCategorie(idArr) {
-            let updateModel = { ids: idArr, pid: this.pid };
+            let updateModel = { ids: idArr, pid: CURRENTPID };
             updateModel.categorie = [this.subId];
             let res = await this.$http(blukUpdateVideos, updateModel);
             if (res.code === 200) {
@@ -780,7 +775,7 @@ export default {
             }
         },
         async loadVideoData() {
-            let res = await this.$http(getManyVideos, { pid: this.pid, type: "video", page: this.page3, count: this.count3, ...this.getQuery(), ...this.sortT });
+            let res = await this.$http(getManyVideos, { pid: CURRENTPID, type: "video", page: this.page3, count: this.count3, ...this.getQuery(), ...this.sortT });
             if (res.code === 200) {
                 this.pageData3 = res.msg.pageData;
                 this.totalCount3 = res.msg.totalCount;
@@ -815,7 +810,7 @@ export default {
         },
 
         async loadAtlasData() {
-            let res = await this.$http(getManyVideos, { pid: this.pid, type: "atlas", page: this.page3, count: this.count3, ...this.sortT, ...this.getQuery() }, true);
+            let res = await this.$http(getManyVideos, { pid: CURRENTPID, type: "atlas", page: this.page3, count: this.count3, ...this.sortT, ...this.getQuery() }, true);
             if (res.code === 200) {
                 this.isCheckedTags = false;
                 this.pageData4 = res.msg.pageData;
@@ -901,7 +896,7 @@ export default {
                     if (!item && !this.isCheckedTags) {
                         this.isCheckedTags = true;
                         this.$message('标签未解析，已更新，请重新查询');
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags",CURRENTPID);
                     }
                 }
             }
@@ -948,7 +943,7 @@ export default {
             let tempCount = 0;
             var obj = [];
             var index = 0;
-            let res = await this.$http(getManySub, { pid: this.pid, page: 1, count: 10000, parentId: pData._id }, true);
+            let res = await this.$http(getManySub, { pid: CURRENTPID, page: 1, count: 10000, parentId: pData._id }, true);
             if (res && res.code === 200) {
                 let data = deepClone(await setImgView(res.msg.pageData, "coverUrl"));
 
@@ -1045,7 +1040,7 @@ export default {
             this.loadKindsData();
         },
         async loadData() {
-            let res = await this.$http(getManyFirst, { pid: this.pid, page: this.page, count: 100000, type: this.currentCategoryType }, true);
+            let res = await this.$http(getManyFirst, { pid: CURRENTPID, page: this.page, count: 100000, type: this.currentCategoryType }, true);
             if (res.code === 200) {
                 this.pageData = res.msg.pageData;
                 this.totalCount = res.msg.totalCount;
@@ -1085,7 +1080,7 @@ export default {
         },
         async loadAllSub(item, obj, index) {
             let tempCount = 0;
-            let res = await this.$http(getManySub, { pid: this.pid, page: 1, count: 10000, parentId: item._id });
+            let res = await this.$http(getManySub, { pid: CURRENTPID, page: 1, count: 10000, parentId: item._id });
             if (res && res.code === 200) {
                 let data = deepClone(await setImgView(res.msg.pageData, "coverUrl"));
 
@@ -1243,7 +1238,7 @@ export default {
                 res = await this.$http(insertCategories, { type: this.currentCategoryType, ...query });
             }
             if (res.code === 200) {
-                this.$store.dispatch("baseData/setCategories");
+                this.$store.dispatch("baseData/setCategories",CURRENTPID);
                 this.$message.success("操作成功");
                 this.dialogVisible = false;
                 if (this.parentData && this.parentData.name) {
@@ -1281,7 +1276,7 @@ export default {
             if (res.code === 200) {
                 this.$message.success("删除成功");
                 this.loadData();
-                this.$store.dispatch("baseData/setCategories");
+                this.$store.dispatch("baseData/setCategories",CURRENTPID);
             }
         },
         async delLineSub(row) {
@@ -1303,7 +1298,7 @@ export default {
         showAdd() {
             this.parentData = {};
             this.formObj = {
-                pid: this.parentData?.pid,
+                pid: CURRENTPID,//this.parentData?.pid,
                 parentId: this.parentData ? this.parentData._id : undefined,
                 active: true,
                 enableRandom: true,
@@ -1316,7 +1311,7 @@ export default {
         showAddSub() {
             this.parentData = this.tempParentData;
             this.formObj = {
-                pid: this.parentData?.pid,
+                pid: CURRENTPID,//this.parentData?.pid,
                 parentId: this.parentData ? this.parentData._id : undefined,
                 active: true,
                 enableRandom: true,

@@ -1,11 +1,7 @@
 <template>
     <el-card>
         <el-button type="primary" @click="addPid">添加平台</el-button>
-        <el-tabs v-model="activeName" >
-            <el-tab-pane v-for="item in formObj" :key="item.pid" :label="$pidFormat(item.pid)" :value="item.pid">
-                <screctInfo :pid="item.pid" :resData="item" v-on:systemsetting="loadData"> </screctInfo>
-            </el-tab-pane>
-        </el-tabs>
+        <screctInfo  v-on:systemsetting="notice"> </screctInfo>
         <el-dialog title="新增平台" :visible.sync="dialogVisible">
             <el-form ref="formName" class="demo-form-inline" :model="addObj">
                 <el-form-item label="项目">
@@ -53,10 +49,11 @@
     </el-card>
 </template>
 <script>
-import { secretMgrAdd, secretMgrGet } from '@/api/serverConfigure';
+import { secretMgrAdd } from '@/api/serverConfigure';
 import tinymce from '@/components/Tinymce/serverConfigIndex.vue';
 import { setSession } from "@/utils/auth";
 import { pidList } from '@/utils/baseConst';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import screctInfo from './screctInfo.vue';
 export default {
     components: {
@@ -83,8 +80,10 @@ export default {
             }
         };
         return {
+            resData: {},
+            pid: CURRENTPID,
             pidList: pidList,
-            formObj: [],
+            formObj: {},
             addObj: {},
             activeName: '',
             dialogVisible: false,
@@ -94,19 +93,9 @@ export default {
         };
     },
     created() {
-        this.loadData();
     },
 
     methods: {
-        async loadData() {
-            let res = await this.$http(secretMgrGet, {});
-            if (res.code === 200) {
-                let data = (res.msg?.data || []);
-                this.formObj = data;
-                let pidList = (res.msg?.pidList || []);
-                setSession("pidList", pidList);
-            }
-        },
         addPid() {
             this.addObj = {
                 pid: "",
@@ -139,7 +128,6 @@ export default {
                     if (res.code === 200) {
                         this.dialogVisible = false;
                         setSession("pidList", res.msg);
-                        this.loadData();
                     }
                 } else {
                     return false;
@@ -156,7 +144,9 @@ export default {
         uploaded(path) {
             this.addObj.defaultAvatarURL = path;
         },
-       
+        notice(){
+            console.log("更新了")
+        },
     }
 };
 </script>

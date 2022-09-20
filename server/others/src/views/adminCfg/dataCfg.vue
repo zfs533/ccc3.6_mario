@@ -1,12 +1,12 @@
 <template>
     <el-card class="dashboard-second">
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid" placeholder="请选择项目">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item>
                 <el-button type="primary" @click="searchData">查询</el-button>
             </el-form-item>
@@ -18,7 +18,7 @@
             </el-form-item>
         </el-form>
         <el-table :data="pageData" :border="true" min-width="100%">
-            <el-table-column prop="pid" label="项目" align="center" :formatter="$pidFormat"></el-table-column>
+            <!-- <el-table-column prop="pid" label="项目" align="center" :formatter="$pidFormat"></el-table-column> -->
             <el-table-column prop="loginUserCnt" align="center" label="登陆人数区间" :formatter="loginUserCntFormat"></el-table-column>
             <el-table-column prop="androidRate" align="center" label="安卓用户占比区间" :formatter="arrFormat"></el-table-column>
             <el-table-column prop="newUserRate" align="center" label="新增用户占比" :formatter="arrFormat"></el-table-column>
@@ -155,6 +155,7 @@
 import { getDataCfg, updateDataCfg, dataCfgReset } from '@/api/adminCfg';
 import { isArray } from '@/utils/validate';
 import { pidList } from '@/utils/baseConst';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -189,6 +190,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             return query;
         },
         async loadData() {

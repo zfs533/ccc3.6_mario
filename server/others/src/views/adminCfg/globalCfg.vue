@@ -30,6 +30,7 @@
 <script>
 import { getGlobalCfg, updateGlobalCfg } from '@/api/adminCfg';
 import { pidList } from '@/utils/baseConst';
+import { setSession } from '@/utils/auth';
 export default {
     data() {
         return {

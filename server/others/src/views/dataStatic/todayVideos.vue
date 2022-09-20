@@ -1,12 +1,6 @@
 <template>
     <el-card>
         <el-form :inline="true" style="width:100%">
-            <el-form-item label="项目">
-                <el-select v-model="search.pid">
-                    <el-option label="全部" :value="undefined"></el-option>
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="视频id">
                 <el-input v-model="search.vid"></el-input>
             </el-form-item>
@@ -56,6 +50,7 @@ import { getTodayVideos } from '@/api/dataStatic';
 import { payTypeList, pidList, timeTypeList, todayVideoSortList } from '@/utils/baseConst';
 import { getBeforeDate } from '@/utils/dateTime';
 import { dateFm, getWholeCategorieLabelByIds } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -100,6 +95,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.sumDate && this.sumDate.length > 1) {
                 query.sumDateBegin = this.sumDate[0];
                 query.sumDateEnd = this.sumDate[1];
@@ -154,7 +150,7 @@ export default {
                     if (!item && !this.isCheckedTags) {
                         this.isCheckedTags = true;
                         this.$message('标签未解析，已更新，请重新查询');
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags",CURRENTPID);
                     }
                 }
             }

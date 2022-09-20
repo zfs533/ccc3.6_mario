@@ -213,10 +213,6 @@
             </el-table-column>
             <el-table-column v-if="showColumns.includes('pid')" fixed prop="pid" label="项目" align="center" :formatter="$pidFormat" min-width="80"></el-table-column>
             <el-table-column v-if="showColumns.includes('_id')" prop="_id" label="视频id" align="center" min-width="220" fixed="left"></el-table-column>
-            <el-table-column v-if="showColumns.includes('createdDate')" prop="createdDate" label="创建时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
-            <el-table-column v-if="showColumns.includes('optCreate')" prop="optCreate" label="审核时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
-            <el-table-column v-if="showColumns.includes('releaseDate')" prop="releaseDate" label="前端上线时间" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
-            <el-table-column v-if="showColumns.includes('updatedDate')" prop="updatedDate" label="修改时间" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
             <el-table-column v-if="showColumns.includes('name')" prop="name" label="视频名称" align="center" min-width="160"></el-table-column>
             <el-table-column v-if="showColumns.includes('summary')" prop="summary" label="简介" align="center" min-width="200"></el-table-column>
             <el-table-column v-if="showColumns.includes('coverURL')" prop="coverURL" label="封面" align="center" min-width="150">
@@ -239,6 +235,11 @@
             </el-table-column>
             <el-table-column v-if="showColumns.includes('uploadId')" prop="uploadId" label="上传人" align="center">
             </el-table-column>
+            <el-table-column v-if="showColumns.includes('createdDate')" prop="createdDate" label="创建时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('optCreate')" prop="optCreate" label="审核时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('releaseDate')" prop="releaseDate" label="前端上线时间" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('updatedDate')" prop="updatedDate" label="修改时间" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+
             <el-table-column v-if="showColumns.includes('time')" prop="time" label="时长" align="center" :formatter="secondFormat" min-width="120"></el-table-column>
             <el-table-column v-if="showColumns.includes('size')" prop="size" label="体积大小" align="center" :formatter="sizeFormat" min-width="120"></el-table-column>
             <el-table-column v-if="showColumns.includes('price')" prop="price" label="价格" align="center">
@@ -513,11 +514,17 @@
 
         <el-dialog title="视频列表" top="30px" left :visible.sync="dialogVideoVisible" width="90%">
             <el-form :inline="true" class="demo-form-inline">
-                <el-form-item label="视频id">
+                <el-form-item label="仓库内容id">
                     <el-input v-model="search.id" placeholder="请输入"></el-input>
                 </el-form-item>
                 <el-form-item label="视频名称">
                     <el-input v-model="search.name" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="分类">
+                    <el-input v-model="search.categorie" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="标签">
+                    <el-input v-model="search.tag" placeholder="请输入"></el-input>
                 </el-form-item>
                 <el-form-item label="视频来源">
                     <el-select v-model="search.from" filterable allow-create default-first-option placeholder="请输入">
@@ -534,6 +541,20 @@
                     <el-select v-model="search.sort" placeholder="请选择" style="width:160px">
                         <el-option label="全部" :value="undefined"></el-option>
                         <el-option v-for="item in sortList" :key="item.value" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="横竖屏幕">
+                    <el-select v-model="search.screenType" placeholder="请选择" style="width:160px">
+                        <el-option label="全部" :value="undefined"></el-option>
+                        <el-option v-for="item in screenTypeList" :key="item.value" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="长短类型">
+                    <el-select v-model="search.timeType" placeholder="请选择" style="width:160px">
+                        <el-option label="全部" :value="undefined"></el-option>
+                        <el-option v-for="item in timeTypeList" :key="item.value" :label="item.label" :value="item.value">
                         </el-option>
                     </el-select>
                 </el-form-item>
@@ -582,12 +603,12 @@
                     <el-table :data="pageData1" :border="true" min-width="100%" ref="table" @selection-change="handleSelectionChange1" max-height="500px">
                         <el-table-column type="selection" width="55" fixed="left">
                         </el-table-column>
-                        <el-table-column v-if="showColumns.includes('name')" prop="name" fixed label="名称" align="center" min-width="160"></el-table-column>
-                        <el-table-column v-if="showColumns.includes('_id')" prop="_id" label="仓库内容id" align="center" min-width="200">
-                        </el-table-column>
-                        <el-table-column v-if="showColumns.includes('createdDate')" prop="createdDate" label="创建时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
-                        <el-table-column v-if="showColumns.includes('summary')" prop="summary" label="简介" align="center" min-width="200"></el-table-column>
-                        <el-table-column v-if="showColumns.includes('coverURL')" prop="coverURL" label="封面" align="center" min-width="150">
+                        <el-table-column prop="isUsed" fixed label="是否存在" align="center" width="80" :formatter="boolTypeFormat"></el-table-column>
+                        <el-table-column prop="name" fixed label="名称" align="center" min-width="160"></el-table-column>
+                        <el-table-column prop="_id" label="仓库内容id" align="center" min-width="200"></el-table-column>
+                        <el-table-column prop="createdDate" label="创建时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+                        <el-table-column prop="summary" label="简介" align="center" min-width="200"></el-table-column>
+                        <el-table-column prop="coverURL" label="封面" align="center" min-width="150">
                             <template slot-scope="scope">
                                 <el-image v-if="scope.row.coverURLView" :src="scope.row.coverURLView" :preview-src-list="[scope.row.coverURLView]">
                                     <div slot="error" class="image-slot">
@@ -598,19 +619,21 @@
                                 </div>
                             </template>
                         </el-table-column>
-                        <el-table-column v-if="showColumns.includes('publisherId')" prop="publisherId" label="发布人" align="center">
+                        <!-- <el-table-column  prop="publisherId" label="发布人" align="center">
+                        </el-table-column> -->
+                        <!-- <el-table-column  prop="uploadId" label="上传人" align="center">
+                        </el-table-column> -->
+                        <el-table-column prop="time" label="时长" align="center" :formatter="secondFormat" min-width="120"></el-table-column>
+                        <el-table-column prop="size" label="体积大小" align="center" :formatter="sizeFormat" min-width="120"></el-table-column>
+                        <el-table-column prop="timeType" label="长短类型" align="center" :formatter="timeTypeFormat"></el-table-column>
+                        <el-table-column prop="screenType" label="横竖类型" align="center" :formatter="screenTypeFormat"></el-table-column>
+                        <el-table-column prop="categorie" label="分类" align="center" min-width="200" :formatter="tagsArrFormat"></el-table-column>
+                        <el-table-column prop="tags" label="标签" align="center" min-width="200" :formatter="tagsArrFormat"></el-table-column>
+                        <el-table-column prop="from" label="视频来源" align="center">
                         </el-table-column>
-                        <el-table-column v-if="showColumns.includes('uploadId')" prop="uploadId" label="上传人" align="center">
-                        </el-table-column>
-                        <el-table-column v-if="showColumns.includes('time')" prop="time" label="时长" align="center" :formatter="secondFormat" min-width="120"></el-table-column>
-                        <el-table-column v-if="showColumns.includes('size')" prop="size" label="体积大小" align="center" :formatter="sizeFormat" min-width="120"></el-table-column>
-                        <el-table-column v-if="showColumns.includes('timeType')" prop="timeType" label="长短类型" align="center" :formatter="timeTypeFormat"></el-table-column>
-                        <el-table-column v-if="showColumns.includes('tags')" prop="tags" label="标签" align="center" :formatter="tagsFormat" min-width="200"></el-table-column>
-                        <el-table-column v-if="showColumns.includes('from')" prop="from" label="视频来源" align="center">
-                        </el-table-column>
-                        <el-table-column v-if="showColumns.includes('status')" prop="status" label="状态" align="center" :formatter="statusFormat"></el-table-column>
-                        <el-table-column v-if="showColumns.includes('opt')" prop="opt" label="审核人" align="center"></el-table-column>
-                        <el-table-column v-if="showColumns.includes('reason')" prop="reason" label="审核拒绝原因" align="center" min-width="200"></el-table-column>
+                        <el-table-column prop="status" label="状态" align="center" :formatter="statusFormat"></el-table-column>
+                        <el-table-column prop="opt" label="审核人" align="center"></el-table-column>
+                        <!-- <el-table-column  prop="reason" label="审核拒绝原因" align="center" min-width="200"></el-table-column> -->
                         <el-table-column fixed="right" label="操作" width="100" align="center">
                             <template slot-scope="scope">
 
@@ -641,12 +664,14 @@
     </el-card>
 </template>
 <script>
+import { clientEvent } from '@/api/eventManager';
 import { blukUpdateVideos, cloneContent, downVideo, getManyVerifyVideos, getManyVideos, getPublisher, updateCoverURL, updatePlist, updateState, updateVideos, videosExcel } from '@/api/videoManager';
 import imgUpload from '@/components/imgUpload.vue';
 import { getSession } from '@/utils/auth';
-import { auditStateList, payTypeList, pidList, sortList, timeTypeList, UploadPath, UserTypeNew, videoStateList } from '@/utils/baseConst';
+import { auditStateList, payTypeList, pidList, screenTypeList, sortList, timeTypeList, UploadPath, UserTypeNew, videoStateList } from '@/utils/baseConst';
 import { getRandomCityList } from '@/utils/city';
 import { dateStartTimeFm, deepClone, getCategories, getWholeCategorieLabelArr, secToString, setImgView, sizeFormat } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import video from './video';
 export default {
     components: {
@@ -697,6 +722,7 @@ export default {
             sortList: sortList,
             pidList,
             UserTypeNew,
+            screenTypeList,
             payTypeList: payTypeList,
             timeTypeList: timeTypeList,
             stateList: videoStateList,
@@ -765,6 +791,7 @@ export default {
     },
     computed: {
         categorieList() {
+            this.pid = CURRENTPID;
             return this.$store.getters.categorieList.filter(e => e.id === this.pid);
         },
         tagsList() {
@@ -782,9 +809,16 @@ export default {
         }
     },
     async created() {
+        this.tagsList;
+        this.pidList = getSession("pidList");
+        this.pid = CURRENTPID;
         this.isMaterial = this.$route.name.includes('material');
         this.loadData();
         this.loadUsers();
+        clientEvent.off(clientEvent.EVENT_TYPE.changePid);
+        clientEvent.on(clientEvent.EVENT_TYPE.changePid, () => {
+            this.loadData();
+        }, this);
     },
     watch: {
         value() {
@@ -815,6 +849,7 @@ export default {
             this.addVideoToCategorie(this.vidsArr);
         },
         async addVideoToCategorie(idArr) {
+            this.pid = CURRENTPID;
             let updateModel = { ids: idArr };
             let citys = getRandomCityList(20);
             updateModel.pid = this.pid;
@@ -872,7 +907,7 @@ export default {
             }
         },
         showAddVideo() {
-            this.search = {};
+            this.search = { status: 2 };
             this.loadVideoData();
             this.dialogVideoVisible = true;
             this.tempSelectedVideos = [];
@@ -880,8 +915,8 @@ export default {
         },
 
         async loadVideoData() {
-
-            let res = await this.$http(getManyVerifyVideos, { pid: this.pid, page: this.page1, count: this.count1, type: "video", ...this.getQuery() }, true);
+            this.pid = CURRENTPID;
+            let res = await this.$http(getManyVerifyVideos, { pid: this.pid, page: this.page1, count: this.count1, type: "video", ...this.getResQuery() }, true);
             if (res.code === 200) {
                 this.pageData1 = res.msg.pageData;
                 this.totalCount1 = res.msg.totalCount;
@@ -1006,6 +1041,20 @@ export default {
             }
             return query;
         },
+        getResQuery() {
+            let query = { ...this.search };
+            query.sizeMin = query.sizeMin ? query.sizeMin * 1024 * 1024 : undefined;
+            query.sizeMax = query.sizeMax ? query.sizeMax * 1024 * 1024 : undefined;
+            if (this.dateArr1 && this.dateArr1.length > 1) {
+                query.createdDateStart = this.dateArr1[0];
+                query.createdDateEnd = this.dateArr1[1];
+            }
+            if (this.dateArr2 && this.dateArr2.length > 1) {
+                query.optDateStart = this.dateArr2[0];
+                query.optDateEnd = this.dateArr2[1];
+            }
+            return query;
+        },
         handleHeaderClick(column, event) {
             this.sortT = {};
             switch (column.property) {
@@ -1029,6 +1078,7 @@ export default {
             }
         },
         async loadData2() {
+            this.pid = CURRENTPID;
             let res = await this.$http(getManyVideos, { type: "video", page: this.page, pid: this.pid, count: this.count, ...this.sortT });
             if (res.code === 200) {
                 this.isCheckedTags = false;
@@ -1038,6 +1088,7 @@ export default {
             }
         },
         async loadData() {
+            this.pid = CURRENTPID;
             let res = await this.$http(getManyVideos, { type: "video", page: this.page, pid: this.pid, count: this.count, ...this.getQuery() });
             if (res?.code === 200) {
                 this.isCheckedTags = false;
@@ -1066,15 +1117,10 @@ export default {
             }
         },
         async exportData() {
+            this.pid = CURRENTPID;
             let res = await this.$http(videosExcel, { pid: this.pid, page: this.page, count: this.count, ...this.getQuery() });
             if (res.code === 200) {
                 this.$message.success("导出任务创建成功");
-                // await this.$confirm('导出任务创建成功，是否跳转到任务管理页面下载', '提示', {
-                //     confirmButtonText: '跳转',
-                //     cancelButtonText: '取消',
-                //     type: 'warning'
-                // });
-                // this.$router.push({ path: '/index' });
             }
         },
         handleChange(val) { console.log(val, this.formObj.categorie); },
@@ -1141,6 +1187,10 @@ export default {
             let item = this.timeTypeList.find(i => i.value === cellValue);
             return item ? item.label : cellValue;
         },
+        screenTypeFormat(row, column, cellValue) {
+            let item = this.screenTypeList.find(i => i.value === cellValue);
+            return item ? item.label : cellValue;
+        },
         stateFormat(row, column, cellValue) {
             let item = this.stateList.find(i => i.value === cellValue);
             return item ? item.label : cellValue;
@@ -1153,14 +1203,17 @@ export default {
             v = getWholeCategorieLabelArr(v, this.categorieList);
             return v;
         },
-        // categorieFormat(row, column, cellValue) {
-        //     if (Array.isArray(cellValue) && cellValue.length != 0) {
-        //         let v = getWholeCategorieLabelByIds(cellValue, this.categorieList);
-        //         return v;
-        //     }
-        // },
+        tagsArrFormat(row, column, cellValue) {
+            if (cellValue instanceof Array) {
+                return cellValue.join(',');
+            }
+            return cellValue;
+        },
         arrFormat(row, column, cellValue) {
             return typeof cellValue == "object" ? cellValue.join('，') : cellValue;
+        },
+        boolTypeFormat(row, column, cellValue) {
+            return cellValue ? "已存在" : "可添加";
         },
         tagsFormat(row, column, cellValue) {
             let str = '';
@@ -1171,7 +1224,7 @@ export default {
                     if (!item && !this.isCheckedTags) {
                         this.isCheckedTags = true;
                         this.$message('标签未解析，已更新，请重新查询');
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags", CURRENTPID);
                     }
                 }
             }
@@ -1225,6 +1278,7 @@ export default {
             }
         },
         editLine(row) {
+            this.pid = CURRENTPID;
 
             this.formObj = {
                 id: row._id,
@@ -1340,6 +1394,7 @@ export default {
                 updateModel.pid = query.pid;
                 updateModel.releaseDate = query.releaseDate;
             }
+            this.pid = CURRENTPID;
             updateModel.pid = this.pid;
             let res = await this.$http(blukUpdateVideos, updateModel);
             if (res.code === 200) {
@@ -1489,6 +1544,7 @@ export default {
             };
         },
         async loadUsers() {
+            this.pid = CURRENTPID;
             let res = await this.$http(getPublisher, { pid: this.pid }, true);
             if (res?.code === 200 && res.msg) {
                 this.restaurants = res.msg.map(i => {
@@ -1501,7 +1557,7 @@ export default {
                     return { value: i.type, label: userType.label, children: i.list };
                 });
                 this.searchPublisherArr.unshift({ value: -1, label: '发布人缺失', children: [{ uid: -1, name: "发布人缺失" }] });
-                this.searchPublisherArr.unshift({ value: 0, label: '不搜索', children: [{ uid: undefined, name: "无" }] });
+                this.searchPublisherArr.unshift({ value: 0, label: '不搜索', children: [{ uid: undefined, name: "全部" }] });
             }
         },
         async downVideo(row) {

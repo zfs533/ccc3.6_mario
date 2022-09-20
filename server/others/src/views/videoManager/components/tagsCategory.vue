@@ -1,11 +1,7 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
-                <el-select v-model="pid" placeholder="请选择项目">
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid">
-                    </el-option>
-                </el-select>
+            <el-form-item>
                 <el-button type="primary" @click="searchData">查询</el-button>
                 <el-button type="primary" @click="showAdd">添加分类</el-button>
             </el-form-item>
@@ -106,6 +102,9 @@
                 <el-form-item label="标签名">
                     <el-input v-model="formObj.name" placeholder="请输入"></el-input>
                 </el-form-item>
+                <el-form-item label="封面图(点图上传)" label-width="150px">
+                    <ImgUpload :imageUrl="formObj.coverURLView" :path="UploadPath.CategoriesImg" :isCompress="true" @success="uploaded" />
+                </el-form-item>
                 <el-form-item label="简介">
                     <el-input type="textarea" :rows="3" v-model="formObj.summary" placeholder="请输入"></el-input>
                 </el-form-item>
@@ -118,7 +117,7 @@
         <el-dialog title="添加分类" :visible.sync="dialogVisible" width="800px">
             <el-form label-width="120px">
                 <el-form-item label="项目">
-                    <el-select v-model="formObj.pid" placeholder="请选择项目">
+                    <el-select disabled="true" v-model="formObj.pid" placeholder="请选择项目">
                         <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid">
                         </el-option>
                     </el-select>
@@ -493,12 +492,15 @@
     </el-card>
 </template>
 <script>
-import { getManyFirst, getManyTags, deleteCategories, getManySub, insertCategories, addCategoryTag, getCategoryTags, insertTags, updateTags, getManyVideos, updateVideos, getPublisher, blukUpdateVideos, delCategoryTag, sortCategoryTag } from '@/api/videoManager';
-import draggable from 'vuedraggable';
-import { deepClone, getCategories, getWholeCategorieLabelArr, secToString, setImgView, sizeFormat } from '@/utils/formatter';
-import { payTypeList, sortList, timeTypeList, pidList, UploadPath, videoStateList, CategoryType, categoryImgLocation } from '@/utils/baseConst';
+import { clientEvent } from '@/api/eventManager';
+import { addCategoryTag, blukUpdateVideos, delCategoryTag, deleteCategories, getCategoryTags, getManyFirst, getManySub, getManyTags, getManyVideos, getPublisher, insertCategories, insertTags, sortCategoryTag, updateTags, updateVideos } from '@/api/videoManager';
 import imgUpload from '@/components/imgUpload.vue';
 import { getSession } from '@/utils/auth';
+import { categoryImgLocation, payTypeList, pidList, sortList, timeTypeList, UploadPath, videoStateList } from '@/utils/baseConst';
+import { deepClone, getCategories, getWholeCategorieLabelArr, secToString, setImgView, sizeFormat } from '@/utils/formatter';
+import { jiemi } from '@/utils/getFile';
+import { CURRENTPID } from '@/utils/myAsyncFn';
+import draggable from 'vuedraggable';
 import video from './video';
 export default {
     components: {
@@ -644,6 +646,10 @@ export default {
         await this.loadData();
         await this.loadAllTags();
         await this.loadUsers();
+        clientEvent.off(clientEvent.EVENT_TYPE.changePid);
+        clientEvent.on(clientEvent.EVENT_TYPE.changePid, () => {
+            this.loadData();
+        }, this);
     },
     methods: {
         closePlayer() {
@@ -669,7 +675,7 @@ export default {
         showAddSub() {
             this.parentData = this.tempParentData;
             this.formObj = {
-                pid: this.pid,
+                pid: CURRENTPID,
                 parentId: this.parentData ? this.parentData._id : undefined,
                 active: true,
                 enableRandom: true,
@@ -804,7 +810,7 @@ export default {
             let tempCount = 0;
             var obj = [];
             var index = 0;
-            let res = await this.$http(getManySub, { pid: this.pid, page: 1, count: 10000, parentId: pData._id }, true);
+            let res = await this.$http(getManySub, { pid: CURRENTPID, page: 1, count: 10000, parentId: pData._id }, true);
             if (res && res.code === 200) {
                 let data = deepClone(await setImgView(res.msg.pageData, "coverUrl"));
                 for (let i = 0; i < data.length; i++) {
@@ -924,7 +930,7 @@ export default {
         async loadTagVideoData(data) {
             return new Promise(async resolve => {
                 this.pageData2.splice(0);
-                var obj = { pid: this.pid, type: "video", page: this.page2, count: this.count2, tags: this.currentTag.tagId, ...this.searchT };
+                var obj = { pid: CURRENTPID, type: "video", page: this.page2, count: this.count2, tags: this.currentTag.tagId, ...this.searchT };
                 let res = await this.$http(getManyVideos, obj);
                 if (res && res.code === 200) {
                     this.pageData2 = res.msg.pageData;
@@ -957,7 +963,8 @@ export default {
                 publisherId: row.publisherId,
                 from: row.from,
                 price: row.price,
-                location: row.location
+                location: row.location,
+                pid: CURRENTPID,
             };
             let res = await this.$http(updateVideos, query);
             if (res.code === 200) {
@@ -1056,7 +1063,7 @@ export default {
         },
         async loadAllTags() {
             return new Promise(async resolve => {
-                let res = await this.$http(getManyTags, {}, true);
+                let res = await this.$http(getManyTags, {pid:CURRENTPID}, true);
                 if (res.code === 200) {
                     res.msg.pageData.sort(function (a, b) {
                         return a.index - b.index;
@@ -1074,7 +1081,7 @@ export default {
             this.sortData = [];
             this.collapseArr = {};
 
-            let res = await this.$http(getManyFirst, { pid: this.pid, type: "tag", page: 1, count: 100000 }, true);
+            let res = await this.$http(getManyFirst, { pid: CURRENTPID, type: "tag", page: 1, count: 100000 }, true);
             if (res.code === 200) {
                 res.msg.pageData.sort(function (a, b) {
                     return a.index - b.index;
@@ -1124,7 +1131,7 @@ export default {
                 if (res.code === 200) {
                     this.$message.success("添加成功");
                     this.loadData();
-                    this.$store.dispatch("baseData/setTags");
+                    this.$store.dispatch("baseData/setTags",CURRENTPID);
                 }
             }
             this.inputVisible = false;
@@ -1137,7 +1144,7 @@ export default {
                 this.$message.success("编辑成功");
                 this.dialogUpdate = false;
                 this.loadData();
-                this.$store.dispatch("baseData/setTags");
+                this.$store.dispatch("baseData/setTags",CURRENTPID);
             }
         },
         async submitMany() {
@@ -1152,8 +1159,10 @@ export default {
         },
         editLine(row) {
             if (row.id == this.currentTag.id) {
-                this.formObj = { id: row.tagId, name: row.tagName, summary: row.summary };
-                this.dialogUpdate = true;
+                jiemi(row.coverUrl).then((value) => {
+                    this.formObj = { id: row.tagId, coverURLView: value, name: row.tagName, summary: row.summary };
+                    this.dialogUpdate = true;
+                });
             } else {
                 this.currentTag = row;
                 this.loadTagVideoData(row);
@@ -1184,7 +1193,7 @@ export default {
                     if (res.code === 200) {
                         this.$message.success("操作成功");
                         this.loadData();
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags",CURRENTPID);
                     }
                 })
                 .catch(() => {
@@ -1259,7 +1268,7 @@ export default {
                     if (!item && !this.isCheckedTags) {
                         this.isCheckedTags = true;
                         this.$message('标签未解析，已更新，请重新查询');
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags",CURRENTPID);
                     }
                 }
             }
@@ -1293,7 +1302,7 @@ export default {
                 return;
             }
             let updateModel = {
-                pid: this.pid,
+                pid: CURRENTPID,
                 tags: [this.currentTag.tagId],
                 ids: vidsArr,
             };

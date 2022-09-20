@@ -1,11 +1,6 @@
 <template>
     <el-card>
         <el-form :inline="true" style="width:100%">
-            <el-form-item label="项目">
-                <el-select v-model="search.pid">
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="渠道账号">
                 <el-input v-model="search.channelAct"></el-input>
             </el-form-item>
@@ -13,8 +8,7 @@
                 <el-input v-model="search.channel"></el-input>
             </el-form-item>
             <el-form-item label="统计日期:">
-                <el-date-picker v-model="sumDate" type="daterange" value-format="yyyy-MM-dd HH:mm:ss"
-                    start-placeholder="开始时间" end-placeholder="结束时间">
+                <el-date-picker v-model="sumDate" type="daterange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间">
                 </el-date-picker>
             </el-form-item>
             <el-form-item>
@@ -47,9 +41,7 @@
             <el-table-column prop="iosTfCount" label="iosTF下载次数(去重)" align="center"></el-table-column>
         </el-table>
         <el-col class="toolbar2">
-            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag"
-                @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page"
-                :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
+            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag" @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page" :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
         </el-col>
     </el-card>
 </template>
@@ -58,6 +50,7 @@ import { exportCpGuardStatData, getCpGuardStatData } from '@/api/dataStatic';
 import { pidList } from '@/utils/baseConst';
 import { getBeforeDate } from '@/utils/dateTime';
 import { dateFm } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -104,6 +97,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.sumDate && this.sumDate.length > 1) {
                 query.startTime = this.sumDate[0];
                 query.endTime = this.sumDate[1];

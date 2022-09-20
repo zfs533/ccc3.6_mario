@@ -2,15 +2,8 @@
 <template>
     <div>
         <el-form :inline="true" style="width:100%">
-            <el-form-item label="项目">
-                <el-select v-model="pid">
-                    <el-option label="全部" :value="undefined"></el-option>
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="周期数据:">
-                <el-date-picker v-model="sumDate" type="daterange" value-format="yyyy-MM-dd HH:mm:ss"
-                    start-placeholder="开始时间" end-placeholder="结束时间">
+                <el-date-picker v-model="sumDate" type="daterange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间">
                 </el-date-picker>
             </el-form-item>
             <el-form-item>
@@ -97,9 +90,7 @@
             <el-table-column prop="iosRetentionDay7" label="ios七日留存" align="center"></el-table-column>
         </el-table>
         <el-col class="toolbar2">
-            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag"
-                @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page"
-                :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
+            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag" @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page" :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
         </el-col>
     </div>
 </template>
@@ -108,7 +99,9 @@
 
 import { exportpDaySum, getPDaySum } from '@/api/dataStatic';
 import { pidList } from '@/utils/baseConst';
+import { getBeforeDate } from '@/utils/dateTime';
 import { dateFm } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
 
     data() {
@@ -125,10 +118,12 @@ export default {
             totalData: []
         };
     },
-
+    created() {
+        this.sumDate=getBeforeDate('date', 0, 0);
+    },
     methods: {
 
-
+        
 
         handleCurrentChange(val) {
             this.page = val;
@@ -149,7 +144,7 @@ export default {
             if (this.sumDate && this.sumDate.length > 1) {
                 query.sumDateStart = this.sumDate[0];
                 query.sumDateEnd = this.sumDate[1];
-                query.pid = this.pid || '';
+                query.pid = CURRENTPID || '';
             }
 
             return query;

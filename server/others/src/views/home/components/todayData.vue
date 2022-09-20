@@ -8,52 +8,97 @@
         </div>
         <el-descriptions direction="vertical" :column="15" border>
             <el-descriptions-item label-class-name="label_title1" label="总充值">{{ formObj.totalChargeAmt }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="vip充值">{{ formObj.vipChargeAmt }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="钻石充值">{{ formObj.diamondChargeAmt}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="vip订单数">{{formObj.vipChargeCount || 0}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="vip用户数(新/老)">{{(formObj.newUserVipChargeUserCount || 0)+"/"+(formObj.oldUserVipChargeUserCount || 0)}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="钻石订单数">{{ formObj.diamondChargeCount || 0 }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="钻石用户数(新/老)">{{(formObj.newUserDiamondChargeUserCount || 0) +"/"+(formObj.oldUserDiamondChargeUserCount||0)}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="登陆人数">{{ formObj.loginUserCount ||0}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="观影人数(新/老)">{{ (formObj.watchUserCount ||0)+"/"+(formObj.newUserWatchUserCount||0)+"/"+(formObj.oldUserWatchUserCount||0)}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="新增人数">{{ formObj.newUserCount || 0}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="落地页(PV/UV/DV)">{{ (formObj.guardVistCount || 0)+"/"+(formObj.guardUsersCount || 0)+"/"+(formObj.guardTotalDownCount || 0)}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="拉单数(成功/失败)">{{ (formObj.totalOrdersRechargeCount||0)+"/"+(formObj.totalRechargeCount||0)+"/"+(formObj.totalArriviedCount || 0)+"/"+((formObj.totalRechargeCount || 0)-(formObj.totalArriviedCount || 0))}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="支付成功率">{{ formObj.payRate||0 }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="新增付费率">{{ formObj.newUserPayRate }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="次日留存">{{formObj.retentionDay2}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="vip充值">{{ formObj.vipChargeAmt }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="钻石充值">{{ formObj.diamondChargeAmt}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="vip订单数">{{formObj.vipChargeCount || 0}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="vip用户数(新/老)">{{(formObj.newUserVipChargeUserCount || 0)+"/"+(formObj.oldUserVipChargeUserCount || 0)}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="钻石订单数">{{ formObj.diamondChargeCount || 0 }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="钻石用户数(新/老)">{{(formObj.newUserDiamondChargeUserCount || 0) +"/"+(formObj.oldUserDiamondChargeUserCount||0)}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="登陆人数">{{ formObj.loginUserCount ||0}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="观影人数(新/老)">{{ (formObj.watchUserCount ||0)+"/"+(formObj.newUserWatchUserCount||0)+"/"+(formObj.oldUserWatchUserCount||0)}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="新增人数">{{ formObj.newUserCount || 0}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="落地页(PV/UV/DV)">{{ (formObj.guardVistCount || 0)+"/"+(formObj.guardUsersCount || 0)+"/"+(formObj.guardTotalDownCount || 0)}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="拉单/下单(成功/失败)">
+                <el-popover placement="top-start" width="600" trigger="hover">
+                    <el-table :data="formObj.rechargeInfoList?formObj.rechargeInfoList.total:[]">
+                        <el-table-column width="80" property="payType" label="支付方式"></el-table-column>
+                        <el-table-column width="80" property="orderCnt" label="拉单数(去重复)"></el-table-column>
+                        <el-table-column width="80" property="totalCnt" label="下单数(去重复)"></el-table-column>
+                        <el-table-column width="80" property="arriviedCnt" label="到账数(去重复)"></el-table-column>
+                        <el-table-column width="80" property="orderRepeatCnt" label="拉单数"></el-table-column>
+                        <el-table-column width="80" property="totalRepeatCnt" label="下单数"></el-table-column>
+                        <el-table-column width="80" property="arriviedRepeatCnt" label="到账数"></el-table-column>
+                    </el-table>
+                    <el-button type="text" slot="reference">
+                        {{(formObj.totalOrdersRechargeCount||0)+"/"+(formObj.totalRechargeCount||0)+"/"+(formObj.totalArriviedCount || 0)+"/"+((formObj.totalRechargeCount || 0)-(formObj.totalArriviedCount || 0))}}
+                    </el-button>
+                </el-popover>
+            </el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="支付成功率">{{ formObj.payRate||0 }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="新增付费率">{{ formObj.newUserPayRate }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="次日留存">{{formObj.retentionDay2}}</el-descriptions-item>
 
-                        <el-descriptions-item label-class-name="label_title1" label="安卓">{{ formObj.androidTotalChargeAmt }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="安卓">{{ formObj.androidVipChargeAmt}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="安卓">{{ formObj.androidDiamondChargeAmt }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="安卓">{{ formObj.androidVipChargeCount || 0 }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="安卓">{{ (formObj.androidNewUserVipChargeUserCount || 0)+"/"+(formObj.androidOldUserVipChargeUserCount || 0) }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="安卓">{{ formObj.androidDiamondChargeCount || 0 }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="安卓">{{ (formObj.androidNewUserDiamondChargeUserCount || 0)+"/"+(formObj.androidOldUserDiamondChargeUserCount || 0) }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="安卓">{{ formObj.androidLoginUserCount || 0 }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="安卓">{{ (formObj.androidWatchUserCount || 0)+"/"+(formObj.androidNewUserWatchUserCount||0)+"/"+(formObj.androidOldUserWatchUserCount||0) }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="安卓">{{formObj.androidNewUserCount || 0}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="安卓">{{(formObj.androidGuardVistCount || 0)+"/"+(formObj.androidGuardUsersCount||0)+"/"+(formObj.androidGuardTotalDownCount||0)}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="安卓">{{(formObj.androidTotalOrdersRechargeCount||0)+"/"+(formObj.androidTotalRechargeCount || 0)+"/"+(formObj.androidArriviedCount || 0)+"/"+((formObj.androidTotalRechargeCount || 0)-(formObj.androidArriviedCount || 0))}} </el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="安卓">{{formObj.androidPayRate||0}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="安卓">{{formObj.androidNewUserPayRate}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="安卓">{{formObj.androidRetentionDay2}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="安卓">{{ formObj.androidTotalChargeAmt }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="安卓">{{ formObj.androidVipChargeAmt}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="安卓">{{ formObj.androidDiamondChargeAmt }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="安卓">{{ formObj.androidVipChargeCount || 0 }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="安卓">{{ (formObj.androidNewUserVipChargeUserCount || 0)+"/"+(formObj.androidOldUserVipChargeUserCount || 0) }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="安卓">{{ formObj.androidDiamondChargeCount || 0 }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="安卓">{{ (formObj.androidNewUserDiamondChargeUserCount || 0)+"/"+(formObj.androidOldUserDiamondChargeUserCount || 0) }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="安卓">{{ formObj.androidLoginUserCount || 0 }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="安卓">{{ (formObj.androidWatchUserCount || 0)+"/"+(formObj.androidNewUserWatchUserCount||0)+"/"+(formObj.androidOldUserWatchUserCount||0) }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="安卓">{{formObj.androidNewUserCount || 0}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="安卓">{{(formObj.androidGuardVistCount || 0)+"/"+(formObj.androidGuardUsersCount||0)+"/"+(formObj.androidGuardTotalDownCount||0)}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="安卓">
+                <el-popover placement="top-start" width="600" trigger="hover">
+                    <el-table :data="formObj.rechargeInfoList?formObj.rechargeInfoList.android:[]">
+                        <el-table-column width="80" property="payType" label="支付方式"></el-table-column>
+                        <el-table-column width="80" property="orderCnt" label="拉单数(去重复)"></el-table-column>
+                        <el-table-column width="80" property="totalCnt" label="下单数(去重复)"></el-table-column>
+                        <el-table-column width="80" property="arriviedCnt" label="到账数(去重复)"></el-table-column>
+                        <el-table-column width="80" property="orderRepeatCnt" label="拉单数"></el-table-column>
+                        <el-table-column width="80" property="totalRepeatCnt" label="下单数"></el-table-column>
+                        <el-table-column width="80" property="arriviedRepeatCnt" label="到账数"></el-table-column>
+                    </el-table>
+                    <el-button type="text" slot="reference">
+                        {{(formObj.androidTotalOrdersRechargeCount||0)+"/"+(formObj.androidTotalRechargeCount || 0)+"/"+(formObj.androidArriviedCount || 0)+"/"+((formObj.androidTotalRechargeCount || 0)-(formObj.androidArriviedCount || 0))}}
+                    </el-button>
+                </el-popover>
+            </el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="安卓">{{formObj.androidPayRate||0}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="安卓">{{formObj.androidNewUserPayRate}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="安卓">{{formObj.androidRetentionDay2}}</el-descriptions-item>
 
-                        <el-descriptions-item label-class-name="label_title1" label="ios">{{ formObj.iosTotalChargeAmt}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="ios">{{ formObj.iosVipChargeAmt }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="ios">{{ formObj.iosDiamondChargeAmt }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="ios">{{ formObj.iosVipChargeCount || 0}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="ios">{{ (formObj.iosNewUserVipChargeUserCount || 0)+"/"+(formObj.iosOldUserVipChargeUserCount || 0) }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="ios">{{ formObj.iosDiamondChargeCount }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="ios">{{ (formObj.iosNewUserDiamondChargeUserCount || 0)+"/"+(formObj.iosOldUserDiamondChargeUserCount || 0) }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="ios">{{formObj.iosLoginUserCount || 0}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="ios">{{(formObj.iosWatchUserCount || 0)+"/"+(formObj.iosNewUserWatchUserCount||0)+"/"+(formObj.iosOldUserWatchUserCount||0)}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="ios">{{ formObj.iosNewUserCount ||0}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="ios">{{(formObj.iosGuardVistCount || 0)+"/"+(formObj.iosGuardUsersCount||0)+"/"+(formObj.iosGuardTotalDownCount||0)}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="ios">{{(formObj.iosTotalOrdersRechargeCount||0)+"/"+(formObj.iosTotalRechargeCount || 0)+"/"+(formObj.iosArriviedCount || 0)+"/"+((formObj.iosTotalRechargeCount || 0)-(formObj.iosArriviedCount || 0))}}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="ios">{{ formObj.iosPayRate||0 }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title2" label="ios">{{ formObj.iosNewUserPayRate }}</el-descriptions-item>
-                        <el-descriptions-item label-class-name="label_title1" label="ios">{{ formObj.iosRetentionDay2 }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="ios">{{ formObj.iosTotalChargeAmt}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="ios">{{ formObj.iosVipChargeAmt }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="ios">{{ formObj.iosDiamondChargeAmt }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="ios">{{ formObj.iosVipChargeCount || 0}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="ios">{{ (formObj.iosNewUserVipChargeUserCount || 0)+"/"+(formObj.iosOldUserVipChargeUserCount || 0) }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="ios">{{ formObj.iosDiamondChargeCount }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="ios">{{ (formObj.iosNewUserDiamondChargeUserCount || 0)+"/"+(formObj.iosOldUserDiamondChargeUserCount || 0) }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="ios">{{formObj.iosLoginUserCount || 0}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="ios">{{(formObj.iosWatchUserCount || 0)+"/"+(formObj.iosNewUserWatchUserCount||0)+"/"+(formObj.iosOldUserWatchUserCount||0)}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="ios">{{ formObj.iosNewUserCount ||0}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="ios">{{(formObj.iosGuardVistCount || 0)+"/"+(formObj.iosGuardUsersCount||0)+"/"+(formObj.iosGuardTotalDownCount||0)}}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="ios">
+                <el-popover placement="top-start" width="600" trigger="hover">
+                    <el-table :data="formObj.rechargeInfoList?formObj.rechargeInfoList.ios:[]">
+                        <el-table-column width="80" property="payType" label="支付方式"></el-table-column>
+                        <el-table-column width="80" property="orderCnt" label="拉单数(去重复)"></el-table-column>
+                        <el-table-column width="80" property="totalCnt" label="下单数(去重复)"></el-table-column>
+                        <el-table-column width="80" property="arriviedCnt" label="到账数(去重复)"></el-table-column>
+                        <el-table-column width="80" property="orderRepeatCnt" label="拉单数"></el-table-column>
+                        <el-table-column width="80" property="totalRepeatCnt" label="下单数"></el-table-column>
+                        <el-table-column width="80" property="arriviedRepeatCnt" label="到账数"></el-table-column>
+                    </el-table>
+                    <el-button type="text" slot="reference">
+                        {{(formObj.iosTotalOrdersRechargeCount||0)+"/"+(formObj.iosTotalRechargeCount || 0)+"/"+(formObj.iosArriviedCount || 0)+"/"+((formObj.iosTotalRechargeCount || 0)-(formObj.iosArriviedCount || 0))}}
+                    </el-button>
+                </el-popover>
+            </el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="ios">{{ formObj.iosPayRate||0 }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title2" label="ios">{{ formObj.iosNewUserPayRate }}</el-descriptions-item>
+            <el-descriptions-item label-class-name="label_title1" label="ios">{{ formObj.iosRetentionDay2 }}</el-descriptions-item>
         </el-descriptions>
         <div style="display:flex;justify-content:space-between;align-items:center">
             <h4>24h走势图</h4>
@@ -76,6 +121,7 @@
 import { pDaySum, pRealDayLine } from '@/api/home';
 import LineMarker from '@/components/Charts/LineMarker.vue';
 import { dataConfig, dataConfig_recharge } from '@/utils/home';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import lineRender from './lineRender.vue';
 
 export default {
@@ -127,14 +173,14 @@ export default {
         },
 
         async loadInfo() {
-            let res = await this.$http(pDaySum, { pid: this.pid }, true);
+            let res = await this.$http(pDaySum, { pid: CURRENTPID }, true);
             if (res.code === 200) {
                 this.formObj = res.msg ? res.msg : {};
             }
         },
 
         async initChart() {
-            let res = await this.$http(pRealDayLine, { pid: this.pid }, true);
+            let res = await this.$http(pRealDayLine, { pid: CURRENTPID }, true);
             if (res.code === 200) {
                 this.formLine = res.msg;
             }

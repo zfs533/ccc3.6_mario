@@ -6,12 +6,12 @@
             <span class="title">渠道归属人</span>
         </el-col>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="归属人名称">
                 <el-input v-model="search.name" placeholder="请输入"></el-input>
             </el-form-item>
@@ -25,7 +25,7 @@
         </el-form>
 
         <el-table :data="pageData" min-width="100%" :border="true">
-            <el-table-column prop="pid" label="项目" align="center" :formatter="$pidFormat"></el-table-column>
+            <!-- <el-table-column prop="pid" label="项目" align="center" :formatter="$pidFormat"></el-table-column> -->
             <el-table-column prop="name" label="渠道归属人" align="center"></el-table-column>
             <el-table-column prop="createDate" label="创建时间" align="center" :formatter="$dateTimeFm"></el-table-column>
         </el-table>
@@ -36,13 +36,13 @@
 
         <el-dialog title="新增渠道归属人" :visible.sync="dialogAdd" width="500px">
             <el-form>
-                <el-form-item label="项目" label-width="100px">
+                <!-- <el-form-item label="项目" label-width="100px">
                     <el-select v-model="addInfo.pid" placeholder="请选择项目" style="width:110px">
                         <template v-for="item in pidList">
                             <el-option :key="item.pid" :label="item.name" :value="item.pid" v-if="item.pid!=undefined"></el-option>
                         </template>
                     </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="归属人名称" label-width="100px">
                     <el-input type="textarea" v-model="addInfo.name" :rows="2" placeholder="请输入归属人名称"></el-input>
                 </el-form-item>
@@ -59,6 +59,7 @@
 <script>
 import { getPartnerMany, insertOnePartnerdata } from '@/api/channel';
 import { pidList } from '@/utils/baseConst';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
 
     data() {
@@ -80,6 +81,7 @@ export default {
     },
 
     created() {
+        this.search.pid=CURRENTPID;
         this.loadData();
     },
 
@@ -113,6 +115,7 @@ export default {
         },
 
         showAdd() {
+            this.addInfo={pid:CURRENTPID};
             this.dialogAdd = true;
         },
 

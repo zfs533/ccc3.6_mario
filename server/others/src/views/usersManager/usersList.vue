@@ -1,12 +1,6 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
-                <el-select v-model="search.pid" placeholder="请选择项目">
-                    <el-option label="全部" :value="undefined"></el-option>
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="用户id">
                 <el-input v-model="search.uid" placeholder="请输入"></el-input>
             </el-form-item>
@@ -20,6 +14,12 @@
                     </el-option>
                 </el-select>
             </el-form-item>
+            <el-form-item label="vip等级">
+                    <el-select v-model="search.vipLevel" placeholder="请选择" style="width:160px">
+                        <el-option v-for="item in vipLevelPrivileges" :key="item.value" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
+                </el-form-item>
             <el-form-item label="手机号">
                 <el-input v-model="search.phone" placeholder="请输入"></el-input>
             </el-form-item>
@@ -30,7 +30,6 @@
             <el-form-item label="最后登陆ip">
                 <el-input v-model="search.loginIp" placeholder="请输入"></el-input>
             </el-form-item>
-
             <el-form-item label="注册ip">
                 <el-input v-model="search.registerIp" placeholder="请输入"></el-input>
             </el-form-item>
@@ -102,11 +101,11 @@
             <el-table-column v-if="showColumns.includes('username')" prop="username" label="用户昵称" align="center" width="120"></el-table-column>
             <el-table-column v-if="showColumns.includes('createdDate')" prop="createdDate" label="创建时间" sortable align="center" width="170" :formatter="$dateTimeFm"></el-table-column>
             <el-table-column v-if="showColumns.includes('lastLoginDate')" prop="lastLoginDate" label="最后登陆时间" sortable align="center" width="170" :formatter="$dateTimeFm"></el-table-column>
-            <el-table-column v-if="showColumns.includes('vipLevel') && isKefu" prop="vipLevel" label="vip等级" align="center" width="120"></el-table-column>
-            <el-table-column v-else-if="showColumns.includes('vipLevel')" prop="vipLevel" label="vip等级" align="center" width="120">
+            <el-table-column v-if="showColumns.includes('vipLevel') && isKefu" prop="vipLevel" label="vip等级" align="center" width="120" :formatter="vipLevelPrivilegesFormat"></el-table-column>
+            <el-table-column v-else-if="showColumns.includes('vipLevel')" prop="vipLevel" label="vip等级" align="center" width="120" >
                 <template slot-scope="scope">
                     <el-button type="text" style="margin:0 10px 0 0" @click="showEditVipView(scope.row)">
-                        {{ scope.row.vipLevel }}</el-button>
+                        {{ vipLevelPrivilegesFormat(0,0,scope.row.vipLevel) }}</el-button>
                 </template>
             </el-table-column>
             <el-table-column v-if="showColumns.includes('vipEffectiveTime')" prop="vipEffectiveTime" label="vip到期时间" sortable align="center" width="170" :formatter="$dateTimeFm"></el-table-column>
@@ -202,7 +201,7 @@
         <el-dialog :title="dialogTitle" :visible.sync="dialogVisible" width="600px">
             <el-form label-width="80px">
                 <el-form-item label="项目" v-if="!formObj.id">
-                    <el-select v-model="formObj.pid" placeholder="请选择项目">
+                    <el-select disabled="true" v-model="formObj.pid" placeholder="请选择项目">
                         <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid">
                         </el-option>
                     </el-select>
@@ -255,7 +254,11 @@
         <el-dialog :title="`编辑vip等级:${this.username}`" :visible.sync="editVipVisible" width="600px" @close="closeEditVipView">
             <el-form label-width="80px" ref="editVipModel" :model="editVipModel">
                 <el-form-item label="vip等级">
-                    <el-input v-model="editVipModel.vipLevel" placeholder="请输入"></el-input>
+                    <!-- <el-input v-model="editVipModel.vipLevel" placeholder="请输入"></el-input> -->
+                    <el-select v-model="editVipModel.vipLevel" placeholder="请选择" style="width:160px">
+                        <el-option v-for="item in vipLevelPrivileges" :key="item.value" :label="item.label" :value="item.value">
+                        </el-option>
+                    </el-select>
                 </el-form-item>
                 <el-form-item label="到期时间" v-show="vipEffectiveTimePicker">
                     <!--  <el-date-picker v-model="editVipModel.vipEffectiveTime" type="datetime" placeholder="选择日期" value-format="yyyy-MM-dd HH:mm:ss">
@@ -307,12 +310,14 @@
     </el-card>
 </template>
 <script>
+import { getVipLevelPrivileges } from '@/api/serverConfigure';
 import { addDiamond, bindInviter, createUser, getManyUserInfo, subDiamond, updateChannel, updateOne, updateType, updateVip, usersListExcel } from '@/api/usersManager';
 import attributionDialog from "@/components/attribution.vue";
 import followListDialog from "@/components/followList.vue";
 import imgUpload from '@/components/imgUpload.vue';
 import { pidList, sexList, UploadPath, userStatusList, UserTypeNew } from '@/utils/baseConst';
 import { deepClone, secToString, setImgView } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import userAmountDetailDialog from "./userAmountDetail.vue";
 export default {
     components: {
@@ -393,6 +398,7 @@ export default {
             editTypeVisible: false,
             editTypeModel: {},
             isKefu: false,
+            vipLevelPrivileges:[]
         };
     },
     created() {
@@ -414,6 +420,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.createdDateStart = this.dateArr1[0];
                 query.createdDateEnd = this.dateArr1[1];
@@ -429,13 +436,20 @@ export default {
             return query;
         },
         async loadData() {
-            let res = await this.$http(getManyUserInfo, { page: this.page, count: this.count, ...this.getQuery() });
-            if (res.code === 200) {
-                this.pageData = res.msg.pageData;
-                this.totalCount = res.msg.totalCount;
-
-                this.pageData = deepClone(await setImgView(res.msg.pageData, "avatarURL"));
+            let ret=await Promise.all([
+                this.$http(getManyUserInfo, { page: this.page, count: this.count, ...this.getQuery() }),
+                this.$http(getVipLevelPrivileges, { pid:CURRENTPID}, true),
+            ]);
+            if(ret[1].code===200){
+                this.vipLevelPrivileges=(ret[1]?.msg?.pageData||[]).map(e=>{return {value:e.vipLevel,label:e.name}});
+                this.vipLevelPrivileges.unshift({value:0,label:'无'})
             }
+            if (ret[0].code === 200) {
+                this.pageData = ret[0].msg.pageData;
+                this.totalCount = ret[0].msg.totalCount;
+                this.pageData = deepClone(await setImgView(ret[0].msg.pageData, "avatarURL"));
+            }
+            
         },
         async exportData() {
             await this.$confirm('确认导出吗？', '提示', {
@@ -474,6 +488,7 @@ export default {
         },
         async submitForm() {
             let query = { ...this.formObj };
+            query.pid = CURRENTPID;
             let res = {};
             if (query.id) {
                 res = await this.$http(updateOne, query);
@@ -488,7 +503,7 @@ export default {
             }
         },
         showAdd() {
-            this.formObj = { pid: "A" };
+            this.formObj = { pid: CURRENTPID };
             this.dialogTitle = "添加用户";
             this.dialogVisible = true;
         },
@@ -499,7 +514,8 @@ export default {
                 phone: row.phone,
                 sex: row.sex,
                 introduce: row.introduce,
-                avatarURLView: row.avatarURLView
+                avatarURLView: row.avatarURLView,
+                pid: CURRENTPID,
             };
             this.dialogTitle = "编辑用户";
             this.dialogVisible = true;
@@ -532,6 +548,7 @@ export default {
             this.$refs['editVipModel'].validate(async (valid) => {
                 if (valid) {
                     let editModel = { ...this.editVipModel };
+                    editModel.pid = CURRENTPID;
                     let res = await this.$http(updateVip, editModel);
                     if (res.code === 200) {
                         this.$message.success("vip等级修改成功");
@@ -587,7 +604,7 @@ export default {
         async showEditDiamondView(row) {
             this.username = row.username;
             this.diamond = row.diamond;
-            this.editDiamondModel = { uid: row.uid };
+            this.editDiamondModel = { uid: row.uid};
             this.editDiamondVisible = true;
         },
         async submitFormEditDiamond(action) {
@@ -624,6 +641,10 @@ export default {
         typeFormat(row, column, cellValue) {
             let item = this.typeList.find(i => i.value == cellValue);
             return item ? item.label : "普通用户";
+        },
+        vipLevelPrivilegesFormat(row, column, cellValue) {
+            let item = this.vipLevelPrivileges.find(i => i.value == cellValue);
+            return item ? item.label : "cellValue";
         },
 
         showAmountDetailView(row) {

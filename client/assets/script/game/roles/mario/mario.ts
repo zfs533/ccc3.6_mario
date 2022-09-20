@@ -1,10 +1,11 @@
-import { Animation, Collider2D, Component, IPhysics2DContact, RigidBody2D, UITransformComponent, v2, v3, Vec3, _decorator } from 'cc';
+import { Animation, BoxCollider2D, Collider2D, Component, IPhysics2DContact, PolygonCollider2D, RigidBody2D, UITransformComponent, v2, v3, Vec3, _decorator } from 'cc';
 import { clientEvent } from '../../../framework/clientEvent';
 import { Constant } from '../../../framework/constant';
 import { AnimMario, MarioStatus } from '../../../framework/enum';
 import { baseCollider } from '../../collider/baseCollider';
 import { brick } from '../../pieces/brick';
 import { whyBrick } from '../../pieces/whyBrick';
+import { roleManager } from '../roleManager';
 const { ccclass, property } = _decorator;
 
 @ccclass('mario')
@@ -60,8 +61,8 @@ export class mario extends baseCollider {
     update(deltaTime: number) {
         if (this._isDeath) return;
         //移动状态
+        let pos = this.node.getPosition();
         if (this._isMoving) {
-            let pos = this.node.getPosition();
             let scale = this.node.getScale();
             let offset = 0;
             if (this._isLeft) {
@@ -79,6 +80,10 @@ export class mario extends baseCollider {
             this.node.setScale(scale);
             clientEvent.dispatchEvent(Constant.EVENT_TYPE.MoveCamera, [pos, offset]);
         }
+        if (pos.y < -40) {
+            this._evtPlayMarioDeath(true);
+            return;
+        }
         //起跳状态
         if (this._isJumping) {
             let pos = this.node.getPosition();
@@ -93,6 +98,7 @@ export class mario extends baseCollider {
                 }
             }
         }
+
     }
     async playIdle() {
         if (this._isDeath) return;
@@ -112,21 +118,27 @@ export class mario extends baseCollider {
         this._status = MarioStatus.walk;
         this._anim.play(AnimMario.walk);
     }
-    async _evtPlayMarioDeath() {
+    async _evtPlayMarioDeath(isDown: boolean = false) {
         if (this._isDeath) return;
         if (!this._anim) {
             await this._loadAnimComponent();
         }
+        this.node.getComponent(PolygonCollider2D).destroy();
         this._status = MarioStatus.death;
         this._anim.play(AnimMario.death);
         this._isDeath = true;
         let pos = this.node.getPosition();
         this.node.setPosition(v3(pos.x, pos.y + 2, pos.z));
-        this._rigidbody2d.applyForce(v2(0, 1600), v2(0, 0), true);
+        if (isDown) {
+            this._rigidbody2d.applyForce(v2(0, 2800), v2(0, 0), true);
+        }
+        else {
+            this._rigidbody2d.applyForce(v2(0, 1300), v2(0, 0), true);
+        }
         //先让他复活
         this.scheduleOnce(() => {
-            this._isDeath = false;
-            this.playIdle();
+            this.node.destroy();
+            roleManager.Inst.addMarioToMap();
         }, 3);
     }
     async playSwim() {
@@ -182,7 +194,7 @@ export class mario extends baseCollider {
         this.playJump();
         let pos = this.node.getPosition();
         this.node.setPosition(v3(pos.x, pos.y + 2, pos.z));
-        this._rigidbody2d.applyForce(v2(0, 1300), v2(0, 0), true);
+        this._rigidbody2d.applyForce(v2(0, 950), v2(0, 0), true);
     }
 
     /**

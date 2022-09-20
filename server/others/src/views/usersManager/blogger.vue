@@ -71,7 +71,7 @@
 import { bloggerGet, bloggerUpdate } from '@/api/usersManager';
 import { UserTypeNew } from '@/utils/baseConst';
 import { deepClone, setImgView } from '@/utils/formatter';
-
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     components: {
     },
@@ -121,6 +121,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid=CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.createTimeStart = this.dateArr1[0];
                 query.createTimeEnd = this.dateArr1[1];

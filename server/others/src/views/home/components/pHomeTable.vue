@@ -1,11 +1,6 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目" v-if="pidList.length>1">
-                <el-select v-model="search.pid" placeholder="请选择项目">
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="时间">
                 <el-date-picker v-model="dateArr1" type="datetimerange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间"></el-date-picker>
             </el-form-item>
@@ -34,6 +29,7 @@ import { getPRealDays } from '@/api/home';
 import { pidList } from '@/utils/baseConst';
 import { getSession } from '@/utils/auth';
 import { getBeforeDate } from '@/utils/dateTime';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -59,6 +55,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.sumDateStart = this.dateArr1[0];
                 query.sumDateEnd = this.dateArr1[1];

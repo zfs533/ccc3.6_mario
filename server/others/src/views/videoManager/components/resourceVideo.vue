@@ -550,8 +550,8 @@ import imgUpload from '@/components/imgUpload.vue';
 import { getSession } from '@/utils/auth';
 import { payTypeList, pidList, sortList, timeTypeList, UploadPath, UserTypeNew, videoStateList } from '@/utils/baseConst';
 import { dateStartTimeFm, deepClone, getCategories, getWholeCategorieLabelArr, secToString, setImgView, sizeFormat } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import video from './video';
-
 export default {
     components: {
         Video: video,
@@ -964,7 +964,7 @@ export default {
                     if (!item && !this.isCheckedTags) {
                         this.isCheckedTags = true;
                         this.$message('标签未解析，已更新，请重新查询');
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags",CURRENTPID);
                     }
                 }
             }

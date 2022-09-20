@@ -53,8 +53,9 @@
 </template>
 
 <script>
-import { pidList } from '@/utils/baseConst';
 import { getListLoginHiddenAuth, resetLoginHiddenAuth } from '@/api/channel';
+import { pidList } from '@/utils/baseConst';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import showCooperationDialog from './showCooperation.vue';
 export default {
     components: {
@@ -73,6 +74,7 @@ export default {
     },
 
     created() {
+        this.search.pid=CURRENTPID;
         this.loadData();
     },
 

@@ -1,19 +1,19 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid" placeholder="请选择项目">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <!-- <el-form-item label="开关">
                 <el-switch v-model="formObj.enable" />
             </el-form-item> -->
             <el-form-item label="编码">
                 <el-input v-model="search.code" placeholder="请输入"></el-input>
             </el-form-item>
-            
+
             <el-form-item>
                 <el-button type="primary" @click="searchData">查询</el-button>
                 <!-- <el-button type="primary" @click="addOne">新增</el-button> -->
@@ -83,6 +83,7 @@ import { clientRes_addOne, clientRes_getMany, clientRes_update } from '@/api/vid
 import imgUpload from '@/components/imgUpload.vue';
 import { pidList, UploadPath } from '@/utils/baseConst';
 import { deepClone, setImgView } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
      components: {
         ImgUpload: imgUpload,
@@ -112,6 +113,7 @@ export default {
         },
         async loadData() {
             let query = { ...this.search };
+            query.pid=CURRENTPID;
             let res = await this.$http(clientRes_getMany, { page: this.page, count: this.count, ...query }, true);
             if (res.code === 200) {
                 this.pageData = res.msg.pageData;
@@ -137,7 +139,7 @@ export default {
         async editOne(row) {
             this.title="编辑"
             this.isUpdate=true;
-            this.formObj = { 
+            this.formObj = {
                     id:row._id,
                     pid:row.pid,
                     enable:row.enable,
@@ -151,18 +153,18 @@ export default {
         async addOne() {
             this.title="添加"
             this.isUpdate=false;
-            this.formObj={};
+            this.formObj={pid:CURRENTPID};
             this.dialogVisible=true;
         },
         booleanFormat(row, column, cellValue) {
             return cellValue ? "开" : "关";
         },
-  
+
         formatObjectId(r, a, cellValue) {
             if (!cellValue || cellValue.length !== 24) return "";
             return cellValue;
         },
-       
+
         async submitForm() {
             let query = { ...this.formObj };
             delete query.imgUrlView;
@@ -180,7 +182,7 @@ export default {
                     this.loadData();
                     this.dialogVisible = false;
                 }
-            } 
+            }
         }
     }
 };

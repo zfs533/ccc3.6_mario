@@ -83,6 +83,15 @@ export function videosExcel(data) {
 export function updateVideos(data) {
     return request.post(`api/admin/videoMananger/gameVideos/updateOne`, data);
 }
+
+// 编辑线上视频信息
+export function editAtlas(data) {
+  return request.post(`api/admin/videoMananger/gameVideos/editAtlas`, data);
+}
+// 编辑线上视频信息
+export function editAtlas1(data) {
+  return request.post(`api/admin/videoMananger/verifyVideos/editAtlas`, data);
+}
 // 克隆
 export function cloneContent(data) {
     return request.post(`api/admin/videoMananger/gameVideos/cloneOne`, data);

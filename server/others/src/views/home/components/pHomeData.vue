@@ -2,15 +2,8 @@
     <div class="adminHome">
         <el-card>
             <el-form :inline="true" class="demo-form-inline" v-if="pidList.length > 1 || !dataAuth">
-                <el-form-item label="项目" v-if="pidList.length > 1">
-                    <el-select v-model="search.pid" placeholder="请选择项目">
-                        <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid">
-                        </el-option>
-                    </el-select>
-                </el-form-item>
                 <el-form-item label="日期" v-if="!dataAuth">
-                    <el-date-picker v-model="search.sumDate" type="date" placeholder="选择日期"
-                        value-format="yyyy-MM-dd HH:mm:ss">
+                    <el-date-picker v-model="search.sumDate" type="date" placeholder="选择日期" value-format="yyyy-MM-dd HH:mm:ss">
                     </el-date-picker>
                 </el-form-item>
                 <el-form-item>
@@ -20,8 +13,7 @@
             <div style="display:flex;justify-content:space-between;align-items:center">
                 <h4>今日数据</h4>
                 <div>
-                    <el-button class="dashboard-winLoseButton" type="primary" size="mini" icon="el-icon-refresh"
-                        @click="searchDataTotal">刷新</el-button>
+                    <el-button class="dashboard-winLoseButton" type="primary" size="mini" icon="el-icon-refresh" @click="searchDataTotal">刷新</el-button>
                 </div>
             </div>
             <el-descriptions direction="vertical" :column="dataAuth == true ? 3 : 8" border>
@@ -79,15 +71,13 @@
             <div style="display:flex;justify-content:space-between;align-items:center">
                 <h4>24h走势图</h4>
                 <div>
-                    <el-button class="dashboard-winLoseButton" type="primary" size="mini" icon="el-icon-refresh"
-                        @click="searchData">刷新</el-button>
+                    <el-button class="dashboard-winLoseButton" type="primary" size="mini" icon="el-icon-refresh" @click="searchData">刷新</el-button>
                 </div>
             </div>
             <div style="display:flex">
                 <lineRender id="trend_userCount" :height="'420px'" :datas="{ ...data_line_count, text: '用户图' }">
                 </lineRender>
-                <lineRender v-if="!dataAuth" id="trend_charge" :height="'420px'"
-                    :datas="{ ...data_line_charge, text: '充值图' }">
+                <lineRender v-if="!dataAuth" id="trend_charge" :height="'420px'" :datas="{ ...data_line_charge, text: '充值图' }">
                 </lineRender>
             </div>
         </el-card>
@@ -100,6 +90,7 @@ import { getSession } from '@/utils/auth';
 import { pidList } from '@/utils/baseConst';
 import { dataConfig, dataConfig_recharge } from '@/utils/home';
 import lineRender from './lineRender.vue';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 
 export default {
     components: {
@@ -140,6 +131,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (!query.pid && pidList) {
                 query = { pid: pidList[0].pid, sumDate: this.search.sumDate };
             }

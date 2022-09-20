@@ -1,11 +1,6 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
-                <el-select v-model="search.pid" placeholder="请选择项目">
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="合作方式">
                 <el-select v-model="search.cooperationType" placeholder="请选择合作方式">
                     <el-option label="全部" :value="undefined"></el-option>
@@ -126,6 +121,7 @@ import { ChannelCooperationTypeList, ChannelLevel, pidList } from '@/utils/chann
 import { getBeforeDate } from '@/utils/dateTime';
 import { dateFm, secToString } from '@/utils/formatter';
 import channelDetail from './channelDetail.vue';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     components: {
         channelDetail: channelDetail,
@@ -205,7 +201,7 @@ export default {
         },
         showDetailView(row) {
             this.channel = row.channel;
-            this.pid = row.pid;
+            this.pid = CURRENTPID;
             this.sumDate = row.sumDate;
             this.openDialog = true;
         }, isShow(row) {

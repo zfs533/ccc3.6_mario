@@ -1,15 +1,8 @@
 <template>
     <el-card>
         <el-form :inline="true" style="width:100%">
-            <el-form-item label="项目">
-                <el-select v-model="search.pid">
-                    <el-option label="全部" :value="undefined"></el-option>
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="统计日期:">
-                <el-date-picker v-model="sumDate" type="daterange" value-format="yyyy-MM-dd HH:mm:ss"
-                    start-placeholder="开始时间" end-placeholder="结束时间">
+                <el-date-picker v-model="sumDate" type="daterange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间">
                 </el-date-picker>
             </el-form-item>
             <el-form-item>
@@ -32,7 +25,7 @@
             </el-table-column>
             <el-table-column prop="sumDate" label="统计日期" align="center" fixed width="120px" :formatter="dateFormat">
             </el-table-column>
-            <el-table-column prop="retentionDay2" label="2日留存" align="center"  ></el-table-column>
+            <el-table-column prop="retentionDay2" label="2日留存" align="center"></el-table-column>
             <el-table-column prop="retentionDay2_regCnt" label="2日注册数" align="center"></el-table-column>
             <el-table-column prop="retentionDay2_loignCnt" label="近2日登录数" align="center"></el-table-column>
             <el-table-column prop="androidRetentionDay2" label="安卓2日留存" align="center"></el-table-column>
@@ -41,8 +34,8 @@
             <el-table-column prop="iosRetentionDay2" label="ios2日留存" align="center"></el-table-column>
             <el-table-column prop="iosRetentionDay2_regCnt" label="ios2日注册数" align="center"></el-table-column>
             <el-table-column prop="iosRetentionDay2_loignCnt" label="ios近2日登录数" align="center"></el-table-column>
-        
-            <el-table-column prop="retentionDay3" label="3日留存" align="center" ></el-table-column>
+
+            <el-table-column prop="retentionDay3" label="3日留存" align="center"></el-table-column>
             <el-table-column prop="retentionDay3_regCnt" label="3日注册数" align="center"></el-table-column>
             <el-table-column prop="retentionDay3_loignCnt" label="近3日登录数" align="center"></el-table-column>
             <el-table-column prop="androidRetentionDay3" label="安卓3日留存" align="center"></el-table-column>
@@ -51,8 +44,8 @@
             <el-table-column prop="iosRetentionDay3" label="ios3日留存" align="center"></el-table-column>
             <el-table-column prop="iosRetentionDay3_regCnt" label="ios3日注册数" align="center"></el-table-column>
             <el-table-column prop="iosRetentionDay3_loignCnt" label="ios近3日登录数" align="center"></el-table-column>
-            
-            <el-table-column prop="retentionDay7" label="7日留存" align="center" ></el-table-column>
+
+            <el-table-column prop="retentionDay7" label="7日留存" align="center"></el-table-column>
             <el-table-column prop="retentionDay7_regCnt" label="7日注册数" align="center"></el-table-column>
             <el-table-column prop="retentionDay7_loignCnt" label="近7日登录数" align="center"></el-table-column>
             <el-table-column prop="androidRetentionDay7" label="安卓7日留存" align="center"></el-table-column>
@@ -63,9 +56,7 @@
             <el-table-column prop="iosRetentionDay7_loignCnt" label="ios近7日登录数" align="center"></el-table-column>
         </el-table>
         <el-col class="toolbar2">
-            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag"
-                @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page"
-                :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
+            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag" @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page" :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
         </el-col>
     </el-card>
 </template>
@@ -74,6 +65,7 @@ import { exportUserReletionStatData, getReletionStat } from '@/api/dataStatic';
 import { pidList } from '@/utils/baseConst';
 import { getBeforeDate } from '@/utils/dateTime';
 import { dateFm } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -88,7 +80,7 @@ export default {
         };
     },
     computed: {
-   
+
     },
     created() {
         // this.loadData();
@@ -109,6 +101,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.sumDate && this.sumDate.length > 1) {
                 query.sumDateBegin = this.sumDate[0];
                 query.sumDateEnd = this.sumDate[1];

@@ -60,7 +60,10 @@ export const auditStateList = [
     { value: 2, label: "审核通过" },
     { value: 3, label: "审核未通过" },
     { value: 4, label: "暂存" }
-
+];
+export const screenTypeList = [
+    { value: 1, label: "竖屏" },
+    { value: 2, label: "横屏" },
 ];
 
 //审核-视频排序
@@ -401,4 +404,8 @@ export const UploadPath={
      UserAvatar : "web/img/userAvater",
      // 分类
      CategorieImg : "web/img/categorie",
+     //标签分类三级封面图
+     TagsallImage : "web/img/categorie",
+     //标签管理/全部标签三级标签封面图
+     CategoriesImg  : "web/img/categorie"
 }

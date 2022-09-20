@@ -98,6 +98,7 @@
 <script>
 import { ordersList } from '@/api/withdrawMgr';
 import { billOrderState, pidList, refStatus, withdrawTypes } from '@/utils/baseConst';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -126,6 +127,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid=CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.createTimeBegin = this.dateArr1[0];
                 query.createTimeEnd = this.dateArr1[1];

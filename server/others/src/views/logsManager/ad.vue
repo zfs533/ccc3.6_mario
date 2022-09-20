@@ -1,12 +1,6 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
-                <el-select v-model="search.pid" placeholder="请选择项目">
-                    <el-option label="全部" :value="undefined"></el-option>
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="广告类型">
                 <el-select v-model="search.pos" placeholder="请选择广告类型">
                     <el-option label="全部" :value="undefined"></el-option>
@@ -21,8 +15,7 @@
                 </el-select>
             </el-form-item>
             <el-form-item label="日志时间">
-                <el-date-picker v-model="dateArr1" type="datetimerange" value-format="yyyy-MM-dd HH:mm:ss"
-                    start-placeholder="开始时间" end-placeholder="结束时间"></el-date-picker>
+                <el-date-picker v-model="dateArr1" type="datetimerange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间"></el-date-picker>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="searchData">查询</el-button>
@@ -36,10 +29,8 @@
             <el-table-column prop="adsInfo" label="广告信息" align="center">
                 <el-table-column prop="adsInfo.pid" label="项目" width="60" align="center" :formatter="$pidFormat">
                 </el-table-column>
-                <el-table-column prop="adsInfo.createdDate" label="创建时间" width="160" align="center"
-                    :formatter="$dateTimeFm"></el-table-column>
-                <el-table-column prop="adsInfo.updatedDate" label="修改时间" width="160" align="center"
-                    :formatter="$dateTimeFm"></el-table-column>
+                <el-table-column prop="adsInfo.createdDate" label="创建时间" width="160" align="center" :formatter="$dateTimeFm"></el-table-column>
+                <el-table-column prop="adsInfo.updatedDate" label="修改时间" width="160" align="center" :formatter="$dateTimeFm"></el-table-column>
                 <el-table-column prop="adsInfo.name" label="名称" align="center"></el-table-column>
                 <el-table-column prop="adsInfo.pos" label="广告类型" align="center" :formatter="typeFormat">
                 </el-table-column>
@@ -58,8 +49,7 @@
                     </template>
                 </el-table-column>
                 <el-table-column prop="adsInfo.index" label="排序" align="center" width="60"></el-table-column>
-                <el-table-column prop="adsInfo.enable" label="是否开启" align="center" :formatter="formatBoolean"
-                    width="60"></el-table-column>
+                <el-table-column prop="adsInfo.enable" label="是否开启" align="center" :formatter="formatBoolean" width="60"></el-table-column>
                 <el-table-column prop="adsInfo.opt" label="操作人" align="center" width="100"></el-table-column>
             </el-table-column>
 
@@ -88,9 +78,7 @@
 
         </el-table> -->
         <el-col class="toolbar2">
-            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag"
-                @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page"
-                :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
+            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag" @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page" :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
         </el-col>
     </el-card>
 </template>
@@ -99,6 +87,7 @@ import { getAdsIds, getAdsLog } from '@/api/logsManager';
 import imageShow from "@/components/imageShow/imageShow.vue";
 import { pidList, PosType } from '@/utils/baseConst';
 import { isArray } from '@/utils/validate';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     components: {
 
@@ -130,6 +119,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.logDateStart = this.dateArr1[0];
                 query.logDateEnd = this.dateArr1[1];

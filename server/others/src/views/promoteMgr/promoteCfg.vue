@@ -1,14 +1,14 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid" placeholder="请选择项目">
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="searchData">查询</el-button>
-            </el-form-item>
+            </el-form-item> -->
         </el-form>
         <h3>当前生效配置</h3>
         <el-table :data="pageData" :border="true" min-width="100%">
@@ -96,6 +96,7 @@
 import { getCurCfg, getNextCfg, updateNextCfg } from '@/api/promote.js';
 import { pidList } from '@/utils/baseConst';
 import { deepClone } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -119,6 +120,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             return query;
         },
         async loadData() {

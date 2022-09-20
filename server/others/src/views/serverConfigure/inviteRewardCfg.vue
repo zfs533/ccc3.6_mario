@@ -1,20 +1,20 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid" placeholder="请选择项目">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item>
                 <el-button type="primary" @click="searchData">查询</el-button>
                 <el-button type="primary" @click="addOne">添加</el-button>
             </el-form-item>
         </el-form>
         <el-table :data="pageData" :border="true" min-width="100%" max-height="800">
-            <el-table-column prop="pid" label="项目" width="100px" align="center" :formatter="$pidFormat">
-            </el-table-column>
+            <!-- <el-table-column prop="pid" label="项目" width="100px" align="center" :formatter="$pidFormat">
+            </el-table-column> -->
             <el-table-column prop="active" width="100px" label="开关" align="center" :formatter="boolFormat">
             </el-table-column>
             <el-table-column prop="vipLevel" width="200px" label="vip特权等级" align="center" :formatter="vipInfoFomat">
@@ -41,12 +41,12 @@
         </el-col>
         <el-dialog :title="this.title" :visible.sync="dialogVisible" width="600px">
             <el-form label-position="top" label-width="100px">
-                <el-form-item label="项目">
+                <!-- <el-form-item label="项目">
                     <el-select v-model="formObj.pid" placeholder="请选择项目">
                         <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid">
                         </el-option>
                     </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="开关">
                     <el-switch v-model="formObj.active" />
                 </el-form-item>
@@ -63,7 +63,7 @@
                     <el-input v-model="formObj.invitedRewardVipDays" placeholder="请输入"></el-input>
                 </el-form-item>
                 <el-form-item label="邀请人奖励">
-                    <el-button type="primary" style="float:right;margin-left:30px" @click="addLine()">添加</el-button>
+                    <!-- <el-button type="primary" style="float:right;margin-left:30px" @click="addLine()">添加</el-button> -->
                     <div v-for="(item, index) in formObj.inviteRewards" :key="index" style="display:flex;align-items:center;margin-bottom:10px">
                         邀请人数
                         <el-input v-model="item.inviteCnt" style="margin-left:10px;width:6rem;" />
@@ -85,6 +85,7 @@
 import { addInvitationData, getInvitationData, getVipLevelPrivileges, updateInvitationData } from '@/api/serverConfigure';
 import { JumpType, pidList, PosType, timeTypeList } from '@/utils/baseConst';
 import { deepClone, setImgView } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     components: {
     },
@@ -114,6 +115,7 @@ export default {
         };
     },
     async created() {
+        this.search.pid = CURRENTPID;
         this.loadData();
     },
     methods: {
@@ -126,7 +128,7 @@ export default {
         async loadData() {
             let ret = await Promise.all([
                 this.$http(getInvitationData, { page: this.page, count: this.count, ...this.search }),
-                this.$http(getVipLevelPrivileges, {}, true),
+                this.$http(getVipLevelPrivileges, {pid:CURRENTPID}, true),
             ]);
             // let errRet=ret.find(e=>e.code!==200);
             // let res=await this.$http(getInvitationData, { page: this.page, count: this.count, ...this.search });
@@ -157,6 +159,7 @@ export default {
         },
         async submitForm() {
             let query = { ...this.formObj };
+            query.pid = CURRENTPID;
             let res = {};
             // console.log("---------", query);
             if (query.id) {

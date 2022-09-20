@@ -15,9 +15,11 @@
                 <el-tooltip content="Global Size" effect="dark" placement="bottom">
                     <size-select id="size-select" class="right-menu-item hover-effect" />
                 </el-tooltip>
-
+                <span class="right-menu-item hover-effect">当前项目</span>
+                <el-select class="right-menu-item hover-effect" v-model="curPid" placeholder="当前项目" @change="checkPlatform">
+                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
+                </el-select>
             </template>
-
             <el-dropdown class="avatar-container right-menu-item hover-effect" trigger="click">
                 <div class="avatar-wrapper">
                     <img class="user-avatar">
@@ -43,6 +45,8 @@ import Hamburger from '@/components/Hamburger';
 import Search from '@/components/HeaderSearch';
 import Screenfull from '@/components/Screenfull';
 import SizeSelect from '@/components/SizeSelect';
+import { getSession } from '@/utils/auth';
+import { CURRENTPID, setCurrentPid } from '@/utils/myAsyncFn';
 import { mapGetters } from 'vuex';
 import { logout } from "../../api/user";
 
@@ -55,13 +59,35 @@ export default {
         SizeSelect,
         Search
     },
+    data() {
+        return {
+            pidList: [],
+            curPid: CURRENTPID,
+        };
+    },
     computed: {
         ...mapGetters([
             'sidebar',
             'device'
         ])
     },
+    created() {
+        this.pidList = getSession("pidList");
+        setCurrentPid();
+        this.curPid = CURRENTPID;
+    },
     methods: {
+        async checkPlatform(param) {
+            setCurrentPid(param);
+            console.log('加载新平台:'+param);
+            await Promise.all([
+                this.$store.dispatch("baseData/setCategories",param),
+                this.$store.dispatch("baseData/setTags",param)
+            ]);
+            
+            // clientEvent.dispatchEvent(clientEvent.EVENT_TYPE.changePid);
+             location.reload();
+        },
         toggleSideBar() {
             this.$store.dispatch('app/toggleSideBar');
         },
@@ -70,7 +96,6 @@ export default {
 
             if (res.code === 200) {
                 sessionStorage.clear();
-                // console.log(`/login?redirect=${this.$route.fullPath}`);
                 this.$router.push(`/login`);
 
                 location.reload();

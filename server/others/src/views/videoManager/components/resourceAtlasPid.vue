@@ -6,7 +6,8 @@
             </el-form-item>
             <el-form-item label="视频fromId">
                 <el-tooltip class="item" effect="dark" content="仓库内容Id;资源仓库Id" placement="top">
-                    <el-input v-model="search.fromId" placeholder="请输入"></el-input>
+                    <el-input v-model=" search.fromId" placeholder="请输入">
+                    </el-input>
                 </el-tooltip>
             </el-form-item>
             <el-form-item label="图集名称">
@@ -131,18 +132,9 @@
         <el-table :data="pageData" :border="true" min-width="100%" ref="table" @header-click="handleHeaderClick" @selection-change="handleSelectionChange" max-height="800px">
             <el-table-column type="selection" width="55" fixed="left">
             </el-table-column>
-            <el-table-column v-if="showColumns.includes('pid')" fixed prop="pid" label="项目" align="center" :formatter="$pidFormat" min-width="80"></el-table-column>
-            <el-table-column v-if="showColumns.includes('_id')" prop="_id" label="图集id" align="center" min-width="220" fixed="left"></el-table-column>
-            <el-table-column v-if="showColumns.includes('createdDate')" prop="createdDate" label="创建时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
-            <el-table-column v-if="showColumns.includes('optCreate')" prop="optCreate" label="审核时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
-            <el-table-column v-if="showColumns.includes('releaseDate')" prop="releaseDate" label="前端上线时间" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
-            <el-table-column v-if="showColumns.includes('updatedDate')" prop="updatedDate" label="修改时间" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
             <el-table-column v-if="showColumns.includes('name')" prop="name" label="图集名称" align="center" min-width="160"></el-table-column>
-            <el-table-column v-if="showColumns.includes('price')" prop="price" label="免费展示数量" align="center" min-width="160"></el-table-column>
             <el-table-column v-if="showColumns.includes('summary')" prop="summary" label="简介" align="center" min-width="200"></el-table-column>
-            <el-table-column v-if="showColumns.includes('fromId')" prop="fromId" label="资源仓库id" align="center" min-width="200"></el-table-column>
-            <el-table-column v-if="showColumns.includes('htmlContent')" prop="htmlContent" label="内容" align="center" min-width="100"></el-table-column>
-            <el-table-column v-if="showColumns.includes('imageUrls')" prop="imageUrls" label="图集" align="center" min-width="150">
+            <el-table-column label="图集" align="center" min-width="150">
                 <template slot-scope="scope" v-if="scope.row.imageUrlsView">
                     <div style="width: 100%; height: 220px;overflow:auto;">
                         <div v-for="itemimg in scope.row.imageUrlsView" :key="itemimg.id">
@@ -157,6 +149,15 @@
                     </div>
                 </template>
             </el-table-column>
+            <el-table-column v-if="showColumns.includes('pid')" fixed prop="pid" label="项目" align="center" :formatter="$pidFormat" min-width="80"></el-table-column>
+            <el-table-column v-if="showColumns.includes('_id')" prop="_id" label="图集id" align="center" min-width="220" fixed="left"></el-table-column>
+            <el-table-column v-if="showColumns.includes('createdDate')" prop="createdDate" label="创建时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('optCreate')" prop="optCreate" label="审核时间" sortable="false" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('releaseDate')" prop="releaseDate" label="前端上线时间" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('updatedDate')" prop="updatedDate" label="修改时间" align="center" :formatter="$dateTimeFm" min-width="170"></el-table-column>
+            <el-table-column v-if="showColumns.includes('fromId')" prop="fromId" label="资源仓库id" align="center" min-width="200"></el-table-column>
+            <el-table-column v-if="showColumns.includes('htmlContent')" prop="htmlContent" label="内容" align="center" min-width="100"></el-table-column>
+            <el-table-column v-if="showColumns.includes('price')" prop="price" label="免费展示数量" align="center" min-width="160"></el-table-column>
 
             <el-table-column v-if="showColumns.includes('state')" prop="state" label="状态" align="center" :formatter="stateFormat">
                 <!--  <template slot-scope="scope">
@@ -200,33 +201,39 @@
         <el-dialog title="图集播放" @keyup.native.27="dialogVideo=false" :visible.sync="dialogVideo" width="790px" :close-on-click-modal="true" @close="closePlayer">
             <Video ref="video" :url="videoUrl" />
         </el-dialog>
-        <el-dialog title="编辑信息" top="5%" :visible.sync="dialogVisible" width="600px">
+        <el-dialog title="编辑信息" top="10px" :visible.sync="dialogVisible" width="800px">
             <div class="x-flex-container" style="display:flex;  justify-content:space-between;">
                 <div style="width:450px">
-                    <el-form label-width="80px" :inline="true">
+                    <el-form label-width="100px" :inline="true">
                         <el-form-item label="图集名称">
-                            <el-input v-model="formObj.name" placeholder="请输入"></el-input>
+                            <el-input style="width:250px" v-model="formObj.name" placeholder="请输入"></el-input>
                         </el-form-item>
 
                         <el-form-item label="付费方式">
-                            <el-select v-model="formObj.payType" placeholder="请选择" style="width:160px">
+                            <el-select style="width:250px" v-model="formObj.payType" placeholder="请选择">
                                 <el-option v-for="item in payTypeList" :key="item.value" :label="item.label" :value="item.value"></el-option>
                             </el-select>
                         </el-form-item>
                         <el-form-item label="图集价格" v-if="formObj.payType===4">
-                            <el-input type="number" v-model="formObj.price" placeholder="请输入"></el-input>
+                            <el-input style="width:250px" type="number" v-model="formObj.price" placeholder="请输入"></el-input>
                         </el-form-item>
                         <el-form-item label="html内容">
-                            <el-input type="text" v-model="formObj.htmlContent" placeholder="请输入"></el-input>
+                            <el-input style="width:250px" type="text" v-model="formObj.htmlContent" placeholder="请输入"></el-input>
                         </el-form-item>
-                        <el-form-item label="排序" v-if="formObj.payType==4||formObj.payType==3">
-                            <el-input type="number" v-model="formObj.index" placeholder="不填则使用默认排序"></el-input>
+                        <el-form-item style="width:250px" label="排序" v-if="formObj.payType==4||formObj.payType==3">
+                            <el-input style="width:250px" type="number" v-model="formObj.index" placeholder="不填则使用默认排序"></el-input>
                         </el-form-item>
                         <el-form-item label="发布城市">
-                            <el-input v-model="formObj.location" placeholder="请输入"></el-input>
+                            <el-input style="width:250px" v-model="formObj.location" placeholder="请输入"></el-input>
                         </el-form-item>
                         <el-form-item label="图集来源">
-                            <el-input type="text" v-model="formObj.from" placeholder="请输入"></el-input>
+                            <el-input style="width:250px" type="text" v-model="formObj.from" placeholder="请输入"></el-input>
+                        </el-form-item>
+                        <el-form-item label="免费展示数量">
+                            <el-input style="width:250px" type="text" v-model="formObj.freeImgCnt" placeholder="请输入"></el-input>
+                        </el-form-item>
+                        <el-form-item label="图集分类">
+                            <el-cascader style="width:250px" v-model="formObj.categorie" :options="categorieList" :props="{ expandTrigger: 'hover',multiple: true,checkStrictly:true,value:'id',label:'name' }" @change="handleChange"></el-cascader>
                         </el-form-item>
                         <el-form-item label="状态">
                             <el-radio-group v-model="formObj.state" style="width:300px">
@@ -235,6 +242,30 @@
                                 <el-radio :label="3">等待复审</el-radio>
                             </el-radio-group>
                         </el-form-item>
+
+                        <!----------------------------------------------------------------------------------->
+
+                        <el-form-item label="图集标签">
+                            <div class="el-input-tag input-tag-wrapper" :class="[size ? 'el-input-tag--' + size : '']" @click="focusTagInput">
+                                <el-tag v-for="(tag, idx) in innerTags" v-bind="$attrs" :key="tag" :size="size" :closable="!readOnly" :disable-transitions="false" @close="remove(idx)">
+                                    {{tag}}
+                                </el-tag>
+                            </div>
+                            <div :border="true" style=" display: inline-block !important;margin: 5px 0px;border:1px solid #ddd;width:100%">
+                                <input style="margin:0 10px" ref="tagInput" v-if="!readOnly" class="tag-input" placeholder="请输入" @input="inputTag" :value="newTag" @keydown="inputKeydown" @keydown.delete.stop="removeLastTag" />
+                                <el-switch v-model="isshowTags" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
+                                <el-switch style="margin:0 30px" v-model="isshowAllTags" inactive-text="展示全部标签" @change="showAllChiange" active-color="#13ce66" inactive-color="#ff4949"></el-switch>
+                            </div>
+                        </el-form-item>
+
+                        <div v-if="isshowTags" style="height:300px;width:100%;overflow:auto;">
+                            <el-checkbox-group v-model="mtagsgroup" @change="handleCheckedCitiesChange1">
+                                <el-checkbox class="checkbox" v-for="(item,index) in mtags" :label="item.value" :key="index">
+                                    {{item.label}}</el-checkbox>
+                            </el-checkbox-group>
+                        </div>
+                        <!----------------------------------------------------------------------------------->
+
                         <br>
                         <el-form-item label="发布人">
                             <el-select v-model="formObj.publisherId" filterable placeholder="请选择">
@@ -266,6 +297,9 @@
             <el-form label-width="80px" :inline="true">
                 <el-form-item label="图集名称">
                     <el-input readonly v-model="formObj.name" placeholder="请输入"></el-input>
+                </el-form-item>
+                <el-form-item label="简介">
+                    <el-input readonly type="textarea" style="width:300px" :rows="5" v-model="formObj.summary" placeholder="请输入"></el-input>
                 </el-form-item>
 
                 <el-form-item label="付费方式">
@@ -371,14 +405,15 @@
     </el-card>
 </template>
 <script>
-import { blukUpdateVideos, cloneContent, downVideo, getManyVideos, getPublisher, updateCoverURL, updateState, updateVideos, videosExcel } from '@/api/videoManager';
+import { clientEvent } from '@/api/eventManager';
+import { blukUpdateVideos, cloneContent, downVideo, editAtlas, getManyVideos, getPublisher, updateCoverURL, updateState, videosExcel } from '@/api/videoManager';
 import imgListUpload from '@/components/imgListUpload.vue';
 import imgUpload from '@/components/imgUpload.vue';
 import { getSession } from '@/utils/auth';
 import { payTypeList, pidList, sortList, timeTypeList, UploadPath, UserTypeNew, videoStateList } from '@/utils/baseConst';
 import { dateStartTimeFm, deepClone, getCategories, getWholeCategorieLabelArr, secToString, setImgView, sizeFormat } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import video from './video';
-
 export default {
     components: {
         Video: video,
@@ -400,6 +435,7 @@ export default {
     data() {
         return {
             isshowTags: true,
+            isshowAllTags: false,
             mtags: [],
             UploadPath: UploadPath,
             origintags: [],
@@ -473,7 +509,20 @@ export default {
         };
     },
     computed: {
+        inputKeydown(e) {
+            if (e.key == "Enter") {
+                let item = this.getItemTagByLabel(this.newTag);
+                if (item) {
+                    this.mtagsgroup.push(item.value);
+                    this.innerTags.push(item.label);
+                    this.newTag = "";
+                    this.showAllChiange();
+                    this.$refs.tagInput.focus();
+                }
+            }
+        },
         categorieList() {
+            this.pid = CURRENTPID;
             return this.$store.getters.categorieList.filter(e => e.id === this.pid);
         },
         tagsList() {
@@ -485,14 +534,21 @@ export default {
                     this.mtags.push(item);
                     this.origintags.push(item);
                 }
+                this.showAllChiange();
             }
             return this.$store.getters.tagsList;
         }
     },
     async created() {
-        this.loadData();
+        this.pidList = getSession("pidList");
         this.loadUsers();
+        this.loadData();
+        this.tagsList;
         this.isMaterial = this.$route.name.includes('material');
+        clientEvent.off(clientEvent.EVENT_TYPE.changePid);
+        clientEvent.on(clientEvent.EVENT_TYPE.changePid, () => {
+            this.refreshData();
+        }, this);
     },
     watch: {
         value() {
@@ -508,6 +564,15 @@ export default {
         this.showColumns = this.columns.map(i => i.value);
     },
     methods: {
+        showAllChiange() {
+            console.log(this.mtags);
+            if (this.isshowAllTags) {
+                this.mtags = this.origintags;
+            }
+            else {
+                this.mtags = this.origintags.slice(0, 80);
+            }
+        },
         uploadedAtlas(path) {
             this.isChangedAtlas = true;
             this.formObj.imageUrls.push(path);
@@ -634,6 +699,7 @@ export default {
             }
         },
         async loadData2() {
+            this.pid = CURRENTPID;
             let res = await this.$http(getManyVideos, { type: "atlas", pid: this.pid, page: this.page, count: this.count, ...this.sortT });
             if (res.code === 200) {
                 this.isCheckedTags = false;
@@ -643,6 +709,7 @@ export default {
             }
         },
         async loadData() {
+            this.pid = CURRENTPID;
             let res = await this.$http(getManyVideos, { type: "atlas", pid: this.pid, page: this.page, count: this.count, ...this.getQuery() });
             if (res && res.code === 200) {
                 this.isCheckedTags = false;
@@ -650,6 +717,7 @@ export default {
                 this.pageData = res.msg.pageData;
                 this.totalCount = res.msg.totalCount;
                 this.pageData = deepClone(await setImgView(res.msg.pageData, "imageUrls"));
+                console.log(this.pageData);
                 this.$nextTick(() => {
                     // 指定选中状态
                     if (this.selectList.length) {
@@ -671,6 +739,7 @@ export default {
             }
         },
         async exportData() {
+            this.pid = CURRENTPID;
             let res = await this.$http(videosExcel, { pid: this.pid, page: this.page, count: this.count, ...this.getQuery() });
             if (res.code === 200) {
                 this.$message.success("导出任务创建成功");
@@ -778,7 +847,7 @@ export default {
                     if (!item && !this.isCheckedTags) {
                         this.isCheckedTags = true;
                         this.$message('标签未解析，已更新，请重新查询');
-                        this.$store.dispatch("baseData/setTags");
+                        this.$store.dispatch("baseData/setTags",CURRENTPID);
                     }
                 }
             }
@@ -806,12 +875,19 @@ export default {
             let query = { ...this.formObj };
             let item = this.restaurants.find(i => i.label === query.publisherId);
             query.publisherId = query.publisherId;
-            // query.categorie = query.categorie ? query.categorie.map(i => i[i.length - 1]) : [];
+            query.categorie = query.categorie ? query.categorie.map(i => i[i.length - 1]) : [];
+            let list = [];
+            for (let i = 0; i < query.categorie.length; i++) {
+                if (query.categorie[i].length > 10) {
+                    list.push(query.categorie[i]);
+                }
+            }
+            query.categorie = list;
             delete query.imageUrlsView;
             if (!this.isChangedAtlas) {
                 delete query.imageUrls;
             }
-            let res = await this.$http(updateVideos, query);
+            let res = await this.$http(editAtlas, query);
             if (res.code === 200) {
                 this.$message.success("修改成功");
                 this.dialogVisible = false;
@@ -846,19 +922,21 @@ export default {
             }
             this.formObj = {
                 id: row._id,
-                pid: this.pid,
+                pid: CURRENTPID,
                 pids: row.pids,
                 name: row.name,
                 payType: row.payType,
                 state: row.state,
+                freeImgCnt: row.freeImgCnt,
                 summary: row.summary,
                 imageUrls: row.imageUrls,
                 publisherId: row.publisherId,
                 from: row.from,
+                tags: row.tags,
                 price: row.price,
                 location: row.location,
                 htmlContent: row.htmlContent,
-                categorie: [],
+                categorie: getCategories(row.categorie, this.categorieList),
             };
             let list = row.categorie;
             for (let i = 0; i < list.length; i++) {
@@ -871,6 +949,12 @@ export default {
                 this.dialogVisible = true;
             }
             this.mtagsgroup.splice(0);
+            this.innerTags.splice(0);
+            for (let i = 0; i < this.formObj.tags.length; i++) {
+                let item = this.getItemTag(this.formObj.tags[i]);
+                this.mtagsgroup.push(item.value);
+                this.innerTags.push(item.label);
+            }
         },
         cloneOne(row) {
             this.formObj = {
@@ -913,6 +997,7 @@ export default {
         },
         async updatePayType(action) {
             let query = { ...this.blukEditObj };
+            query.pid = CURRENTPID;
             let idArr = [];
             this.selectList.forEach(element => {
                 idArr.push(element._id);
@@ -1104,6 +1189,7 @@ export default {
             };
         },
         async loadUsers() {
+            this.pid = CURRENTPID;
             let res = await this.$http(getPublisher, { pid: this.pid }, true);
             if (res.code === 200 && res.msg) {
                 this.restaurants = res.msg.map(i => {
@@ -1116,7 +1202,7 @@ export default {
                     return { value: i.type, label: userType.label, children: i.list };
                 });
                 this.searchPublisherArr.unshift({ value: -1, label: '发布人缺失', children: [{ uid: -1, name: "发布人缺失" }] });
-                this.searchPublisherArr.unshift({ value: 0, label: '不搜索', children: [{ uid: undefined, name: "无" }] });
+                this.searchPublisherArr.unshift({ value: 0, label: '不搜索', children: [{ uid: undefined, name: "全部" }] });
             }
         },
         async downVideo(row) {

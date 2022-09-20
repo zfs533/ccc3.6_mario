@@ -110,3 +110,30 @@ export function checkTokenTime() {
         }
     });
 }
+
+
+// export let CURRENTPID = CURRENTPID||getSession("curPid");
+export let CURRENTPID = (()=>{
+    let pid = getSession("curpid");
+    if(pid){
+        return pid;
+    }
+    let list = getSession("pidList");
+    return list && list.length>0?list[0].pid:"A";
+})();
+/**
+ * 设置当前平台pid
+ */
+export async function setCurrentPid(pid) {
+    let pidList = getSession("pidList");
+    let curPid = ""
+    if(pidList.length>0 && !pid && !getSession("curpid")){
+        curPid =pid?pid:  pidList[0].pid;
+    }
+    else{
+        curPid = pid?pid: pidList[0].pid;
+    }
+    setSession("curpid",curPid);
+}
+
+

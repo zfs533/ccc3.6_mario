@@ -11,10 +11,12 @@
             <el-table-column prop="name" label="账号" align="center" />
             <el-table-column prop="role" label="角色名" align="center" />
             <el-table-column prop="pwd" label="密码" align="center" />
+            <el-table-column prop="pids" label="项目" :formatter="pidFormat" align="center" />
             <el-table-column fixed="right" label="操作" align="center">
                 <template slot-scope="scope">
                     <el-button type="text" @click="showUpdate(scope.row,1)">修改角色</el-button>
                     <el-button type="text" @click="showUpdate(scope.row,2)">修改密码</el-button>
+                    <el-button type="text" @click="showUpdate(scope.row,3)">编辑</el-button>
                     <!-- <el-button type="text" @click="delLine(scope.row.name)">删除账号</el-button> -->
                     <!-- <el-button type="text" @click="resetCode(scope.row.act)" v-if="scope.row.loginDate">重置谷歌验证</el-button> -->
                 </template>
@@ -34,6 +36,11 @@
                 <el-form-item label="角色">
                     <el-select v-model="formObj.role" placeholder="请选择">
                         <el-option v-for="(item,index) in roleList" :key="index" :label="item.name" :value="item.name"></el-option>
+                    </el-select>
+                </el-form-item>
+                <el-form-item label="项目">
+                    <el-select multiple v-model="formObj.pids" placeholder="请选择">
+                        <el-option v-for="(item,index) in pidList" :key="index" :label="item.name" :value="item.pid"></el-option>
                     </el-select>
                 </el-form-item>
             </el-form>
@@ -72,11 +79,28 @@
                 <el-button type="primary" @click="submitPwd">确 定</el-button>
             </div>
         </el-dialog>
+        <el-dialog title="项目编辑" :visible.sync="dialogPids" width="400px">
+            <el-form>
+                <el-form-item label="账号" label-width="80px">
+                    {{formObj.id}}
+                </el-form-item>
+                <el-form-item label="项目">
+                    <el-select multiple v-model="formObj.pids" placeholder="请选择">
+                        <el-option v-for="(item,index) in pidList" :key="index" :label="item.name" :value="item.pid"></el-option>
+                    </el-select>
+                </el-form-item>
+            </el-form>
+            <div slot="footer" class="dialog-footer">
+                <el-button @click="dialogPids = false">取 消</el-button>
+                <el-button type="primary" @click="submitChannel">确 定</el-button>
+            </div>
+        </el-dialog>
     </el-card>
 </template>
 <script>
 import { removeInvalid } from '@/utils/formatter';
-import { create, changePwd, grantRole, acdelete, getUsers, getByType } from '@/api/account';
+import { create, changePwd, grantRole, changePids, acdelete, getUsers, getPidList, getByType } from '@/api/account';
+import { clientEvent } from '@/api/eventManager';
 import { getSession } from '@/utils/auth';
 
 export default {
@@ -96,10 +120,16 @@ export default {
             dialogRole: false,
             dialogPwd: false,
             dialogAct: false,
-            formObj: { role: undefined }
+            formObj: { role: undefined },
+            pidList: [],
+            dialogPids: false,
         };
     },
     created() {
+        clientEvent.off(clientEvent.EVENT_TYPE.changePid);
+        clientEvent.on(clientEvent.EVENT_TYPE.changePid, () => {
+            this.loadData();
+        }, this);
         this.loadData();
         this.loadRoleNames();
     },
@@ -123,6 +153,27 @@ export default {
                 this.pageData = res.msg.data;
                 this.totalCount = res.msg.totalCount;
             }
+            res = await this.$http(getPidList, query, true);
+            if (res.code === 200) {
+                this.pidList = res.msg;
+            }
+
+        },
+        pidFormat(row) {
+            let res = "";
+            for (let i = 0; i < row.pids.length; i++) {
+                for (let j = 0; j < this.pidList.length; j++) {
+                    if (row.pids[i] == this.pidList[j].pid) {
+                        if (i == row.pids.length - 1) {
+                            res += this.pidList[j].name;
+                        }
+                        else {
+                            res += this.pidList[j].name + "/";
+                        }
+                    }
+                }
+            }
+            return res;
         },
 
         statusFormat(row, column, cellValue) {
@@ -140,13 +191,16 @@ export default {
             this.loadData();
         },
         showUpdate(row, type) {
-            this.formObj = { name: row.name, role: undefined, id: row._id };
+            this.formObj = { name: row.name, role: undefined, id: row._id, pids: row.pids };
             if (type === 1) {
                 this.formObj.role = row.role;
                 this.dialogRole = true;
             }
             else if (type === 2) {
                 this.dialogPwd = true;
+            }
+            else if (type === 3) {
+                this.dialogPids = true;
             }
         },
         async delLine(name) {
@@ -177,8 +231,17 @@ export default {
                 this.dialogPwd = false;
             }
         },
+        async submitChannel() {
+            let query = this.formObj;
+            let res = await this.$http(changePids, query);
+            if (res.code === 200) {
+                this.$message.success("修改成功");
+                this.dialogPids = false;
+            }
+        },
         async submitAct() {
             let query = this.formObj;
+            console.log(query);
             let res = await this.$http(create, query);
             if (res.code === 200) {
                 this.loadData();

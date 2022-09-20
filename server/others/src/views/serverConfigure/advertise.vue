@@ -1,12 +1,12 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
+            <!-- <el-form-item label="项目">
                 <el-select v-model="search.pid" placeholder="请选择项目">
                     <el-option label="全部" :value="undefined"></el-option>
                     <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
                 </el-select>
-            </el-form-item>
+            </el-form-item> -->
             <el-form-item label="创建时间">
                 <el-date-picker v-model="dateArr1" type="datetimerange" value-format="yyyy-MM-dd HH:mm:ss" start-placeholder="开始时间" end-placeholder="结束时间"></el-date-picker>
             </el-form-item>
@@ -30,7 +30,7 @@
             </el-form-item>
         </el-form>
         <el-table :data="pageData" :border="true" min-width="100%" max-height="800">
-            <el-table-column prop="pid" label="项目" align="center" :formatter="$pidFormat"></el-table-column>
+            <!-- <el-table-column prop="pid" label="项目" align="center" :formatter="$pidFormat"></el-table-column> -->
             <el-table-column prop="createdDate" label="创建时间" align="center" :formatter="$dateTimeFm"></el-table-column>
             <el-table-column prop="updatedDate" label="修改时间" align="center" :formatter="$dateTimeFm"></el-table-column>
             <el-table-column prop="name" label="名称" align="center"></el-table-column>
@@ -49,6 +49,7 @@
                 </template>
             </el-table-column>
             <el-table-column prop="index" label="排序" align="center" width="100"></el-table-column>
+            <el-table-column prop="weight" label="权重" align="center" width="100"></el-table-column>
             <el-table-column prop="enable" label="是否开启" align="center" :formatter="formatBoolean" width="100">
             </el-table-column>
             <el-table-column prop="opt" label="操作人" align="center" width="100"></el-table-column>
@@ -64,12 +65,12 @@
         </el-col>
         <el-dialog :title="this.title" :visible.sync="dialogVisible" width="600px">
             <el-form label-width="100px">
-                <el-form-item label="项目">
+                <!-- <el-form-item label="项目">
                     <el-select v-model="formObj.pid" placeholder="请选择项目">
                         <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid">
                         </el-option>
                     </el-select>
-                </el-form-item>
+                </el-form-item> -->
                 <el-form-item label="广告位置">
                     <el-select v-model="formObj.pos" placeholder="请选择广告位置">
                         <el-option v-for="item in PosType" :key="item.value" :label="item.label" :value="item.value">
@@ -109,7 +110,9 @@
                 <el-form-item label="排序">
                     <el-input type="number" v-model="formObj.index" placeholder="请输入"></el-input>
                 </el-form-item>
-
+                <el-form-item label="权重">
+                    <el-input type="number" v-model="formObj.weight" placeholder="请输入"></el-input>
+                </el-form-item>
                 <el-form-item label="是否开启">
                     <el-radio-group v-model="formObj.enable">
                         <el-radio :label="true">是</el-radio>
@@ -129,6 +132,7 @@ import { addAdvertise, deleteAdvertise, getAdvertiseData, updateAdvertise } from
 import imgUpload from '@/components/imgUpload.vue';
 import { AdType, JumpType, pidList, PosType, timeTypeList, UploadPath } from '@/utils/baseConst';
 import { deepClone, setImgView } from '@/utils/formatter';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     components: {
         ImgUpload: imgUpload
@@ -169,6 +173,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.createdDateStart = this.dateArr1[0];
                 query.createdDateEnd = this.dateArr1[1];
@@ -243,6 +248,7 @@ export default {
                 coverUrl: row.coverUrl,
                 coverUrlView: row.coverUrlView,
                 enable: row.enable,
+                weight: row.weight,
                 type: row.type,
             };
             this.copyUrl = row.url;

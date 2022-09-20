@@ -1,12 +1,6 @@
 <template>
     <el-card>
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
-                <el-select v-model="search.pid" placeholder="请选择项目">
-                    <el-option label="全部" :value="undefined"></el-option>
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
-            </el-form-item>
             <el-form-item label="一级渠道">
                 <el-input v-model="search.channel" placeholder="请输入"></el-input>
             </el-form-item>
@@ -47,6 +41,7 @@ import { getChannelStat, mainChannelTotalExcel } from '@/api/dataStatic';
 import { pidList } from '@/utils/channelShield';
 import { dateFm } from '@/utils/formatter';
 import { getBeforeDate } from '@/utils/dateTime';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -68,6 +63,7 @@ export default {
     methods: {
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.sumDateBegin = this.dateArr1[0];
                 query.sumDateEnd = this.dateArr1[1];

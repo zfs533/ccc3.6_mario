@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, Vec3, tween, v3, SpriteFrame, SpriteComponent, Sprite, instantiate, Enum } from 'cc';
+import { _decorator, Component, Node, Vec3, tween, v3, SpriteFrame, SpriteComponent, Sprite, instantiate, Enum, UITransform, UITransformComponent } from 'cc';
 import { clientEvent } from '../../framework/clientEvent';
 import { Constant } from '../../framework/constant';
 import { ResourcePath, whyType } from '../../framework/enum';
@@ -43,25 +43,31 @@ export class whyBrick extends Component {
 
     private async _loadMushroom() {
         this._isGot = true;
+        this._setFinishedStatus();
         let pre = await resourceUtil.loadPiecesPriefabRes("mushroom")
         if (pre) {
-            //加载金币并发送消除金币事件
+            //蘑菇mushroom
             let node = instantiate(pre) as Node;
-            this.node.addChild(node);
+            let pos = this.node.getWorldPosition();
+            node.setWorldPosition(pos);
+            clientEvent.dispatchEvent(Constant.EVENT_TYPE.AddToMap, node);
         }
     }
     private async _playMoveUp() {
         this._isGot = true;
-        resourceUtil.setSpriteFrame(ResourcePath.textureBrick + "whyDown", this.node.getComponent(Sprite), () => { });
+        this._setFinishedStatus();
         let pre = await resourceUtil.loadPiecesPriefabRes("coin")
         if (pre) {
             //加载金币并发送消除金币事件
             let node = instantiate(pre) as Node;
             this.node.addChild(node);
             let idx = node.getComponent(coin).index;
-            console.log("222222");
             clientEvent.dispatchEvent(Constant.EVENT_TYPE.CoinRemove + idx);
         }
+    }
+
+    private _setFinishedStatus() {
+        resourceUtil.setSpriteFrame(ResourcePath.textureBrick + "whyDown", this.node.getComponent(Sprite), () => { });
     }
 
     private _init() {

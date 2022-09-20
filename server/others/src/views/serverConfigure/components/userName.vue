@@ -25,9 +25,10 @@
     </el-card>
 </template>
 <script>
+import { addUserInitUrn, delUserInitUrn, getUserInitUrnCfg } from '@/api/serverConfigure';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 import * as XLSX from 'xlsx';
 
-import { getUserInitUrnCfg, addUserInitUrn, delUserInitUrn } from '@/api/serverConfigure';
 export default {
     props: {
         pid: '',
@@ -58,7 +59,7 @@ export default {
             this.loadData();
         },
         async loadData() {
-            let res = await this.$http(getUserInitUrnCfg, { page: this.page, count: this.count, pid: this.pid }, true);
+            let res = await this.$http(getUserInitUrnCfg, { page: this.page, count: this.count, pid: CURRENTPID }, true);
             if (res.code === 200) {
                 this.pageData = res.msg.pageData;
                 this.totalCount = res.msg.totalCount;

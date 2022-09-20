@@ -5,6 +5,16 @@ export function create(data) {
     return request.post(`api/admin/accManager/account/create`, data);
 }
 
+// 平台列表
+export function getPidList() {
+    return request.get(`api/admin/accManager/account/getPidList`);
+}
+
+// 修改平台
+export function changePids(data) {
+    return request.post(`api/admin/accManager/account/changePids`, data);
+}
+
 // 修改密码 
 export function changePwd(data) {
     return request.post(`api/admin/accManager/account/changePwd`, data);

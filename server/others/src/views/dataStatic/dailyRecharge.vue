@@ -1,18 +1,17 @@
 <template>
     <el-card class="dashboard-second">
         <el-form :inline="true" class="demo-form-inline">
-            <el-form-item label="项目">
-                <el-select v-model="search.pid">
+            <el-form-item label="充值类型">
+                 <el-select v-model="search.payType">
                     <el-option label="全部" :value="undefined"></el-option>
-                    <el-option v-for="item in pidList" :key="item.pid" :label="item.name" :value="item.pid"></el-option>
-                </el-select>
+                    <el-option v-for="item in payTypesEnum" :key="item.value" :label="item.label" :value="item.value"></el-option>
+                 </el-select>
             </el-form-item>
             <el-form-item label="充值渠道">
                 <el-input v-model="search.channel"></el-input>
             </el-form-item>
             <el-form-item label="时间范围">
-                <el-date-picker v-model="dateArr1" value-format="yyyy-MM-dd HH:mm:ss" type="datetimerange"
-                    placeholder="选择时间范围"></el-date-picker>
+                <el-date-picker v-model="dateArr1" value-format="yyyy-MM-dd HH:mm:ss" type="datetimerange" placeholder="选择时间范围"></el-date-picker>
             </el-form-item>
             <el-form-item>
                 <el-button type="primary" @click="searchData">查询</el-button>
@@ -51,16 +50,15 @@
             <el-table-column prop="arrivalUsdtMoney" label="回调到账USDT" min-width="120" align="center"></el-table-column>
         </el-table>
         <el-col class="toolbar2">
-            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag"
-                @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page"
-                :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
+            <el-pagination layout="total,sizes,prev, pager, next,jumper" class="pag" @current-change="handleCurrentChange" @size-change="handleSizeChange" :current-page="page" :page-sizes="[10, 20, 30, 50]" :page-size="count" :total="totalCount"></el-pagination>
         </el-col>
     </el-card>
 </template>
 <script>
 import { daySumExport, getDaySum, getRealDay } from "@/api/dataStatic";
-import { payTypes, pidList } from "@/utils/baseConst";
+import { PayTypesEnum, pidList } from "@/utils/baseConst";
 import { getBeforeDate } from '@/utils/dateTime';
+import { CURRENTPID } from '@/utils/myAsyncFn';
 export default {
     data() {
         return {
@@ -69,7 +67,7 @@ export default {
             count: 10,
             totalCount: 10,
             pageData: [],
-            payTypes: payTypes,
+            payTypesEnum:PayTypesEnum,
             dateArr1: [],
             dateArr2: [],
             pidList: pidList,
@@ -107,6 +105,7 @@ export default {
         };
     },
     created() {
+        this.dateArr1=getBeforeDate('date', 0, 0)
         this.loadData();
     },
     methods: {
@@ -120,6 +119,7 @@ export default {
         },
         getQuery() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.dateArr1 && this.dateArr1.length > 1) {
                 query.startTime = this.dateArr1[0];
                 query.endTime = this.dateArr1[1];
@@ -128,6 +128,7 @@ export default {
         },
         getQueryShortTime() {
             let query = { ...this.search };
+            query.pid = CURRENTPID;
             if (this.dateArr2 && this.dateArr2.length > 1) {
                 query.startTime = this.dateArr2[0];
                 query.endTime = this.dateArr2[1];
@@ -161,7 +162,7 @@ export default {
             this.loadData();
         },
         payTypeFormat(row) {
-            let item = payTypes.find(i => i.value === row.payType);
+            let item = this.payTypesEnum.find(i => i.value === row.payType);
             return item ? item.label : row.payType;
         },
         minuteChange() {
