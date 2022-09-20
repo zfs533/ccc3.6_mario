@@ -7,3 +7,13 @@
 /client/assets/res/.DS_Store
 /client/assets/script/.DS_Store
 /client/assets/resources/.DS_Store
+/client/assets/script/game/.DS_Store
+/client/assets/res/textures/.DS_Store
+/client/assets/res/textures/roles/.DS_Store
+/client/assets/res/textures/roles/enemy/.DS_Store
+/server/others/src/.DS_Store
+/server/others/src/store/.DS_Store
+/server/others/src/layout/.DS_Store
+/server/others/src/layout/components/.DS_Store
+/server/others/src/views/.DS_Store
+/server/others/src/views/home/.DS_Store
