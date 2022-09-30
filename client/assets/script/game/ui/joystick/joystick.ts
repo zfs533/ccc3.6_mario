@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, EventTouch, Vec3, UITransform, input, Input, EventKeyboard, KeyCode, view } from 'cc';
+import { AudioManager } from '../../../framework/audioManager';
 import { clientEvent } from '../../../framework/clientEvent';
 import { Constant } from '../../../framework/constant';
 const { ccclass, property } = _decorator;
@@ -123,6 +124,7 @@ export class joystick extends Component {
     }
 
     private jump() {
+        AudioManager.instance.playSound("smb_jumpsmall",false);
         clientEvent.dispatchEvent(Constant.EVENT_TYPE.Jump);
     }
 }

@@ -1,4 +1,5 @@
 import { _decorator, Component, Node } from 'cc';
+import { AudioManager } from '../../framework/audioManager';
 import { clientEvent } from '../../framework/clientEvent';
 import { Constant } from '../../framework/constant';
 import { getBrickIndex } from '../../net/util';
@@ -10,6 +11,8 @@ export class coin extends Component {
     onEnable() {
         this._init();
         this._addListener();
+        AudioManager.instance.playSound("smb_coin",false);
+        
     }
 
 

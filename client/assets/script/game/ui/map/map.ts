@@ -1,4 +1,5 @@
 import { _decorator, Component, Node, Vec3, director, UITransformComponent, view, v3, physics, Physics2DUtils, PhysicsSystem2D, EPhysics2DDrawFlags, instantiate } from 'cc';
+import { AudioManager } from '../../../framework/audioManager';
 import { clientEvent } from '../../../framework/clientEvent';
 import { Constant } from '../../../framework/constant';
 import { resourceUtil } from '../../../framework/resourceUtil';
@@ -19,6 +20,7 @@ export class map extends Component {
         }
         this._init();
         this._addListener();
+        AudioManager.instance.playMusic("mario_bg",true);
     }
 
     private _addListener() {

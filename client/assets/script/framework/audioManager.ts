@@ -1,5 +1,5 @@
 import { lodash } from './lodash';
-import { _decorator, AudioClip } from "cc";
+import { _decorator, AudioClip, AudioSource } from "cc";
 import { StorageManager } from "./storageManager";
 import { resourceUtil } from "./resourceUtil";
 const { ccclass, property } = _decorator;
@@ -29,12 +29,6 @@ export class AudioManager  {
         this.soundVolume = this.getAudioSetting(false) ? 1 : 0;
 
         // let isPlayAudio = true;
-        // if (window.jsb) {
-        //     //获取安卓是否可以播放音乐，例如打电话时候音乐关闭
-        //     isPlayAudio = jsb.reflection.callStaticMethod('com/cocos/game/AppActivity', 'isPlayAudio', '()Z');
-        //     StorageManager.instance.setGlobalData('music', String(isPlayAudio));
-        //     StorageManager.instance.setGlobalData('sound', String(isPlayAudio));
-        // }
         
         // this.musicVolume = isPlayAudio ? 0.8: 0;
         // this.soundVolume = isPlayAudio ? 1 : 0;
@@ -57,9 +51,6 @@ export class AudioManager  {
         } else {
             state = StorageManager.instance.getGlobalData('sound');
         }
-
-        // console.log('Config for [' + (isMusic ? 'Music' : 'Sound') + '] is ' + state);
-
         return !state || state === 'true' ? true : false;
     }
 
@@ -69,7 +60,7 @@ export class AudioManager  {
      * @param {Boolean} loop 是否循环播放
      */
     playMusic (name:string, loop: boolean) {
-        let path = 'audio/music/' + name;
+        let path = 'audio/' + name;
         //微信特殊处理，除一开场的音乐，其余的放在子包里头
         // if (name !== 'click') {
         //     path =  path; //微信特殊处理，除一开场的音乐，其余的放在子包里头
@@ -81,8 +72,12 @@ export class AudioManager  {
             tmp.clip = clip;
             tmp.loop = loop;
             tmp.isMusic = true;
-            this.audios[name] = tmp;
-            this.playClip(name, true); 
+            // this.audios[name] = tmp;
+            // this.playClip(name, true); 
+            let as = new AudioSource();
+            as.clip = clip;
+            as.loop = loop;
+            as.play();
         });     
     }
 
@@ -97,11 +92,9 @@ export class AudioManager  {
         }
 
         //音效一般是多个的，不会只有一个
-        let path = 'audio/sound/';
-        // if (name !== 'click') {
-        //     path = path; //微信特殊处理，除一开场的音乐，其余的放在子包里头
-        // }
-
+        let path = 'audio/';
+        
+        // name = "smb_coin";
         resourceUtil.loadRes(path + name, AudioClip, (err: any, clip: any)=> {
             let tmp = {} as any;
             tmp.clip = clip;
@@ -113,16 +106,20 @@ export class AudioManager  {
                 this.audios[name] = tmp;
                 clip.setLoop(loop);
             }
+            let as = new AudioSource();
+            as.clip = clip;
+            as.volume = this.soundVolume;
+            as.play();
 
-            clip.setVolume(this.soundVolume);
+            // clip.setVolume(this.soundVolume);
             
-            clip.playOneShot();
+            // clip.playOneShot();
 
-            clip.once('ended', ()=>{
-                lodash.remove(this.arrSound, (obj: any)=>{
-                    return obj.clip === tmp.clip;
-                });
-            })
+            // clip.once('ended', ()=>{
+            //     lodash.remove(this.arrSound, (obj: any)=>{
+            //         return obj.clip === tmp.clip;
+            //     });
+            // })
         });
     }
 
