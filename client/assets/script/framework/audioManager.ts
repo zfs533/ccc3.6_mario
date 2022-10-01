@@ -65,14 +65,16 @@ export class AudioManager  {
         // if (name !== 'click') {
         //     path =  path; //微信特殊处理，除一开场的音乐，其余的放在子包里头
         // }
-
+        if(this.audios[name] && this.audios[name].loop){
+            return;
+        }
          
         resourceUtil.loadRes(path, AudioClip, (err: any, clip: any)=> {
             let tmp = {} as any;
             tmp.clip = clip;
             tmp.loop = loop;
             tmp.isMusic = true;
-            // this.audios[name] = tmp;
+            this.audios[name] = tmp;
             // this.playClip(name, true); 
             let as = new AudioSource();
             as.clip = clip;

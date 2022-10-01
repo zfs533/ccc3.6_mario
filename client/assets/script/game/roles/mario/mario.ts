@@ -138,8 +138,9 @@ export class mario extends baseCollider {
         //先让他复活
         this.scheduleOnce(() => {
             this.node.destroy();
-            roleManager.Inst.addMarioToMap();
-        }, 3);
+            // roleManager.Inst.addMarioToMap();
+            clientEvent.dispatchEvent(Constant.EVENT_TYPE.TranslateScenes);
+        }, 2);
     }
     async playSwim() {
         if (this._isDeath) return;

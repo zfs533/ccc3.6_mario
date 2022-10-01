@@ -39,7 +39,7 @@ export class clientEvent {
      */
     public static off(eventName: string, handler: Function, target: any) {
         var handlerList = clientEvent._handlers[eventName];
-
+        console.log("event_off: "+eventName);
         if (!handlerList) {
             return;
         }

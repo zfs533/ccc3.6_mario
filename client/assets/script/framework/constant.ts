@@ -13,7 +13,8 @@ export class Constant {
         TopWhy: "TopWhy",
         CoinRemove: "CoinRemove",
         MarioDeath: "MarioDeath",
-        AddToMap: "AddToMap"
+        AddToMap: "AddToMap",
+        TranslateScenes:"TranslateScenes"
     }
 
     public static MoveSpeed: number = 10;
