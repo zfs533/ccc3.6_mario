@@ -1,4 +1,4 @@
-import { _decorator, Component, Node, view, v3 } from 'cc';
+import { _decorator, Component, Node, view, v3, Vec3, TERRAIN_HEIGHT_BASE } from 'cc';
 import { clientEvent } from '../../../framework/clientEvent';
 import { Constant } from '../../../framework/constant';
 import { roleManager } from '../../roles/roleManager';
@@ -8,24 +8,33 @@ const { ccclass, property } = _decorator;
 export class camera extends Component {
 
     private _winSize = view.getVisibleSize();
+    private _originPos:Vec3 = new Vec3(0,0,1000);
     start() {
         this._init();
         this._addListener();
     }
 
     private _init() {
-
+        console.log("camera pos: "+this.node.getPosition());
     }
 
     private _addListener() {
         clientEvent.on(Constant.EVENT_TYPE.MoveCamera, this._evtMoveCamera, this);
+        clientEvent.on(Constant.EVENT_TYPE.InitCameraPos, this._evtInitCameraPos, this);
         clientEvent.on(Constant.EVENT_TYPE.StopCamera, this._evtStopCamera, this);
     }
 
     onDestroy() {
         clientEvent.off(Constant.EVENT_TYPE.MoveCamera, this._evtMoveCamera, this);
+        clientEvent.off(Constant.EVENT_TYPE.InitCameraPos, this._evtInitCameraPos, this);
         clientEvent.off(Constant.EVENT_TYPE.StopCamera, this._evtStopCamera, this);
     }
+
+    private _evtInitCameraPos(rolePos:Vec3){
+        let pos = v3(rolePos.x-400,this._originPos.y,this._originPos.z);
+        this.node.setPosition(pos);
+    }
+
     /**
      * 摄像机跟着角色移动
      * @param params 
@@ -34,24 +43,38 @@ export class camera extends Component {
         let rolePos = params[0];
         let offset: number = params[1];
         let pos = this.node.getPosition();
-        if (rolePos.x - pos.x > this._winSize.width / 2) {
-            this._startMove(offset);
+        // if (rolePos.x - pos.x > this._winSize.width / 2) {
+            // console.log(rolePos.x - pos.x);
+        //     this._startMove(offset);
+        // }
+        // else 
+        // if (rolePos.x > this._winSize.width / 2 && rolePos.x - pos.x < 400) {
+        //     this._startMove(offset);
+        // }
+        // else if (rolePos.x <= this._winSize.width / 2 && pos.x > 0) {
+        //     this._startMove(offset);
+        // }
+        let gap = this._winSize.width/2;
+        if(pos.x>=0 && rolePos.x>=400){
+            pos.x = rolePos.x-gap+280;
+            if(pos.x>= Constant.CurMapWidth-this._winSize.width){
+                pos.x = Constant.CurMapWidth - this._winSize.width;
+            }
+            this.node.setPosition(pos);
         }
-        else if (rolePos.x > this._winSize.width / 2 && rolePos.x - pos.x < 400) {
-            this._startMove(offset);
-        }
-        else if (rolePos.x <= this._winSize.width / 2 && pos.x > 0) {
-            this._startMove(offset);
+        else{
+            this.node.setPosition(v3(0,pos.y,pos.z));
         }
     }
 
     private _startMove(offset: number) {
         let pos = this.node.getPosition();
         pos.x += offset;
+        if(pos.x>= Constant.CurMapWidth-this._winSize.width){
+            pos.x = Constant.CurMapWidth - this._winSize.width;
+        }
         this.node.setPosition(pos);
         clientEvent.dispatchEvent(Constant.EVENT_TYPE.MoveJoystick, offset);
-        let rPos = v3(pos.x + this._winSize.width / 4, 700, 0);
-        roleManager.Inst.setInitRolePos(rPos);
     }
     private _evtStopCamera() {
 

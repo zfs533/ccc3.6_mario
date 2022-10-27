@@ -14,10 +14,12 @@ export class Constant {
         CoinRemove: "CoinRemove",
         MarioDeath: "MarioDeath",
         AddToMap: "AddToMap",
-        TranslateScenes:"TranslateScenes"
+        TranslateScenes:"TranslateScenes",
+        InitCameraPos:"InitCameraPos",
     }
 
     public static MoveSpeed: number = 10;
     public static MapScale: number = 2.5;
     public static CurMap: map = null;
+    public static CurMapWidth:number = 0;
 }

@@ -76,6 +76,7 @@ export class mario extends baseCollider {
                 scale.x = Math.abs(scale.x);
             }
             if (pos.x <= 8) { pos.x = 8; }
+            if(pos.x>=Constant.CurMapWidth - 8){pos.x = Constant.CurMapWidth - 8;}
             this.node.setPosition(pos);
             this.node.setScale(scale);
             clientEvent.dispatchEvent(Constant.EVENT_TYPE.MoveCamera, [pos, offset]);
@@ -135,6 +136,8 @@ export class mario extends baseCollider {
         else {
             this._rigidbody2d.applyForce(v2(0, 1300), v2(0, 0), true);
         }
+        //刷新复活点
+        roleManager.Inst.updateAlivePoint(pos)
         //先让他复活
         this.scheduleOnce(() => {
             this.node.destroy();

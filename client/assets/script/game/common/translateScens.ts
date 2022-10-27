@@ -6,7 +6,6 @@ export class translateScens extends Component {
     start() {
         this.scheduleOnce(()=>{
             director.loadScene("mario");
-
         },0.2)
     }
 

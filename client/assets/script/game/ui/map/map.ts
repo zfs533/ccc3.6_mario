@@ -39,10 +39,12 @@ export class map extends Component {
 
     private async _init() {
         Constant.CurMap = this;
+        Constant.CurMapWidth = this.node.getComponent(UITransformComponent).width;
         let size = view.getVisibleSize();
         roleManager.Inst.init(this);
         roleManager.Inst.addMarioToMap();
         roleManager.Inst.addEnemyToMap();
+
     }
 
     update(deltaTime: number) {
