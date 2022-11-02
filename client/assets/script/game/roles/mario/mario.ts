@@ -1,4 +1,4 @@
-import { Animation, BoxCollider2D, Collider2D, Component, IPhysics2DContact, PolygonCollider2D, RigidBody2D, UITransformComponent, v2, v3, Vec3, _decorator } from 'cc';
+import { Animation, BoxCollider2D, Collider2D, Component, IPhysics2DContact, PolygonCollider2D, RigidBody2D, tween, UITransformComponent, v2, v3, Vec3, _decorator } from 'cc';
 import { clientEvent } from '../../../framework/clientEvent';
 import { Constant } from '../../../framework/constant';
 import { AnimMario, MarioStatus } from '../../../framework/enum';
@@ -19,6 +19,7 @@ export class mario extends baseCollider {
     private _jumpPoint: Vec3 = new Vec3();
     private _status: number = 0;
     private _isDeath: boolean = false;
+    private _lastColliderName:string = "";
     start() {
         super.start();
         this._init();
@@ -224,6 +225,10 @@ export class mario extends baseCollider {
         // 只在两个碰撞体开始接触时被调用一次
         let name1 = selfCollider.node.name;
         let name2 = otherCollider.node.name;
+        if(name2 == this._lastColliderName)return;
+        this._lastColliderName = name2;
+        console.log(name2);
+        if(Constant.FinishedGame)return;
         if (name1.includes("mario") && name2.includes("wall")) {
             let bk: brick = otherCollider.node.getComponent(brick);
             let points = contact.getWorldManifold().points;
@@ -275,6 +280,14 @@ export class mario extends baseCollider {
         else if (name1.includes("mario") && name2.includes("ladder")) {
             let mar = selfCollider.node.getComponent(mario);
             mar.handleColliderUp();
+        }
+        if(name2.includes("flag")){
+            console.log("finished_game");
+            Constant.FinishedGame = true;
+            clientEvent.dispatchEvent(Constant.EVENT_TYPE.FinishedGame);
+            let pos = this.node.getPosition();
+            let nPos = v3(pos.x+300,pos.y,pos.z);
+            tween(this.node).to(2,{position:nPos});
         }
     }
 }

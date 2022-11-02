@@ -16,10 +16,12 @@ export class Constant {
         AddToMap: "AddToMap",
         TranslateScenes:"TranslateScenes",
         InitCameraPos:"InitCameraPos",
+        FinishedGame:"FinishedGame",
     }
 
     public static MoveSpeed: number = 10;
     public static MapScale: number = 2.5;
     public static CurMap: map = null;
     public static CurMapWidth:number = 0;
+    public static FinishedGame:boolean = false;
 }

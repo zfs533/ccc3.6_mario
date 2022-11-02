@@ -17,8 +17,10 @@ export class joystick extends Component {
     private _R: number = 100;
     private _offsetX: number = 0;
     private _isUseful: boolean = false;
+    private _isFinished: boolean = false;
 
     onLoad() {
+        this._init();
         this.node.on(Node.EventType.TOUCH_START, this._touchStart, this);
         this.node.on(Node.EventType.TOUCH_MOVE, this._touchMove, this);
         this.node.on(Node.EventType.TOUCH_END, this._touchEnd, this);
@@ -27,13 +29,17 @@ export class joystick extends Component {
         //键盘事件test
         input.on(Input.EventType.KEY_DOWN, this._onKeyDown, this);
         input.on(Input.EventType.KEY_UP, this._onKeyUp, this);
+
     }
 
-    start() {
+    _init() {
+        this._isFinished = false;
+        Constant.FinishedGame = true;
         this._addListener();
     }
 
     private _touchStart(event: EventTouch) {
+        if(this._isFinished)return;
         let touchPos = event.getUILocation();
         let pos = new Vec3(touchPos.x, touchPos.y, 0);
         pos = this.node.parent?.getComponent(UITransform)?.convertToNodeSpaceAR(pos) as Vec3;
@@ -55,6 +61,7 @@ export class joystick extends Component {
         pos = this.joystickBg?.getComponent(UITransform)?.convertToNodeSpaceAR(pos) as Vec3;
         pos.x += this._offsetX;
 
+        pos.x = pos.x+this.node.getPosition().x;
         let radius = Math.atan2(pos.y, pos.x);
         let out = new Vec3();
         let len = Vec3.subtract(out, pos, new Vec3()).length();
@@ -79,6 +86,7 @@ export class joystick extends Component {
         clientEvent.dispatchEvent(Constant.EVENT_TYPE.Stop);
     }
     private _onKeyDown(e: EventKeyboard) {
+        if(this._isFinished)return;
         switch (e.keyCode) {
             case KeyCode.KEY_A:
                 clientEvent.dispatchEvent(Constant.EVENT_TYPE.Move, new Vec3(-1, 0, 0));
@@ -92,6 +100,7 @@ export class joystick extends Component {
         }
     }
     private _onKeyUp(e: EventKeyboard) {
+        if(this._isFinished)return;
         switch (e.keyCode) {
             case KeyCode.KEY_A:
                 clientEvent.dispatchEvent(Constant.EVENT_TYPE.Stop);
@@ -103,29 +112,34 @@ export class joystick extends Component {
     }
 
     private _addListener() {
-        console.log("addlistener")
         clientEvent.on(Constant.EVENT_TYPE.MoveJoystick, this._evtMoveJoystick, this);
+        clientEvent.on(Constant.EVENT_TYPE.FinishedGame, this._evtFinishedGame, this);
     }
 
     onDestroy() {
         clientEvent.off(Constant.EVENT_TYPE.MoveJoystick, this._evtMoveJoystick, this);
+        clientEvent.off(Constant.EVENT_TYPE.FinishedGame, this._evtFinishedGame, this);
     }
 
     /**
      * 摇杆跟着摄像机移动
      * @param params 
      */
-    private _evtMoveJoystick(offset: number) {
+    private _evtMoveJoystick(point:Vec3) {
         let pos = this.node.getPosition();
-        pos.x += offset;
-        this._offsetX += offset;
-        // console.log(pos);
+        pos.x = point.x;
         this.node.setPosition(pos);
     }
 
     private jump() {
         AudioManager.instance.playSound("smb_jumpsmall",false);
         clientEvent.dispatchEvent(Constant.EVENT_TYPE.Jump);
+    }
+
+    private _evtFinishedGame(){
+        if(this._isFinished)return;
+        this._isFinished = true;
+        Constant.FinishedGame = true;
     }
 }
 

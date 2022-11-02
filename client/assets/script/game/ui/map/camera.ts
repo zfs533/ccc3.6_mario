@@ -33,6 +33,7 @@ export class camera extends Component {
     private _evtInitCameraPos(rolePos:Vec3){
         let pos = v3(rolePos.x-400,this._originPos.y,this._originPos.z);
         this.node.setPosition(pos);
+        clientEvent.dispatchEvent(Constant.EVENT_TYPE.MoveJoystick, pos);
     }
 
     /**
@@ -43,17 +44,7 @@ export class camera extends Component {
         let rolePos = params[0];
         let offset: number = params[1];
         let pos = this.node.getPosition();
-        // if (rolePos.x - pos.x > this._winSize.width / 2) {
-            // console.log(rolePos.x - pos.x);
-        //     this._startMove(offset);
-        // }
-        // else 
-        // if (rolePos.x > this._winSize.width / 2 && rolePos.x - pos.x < 400) {
-        //     this._startMove(offset);
-        // }
-        // else if (rolePos.x <= this._winSize.width / 2 && pos.x > 0) {
-        //     this._startMove(offset);
-        // }
+        
         let gap = this._winSize.width/2;
         if(pos.x>=0 && rolePos.x>=400){
             pos.x = rolePos.x-gap+280;
@@ -61,6 +52,7 @@ export class camera extends Component {
                 pos.x = Constant.CurMapWidth - this._winSize.width;
             }
             this.node.setPosition(pos);
+            clientEvent.dispatchEvent(Constant.EVENT_TYPE.MoveJoystick, pos);
         }
         else{
             this.node.setPosition(v3(0,pos.y,pos.z));
