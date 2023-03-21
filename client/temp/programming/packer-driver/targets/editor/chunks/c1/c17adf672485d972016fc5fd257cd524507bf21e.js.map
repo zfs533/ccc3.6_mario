@@ -1,0 +1,1 @@
+{"version":3,"sources":["file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/err.ts"],"names":["ErrEnum","OK"],"mappings":";;;;;;;;;;;;;;yBAAaA,O,GAAU;AACnBC,QAAAA,EAAE,EAAE;AADe,O","sourcesContent":["export const ErrEnum = {\r\n    OK: 200,\r\n}"]}

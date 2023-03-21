@@ -1,0 +1,90 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "wall_brick2",
+    "atlas": "",
+    "rect": {
+      "x": 0,
+      "y": 0,
+      "width": 16,
+      "height": 15
+    },
+    "offset": {
+      "x": 0,
+      "y": 0.5
+    },
+    "originalSize": {
+      "width": 16,
+      "height": 16
+    },
+    "rotated": false,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "vertices": {
+      "rawPosition": [
+        -8,
+        -7.5,
+        0,
+        8,
+        -7.5,
+        0,
+        -8,
+        7.5,
+        0,
+        8,
+        7.5,
+        0
+      ],
+      "indexes": [
+        0,
+        1,
+        2,
+        2,
+        1,
+        3
+      ],
+      "uv": [
+        0,
+        16,
+        16,
+        16,
+        0,
+        1,
+        16,
+        1
+      ],
+      "nuv": [
+        0,
+        0.0625,
+        1,
+        0.0625,
+        0,
+        1,
+        1,
+        1
+      ],
+      "minPos": {
+        "x": -8,
+        "y": -7.5,
+        "z": 0
+      },
+      "maxPos": {
+        "x": 8,
+        "y": 7.5,
+        "z": 0
+      }
+    },
+    "texture": "97c9800b-c6ac-45db-9c7f-34a934e6ad2a@6c48a",
+    "packable": true,
+    "pixelsToUnit": 100,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "meshType": 0
+  }
+}

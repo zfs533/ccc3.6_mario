@@ -1,0 +1,67 @@
+System.register(["cc"], function (_export, _context) {
+  "use strict";
+
+  var _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, Collider2D, Component, Contact2DType, _decorator, _dec, _class, _crd, ccclass, property, baseCollider;
+
+  return {
+    setters: [function (_cc) {
+      _cclegacy = _cc.cclegacy;
+      __checkObsolete__ = _cc.__checkObsolete__;
+      __checkObsoleteInNamespace__ = _cc.__checkObsoleteInNamespace__;
+      Collider2D = _cc.Collider2D;
+      Component = _cc.Component;
+      Contact2DType = _cc.Contact2DType;
+      _decorator = _cc._decorator;
+    }],
+    execute: function () {
+      _crd = true;
+
+      _cclegacy._RF.push({}, "2368aC9wBVN6aGeWpOhsh4/", "baseCollider", undefined);
+
+      __checkObsolete__(['Collider2D', 'Component', 'Contact2DType', 'IPhysics2DContact', 'UITransformComponent', '_decorator']);
+
+      ({
+        ccclass,
+        property
+      } = _decorator);
+
+      _export("baseCollider", baseCollider = (_dec = ccclass('baseCollider'), _dec(_class = class baseCollider extends Component {
+        start() {
+          this._handleCollider();
+        }
+
+        _handleCollider() {
+          var collider = this.node.getComponent(Collider2D);
+
+          if (collider) {
+            collider.on(Contact2DType.BEGIN_CONTACT, this.onBeginContact, this);
+            collider.on(Contact2DType.END_CONTACT, this._onEndContact, this);
+          }
+        }
+        /**
+         * 子类重写
+         * @param selfCollider 
+         * @param otherCollider 
+         * @param contact 
+         */
+
+
+        onBeginContact(selfCollider, otherCollider, contact) {
+          // 只在两个碰撞体开始接触时被调用一次
+          var name1 = selfCollider.node.name;
+          var name2 = otherCollider.node.name;
+        }
+
+        _onEndContact(selfCollider, otherCollider, contact) {// 只在两个碰撞体结束接触时被调用一次
+          // console.log('onEndContact');
+        }
+
+      }) || _class));
+
+      _cclegacy._RF.pop();
+
+      _crd = false;
+    }
+  };
+});
+//# sourceMappingURL=4ed26a255e44646f74f0b7cdfe593ddc2088ffdd.js.map

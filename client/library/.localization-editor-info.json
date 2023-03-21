@@ -1,0 +1,218 @@
+{
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\components": {
+    "time": 1667376244448.5847,
+    "uuid": "e20945fc-1f04-4216-a044-2652e1ebdf78",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core": {
+    "time": 1667376244511.1414,
+    "uuid": "ef8d37e0-634c-4106-a3ee-13df564c46a3",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\l10n": {
+    "time": 1667376244511.1414,
+    "uuid": "5edb8c82-d058-4174-84ae-a6624ae65a90",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills": {
+    "time": 1667376244542.3494,
+    "uuid": "43fd725b-630f-4c60-a864-7cea14073726",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\l10n.ts": {
+    "time": 1667376244495.463,
+    "uuid": "07b549ce-14f5-4964-9fc4-366b956df8d8",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\components\\icu-component.ts": {
+    "time": 1667376244432.809,
+    "uuid": "7a970d99-7d42-4b01-895c-a1fd06c411b5",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\components\\l10n-component.ts": {
+    "time": 1667376244448.5847,
+    "uuid": "64a567b7-70a8-4921-894e-b2b550a6ba6f",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\components\\l10n-label.ts": {
+    "time": 1667376244448.5847,
+    "uuid": "30d83ab3-45f6-472d-8305-9f8280f4f1b8",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\asset-manager-initer.ts": {
+    "time": 1667376244464.2644,
+    "uuid": "8726de39-9138-4457-8098-f4b669c27882",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\auto-config-intl-manager.ts": {
+    "time": 1667376244479.8364,
+    "uuid": "2f21bc78-8001-4d8f-a75c-b7da831c91c7",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\icu-options.ts": {
+    "time": 1667376244479.8364,
+    "uuid": "dc153188-b6f7-4234-8025-20163cbd0f8c",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\icu-type.ts": {
+    "time": 1667376244479.8364,
+    "uuid": "e5dc4963-9221-45a4-8f4b-a8af210423e5",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\l10n-listen-event.ts": {
+    "time": 1667376244479.8364,
+    "uuid": "3415306a-cc9f-4b47-8961-2437afa40e1f",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\l10n-manager.ts": {
+    "time": 1667376244479.8364,
+    "uuid": "2856aec6-495f-456d-be77-9ce8a6277dc9",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\l10n-options.ts": {
+    "time": 1667376244479.8364,
+    "uuid": "b461821b-b11b-4b2d-b469-d9d42b137108",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\localization-global.ts": {
+    "time": 1667376244479.8364,
+    "uuid": "02d9eb4a-80d0-46a8-b3e9-bd4ed15f6f68",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\resource-data-manager.ts": {
+    "time": 1667376244495.463,
+    "uuid": "0a95ad24-8abb-499c-99cc-9d959245a167",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.DateTimeFormat.ts": {
+    "time": 1667376244511.1414,
+    "uuid": "e9a803d0-7f83-426e-b187-6d1caa791dc6",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.DisplayNames.ts": {
+    "time": 1667376244526.7126,
+    "uuid": "495ecfe5-9e27-4b3e-a048-df0d67da1f21",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.getCanonicalLocales.ts": {
+    "time": 1667376244526.7126,
+    "uuid": "306c90e6-641a-46df-8383-07e477f49b91",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.ListFormat.ts": {
+    "time": 1667376244542.3494,
+    "uuid": "9ff49c15-8e75-44e3-955c-3d31f42d783d",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.Locale.ts": {
+    "time": 1667376244542.3494,
+    "uuid": "3d4a4001-ed8e-4131-b245-b6b580406771",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.NumberFormat.ts": {
+    "time": 1667376244542.3494,
+    "uuid": "60bb8e28-ea3e-45ee-8314-911ce01dc8b0",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.PluralRules.ts": {
+    "time": 1667376244542.3494,
+    "uuid": "c959445d-20e1-483c-8aa7-08ca07d74dd4",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.RelativeTimeFormat.ts": {
+    "time": 1667376244542.3494,
+    "uuid": "1d313b84-d501-43d7-8173-4315142c25d3",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\components.meta": {
+    "time": 1667376244431.808
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core.meta": {
+    "time": 1667376244464.2644
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\l10n.meta": {
+    "time": 1667376244495.463
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills.meta": {
+    "time": 1667376244511.1414
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\l10n.ts.meta": {
+    "time": 1667376244495.463
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\components\\icu-component.ts.meta": {
+    "time": 1667376244433.8103
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\components\\l10n-component.ts.meta": {
+    "time": 1667376244448.5847
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\components\\l10n-label.ts.meta": {
+    "time": 1667376244448.5847
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\asset-manager-initer.ts.meta": {
+    "time": 1667376244464.2644
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\auto-config-intl-manager.ts.meta": {
+    "time": 1667376244479.8364
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\icu-options.ts.meta": {
+    "time": 1667376244479.8364
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\icu-type.ts.meta": {
+    "time": 1667376244479.8364
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\l10n-listen-event.ts.meta": {
+    "time": 1667376244479.8364
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\l10n-manager.ts.meta": {
+    "time": 1667376244479.8364
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\l10n-options.ts.meta": {
+    "time": 1667376244479.8364
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\localization-global.ts.meta": {
+    "time": 1667376244479.8364
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\core\\resource-data-manager.ts.meta": {
+    "time": 1667376244511.1414
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.DateTimeFormat.ts.meta": {
+    "time": 1667376244526.7126
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.DisplayNames.ts.meta": {
+    "time": 1667376244526.7126
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.getCanonicalLocales.ts.meta": {
+    "time": 1667376244542.3494
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.ListFormat.ts.meta": {
+    "time": 1667376244542.3494
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.Locale.ts.meta": {
+    "time": 1667376244542.3494
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.NumberFormat.ts.meta": {
+    "time": 1667376244542.3494
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.PluralRules.ts.meta": {
+    "time": 1667376244542.3494
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\polyfills\\Intl.RelativeTimeFormat.ts.meta": {
+    "time": 1667376244542.3494
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\l10n\\resource-bundle.json": {
+    "time": 1667376244495.463,
+    "uuid": "fa0fa81e-eaf8-4eb4-8a48-181676ceff01",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\l10n\\resource-list.json": {
+    "time": 1667376244511.1414,
+    "uuid": "d2f18e87-d231-4e20-9e54-06a7aa2bd5c1",
+    "missing": false
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\l10n\\resource-list.json.meta": {
+    "time": 1667376244511.1414
+  },
+  "D:\\CocosDashboard\\resources\\.editors\\Creator\\3.6.0\\resources\\app.asar.unpacked\\modules\\editor-extensions\\extensions\\localization-editor\\static\\assets\\l10n\\resource-bundle.json.meta": {
+    "time": 1667376244495.463
+  }
+}

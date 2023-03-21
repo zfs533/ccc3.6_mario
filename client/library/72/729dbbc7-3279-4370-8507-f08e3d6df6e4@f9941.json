@@ -1,0 +1,90 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "mario_4",
+    "atlas": "",
+    "rect": {
+      "x": 1,
+      "y": 0,
+      "width": 13,
+      "height": 16
+    },
+    "offset": {
+      "x": -0.5,
+      "y": 0
+    },
+    "originalSize": {
+      "width": 16,
+      "height": 16
+    },
+    "rotated": false,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "vertices": {
+      "rawPosition": [
+        -6.5,
+        -8,
+        0,
+        6.5,
+        -8,
+        0,
+        -6.5,
+        8,
+        0,
+        6.5,
+        8,
+        0
+      ],
+      "indexes": [
+        0,
+        1,
+        2,
+        2,
+        1,
+        3
+      ],
+      "uv": [
+        1,
+        16,
+        14,
+        16,
+        1,
+        0,
+        14,
+        0
+      ],
+      "nuv": [
+        0.0625,
+        0,
+        0.875,
+        0,
+        0.0625,
+        1,
+        0.875,
+        1
+      ],
+      "minPos": {
+        "x": -6.5,
+        "y": -8,
+        "z": 0
+      },
+      "maxPos": {
+        "x": 6.5,
+        "y": 8,
+        "z": 0
+      }
+    },
+    "texture": "729dbbc7-3279-4370-8507-f08e3d6df6e4@6c48a",
+    "packable": true,
+    "pixelsToUnit": 100,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "meshType": 0
+  }
+}

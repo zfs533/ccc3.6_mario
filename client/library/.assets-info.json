@@ -1,0 +1,2458 @@
+{
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res": {
+    "time": 1669815232543.3647,
+    "uuid": "1e7ff7ce-940c-4512-acfc-35c1e5d9eab6",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources": {
+    "time": 1669647977568.813,
+    "uuid": "16d81d9d-c0de-42e3-9cdb-5a2c311309dd",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\scence": {
+    "time": 1669641653369.9019,
+    "uuid": "3f0235fe-9bdd-47c9-81d2-e381994248e4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script": {
+    "time": 1667379702370.0317,
+    "uuid": "afb3648b-0bdd-4512-ae4d-331b6db6a7a2",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations": {
+    "time": 1667379702141.387,
+    "uuid": "76514408-35c9-43bb-b834-6c945da91d73",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\material": {
+    "time": 1667379702153.3916,
+    "uuid": "62b142d1-433f-4e7f-bc06-716b13f24dba",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\prefab": {
+    "time": 1667379702155.3936,
+    "uuid": "6d2b6863-4710-4670-b5dc-144df9dffb95",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures": {
+    "time": 1675175470353.3376,
+    "uuid": "d0085a50-0106-4d24-8473-c8125d5cfa92",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall": {
+    "time": 1669815457304.8687,
+    "uuid": "e7ff7240-7d54-407e-a5f6-628fa3215d8f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\audio": {
+    "time": 1667379702309.9907,
+    "uuid": "7ebbea5d-a17b-44ca-8430-49990fb2d0a5",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\datas": {
+    "time": 1667379702311.988,
+    "uuid": "01b6d824-cb47-4ac0-a936-c4108430f8f4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab": {
+    "time": 1671537506859.1729,
+    "uuid": "777dafa0-8e0c-4f13-9fb1-6241f20a5bd0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures": {
+    "time": 1675175470353.3376,
+    "uuid": "2ea3a207-2baa-4ad2-9e0d-0d12023d8b8c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\config": {
+    "time": 1675004225972.0671,
+    "uuid": "7c417649-c8e7-4cd6-80be-c635349d12f2",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework": {
+    "time": 1667440907774.9592,
+    "uuid": "7f93c955-6b23-429a-99a8-0be30aefb3a8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game": {
+    "time": 1667379702364.11,
+    "uuid": "92e74ac6-4003-4f45-80aa-b2407c94ecc8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net": {
+    "time": 1667379702376.0894,
+    "uuid": "0dcfaf39-d9fc-4a15-806d-ba586a3e5b4d",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\pieces": {
+    "time": 1667379702140.3828,
+    "uuid": "44acb237-7a40-4ddb-9740-a01e6ed8c6c0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles": {
+    "time": 1667379702145.386,
+    "uuid": "9c24893d-b44a-4104-9d46-251eb126b262",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\cloud": {
+    "time": 1667379702158.396,
+    "uuid": "e31899ae-1151-4ec7-ba35-7b28ee7d54ba",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass": {
+    "time": 1667440907742.9348,
+    "uuid": "07749dfc-6572-4f2c-a4e6-80dd2c8059da",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\joystick": {
+    "time": 1667379702166.4011,
+    "uuid": "2172c97b-7d9e-4777-8a4f-fc1691bcdcef",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\pieces": {
+    "time": 1667379702169.4033,
+    "uuid": "c8d67ba6-16e3-484d-92a3-d0cc88e937ea",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\broken": {
+    "time": 1667379702266.1042,
+    "uuid": "dbd6171c-3202-40a1-8e15-bc45eaac96b6",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\pieces": {
+    "time": 1671537510788.139,
+    "uuid": "def72db9-ef4d-4f77-84e8-31161e9ceeff",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\brick": {
+    "time": 1667379702320.4019,
+    "uuid": "76c78c8b-6c76-4736-b04e-4d29133de206",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\collider": {
+    "time": 1667379702347.1648,
+    "uuid": "6666e13b-740f-46c9-99db-deabbf02938a",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\common": {
+    "time": 1667379702350.1672,
+    "uuid": "04add5d5-3909-43cc-964c-e176707bd8b1",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces": {
+    "time": 1667379702357.172,
+    "uuid": "ffc5a8ab-f66d-45e4-955b-796cf8687344",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles": {
+    "time": 1669988427714.0579,
+    "uuid": "2a138bff-a3c1-4c69-bc8f-fcd7b2716b02",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui": {
+    "time": 1667379702369.0298,
+    "uuid": "61baf5ed-f21c-400f-805f-148c6a9241bd",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy": {
+    "time": 1671539847463.9983,
+    "uuid": "9006d415-51ca-4412-b7da-f00d3e8d1ea0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario": {
+    "time": 1667379702150.39,
+    "uuid": "c97240f4-3a0e-42f5-9dae-2b5f7055869f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\enemy": {
+    "time": 1675175632364.979,
+    "uuid": "20d3f1a2-f64b-444f-983c-5c1a6a27367f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\mario": {
+    "time": 1667441394104.5396,
+    "uuid": "c03bffb0-0cf3-42b9-885b-f24af4e6a096",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\joystick": {
+    "time": 1667440907780.9634,
+    "uuid": "609a4e5b-6541-435b-b629-a7f0c5cda6c9",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\map": {
+    "time": 1667440907782.965,
+    "uuid": "b7d96abb-1309-4308-999a-bb8040147480",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\main.ts": {
+    "time": 1667379702369.0298,
+    "uuid": "8865b525-ed41-4951-a116-8381c8c43168",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\config\\lifePoint.ts": {
+    "time": 1670245940070.5188,
+    "uuid": "2537a5cf-c3d5-4735-a4b0-a65d8a3619c5",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\audioManager.ts": {
+    "time": 1674999624937.7915,
+    "uuid": "46b691e0-757d-4654-a051-68f4711dd08b",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\clientEvent.ts": {
+    "time": 1671026682223.2976,
+    "uuid": "15bf209b-2bf9-4986-9664-895c76ba7f80",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\constant.ts": {
+    "time": 1678972975761.933,
+    "uuid": "4d5edd13-d8d0-418b-a3ae-fbb3e34570a9",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\csvManager.ts": {
+    "time": 1667379702337.001,
+    "uuid": "d755406e-aa72-4b00-a89b-c15516b5ee4f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\enum.ts": {
+    "time": 1678971898098.921,
+    "uuid": "ede0fbdc-2795-426f-941e-25852cb75993",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\localConfig.ts": {
+    "time": 1667379702339.0024,
+    "uuid": "12fac499-8454-4621-86bb-cb188b5433a9",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\lodash.ts": {
+    "time": 1667379702340.0037,
+    "uuid": "cfcc6b00-6241-4635-8a52-825b41eafa67",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\poolManager.ts": {
+    "time": 1667379702341.2847,
+    "uuid": "e4062031-76bb-4893-90da-90af839dd648",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\resourceUtil.ts": {
+    "time": 1678882617105.7783,
+    "uuid": "7844ed5b-3b06-4afb-b24c-62310d414e6f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\storageManager.ts": {
+    "time": 1669989182581.258,
+    "uuid": "89c46d87-9faf-4e12-bfcf-64a1da4e0d23",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\util.ts": {
+    "time": 1667379702344.068,
+    "uuid": "f7facb24-dcbb-4d34-a42e-4a1501ea327f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\dataviewUtils.ts": {
+    "time": 1667379702371.0325,
+    "uuid": "ed5c22e1-e80c-46f5-a28a-21a754482027",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\err.ts": {
+    "time": 1667379702372.04,
+    "uuid": "2ea793b1-6402-4b7e-87d4-a03527fe4da8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\globalUtils.ts": {
+    "time": 1667379702373.2683,
+    "uuid": "0e1feeb1-d12c-4217-9995-eae144dbc5c9",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\net.ts": {
+    "time": 1667379702374.1343,
+    "uuid": "05fc56c2-6633-42e9-a2d8-db327981c497",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\routers.ts": {
+    "time": 1667379702375.0872,
+    "uuid": "6bcd0e0f-990d-410e-8ccc-543bae5358ac",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\util.ts": {
+    "time": 1671022559892.1384,
+    "uuid": "d5c2457a-6ad6-42c4-bf94-5e5e22d38a14",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\collider\\baseCollider.ts": {
+    "time": 1675003158555.7383,
+    "uuid": "2368a0bd-c015-4de9-a19e-5a93a1b21e3f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\common\\translateScens.ts": {
+    "time": 1667379702348.1655,
+    "uuid": "ff413655-465d-43f3-9eba-476dfdb2d204",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\common\\user.ts": {
+    "time": 1667379702349.1665,
+    "uuid": "14bb36c0-d7a7-4dc5-afb6-4d93a40a302c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\brick.ts": {
+    "time": 1667379702351.1677,
+    "uuid": "6654fdbe-914d-4557-916d-8ff7f88f03d6",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\cloud.ts": {
+    "time": 1667379702352.1687,
+    "uuid": "0ed13c13-a273-49a8-a9f8-d02d18db13c3",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\coin.ts": {
+    "time": 1671026955892.3064,
+    "uuid": "2f1c3378-026a-4c3a-9815-a7753ffe279d",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\hole.ts": {
+    "time": 1675005094768.1865,
+    "uuid": "8d532fe9-c699-43f9-a7b5-aefd70fcefb4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\mushroom.ts": {
+    "time": 1678976351221.9978,
+    "uuid": "8e6c03dc-5dbc-4917-b151-60f2a3e92a8c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\whyBrick.ts": {
+    "time": 1674999327395.0022,
+    "uuid": "b7c6d389-9cf0-4ea7-9885-ba090179bea8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\roleManager.ts": {
+    "time": 1674999954282.0366,
+    "uuid": "9856f82f-932e-44dd-b7e9-2873caf56347",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\uiManager.ts": {
+    "time": 1671024601001.7927,
+    "uuid": "0d2d02cd-4dff-474d-aa28-385f7b5668a7",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\enemy\\enemy.ts": {
+    "time": 1678970653256.7642,
+    "uuid": "978b6a84-fc5e-4891-867f-d3abf1275b30",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\enemy\\enemyBlack.ts": {
+    "time": 1675177681983.6465,
+    "uuid": "38043232-7212-495d-b280-96df6d597ba7",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\mario\\mario.ts": {
+    "time": 1678977132791.997,
+    "uuid": "ac806470-6c44-4443-874d-566fecf9b2c8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\joystick\\joystick.ts": {
+    "time": 1678977360146.0222,
+    "uuid": "89e6ebbe-1cf2-496e-af4b-8bb6dbf81915",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\map\\camera.ts": {
+    "time": 1671026983190.2852,
+    "uuid": "492262d6-3017-4c20-ba8f-b51c7525324a",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\map\\map.ts": {
+    "time": 1678970619920.0063,
+    "uuid": "7c8c768e-a4c6-4c16-b7cd-43e13d9159bf",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res.meta": {
+    "time": 1667379702135.379
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources.meta": {
+    "time": 1667379702275.9119
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\scence.meta": {
+    "time": 1667379702321.3884
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script.meta": {
+    "time": 1667379702330.4807
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations.meta": {
+    "time": 1667379702138.381
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\material.meta": {
+    "time": 1667379702152.391
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\prefab.meta": {
+    "time": 1667379702153.3916
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures.meta": {
+    "time": 1667379702156.394
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall.meta": {
+    "time": 1667379702261.5828
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\audio.meta": {
+    "time": 1667379702276.9497
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\datas.meta": {
+    "time": 1667379702309.9907
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab.meta": {
+    "time": 1667379702311.988
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures.meta": {
+    "time": 1667379702318.3845
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\config.meta": {
+    "time": 1667379702331.4946
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework.meta": {
+    "time": 1667379702333.9988
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game.meta": {
+    "time": 1667379702345.1626
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net.meta": {
+    "time": 1667379702370.0317
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\pieces.meta": {
+    "time": 1667379702139.382
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles.meta": {
+    "time": 1667379702140.3828
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\cloud.meta": {
+    "time": 1667379702156.394
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass.meta": {
+    "time": 1667379702158.396
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\joystick.meta": {
+    "time": 1667379702163.399
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\pieces.meta": {
+    "time": 1667379702167.4016
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\broken.meta": {
+    "time": 1667379702262.6934
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\pieces.meta": {
+    "time": 1667379702312.9893
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\brick.meta": {
+    "time": 1667379702319.4006
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\collider.meta": {
+    "time": 1667379702346.1643
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\common.meta": {
+    "time": 1667379702348.1655
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces.meta": {
+    "time": 1667379702351.1677
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles.meta": {
+    "time": 1667379702357.172
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui.meta": {
+    "time": 1667379702364.11
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy.meta": {
+    "time": 1667379702142.384
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario.meta": {
+    "time": 1667379702145.386
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\enemy.meta": {
+    "time": 1667379702358.1045
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\mario.meta": {
+    "time": 1667379702361.1077
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\joystick.meta": {
+    "time": 1667379702364.11
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\map.meta": {
+    "time": 1667379702366.3123
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\main.ts.meta": {
+    "time": 1667379702370.0317
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\config\\lifePoint.ts.meta": {
+    "time": 1667379702331.9963
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\audioManager.ts.meta": {
+    "time": 1667379702334.9995
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\clientEvent.ts.meta": {
+    "time": 1667379702336.0002
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\constant.ts.meta": {
+    "time": 1667379702337.001
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\csvManager.ts.meta": {
+    "time": 1667379702338.002
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\enum.ts.meta": {
+    "time": 1667379702339.0024
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\localConfig.ts.meta": {
+    "time": 1667379702340.0037
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\lodash.ts.meta": {
+    "time": 1667379702341.2847
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\poolManager.ts.meta": {
+    "time": 1667379702341.2847
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\resourceUtil.ts.meta": {
+    "time": 1667379702343.0352
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\storageManager.ts.meta": {
+    "time": 1667379702344.068
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\framework\\util.ts.meta": {
+    "time": 1667379702345.1626
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\dataviewUtils.ts.meta": {
+    "time": 1667379702372.04
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\err.ts.meta": {
+    "time": 1667379702373.2683
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\globalUtils.ts.meta": {
+    "time": 1667379702374.1343
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\net.ts.meta": {
+    "time": 1667379702374.1343
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\routers.ts.meta": {
+    "time": 1667379702375.0872
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\net\\util.ts.meta": {
+    "time": 1667379702376.0894
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\collider\\baseCollider.ts.meta": {
+    "time": 1667379702347.1648
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\common\\translateScens.ts.meta": {
+    "time": 1667379702349.1665
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\common\\user.ts.meta": {
+    "time": 1667379702350.1672
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\brick.ts.meta": {
+    "time": 1667379702352.1687
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\cloud.ts.meta": {
+    "time": 1667379702353.1694
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\coin.ts.meta": {
+    "time": 1667379702354.17
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\hole.ts.meta": {
+    "time": 1667379702355.171
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\mushroom.ts.meta": {
+    "time": 1667379702356.1711
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\pieces\\whyBrick.ts.meta": {
+    "time": 1667379702357.172
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\roleManager.ts.meta": {
+    "time": 1667379702363.1094
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\uiManager.ts.meta": {
+    "time": 1667379702369.0298
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\enemy\\enemy.ts.meta": {
+    "time": 1667379702359.1062
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\enemy\\enemyBlack.ts.meta": {
+    "time": 1667379702360.1072
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\mario\\mario.ts.meta": {
+    "time": 1667441394118.5498
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\joystick\\joystick.ts.meta": {
+    "time": 1667379702365.3103
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\map\\camera.ts.meta": {
+    "time": 1667379702366.857
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\ui\\map\\map.ts.meta": {
+    "time": 1667379702367.8584
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\World1-2.png": {
+    "time": 1667379702136.3801,
+    "uuid": "525c8530-31ef-459a-a919-95da96e81f4c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\scence\\mario.scene": {
+    "time": 1674998201305.2273,
+    "uuid": "89b6d5e4-7f6d-4f70-8e76-714636072049",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\scence\\translate.scene": {
+    "time": 1674998201357.2637,
+    "uuid": "ca88d912-38bb-4bd5-b937-f7d1d985d01c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\cutup.py": {
+    "time": 1667379702333.0078,
+    "uuid": "d012a367-e912-4a19-82a7-902756958673",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\material\\broken_trick.mtl": {
+    "time": 1674998201359.265,
+    "uuid": "fbff147c-ce12-4e03-b9d6-204393b87b69",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\prefab\\flag.prefab": {
+    "time": 1674998201358.2644,
+    "uuid": "93bc8f0c-3b0f-4afb-a408-056f50b2dc11",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\coin_brick.png": {
+    "time": 1667379702267.1057,
+    "uuid": "5d6483d1-14f1-4ee2-aeea-8a8422745f4e",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\flag0.png": {
+    "time": 1667379702268.1067,
+    "uuid": "4126159a-3c1e-4936-8836-48b10e8bb018",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\flag1.png": {
+    "time": 1667379702269.1072,
+    "uuid": "b9f260f8-578a-4058-aea2-6764e4967eb6",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\flag2.png": {
+    "time": 1667379702270.1082,
+    "uuid": "59f36d78-618a-4141-8199-95d9153515d5",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\hole.png": {
+    "time": 1667379702271.11,
+    "uuid": "eea63b2d-488a-4b42-871f-76a2e6b182d8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\tower.png": {
+    "time": 1667379702272.1096,
+    "uuid": "301fa896-d3c6-4d3a-b453-910aa4c27756",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_brick.png": {
+    "time": 1667379702273.1099,
+    "uuid": "cf19a963-6a9e-4228-9876-83acc0b21c1e",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_foot.png": {
+    "time": 1667379702273.9092,
+    "uuid": "cc64f023-72ed-4293-9ab1-d0b6dba8ab17",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_ladder.png": {
+    "time": 1667379702274.9111,
+    "uuid": "32b72a58-2023-4faf-820b-af7b4ebabc02",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\audio\\mario_bg.mp3": {
+    "time": 1667379702306.9873,
+    "uuid": "2304e693-6f99-46ab-bb53-09ff6572c8f1",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\audio\\smb_coin.wav": {
+    "time": 1667379702307.986,
+    "uuid": "2198174a-e785-46fd-9b90-27bd47842381",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\audio\\smb_jumpsmall.wav": {
+    "time": 1667379702308.9858,
+    "uuid": "bf2b5003-1a7e-4f3e-9328-5ac4c7b76d65",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\datas\\map003.csv": {
+    "time": 1667379702310.9756,
+    "uuid": "b5ac5f42-b7b4-4415-9682-b1951121dc2f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\pieces\\coin.anim": {
+    "time": 1667379702140.3828,
+    "uuid": "4f8c4b69-dbe5-4a5e-9aaa-e589ab39fa89",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\cloud\\cloud1.png": {
+    "time": 1667379702157.3977,
+    "uuid": "7f25a074-a819-45c5-bbf2-c4fc66d279f2",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass\\auto-atlas.pac": {
+    "time": 1667440907741.9343,
+    "uuid": "c4b16bd7-31f5-4686-b5aa-2c612d6cabaa",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass\\grass_center.png": {
+    "time": 1667379702159.396,
+    "uuid": "65a7cb8b-e588-4225-9fcf-04d12f927705",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass\\grass_left.png": {
+    "time": 1667379702160.397,
+    "uuid": "3c07418a-e307-4816-9cd0-787f5b30901c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass\\grass_right.png": {
+    "time": 1667379702161.3975,
+    "uuid": "7b8e39ed-cc2d-42b1-ad29-4803223f4180",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass\\grass_small.png": {
+    "time": 1667379702162.3982,
+    "uuid": "6da14655-1fc3-4b6a-a063-7ec58f66f117",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\joystick\\fightMove01.png": {
+    "time": 1667379702164.3997,
+    "uuid": "9d24beec-7f21-498f-9855-4dd1a9071aaf",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\joystick\\fightMove02.png": {
+    "time": 1667379702166.4011,
+    "uuid": "d945ed29-80ec-4d3f-93c0-7f016f7b29b6",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\pieces\\coin.png": {
+    "time": 1667379702167.4016,
+    "uuid": "0f9ee3b7-b550-4e2e-8dc0-64bda0ee409f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\pieces\\mushroom.png": {
+    "time": 1667379702169.4033,
+    "uuid": "ff43241f-da8d-47bc-8f01-202c19e09620",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\broken\\0_0.png": {
+    "time": 1667379702263.6953,
+    "uuid": "11e19512-921d-46e0-a80c-42008d2f13c9",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\broken\\0_1.png": {
+    "time": 1667379702264.695,
+    "uuid": "c4b1300a-0c07-45ef-8126-6c3519cef305",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\broken\\1_0.png": {
+    "time": 1667379702265.5774,
+    "uuid": "dc2676e1-65d0-4f08-99f2-e9c9960b74cd",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\broken\\1_1.png": {
+    "time": 1667379702266.1042,
+    "uuid": "8c510f5c-856f-4dd5-a8e5-c8d2a6bb7812",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\pieces\\coin.prefab": {
+    "time": 1674998201862.6238,
+    "uuid": "51dafff3-6845-43eb-add3-fac7d88639c4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\pieces\\mario.prefab": {
+    "time": 1678969765603.1643,
+    "uuid": "81e9765d-2a1c-42d4-8bbc-3664de4aec8a",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\pieces\\mushroom.prefab": {
+    "time": 1674998201879.6357,
+    "uuid": "cd20fdb8-b09b-4788-98fe-855c981917b8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\brick\\whyDown.png": {
+    "time": 1667379702320.4019,
+    "uuid": "507c81f4-4b4b-4c92-b343-a37357561e64",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e1death.anim": {
+    "time": 1667379702142.384,
+    "uuid": "cca918e9-7eeb-490c-8dfd-719e47d663f2",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e1walk.anim": {
+    "time": 1667379702143.385,
+    "uuid": "40bfba7c-e36f-480e-b151-916b99b704f4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario\\mario_death.anim": {
+    "time": 1667379702145.386,
+    "uuid": "ce626512-fef1-49bb-8da3-19096da68f22",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario\\mario_idle.anim": {
+    "time": 1667379702147.3877,
+    "uuid": "74069f5e-05d7-453f-a498-2a82ff335bf6",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario\\mario_jump.anim": {
+    "time": 1667379702148.3882,
+    "uuid": "c0aab0e9-6945-459f-be4d-6c215e3c295a",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario\\mario_swim.anim": {
+    "time": 1667379702149.3892,
+    "uuid": "dd4ed80d-bc1a-4a71-8223-308040c90189",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario\\mario_walk.anim": {
+    "time": 1667379702150.39,
+    "uuid": "e5892c34-45eb-4517-93bb-8a02c9d245e0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\scence\\translate.scene.meta": {
+    "time": 1674998201363.2683
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\scence\\mario.scene.meta": {
+    "time": 1674998201312.2317
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\material\\broken_trick.mtl.meta": {
+    "time": 1674998201366.2703
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\cutup.py.meta": {
+    "time": 1667379702333.0078
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\prefab\\flag.prefab.meta": {
+    "time": 1674998201368.272
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\World1-2.png.meta": {
+    "time": 1674998201346.256
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\flag1.png.meta": {
+    "time": 1674998201391.288
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\flag2.png.meta": {
+    "time": 1674998201402.296
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\flag0.png.meta": {
+    "time": 1674998201397.2932
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\hole.png.meta": {
+    "time": 1674998201457.3357
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\coin_brick.png.meta": {
+    "time": 1674998201405.298
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\tower.png.meta": {
+    "time": 1674998201455.3335
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_foot.png.meta": {
+    "time": 1674998201509.3726
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_brick.png.meta": {
+    "time": 1674998201458.3354
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_ladder.png.meta": {
+    "time": 1674998201520.38
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\datas\\map003.csv.meta": {
+    "time": 1667379702311.988
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\cloud\\cloud1.png.meta": {
+    "time": 1674998201561.4092
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass\\auto-atlas.pac.meta": {
+    "time": 1667440907743.921
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\pieces\\coin.anim.meta": {
+    "time": 1667379702140.3828
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass\\grass_center.png.meta": {
+    "time": 1674998201565.412
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass\\grass_left.png.meta": {
+    "time": 1674998201572.417
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass\\grass_right.png.meta": {
+    "time": 1674998201573.4172
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\grass\\grass_small.png.meta": {
+    "time": 1674998201601.438
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\joystick\\fightMove01.png.meta": {
+    "time": 1674998201607.4421
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\joystick\\fightMove02.png.meta": {
+    "time": 1674998201604.4402
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\pieces\\coin.png.meta": {
+    "time": 1674998201628.4568
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\audio\\smb_jumpsmall.wav.meta": {
+    "time": 1667379702309.9907
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\audio\\smb_coin.wav.meta": {
+    "time": 1667379702308.9858
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\broken\\0_0.png.meta": {
+    "time": 1674998201674.4895
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\textures\\pieces\\mushroom.png.meta": {
+    "time": 1674998201637.4634
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\pieces\\coin.prefab.meta": {
+    "time": 1674998201875.633
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\broken\\0_1.png.meta": {
+    "time": 1674998201657.4773
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\audio\\mario_bg.mp3.meta": {
+    "time": 1667379702307.986
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\broken\\1_0.png.meta": {
+    "time": 1674998201669.486
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e1death.anim.meta": {
+    "time": 1667379702143.385
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\broken\\1_1.png.meta": {
+    "time": 1674998201686.4983
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\pieces\\mushroom.prefab.meta": {
+    "time": 1674998201899.6501
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e1walk.anim.meta": {
+    "time": 1667379702144.3855
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\pieces\\mario.prefab.meta": {
+    "time": 1674998201885.64
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\brick\\whyDown.png.meta": {
+    "time": 1674998201977.7053
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario\\mario_death.anim.meta": {
+    "time": 1667379702146.3962
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario\\mario_swim.anim.meta": {
+    "time": 1667379702149.3892
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario\\mario_idle.anim.meta": {
+    "time": 1667379702147.3877
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario\\mario_jump.anim.meta": {
+    "time": 1667379702148.3882
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\mario\\mario_walk.anim.meta": {
+    "time": 1667379702150.39
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_brick1.png.meta": {
+    "time": 1674998201460.337
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_brick1.png": {
+    "time": 1669469183855.1401,
+    "uuid": "25e53219-566b-49c7-ad81-eb9d9d275275",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_foot1.png.meta": {
+    "time": 1674998201514.3762
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_foot1.png": {
+    "time": 1669469183798.6006,
+    "uuid": "c1753072-29ce-47a1-a1d5-aca7ea62cba3",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_ladder1.png.meta": {
+    "time": 1674998201523.3818
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_ladder1.png": {
+    "time": 1669469183799.601,
+    "uuid": "8dd75a19-ace9-405f-baae-39f35c52794f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map.meta": {
+    "time": 1669647879354.183
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map": {
+    "time": 1670416737602.7393,
+    "uuid": "08bc0997-ec76-4b6d-bd30-10d3871bc94e",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_2.prefab.meta": {
+    "time": 1674998201795.576
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_2.prefab": {
+    "time": 1674998201721.5242,
+    "uuid": "a894af3c-181b-47e4-aae4-4ee483ca99b3",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_2_1.prefab.meta": {
+    "time": 1674998201851.616
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_2_1.prefab": {
+    "time": 1674999012289.787,
+    "uuid": "a7fce159-e3bc-42fc-af56-5104be32d412",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\ui.meta": {
+    "time": 1669648426114.495
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\ui": {
+    "time": 1669648430651.9587,
+    "uuid": "04b2ba07-bf7e-41d4-8ac2-6f74935350ae",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\ui\\joystick.prefab.meta": {
+    "time": 1674998201909.6565
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\ui\\joystick.prefab": {
+    "time": 1674998201898.6492,
+    "uuid": "07fd89ea-0a3c-4854-9441-02422609e879",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_1.prefab.meta": {
+    "time": 1674998201777.5627
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_1.prefab": {
+    "time": 1678977364363.028,
+    "uuid": "b102fda0-36a9-4000-8279-6dc815f0b176",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_2_2.prefab.meta": {
+    "time": 1674998201828.599
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_2_2.prefab": {
+    "time": 1674998201765.5542,
+    "uuid": "1418664c-4e16-4b01-8f43-5ca2b4ca3684",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_2_3.prefab.meta": {
+    "time": 1674998201883.6387
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_2_3.prefab": {
+    "time": 1674998201834.6035,
+    "uuid": "4e6c31f6-6019-456c-9bd0-c706e60e7c80",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\World1-3.png.meta": {
+    "time": 1674998201354.262
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\World1-3.png": {
+    "time": 1603333256210.6016,
+    "uuid": "7d42bfbe-ff9d-4648-9b51-c32e40b2909c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_3.prefab.meta": {
+    "time": 1674998201870.629
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_3.prefab": {
+    "time": 1674998201834.6035,
+    "uuid": "a21c7997-b869-4f75-85df-fdb26757936e",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\world13.png.meta": {
+    "time": 1674998201555.4055
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\foot13.png.meta": {
+    "time": 1674998201403.297
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\tower2.png.meta": {
+    "time": 1674998201452.3313
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\world13.png": {
+    "time": 1669730027192.7876,
+    "uuid": "c91c27d1-76b9-4815-8e55-e9a067edbc90",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\foot13.png": {
+    "time": 1669729957528.9949,
+    "uuid": "f9cabbf4-a966-45c3-b1ac-1288869cb897",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\tower2.png": {
+    "time": 1669730304245.606,
+    "uuid": "b20ff1aa-1d20-4f8f-bbc5-4f61a107c91b",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\World 1-4.png.meta": {
+    "time": 1674998201347.257
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\World 1-4.png": {
+    "time": 1603333261693.6016,
+    "uuid": "f4a9130b-1b5b-4043-88c7-cb8c9d63e80c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\World 1-1.png.meta": {
+    "time": 1674998201349.258
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\World 1-1.png": {
+    "time": 1667379702151.3906,
+    "uuid": "95737512-871d-49fb-be0d-b00ce35fae06",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_brick2.png.meta": {
+    "time": 1674998201518.3784
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\wall\\wall_brick2.png": {
+    "time": 1669469183926.8562,
+    "uuid": "97c9800b-c6ac-45db-9c7f-34a934e6ad2a",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_4.prefab.meta": {
+    "time": 1674998201873.6309
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_4.prefab": {
+    "time": 1674998201852.6167,
+    "uuid": "556b6db5-2b95-49bd-babc-5c72f0bbb77a",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\status.meta": {
+    "time": 1669988427717.039
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\status": {
+    "time": 1669988579410.2026,
+    "uuid": "1b976568-4eb4-4c54-87d7-e6df47b67a67",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\status\\baseStatus.ts.meta": {
+    "time": 1669988439660.6865
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\status\\baseStatus.ts": {
+    "time": 1669989102704.275,
+    "uuid": "aa9baa30-942b-423c-b9d9-7654d55100ad",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\status\\playerStatus.ts.meta": {
+    "time": 1669988579413.1914
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\status\\playerStatus.ts": {
+    "time": 1669989113669.587,
+    "uuid": "a27a181a-b403-438b-8d3d-3b5ce4f72252",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\config\\cfgLevel.ts.meta": {
+    "time": 1670247933960.2278
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\config\\cfgLevel.ts": {
+    "time": 1671450175086.1316,
+    "uuid": "c65c57ef-a36d-4452-aa3c-b5720fe06973",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_1_1.prefab.meta": {
+    "time": 1674998201780.5654
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\map\\map1_1_1.prefab": {
+    "time": 1678890429547.5212,
+    "uuid": "618b8868-9248-4ccb-bd12-1b8ad6f973b8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\pieces\\whyBrick.prefab.meta": {
+    "time": 1674998201915.662
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\pieces\\whyBrick.prefab": {
+    "time": 1674998201897.649,
+    "uuid": "eda5fb63-b186-4f23-8c00-76181f66b365",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\config\\cfgHole.ts.meta": {
+    "time": 1671019490428.271
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\config\\cfgHole.ts": {
+    "time": 1671451752681.808,
+    "uuid": "a87f468b-ed3e-4187-a2b7-e2d1e7af1713",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy.meta": {
+    "time": 1671537506860.173
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy": {
+    "time": 1678887475193.104,
+    "uuid": "039975ac-9650-41f6-ba8a-65283553369b",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy1001.prefab.meta": {
+    "time": 1674998201655.4763
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy1001.prefab": {
+    "time": 1674998201648.4714,
+    "uuid": "7ea52876-ee68-4a3b-adde-0ec3a860b404",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e2death.anim.meta": {
+    "time": 1671538081242.7124
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e2death.anim": {
+    "time": 1671538274442.3723,
+    "uuid": "b9a4d718-f806-4fb2-b004-9ef99323b560",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e2walk.anim.meta": {
+    "time": 1671538088318.5293
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e2walk.anim": {
+    "time": 1671538189916.2344,
+    "uuid": "e06b5d72-aabf-4211-8537-ed141c84df25",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e3death.anim.meta": {
+    "time": 1671538332786.9768
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e3death.anim": {
+    "time": 1671538478355.393,
+    "uuid": "048b9489-ab68-4be7-82b3-8056a70f24ca",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e3walk.anim.meta": {
+    "time": 1671538339304.9397
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e3walk.anim": {
+    "time": 1671538453986.7012,
+    "uuid": "8d594c59-d77d-4337-a997-42ed682df8bb",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e4death.anim.meta": {
+    "time": 1671538586824.3606
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e4death.anim": {
+    "time": 1671538954540.7468,
+    "uuid": "50b256da-afdf-4733-9b43-0e2fc7042585",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e4walk.anim.meta": {
+    "time": 1671538591779.209
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\e4walk.anim": {
+    "time": 1671538913520.0332,
+    "uuid": "041626fd-b716-4a24-8901-da51311cdf84",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy2002.prefab.meta": {
+    "time": 1674998201672.4883
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy2002.prefab": {
+    "time": 1675176568112.731,
+    "uuid": "b44716cb-6503-4a9e-abae-5751845611a9",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy2003.prefab.meta": {
+    "time": 1674998201691.5022
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy2003.prefab": {
+    "time": 1675176593702.343,
+    "uuid": "829d372d-55ec-4cf2-b5e3-0aa16b3d0b26",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy3001.prefab.meta": {
+    "time": 1674998201693.503
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy3001.prefab": {
+    "time": 1674998201683.4958,
+    "uuid": "6230c66c-9cca-4843-9c4e-244f53ffdc97",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\walk3001.anim.meta": {
+    "time": 1671539283890.9155
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\walk3001.anim": {
+    "time": 1671539499475.177,
+    "uuid": "cbbab3d1-df76-48a2-90bd-eed75b28ea17",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\death3001.anim.meta": {
+    "time": 1671539302142.6748
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\death3001.anim": {
+    "time": 1671539623121.8489,
+    "uuid": "54b9b544-4722-4af7-a4e5-d1abaf02f5e6",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy3002.prefab.meta": {
+    "time": 1674998201706.5125
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy3002.prefab": {
+    "time": 1674998201688.5017,
+    "uuid": "c29ee879-3775-4f00-9afb-a0c1fd5fd84f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\death3002.anim.meta": {
+    "time": 1671539662699.8362
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\death3002.anim": {
+    "time": 1671539810626.0269,
+    "uuid": "1043d859-f715-423c-879c-64c166cf1d9d",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\walk3002.anim.meta": {
+    "time": 1671539666985.805
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\walk3002.anim": {
+    "time": 1671539724756.0027,
+    "uuid": "11d6e9ae-cb33-4894-9921-bd3d566b61e4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy3003.prefab.meta": {
+    "time": 1674998201708.5142
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy3003.prefab": {
+    "time": 1674998201689.5005,
+    "uuid": "884105a8-2377-4903-afe9-ddcf56eb9173",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\walk3003.anim.meta": {
+    "time": 1671539844881.4998
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\walk3003.anim": {
+    "time": 1671539894569.1035,
+    "uuid": "2373f9b5-56a7-4146-a147-1d88b75d1e10",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\death3003.anim.meta": {
+    "time": 1671539847468.001
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\res\\animations\\roles\\enemy\\death3003.anim": {
+    "time": 1671539944147.8496,
+    "uuid": "30bd0b0a-bb9a-4888-a307-f5cc5a387dac",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\config\\cfgEnemy.ts.meta": {
+    "time": 1675004225975.08
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\config\\cfgEnemy.ts": {
+    "time": 1678715488414.4502,
+    "uuid": "354405ab-3141-4cb3-9651-f45cf8f43fe4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles.meta": {
+    "time": 1667379702170.404
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy.meta": {
+    "time": 1667379702171.4058
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario.meta": {
+    "time": 1667379702247.439
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1.meta": {
+    "time": 1667379702172.4062
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2.meta": {
+    "time": 1667379702197.4233
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles": {
+    "time": 1667379702247.439,
+    "uuid": "b46c379a-cf4b-4ae7-b35d-9cd5a503af20",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy": {
+    "time": 1667379702233.7966,
+    "uuid": "1c8455a6-0460-4170-94ba-cbd9ddc84317",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario": {
+    "time": 1678893158239.5334,
+    "uuid": "e0281df0-dd34-47e1-ae6e-b08b20dc345b",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1": {
+    "time": 1667379702197.4233,
+    "uuid": "29df5b83-00bf-4e7f-8b80-b3cfc20c3f0d",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2": {
+    "time": 1667379702214.5696,
+    "uuid": "9afdaeca-42c0-4153-93af-deb12c1243a1",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3.meta": {
+    "time": 1667379702215.556
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3": {
+    "time": 1667379702232.796,
+    "uuid": "cf4c1c88-6f5c-4c83-9c75-6f34fd9ab224",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4.meta": {
+    "time": 1667379702232.796
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4": {
+    "time": 1667379702246.4373,
+    "uuid": "02ff9a86-3263-48d3-9828-a785551e6442",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0.meta": {
+    "time": 1667379702248.44
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0": {
+    "time": 1667379702261.5828,
+    "uuid": "36dabc6e-c7ee-4083-9d81-55ca63816af1",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\0_1.png.meta": {
+    "time": 1674998201986.712
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\0_1.png": {
+    "time": 1667379702173.4062,
+    "uuid": "8f4fe24e-cb10-41e8-8d2c-1ce810f494e7",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\1_1.png.meta": {
+    "time": 1674998202064.768
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\1_1.png": {
+    "time": 1667379702177.4087,
+    "uuid": "387ac241-4df6-4865-9544-e88dfefd155e",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\0_7.png.meta": {
+    "time": 1674998202008.7275
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\0_7.png": {
+    "time": 1667379702176.4082,
+    "uuid": "ea286849-893a-4888-aafc-52ed1fc5bb5b",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\0_5.png.meta": {
+    "time": 1674998201973.703
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\0_5.png": {
+    "time": 1667379702175.4075,
+    "uuid": "f94b3a00-5616-4042-a8ad-46a4640d8b3c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\0_3.png.meta": {
+    "time": 1674998201984.7104
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\0_3.png": {
+    "time": 1667379702174.4067,
+    "uuid": "a56cf2fe-ddd5-406a-bd08-1553045c4fef",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\1_3.png.meta": {
+    "time": 1674998202042.7517
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\1_3.png": {
+    "time": 1667379702179.418,
+    "uuid": "298526f2-5a0b-4e77-83de-763ed037f667",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\1_5.png.meta": {
+    "time": 1674998202095.79
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\1_5.png": {
+    "time": 1667379702180.4111,
+    "uuid": "c4fe3fe2-afd0-4661-9c8d-37fc26ac8d37",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\2_1.png.meta": {
+    "time": 1674998202142.823
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\2_1.png": {
+    "time": 1667379702182.4126,
+    "uuid": "488c3c1b-53c0-4959-9e2f-e7b45c869322",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\1_7.png.meta": {
+    "time": 1674998202089.7854
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\1_7.png": {
+    "time": 1667379702181.4116,
+    "uuid": "5d9ab98f-fa0d-47a1-b7b6-46a35aeefe65",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\2_3.png.meta": {
+    "time": 1674998202161.8367
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\2_3.png": {
+    "time": 1667379702182.4126,
+    "uuid": "15b2709f-2114-411f-9c18-4ac2869de787",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\2_7.png.meta": {
+    "time": 1674998202202.866
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\2_7.png": {
+    "time": 1667379702184.4138,
+    "uuid": "857a30d8-2acb-4891-95c4-822d0d1ab590",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\2_5.png.meta": {
+    "time": 1674998202199.8633
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\2_5.png": {
+    "time": 1667379702183.413,
+    "uuid": "5622cb55-4f1c-4f13-b705-b115b9432b21",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\3_3.png.meta": {
+    "time": 1674998202304.9385
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\3_3.png": {
+    "time": 1667379702187.417,
+    "uuid": "7ba6fc51-ab34-4501-8126-eece683c46ad",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\3_1.png.meta": {
+    "time": 1674998202220.8784
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\3_1.png": {
+    "time": 1667379702185.4148,
+    "uuid": "5a955688-b232-49c4-b178-5b27c6008d04",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\3_5.png.meta": {
+    "time": 1674998202343.9666
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\3_5.png": {
+    "time": 1667379702188.4167,
+    "uuid": "0d1ed240-1890-4c63-a705-0f238c073168",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\3_7.png.meta": {
+    "time": 1674998202347.9697
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\3_7.png": {
+    "time": 1667379702189.4172,
+    "uuid": "0786d664-83ff-4736-b1ad-099f6a1a2f90",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\4_1.png.meta": {
+    "time": 1674998202345.9678
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\4_1.png": {
+    "time": 1667379702190.4194,
+    "uuid": "7b2d1b7c-51a3-4797-a603-ca7b31d37295",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\4_5.png.meta": {
+    "time": 1674998202434.0298
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\4_5.png": {
+    "time": 1667379702192.4197,
+    "uuid": "1574fd3a-6af4-4264-84fd-5c50b41f1cd3",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\4_3.png.meta": {
+    "time": 1674998202391
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\4_3.png": {
+    "time": 1667379702191.4187,
+    "uuid": "b20a15c8-88d2-4510-8954-cfd49bfc4a47",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\4_7.png.meta": {
+    "time": 1674998202440.0347
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\4_7.png": {
+    "time": 1667379702193.4204,
+    "uuid": "3cf4ce17-9434-4c91-9068-6d2b30c272f9",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\5_1.png.meta": {
+    "time": 1674998202450.0417
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\5_1.png": {
+    "time": 1667379702194.4214,
+    "uuid": "ba5bee87-3b70-41fe-a7e7-a3b3663c96dd",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\5_3.png.meta": {
+    "time": 1674998202444.0376
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\5_3.png": {
+    "time": 1667379702194.4214,
+    "uuid": "37b2bd85-8a7e-4a39-8489-f5c084f4072e",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\5_7.png.meta": {
+    "time": 1674998202542.1074
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\5_7.png": {
+    "time": 1667379702196.4226,
+    "uuid": "3807c06b-1491-4522-87aa-4f986aee6774",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\5_5.png.meta": {
+    "time": 1674998202507.0825
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e1\\5_5.png": {
+    "time": 1667379702195.4219,
+    "uuid": "fd7da7b9-3902-4181-a19a-e7ada9745999",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\0_0.png.meta": {
+    "time": 1674998202533.101
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\0_0.png": {
+    "time": 1667379702198.4243,
+    "uuid": "569b07df-375b-44a1-8e43-1809c60c6e17",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\0_1.png.meta": {
+    "time": 1674998202536.103
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\0_1.png": {
+    "time": 1667379702199.752,
+    "uuid": "7aa2bdf1-b691-4e28-b21b-973745033a5d",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\0_2.png.meta": {
+    "time": 1674998202527.0974
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\0_2.png": {
+    "time": 1667379702200.768,
+    "uuid": "f93ede10-c511-40e0-9db9-c215a430a911",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\1_0.png.meta": {
+    "time": 1674998202640.177
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\1_0.png": {
+    "time": 1667379702201.7705,
+    "uuid": "339da491-a4d0-46e8-b3c3-868f7cb71115",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\1_2.png.meta": {
+    "time": 1674998202642.1782
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\1_2.png": {
+    "time": 1667379702202.7856,
+    "uuid": "fe05c966-6bdc-4314-bf15-2c3a84fd72f8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\1_1.png.meta": {
+    "time": 1674998202641.1777
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\1_1.png": {
+    "time": 1667379702201.7705,
+    "uuid": "d7fc527d-d706-468e-b54a-519c9764d694",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\2_1.png.meta": {
+    "time": 1674998202678.4248
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\2_1.png": {
+    "time": 1667379702204.772,
+    "uuid": "be5d17e6-b7b1-4a62-ac6b-e1855f5aa749",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\2_0.png.meta": {
+    "time": 1674998202647.1826
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\2_0.png": {
+    "time": 1667379702203.7715,
+    "uuid": "02832d58-d973-4b75-946d-b3a48fec52e8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\2_2.png.meta": {
+    "time": 1674998202716.231
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\2_2.png": {
+    "time": 1667379702205.7883,
+    "uuid": "750d110b-a655-4d3e-97a9-9b085475c81c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\3_0.png.meta": {
+    "time": 1674998202718.2324
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\3_0.png": {
+    "time": 1667379702206.7888,
+    "uuid": "3be333c9-e632-4f63-bec7-98eacda34115",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\3_1.png.meta": {
+    "time": 1674998202739.2473
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\3_1.png": {
+    "time": 1667379702207.8774,
+    "uuid": "6385f88b-2809-4b89-8cfe-7f7f65bcc8c9",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\3_2.png.meta": {
+    "time": 1674998202740.248
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\3_2.png": {
+    "time": 1667379702209.072,
+    "uuid": "636c1f48-ced7-4243-bc38-4f93a0274087",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\4_0.png.meta": {
+    "time": 1674998202766.2668
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\4_0.png": {
+    "time": 1667379702209.072,
+    "uuid": "24de9222-0aba-41cf-8f96-0a3b37ec0e75",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\4_1.png.meta": {
+    "time": 1674998202807.2957
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\4_1.png": {
+    "time": 1667379702211.0603,
+    "uuid": "f9d3fb76-d1a2-4ef4-8d89-03fcd48c5444",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\4_2.png.meta": {
+    "time": 1674998202791.2842
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\4_2.png": {
+    "time": 1667379702211.0603,
+    "uuid": "28248067-41f4-487a-8937-ab369ce02f55",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\5_0.png.meta": {
+    "time": 1674998202814.3015
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\5_0.png": {
+    "time": 1667379702212.8093,
+    "uuid": "4b0a5abd-6002-4506-b6d0-9baee0cffc62",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\5_2.png.meta": {
+    "time": 1674998202835.316
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\5_2.png": {
+    "time": 1667379702214.5696,
+    "uuid": "db3df490-54d4-47e1-9600-686e02000c89",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\5_1.png.meta": {
+    "time": 1674998202812.2998
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e2\\5_1.png": {
+    "time": 1667379702212.8093,
+    "uuid": "05467bd7-1956-483a-aab1-d5ad3bd642f0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\0_0.png.meta": {
+    "time": 1674998202872.342
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\0_0.png": {
+    "time": 1667379702216.369,
+    "uuid": "f24a820f-d90b-4c9c-bd15-acb8da3852f4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\0_1.png.meta": {
+    "time": 1674998202879.3472
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\0_1.png": {
+    "time": 1667379702216.369,
+    "uuid": "1fae2743-677e-4ea4-a1a6-3cc8c86aa5ac",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\1_0.png.meta": {
+    "time": 1674998202896.3591
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\1_0.png": {
+    "time": 1667379702219.3872,
+    "uuid": "3b340d6c-9163-4ea0-86bb-ab713cdec6ee",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\0_2.png.meta": {
+    "time": 1674998202877.3457
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\0_2.png": {
+    "time": 1667379702218.3716,
+    "uuid": "e46daeb5-5c71-4470-bb48-814aff7bfc0e",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\1_1.png.meta": {
+    "time": 1674998202904.3647
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\1_1.png": {
+    "time": 1667379702220.3733,
+    "uuid": "feebd6b2-fa77-4812-a1f3-baf04d894326",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\1_2.png.meta": {
+    "time": 1674998202936.3877
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\1_2.png": {
+    "time": 1667379702221.3735,
+    "uuid": "093042ad-5674-4798-9d85-089d61aa633e",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\2_0.png.meta": {
+    "time": 1674998202940.3904
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\2_0.png": {
+    "time": 1667379702222.375,
+    "uuid": "28e84ba8-3350-49c0-a562-41289b2b65ad",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\2_1.png.meta": {
+    "time": 1674998202943.3928
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\2_1.png": {
+    "time": 1667379702223.3752,
+    "uuid": "a10dacb1-91e2-4fac-bc97-47b2967c3b21",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\2_2.png.meta": {
+    "time": 1674998202955.4014
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\2_2.png": {
+    "time": 1667379702224.3855,
+    "uuid": "d6fedcdc-0717-4d3b-9243-281548190219",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\3_0.png.meta": {
+    "time": 1674998202962.406
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\3_0.png": {
+    "time": 1667379702224.3855,
+    "uuid": "90fb8a6f-7b32-471e-a0fd-60fc7dac2ef1",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\3_1.png.meta": {
+    "time": 1674998202993.4287
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\3_1.png": {
+    "time": 1667379702226.2498,
+    "uuid": "7f503228-4421-4d3f-a39d-1582b04aa30d",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\4_0.png.meta": {
+    "time": 1674998203006.4377
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\4_0.png": {
+    "time": 1667379702228.046,
+    "uuid": "77a4560c-f45c-4a8c-9231-a5620f57b96c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\3_2.png.meta": {
+    "time": 1674998203000.4336
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\3_2.png": {
+    "time": 1667379702226.2498,
+    "uuid": "ceff7d72-c9ea-46ab-8d6b-d8da721c2ce9",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\4_1.png.meta": {
+    "time": 1674998203024.4502
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\4_1.png": {
+    "time": 1667379702229.0476,
+    "uuid": "b084638e-dcbf-41d2-9c61-5b32b1527ee8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\4_2.png.meta": {
+    "time": 1674998203026.4524
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\4_2.png": {
+    "time": 1667379702230.048,
+    "uuid": "21ca0e5e-3f3a-4ec1-abaa-d0ebff071e59",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\5_0.png.meta": {
+    "time": 1674998203053.4712
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\5_0.png": {
+    "time": 1667379702230.048,
+    "uuid": "f9583713-36de-4bbe-b9a6-4064b8d521ab",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\0_0.png.meta": {
+    "time": 1674998203065.4792
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\0_0.png": {
+    "time": 1667379702234.797,
+    "uuid": "1307a44d-6851-472e-9f3b-83f8d0848066",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\5_1.png.meta": {
+    "time": 1674998203061.477
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\5_1.png": {
+    "time": 1667379702231.794,
+    "uuid": "9f0b8de1-ff61-4732-8213-e40f77dacab4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\5_2.png.meta": {
+    "time": 1674998203056.4736
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e3\\5_2.png": {
+    "time": 1667379702231.794,
+    "uuid": "d3505544-7c63-4b84-9f66-d3ffb1d2ca12",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\0_1.png.meta": {
+    "time": 1674998203067.4807
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\0_1.png": {
+    "time": 1667379702235.798,
+    "uuid": "8cc4b244-727c-4d09-aafa-cbdca9be5635",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\0_2.png.meta": {
+    "time": 1674998203093.4995
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\0_2.png": {
+    "time": 1667379702236.799,
+    "uuid": "d31148a1-ad1b-4a78-b277-e1f05d381ea0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\1_0.png.meta": {
+    "time": 1674998203098.503
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\1_0.png": {
+    "time": 1667379702237.4102,
+    "uuid": "664b946b-df70-46fd-9d30-468e9575b911",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\1_1.png.meta": {
+    "time": 1674998203099.5037
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\1_1.png": {
+    "time": 1667379702238.4119,
+    "uuid": "8bf4a5e4-fcd1-4ce0-887f-ae6afd3b64d5",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\2_0.png.meta": {
+    "time": 1674998203106.509
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\2_0.png": {
+    "time": 1667379702239.4126,
+    "uuid": "fbae42c3-559c-4be8-aec8-7eb5279120f2",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\2_1.png.meta": {
+    "time": 1674998203125.5225
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\2_1.png": {
+    "time": 1667379702241.0867,
+    "uuid": "f02c91c0-9334-4755-9ff7-131510d2c7c0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\3_0.png.meta": {
+    "time": 1674998203129.5269
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\3_0.png": {
+    "time": 1667379702242.0884,
+    "uuid": "1c7b7cb4-f600-40c8-98e7-6e45cba83a0c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\1_2.png.meta": {
+    "time": 1674998203095.5012
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\1_2.png": {
+    "time": 1667379702239.4126,
+    "uuid": "7c549c91-0907-4ae5-8347-a6e7d994d313",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\3_1.png.meta": {
+    "time": 1674998203131.527
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\3_1.png": {
+    "time": 1667379702242.8145,
+    "uuid": "91aca132-ebc9-4eee-b145-620b647b12c6",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\4_0.png.meta": {
+    "time": 1674998203133.5283
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\4_0.png": {
+    "time": 1667379702243.7993,
+    "uuid": "8ea351de-23c1-413c-abea-5766fb1b88a0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\5_0.png.meta": {
+    "time": 1674998203160.5479
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\5_0.png": {
+    "time": 1667379702245.5227,
+    "uuid": "d1d33627-ea1c-48c4-a056-776e1c034e8e",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\4_1.png.meta": {
+    "time": 1674998203143.5352
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\4_1.png": {
+    "time": 1667379702244.538,
+    "uuid": "6f0d77ed-65da-4166-ae59-2f01b823c6bc",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\5_1.png.meta": {
+    "time": 1674998203165.5508
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\enemy\\e4\\5_1.png": {
+    "time": 1667379702246.4373,
+    "uuid": "dae6831d-39be-4f27-9f4f-7e8335d0e9d9",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_0.png.meta": {
+    "time": 1674998203162.5488
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_0.png": {
+    "time": 1667379702248.44,
+    "uuid": "fcb62a72-e9f3-4693-86e9-159e9e6b6870",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_1.png.meta": {
+    "time": 1674998203170.555
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_1.png": {
+    "time": 1667379702249.4404,
+    "uuid": "89044e62-9352-4e69-8823-65e94de8995b",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_11.png.meta": {
+    "time": 1674998203193.571
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_11.png": {
+    "time": 1667379702252.4426,
+    "uuid": "7cf449d6-f02a-46bc-9dc2-06f2e3a37c6a",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_10.png.meta": {
+    "time": 1674998203175.558
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_10.png": {
+    "time": 1667379702251.4424,
+    "uuid": "f37e9006-2d91-4304-96d2-e883e4f9e5b8",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_12.png.meta": {
+    "time": 1674998203205.58
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_12.png": {
+    "time": 1667379702252.4426,
+    "uuid": "c449e881-a5bc-4dab-8a91-762531e79020",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_3.png.meta": {
+    "time": 1674998203210.583
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_3.png": {
+    "time": 1667379702255.445,
+    "uuid": "cea4d5c9-2e0d-47e5-a3e0-693b29112c89",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_13.png.meta": {
+    "time": 1674998203201.5771
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_13.png": {
+    "time": 1667379702253.4434,
+    "uuid": "5a12e553-932a-4902-a9fb-58938acb66ad",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_4.png.meta": {
+    "time": 1674998203225.5935
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_4.png": {
+    "time": 1667379702256.4456,
+    "uuid": "729dbbc7-3279-4370-8507-f08e3d6df6e4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_2.png.meta": {
+    "time": 1674998203207.581
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_2.png": {
+    "time": 1667379702254.4438,
+    "uuid": "66ba433a-2647-47cc-802d-e6d2358632c2",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_5.png.meta": {
+    "time": 1674998203236.6018
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_5.png": {
+    "time": 1667379702257.4456,
+    "uuid": "85e7e567-ae66-4e07-b73d-c77dd98145e4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_6.png.meta": {
+    "time": 1674998203242.6064
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_6.png": {
+    "time": 1667379702258.4985,
+    "uuid": "2d0d6b67-0a66-429d-80d7-c52b317f9d8a",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_7.png.meta": {
+    "time": 1674998203246.609
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_7.png": {
+    "time": 1667379702258.5796,
+    "uuid": "9eba20e5-64ff-4a74-ae9f-34566246c209",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_9.png.meta": {
+    "time": 1674998203254.6145
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_9.png": {
+    "time": 1667379702260.5818,
+    "uuid": "269fd6e2-7f4b-4dd4-9cef-f75137c03e62",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_8.png.meta": {
+    "time": 1674998203241.6052
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\mario_0\\mario_8.png": {
+    "time": 1667379702259.5813,
+    "uuid": "37f14d61-4d3a-40d4-a14c-7e634afbaef0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\enemy\\enemyTortoise.ts.meta": {
+    "time": 1675175632368.9836
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\script\\game\\roles\\enemy\\enemyTortoise.ts": {
+    "time": 1678890294837.931,
+    "uuid": "32e8aa7b-875f-47cf-a912-7e1b5091ca5d",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy2001.prefab.meta": {
+    "time": 1678887475199.1274
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\prefab\\enemy\\enemy2001.prefab": {
+    "time": 1678887475196.1074,
+    "uuid": "4e4f0e7e-0809-48cd-b045-fc903f670e6e",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire.meta": {
+    "time": 1678893158237.532
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_01.png.meta": {
+    "time": 1678893199880.9739
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_02.png.meta": {
+    "time": 1678893199857.9583
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_03.png.meta": {
+    "time": 1678893199864.9624
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_04.png.meta": {
+    "time": 1678893199874.97
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_05.png.meta": {
+    "time": 1678893199884.9766
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_06.png.meta": {
+    "time": 1678893199919.0007
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_07.png.meta": {
+    "time": 1678893199934.0112
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_08.png.meta": {
+    "time": 1678893199953.025
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_09.png.meta": {
+    "time": 1678893199963.0325
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_10.png.meta": {
+    "time": 1678893199962.032
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_11.png.meta": {
+    "time": 1678893200004.0615
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_12.png.meta": {
+    "time": 1678893200033.083
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_13.png.meta": {
+    "time": 1678893200068.1072
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_14.png.meta": {
+    "time": 1678893200049.0938
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_15.png.meta": {
+    "time": 1678893200039.0872
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_16.png.meta": {
+    "time": 1678893200089.1226
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_17.png.meta": {
+    "time": 1678893200114.1404
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_18.png.meta": {
+    "time": 1678893200145.1626
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_19.png.meta": {
+    "time": 1678893200123.1467
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_20.png.meta": {
+    "time": 1678893200149.1653
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_21.png.meta": {
+    "time": 1678893200151.1663
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire": {
+    "time": 1678893158234.53,
+    "uuid": "59633311-e173-46d0-80b5-9abb25b8b454",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1.meta": {
+    "time": 1678893158563.8105
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_01.png.meta": {
+    "time": 1678893180895.703
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_02.png.meta": {
+    "time": 1678893180915.7175
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_03.png.meta": {
+    "time": 1678893180891.7012
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_04.png.meta": {
+    "time": 1678893180901.7073
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_05.png.meta": {
+    "time": 1678893180887.6973
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_06.png.meta": {
+    "time": 1678893180970.757
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_07.png.meta": {
+    "time": 1678893180952.7434
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_08.png.meta": {
+    "time": 1678893180980.764
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_09.png.meta": {
+    "time": 1678893180967.7546
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_10.png.meta": {
+    "time": 1678893180976.7612
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_11.png.meta": {
+    "time": 1678893181034.8025
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_12.png.meta": {
+    "time": 1678893181036.8037
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_13.png.meta": {
+    "time": 1678893181033.8018
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_14.png.meta": {
+    "time": 1678893181076.8325
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_15.png.meta": {
+    "time": 1678893181067.8264
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_16.png.meta": {
+    "time": 1678893181117.8616
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_17.png.meta": {
+    "time": 1678893181106.8535
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_18.png.meta": {
+    "time": 1678893181114.8594
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_19.png.meta": {
+    "time": 1678893181135.8748
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_20.png.meta": {
+    "time": 1678893181130.871
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_21.png.meta": {
+    "time": 1678893181151.8855
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_01.png": {
+    "time": 1678892850869.9185,
+    "uuid": "eed045d9-d734-4c8c-8dbe-73c292cec162",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_04.png": {
+    "time": 1678892851184.393,
+    "uuid": "380e8cee-119d-4ccf-a481-be4d4bed37dc",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_05.png": {
+    "time": 1678892851250.6335,
+    "uuid": "7f313cf8-2eb6-411a-915c-1530ffb22478",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_03.png": {
+    "time": 1678892851134,
+    "uuid": "1176b5ab-af89-4fcb-b022-358849f1fd24",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_02.png": {
+    "time": 1678892851079.1675,
+    "uuid": "b5ce1831-fef2-4fe7-b862-52765aed89ee",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_06.png": {
+    "time": 1678892851315.7292,
+    "uuid": "9fd1bd82-45ee-4913-99ce-e0f9d7835866",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_07.png": {
+    "time": 1678892851366.942,
+    "uuid": "a5ea0d31-28b5-4ccd-8dc4-c92de9d6ed2a",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_08.png": {
+    "time": 1678892851430.129,
+    "uuid": "4d5d1853-3bff-4446-acf5-0a13a35c9431",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_10.png": {
+    "time": 1678892851555.173,
+    "uuid": "9f05e4c9-5bf5-4949-ba4f-809c9922d858",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_09.png": {
+    "time": 1678892851492.255,
+    "uuid": "00beac49-e9da-4ec7-9d07-406960ffd3aa",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_12.png": {
+    "time": 1678892851689.5483,
+    "uuid": "16c0e370-8aa5-488b-a75b-9c2f40614bf2",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_13.png": {
+    "time": 1678892851751.5845,
+    "uuid": "e7cd2291-eb83-47e5-9e55-c07a6be5f679",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_11.png": {
+    "time": 1678892851625.4426,
+    "uuid": "9c384656-92ef-440e-9e8d-883a9cb537ee",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_15.png": {
+    "time": 1678892851913.8643,
+    "uuid": "dfa730fc-ceda-4da9-aff0-9e3e71dd18b0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_14.png": {
+    "time": 1678892851851.6167,
+    "uuid": "bc5a939a-6860-4332-a149-ca465d6b10bd",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_16.png": {
+    "time": 1678892851995.9167,
+    "uuid": "ae6c777b-1321-4bdb-966b-fd37ab01eb51",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_17.png": {
+    "time": 1678892852072.728,
+    "uuid": "bfebf4c2-2e9e-4b5f-b860-62ac8da76796",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1": {
+    "time": 1678893158264.551,
+    "uuid": "52dabd82-5afe-4add-922c-8d928acb789c",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_18.png": {
+    "time": 1678892852184.2695,
+    "uuid": "b54ef3e9-3a89-4113-9cd0-cddab7c8bec2",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_21.png": {
+    "time": 1678892852413.8987,
+    "uuid": "149bb017-aa3a-42ec-a020-511d2970a2c0",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_20.png": {
+    "time": 1678892852351.7368,
+    "uuid": "599917ff-8a3a-492c-b173-e4b87f38f603",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big2fire\\fire1_19.png": {
+    "time": 1678892852255.5552,
+    "uuid": "ab34c941-a096-47b2-845c-6be7f03cbc45",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_01.png": {
+    "time": 1678892358858.5447,
+    "uuid": "29e86f7a-78ff-473a-9be4-06097b79e79f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_02.png": {
+    "time": 1678892358983.9001,
+    "uuid": "3a10ef14-94da-4206-8b24-c8647a479fd4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_04.png": {
+    "time": 1678892359176.2356,
+    "uuid": "c9f47578-b9df-41f0-9089-cc2cddf9ee10",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_03.png": {
+    "time": 1678892359105.9995,
+    "uuid": "cff12cde-6cc2-4121-939d-87ce2989d808",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_05.png": {
+    "time": 1678892359260.1138,
+    "uuid": "6144068b-ddeb-4e2f-9e7c-ad274dda2f27",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_06.png": {
+    "time": 1678892359315.2402,
+    "uuid": "228d0fc1-7212-460f-a5d6-4d9cbb8217ba",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_07.png": {
+    "time": 1678892359373.386,
+    "uuid": "3beff711-f1c7-4ea3-8c8e-65cbba7312f2",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_09.png": {
+    "time": 1678892359498.341,
+    "uuid": "203c637f-1f07-49af-86fc-b3c7ab893bb6",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_10.png": {
+    "time": 1678892359571.1143,
+    "uuid": "05d788c5-618e-40f3-80f5-aec6ee8edb45",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_11.png": {
+    "time": 1678892359623.1704,
+    "uuid": "98cf4101-c868-4eae-98e2-6e5c25cd8f58",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_08.png": {
+    "time": 1678892359437.2068,
+    "uuid": "60edee74-99ff-4abb-a262-3add342bb34f",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_12.png": {
+    "time": 1678892359683.909,
+    "uuid": "1bdeb75f-6fee-42bb-bcc2-783dac75ef81",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_14.png": {
+    "time": 1678892359794.51,
+    "uuid": "ab751bcc-5f2a-4ba5-b103-17a1be2279fb",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_13.png": {
+    "time": 1678892359742.3328,
+    "uuid": "39c0a532-1061-439e-a049-7f536dfd5fc1",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_15.png": {
+    "time": 1678892359859.1116,
+    "uuid": "408918f3-3b6b-4aca-ba64-82259cb09273",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_16.png": {
+    "time": 1678892359927.1594,
+    "uuid": "8199eccf-65f9-4e4c-adcd-f48e5e4bc8fd",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_17.png": {
+    "time": 1678892359989.2034,
+    "uuid": "4de1d53c-c860-4254-a092-4d726b17009a",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_18.png": {
+    "time": 1678892360052.3228,
+    "uuid": "a57a6fcd-cae5-4d22-a780-0596630a7b18",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_20.png": {
+    "time": 1678892360210.5745,
+    "uuid": "f3a95962-ad9b-466b-8e9a-43f9af268ff4",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_19.png": {
+    "time": 1678892360147.5483,
+    "uuid": "71e459a1-15b6-4177-8a47-266bb01944da",
+    "missing": false
+  },
+  "E:\\CocosCreator\\git\\mario\\client\\assets\\resources\\textures\\roles\\mario\\big1\\big1_21.png": {
+    "time": 1678892360273.1384,
+    "uuid": "bb0c8f21-f6b2-4e64-87ff-06a9346a4001",
+    "missing": false
+  }
+}

@@ -1,0 +1,256 @@
+{
+  "f46876e4-e81b-4931-b493-6d367be385e7": {
+    "assetUuid": "f46876e4-e81b-4931-b493-6d367be385e7",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "89b6d5e4-7f6d-4f70-8e76-714636072049": {
+    "assetUuid": "89b6d5e4-7f6d-4f70-8e76-714636072049",
+    "animationUuid": "",
+    "expandLevels": [
+      "0",
+      "0_2",
+      "0_2_2"
+    ]
+  },
+  "81e9765d-2a1c-42d4-8bbc-3664de4aec8a": {
+    "assetUuid": "81e9765d-2a1c-42d4-8bbc-3664de4aec8a",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "ca88d912-38bb-4bd5-b937-f7d1d985d01c": {
+    "assetUuid": "ca88d912-38bb-4bd5-b937-f7d1d985d01c",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "a894af3c-181b-47e4-aae4-4ee483ca99b3": {
+    "assetUuid": "a894af3c-181b-47e4-aae4-4ee483ca99b3",
+    "animationUuid": "",
+    "expandLevels": [
+      "0",
+      "0_3"
+    ]
+  },
+  "a7fce159-e3bc-42fc-af56-5104be32d412": {
+    "assetUuid": "a7fce159-e3bc-42fc-af56-5104be32d412",
+    "animationUuid": "",
+    "expandLevels": [
+      "0",
+      "0_4",
+      "0_7",
+      "0_7_0",
+      "0_7_0_1",
+      "0_7_0_1_88",
+      "0_7_0_4"
+    ]
+  },
+  "07fd89ea-0a3c-4854-9441-02422609e879": {
+    "assetUuid": "07fd89ea-0a3c-4854-9441-02422609e879",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "1418664c-4e16-4b01-8f43-5ca2b4ca3684": {
+    "assetUuid": "1418664c-4e16-4b01-8f43-5ca2b4ca3684",
+    "animationUuid": "",
+    "expandLevels": [
+      "0",
+      "0_2",
+      "0_4",
+      "0_7",
+      "0_7_0"
+    ]
+  },
+  "4e6c31f6-6019-456c-9bd0-c706e60e7c80": {
+    "assetUuid": "4e6c31f6-6019-456c-9bd0-c706e60e7c80",
+    "animationUuid": "",
+    "expandLevels": [
+      "0",
+      "0_0",
+      "0_7",
+      "0_8",
+      "0_9"
+    ]
+  },
+  "b102fda0-36a9-4000-8279-6dc815f0b176": {
+    "assetUuid": "b102fda0-36a9-4000-8279-6dc815f0b176",
+    "animationUuid": "",
+    "expandLevels": [
+      "0",
+      "0_1",
+      "0_4_0",
+      "0_5_0",
+      "0_5_0_0",
+      "0_5_0_1",
+      "0_5_0_2",
+      "0_5_0_2_0",
+      "0_5_0_2_0_0",
+      "0_5_0_2_0_1",
+      "0_5_0_2_0_2",
+      "0_5_0_2_0_3",
+      "0_5_0_2_0_4",
+      "0_5_0_2_0_5",
+      "0_5_0_2_0_6",
+      "0_7_0",
+      "0_7_0_5",
+      "0_14",
+      "0_14_1",
+      "0_17",
+      "0_20"
+    ]
+  },
+  "a21c7997-b869-4f75-85df-fdb26757936e": {
+    "assetUuid": "a21c7997-b869-4f75-85df-fdb26757936e",
+    "animationUuid": "",
+    "expandLevels": [
+      "0",
+      "0_1",
+      "0_2_0",
+      "0_2_0_0",
+      "0_2_0_1",
+      "0_3_0",
+      "0_3_0_0",
+      "0_3_0_0_0",
+      "0_3_0_0_0_1",
+      "0_3_0_0_0_2",
+      "0_3_0_0_0_3",
+      "0_3_0_0_0_4",
+      "0_3_0_0_0_5",
+      "0_3_0_0_0_6",
+      "0_3_0_0_0_7",
+      "0_7",
+      "0_9",
+      "0_9_0",
+      "0_9_0_0",
+      "0_9_1",
+      "0_9_2",
+      "0_9_3",
+      "0_9_4",
+      "0_9_5",
+      "0_9_6",
+      "0_9_7",
+      "0_9_8",
+      "0_9_9",
+      "0_9_10",
+      "0_9_11",
+      "0_9_12",
+      "0_9_13",
+      "0_9_14",
+      "0_9_15",
+      "0_9_16"
+    ]
+  },
+  "aa1fdbfc-2475-497f-9f4a-50d3f91fef62": {
+    "assetUuid": "aa1fdbfc-2475-497f-9f4a-50d3f91fef62",
+    "animationUuid": "",
+    "expandLevels": [
+      "0",
+      "0_1",
+      "0_2",
+      "0_2_0",
+      "0_2_0_0"
+    ]
+  },
+  "cda04306-f746-442e-b8d8-2cc28cb70c6e": {
+    "assetUuid": "cda04306-f746-442e-b8d8-2cc28cb70c6e",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "51dafff3-6845-43eb-add3-fac7d88639c4": {
+    "assetUuid": "51dafff3-6845-43eb-add3-fac7d88639c4",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "618b8868-9248-4ccb-bd12-1b8ad6f973b8": {
+    "assetUuid": "618b8868-9248-4ccb-bd12-1b8ad6f973b8",
+    "animationUuid": "",
+    "expandLevels": [
+      "0",
+      "0_4",
+      "0_5",
+      "0_5_0",
+      "0_5_0_1"
+    ]
+  },
+  "eda5fb63-b186-4f23-8c00-76181f66b365": {
+    "assetUuid": "eda5fb63-b186-4f23-8c00-76181f66b365",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "556b6db5-2b95-49bd-babc-5c72f0bbb77a": {
+    "assetUuid": "556b6db5-2b95-49bd-babc-5c72f0bbb77a",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "7ea52876-ee68-4a3b-adde-0ec3a860b404": {
+    "assetUuid": "7ea52876-ee68-4a3b-adde-0ec3a860b404",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "7bc6fca9-99b5-4c24-8be5-4151cebb2cc5": {
+    "assetUuid": "7bc6fca9-99b5-4c24-8be5-4151cebb2cc5",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "b44716cb-6503-4a9e-abae-5751845611a9": {
+    "assetUuid": "b44716cb-6503-4a9e-abae-5751845611a9",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "829d372d-55ec-4cf2-b5e3-0aa16b3d0b26": {
+    "assetUuid": "829d372d-55ec-4cf2-b5e3-0aa16b3d0b26",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "6230c66c-9cca-4843-9c4e-244f53ffdc97": {
+    "assetUuid": "6230c66c-9cca-4843-9c4e-244f53ffdc97",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "c29ee879-3775-4f00-9afb-a0c1fd5fd84f": {
+    "assetUuid": "c29ee879-3775-4f00-9afb-a0c1fd5fd84f",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "884105a8-2377-4903-afe9-ddcf56eb9173": {
+    "assetUuid": "884105a8-2377-4903-afe9-ddcf56eb9173",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  },
+  "cd20fdb8-b09b-4788-98fe-855c981917b8": {
+    "assetUuid": "cd20fdb8-b09b-4788-98fe-855c981917b8",
+    "animationUuid": "",
+    "expandLevels": [
+      "0"
+    ]
+  }
+}

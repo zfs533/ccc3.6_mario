@@ -1,0 +1,90 @@
+{
+  "__type__": "cc.SpriteFrame",
+  "content": {
+    "name": "fire1_01",
+    "atlas": "",
+    "rect": {
+      "x": 1,
+      "y": 1,
+      "width": 16,
+      "height": 32
+    },
+    "offset": {
+      "x": 0.5,
+      "y": -0.5
+    },
+    "originalSize": {
+      "width": 17,
+      "height": 33
+    },
+    "rotated": false,
+    "capInsets": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "vertices": {
+      "rawPosition": [
+        -8,
+        -16,
+        0,
+        8,
+        -16,
+        0,
+        -8,
+        16,
+        0,
+        8,
+        16,
+        0
+      ],
+      "indexes": [
+        0,
+        1,
+        2,
+        2,
+        1,
+        3
+      ],
+      "uv": [
+        1,
+        32,
+        17,
+        32,
+        1,
+        0,
+        17,
+        0
+      ],
+      "nuv": [
+        0.058823529411764705,
+        0,
+        1,
+        0,
+        0.058823529411764705,
+        0.9696969696969697,
+        1,
+        0.9696969696969697
+      ],
+      "minPos": {
+        "x": -8,
+        "y": -16,
+        "z": 0
+      },
+      "maxPos": {
+        "x": 8,
+        "y": 16,
+        "z": 0
+      }
+    },
+    "texture": "eed045d9-d734-4c8c-8dbe-73c292cec162@6c48a",
+    "packable": true,
+    "pixelsToUnit": 100,
+    "pivot": {
+      "x": 0.5,
+      "y": 0.5
+    },
+    "meshType": 0
+  }
+}

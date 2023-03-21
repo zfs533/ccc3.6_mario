@@ -1,0 +1,159 @@
+System.register(["__unresolved_0", "cc", "__unresolved_1", "__unresolved_2", "__unresolved_3", "__unresolved_4"], function (_export, _context) {
+  "use strict";
+
+  var _reporterNs, _cclegacy, __checkObsolete__, __checkObsoleteInNamespace__, _decorator, Component, Collider2D, Contact2DType, AudioManager, clientEvent, Constant, getBrickIndex, _dec, _class, _crd, ccclass, property, coin;
+
+  function _reportPossibleCrUseOfAudioManager(extras) {
+    _reporterNs.report("AudioManager", "../../framework/audioManager", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfclientEvent(extras) {
+    _reporterNs.report("clientEvent", "../../framework/clientEvent", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfConstant(extras) {
+    _reporterNs.report("Constant", "../../framework/constant", _context.meta, extras);
+  }
+
+  function _reportPossibleCrUseOfgetBrickIndex(extras) {
+    _reporterNs.report("getBrickIndex", "../../net/util", _context.meta, extras);
+  }
+
+  return {
+    setters: [function (_unresolved_) {
+      _reporterNs = _unresolved_;
+    }, function (_cc) {
+      _cclegacy = _cc.cclegacy;
+      __checkObsolete__ = _cc.__checkObsolete__;
+      __checkObsoleteInNamespace__ = _cc.__checkObsoleteInNamespace__;
+      _decorator = _cc._decorator;
+      Component = _cc.Component;
+      Collider2D = _cc.Collider2D;
+      Contact2DType = _cc.Contact2DType;
+    }, function (_unresolved_2) {
+      AudioManager = _unresolved_2.AudioManager;
+    }, function (_unresolved_3) {
+      clientEvent = _unresolved_3.clientEvent;
+    }, function (_unresolved_4) {
+      Constant = _unresolved_4.Constant;
+    }, function (_unresolved_5) {
+      getBrickIndex = _unresolved_5.getBrickIndex;
+    }],
+    execute: function () {
+      _crd = true;
+
+      _cclegacy._RF.push({}, "2f1c3N4AmpMOpgVp3U//ied", "coin", undefined);
+
+      __checkObsolete__(['_decorator', 'Component', 'Node', 'BoxCollider2D', 'RigidBody2D', 'Collider2D', 'IPhysics2DContact', 'Contact2DType']);
+
+      ({
+        ccclass,
+        property
+      } = _decorator);
+
+      _export("coin", coin = (_dec = ccclass('coin'), _dec(_class = class coin extends Component {
+        constructor(...args) {
+          super(...args);
+          this.index = 0;
+          this._isDistoried = false;
+          this._lastColliderName = "";
+        }
+
+        onEnable() {
+          this._init();
+
+          this._addListener();
+        }
+
+        _addListener() {
+          (_crd && clientEvent === void 0 ? (_reportPossibleCrUseOfclientEvent({
+            error: Error()
+          }), clientEvent) : clientEvent).on((_crd && Constant === void 0 ? (_reportPossibleCrUseOfConstant({
+            error: Error()
+          }), Constant) : Constant).EVENT_TYPE.CoinRemove + this.index, this._evtCoinRemove, this);
+        }
+
+        onDestroy() {
+          (_crd && clientEvent === void 0 ? (_reportPossibleCrUseOfclientEvent({
+            error: Error()
+          }), clientEvent) : clientEvent).off((_crd && Constant === void 0 ? (_reportPossibleCrUseOfConstant({
+            error: Error()
+          }), Constant) : Constant).EVENT_TYPE.CoinRemove + this.index, this._evtCoinRemove, this);
+        }
+
+        _init() {
+          this.index = (_crd && getBrickIndex === void 0 ? (_reportPossibleCrUseOfgetBrickIndex({
+            error: Error()
+          }), getBrickIndex) : getBrickIndex)();
+          console.log(this.index);
+
+          this._handleCollider();
+        }
+
+        _evtCoinRemove(isImideltly = false) {
+          console.log("this._isDistoried: " + this._isDistoried + "  index: " + this.index);
+          if (this._isDistoried) return;
+          this._isDistoried = true;
+          (_crd && AudioManager === void 0 ? (_reportPossibleCrUseOfAudioManager({
+            error: Error()
+          }), AudioManager) : AudioManager).instance.playSound("smb_coin", false);
+          this.scheduleOnce(() => {
+            if (isImideltly) {
+              this.node.destroy(); // PoolManager.Inst.setNode(this.node);
+            } else {
+              this.scheduleOnce(() => {
+                this.node.destroy(); // PoolManager.Inst.setNode(this.node);
+              }, 0.5);
+            }
+          }, 0.0000001);
+        }
+
+        _handleCollider() {
+          let collider = this.node.getChildByName("coinCollider").getComponent(Collider2D);
+
+          if (collider) {
+            console.log("collider : " + collider);
+            collider.on(Contact2DType.BEGIN_CONTACT, this.onBeginContact, this);
+            collider.on(Contact2DType.END_CONTACT, this._onEndContact, this);
+          }
+        }
+        /**
+         * 碰撞检测
+         * @param selfCollider  
+         * @param otherCollider 
+         * @param contact 
+         */
+
+
+        onBeginContact(selfCollider, otherCollider, contact) {
+          // 只在两个碰撞体开始接触时被调用一次
+          let name1 = selfCollider.node.name;
+          let name2 = otherCollider.node.name;
+          console.log('start_collider : ' + this.index);
+          if (name2 == this._lastColliderName) return;
+          this._lastColliderName = name2;
+
+          if (name2.includes("mario")) {
+            this._evtCoinRemove(true); //  let idx = otherCollider.node.parent.getComponent(coin).index;
+            //  console.log("this._tempIdx-------- all : "+this._tempIdx);
+            //  if(this._tempIdx != idx){
+            //      this._tempIdx = idx;
+            //      console.log("this._tempIdx: "+this._tempIdx);
+            //      clientEvent.dispatchEvent(Constant.EVENT_TYPE.CoinRemove + idx,true);
+
+          }
+        }
+
+        _onEndContact(selfCollider, otherCollider, contact) {// 只在两个碰撞体结束接触时被调用一次
+          // console.log('onEndContact');
+        }
+
+      }) || _class));
+
+      _cclegacy._RF.pop();
+
+      _crd = false;
+    }
+  };
+});
+//# sourceMappingURL=72c06c6ae63b8e602eff236f363510833f37d1fa.js.map
