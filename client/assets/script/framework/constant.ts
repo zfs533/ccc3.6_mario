@@ -1,4 +1,5 @@
 import { map } from "../game/ui/map/map";
+import { MarioBodyStatus } from "./enum";
 
 export class Constant {
     //事件列表
@@ -13,10 +14,14 @@ export class Constant {
         TopWhy: "TopWhy",
         CoinRemove: "CoinRemove",
         MarioDeath: "MarioDeath",
+        ChangeStatus: "ChangeStatus",
         AddToMap: "AddToMap",
         TranslateScenes:"TranslateScenes",
         InitCameraPos:"InitCameraPos",
         FinishedGame:"FinishedGame",
+        HoleGetDown:"HoleGetDown",
+        EnablePhysics:"EnablePhysics",
+        MushRoomDestroy:"MushRoomDestroy",
     }
 
     public static MoveSpeed: number = 10;
@@ -24,4 +29,5 @@ export class Constant {
     public static CurMap: map = null;
     public static CurMapWidth:number = 0;
     public static FinishedGame:boolean = false;
+    public static BodyStatus:MarioBodyStatus = MarioBodyStatus.normal;
 }

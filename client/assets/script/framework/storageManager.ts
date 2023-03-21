@@ -33,19 +33,13 @@ export class StorageManager {
 
         var content;
         if (sys.isNative) {
-            var valueObject = jsb.fileUtils.getValueMapFromFile(this._path);
-            content = valueObject[this._keyConfig];
+            // var valueObject = jsb.fileUtils.getValueMapFromFile(this._path);
+            // content = valueObject[this._keyConfig];
         } else {
             content = sys.localStorage.getItem(this._keyConfig);
         }
 
-        // // 解密代码
-        // if (cc.game.config["encript"]) {
-        //     var newContent = new Xxtea("upgradeHeroAbility").xxteaDecrypt(content);
-        //     if (newContent && newContent.length > 0) {
-        //         content = newContent;
-        //     }
-        // }
+
 
         if (content && content.length) {
             if (content.startsWith('@')) {
@@ -62,11 +56,6 @@ export class StorageManager {
             }
 
         }
-
-        //启动无限定时器，每1秒保存一次数据，而不是无限保存数据
-        // this._saveTimer = setInterval(() =>{
-        //     this.scheduleSave();
-        // }, 500);
 
         //每隔5秒保存一次数据，主要是为了保存最新在线时间，方便离线奖励时间判定
         this._saveTimer = setInterval(() => {
@@ -203,7 +192,7 @@ export class StorageManager {
         var valueObj: any = {};
         valueObj[this._keyConfig] = zipStr;
         // jsb.fileUtils.writeToFile(valueObj, this._path);
-        jsb.fileUtils.writeToFile(valueObj);
+        // jsb.fileUtils.writeToFile(valueObj);
     }
 
     /**
@@ -222,8 +211,8 @@ export class StorageManager {
             path = "./conf";
         } else {
             if (sys.isNative) {
-                path = jsb.fileUtils.getWritablePath();
-                path = path + "conf";
+                // path = jsb.fileUtils.getWritablePath();
+                // path = path + "conf";
             } else {
                 path = "src/conf";
             }

@@ -60,6 +60,7 @@ export class AudioManager  {
      * @param {Boolean} loop 是否循环播放
      */
     playMusic (name:string, loop: boolean) {
+        return;
         let path = 'audio/' + name;
         //微信特殊处理，除一开场的音乐，其余的放在子包里头
         // if (name !== 'click') {

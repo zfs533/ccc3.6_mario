@@ -1,6 +1,7 @@
-import { _decorator, Component, Node, Collider2D, IPhysics2DContact, v3, tween, UITransformComponent, RigidBody2D, BoxCollider2D, math, ERigidBody2DType } from 'cc';
+import { _decorator, Component, Node, Collider2D, IPhysics2DContact, v3, tween, UITransform, RigidBody2D, BoxCollider2D, math, ERigidBody2DType } from 'cc';
 import { clientEvent } from '../../framework/clientEvent';
 import { Constant } from '../../framework/constant';
+import { EnumPhysicsGroup } from '../../framework/enum';
 import { baseCollider } from '../collider/baseCollider';
 const { ccclass, property } = _decorator;
 
@@ -14,11 +15,14 @@ export class mushroom extends baseCollider {
         super.start();
         this._addListener();
         this._init();
+        this.setPhysicsGroup(EnumPhysicsGroup.mushroom);
+        clientEvent.on(Constant.EVENT_TYPE.MushRoomDestroy,this._evtMushRoomDestroy,this);
     }
     private _addListener() {
     }
 
     onDestroy() {
+        clientEvent.off(Constant.EVENT_TYPE.MushRoomDestroy,this._evtMushRoomDestroy,this);
     }
 
     private _init() {
@@ -28,7 +32,7 @@ export class mushroom extends baseCollider {
         this._group = bc.group;
         this._removePhysics();
         let pos = this.node.getWorldPosition();
-        let height = this.node.getComponent(UITransformComponent).height * Constant.MapScale;
+        let height = this.node.getComponent(UITransform).height * Constant.MapScale;
         this.node.setWorldPosition(v3(pos.x, pos.y - (height / Constant.MapScale), pos.z));
         pos = this.node.getWorldPosition();
         this.node.setWorldPosition(v3(pos.x, pos.y - (height), pos.z))
@@ -60,6 +64,10 @@ export class mushroom extends baseCollider {
         }
     }
 
+    _evtMushRoomDestroy(){
+        this.node.destroy();
+    }
+
     private _evtMushroomMove(offset: number) {
         if (offset != this._normalX) {
             this._speed *= -1;
@@ -68,7 +76,7 @@ export class mushroom extends baseCollider {
     }
 
     update(deltaTime: number) {
-        if (!this._isActive) return;
+        if (!this._isActive || !Constant.CurMap.physicsStatus) return;
         let pos = this.node.getPosition();
         pos.x += this._speed;
         this.node.setPosition(pos);

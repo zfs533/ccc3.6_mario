@@ -1,7 +1,8 @@
-import { _decorator, Component, Node, Vec3, tween, v3, SpriteFrame, SpriteComponent, Sprite, instantiate, Enum, UITransform, UITransformComponent } from 'cc';
+import { _decorator, Component, Node, Vec3, tween, v3, SpriteFrame, SpriteComponent, Sprite, instantiate, Enum, UITransform, Prefab } from 'cc';
 import { clientEvent } from '../../framework/clientEvent';
 import { Constant } from '../../framework/constant';
 import { ResourcePath, whyType } from '../../framework/enum';
+import { PoolManager } from '../../framework/poolManager';
 import { resourceUtil } from '../../framework/resourceUtil';
 import { getBrickIndex } from '../../net/util';
 import { coin } from './coin';
@@ -56,9 +57,10 @@ export class whyBrick extends Component {
     private async _playMoveUp() {
         this._isGot = true;
         this._setFinishedStatus();
-        let pre = await resourceUtil.loadPiecesPriefabRes("coin")
+        let pre:Prefab = await resourceUtil.loadPiecesPriefabRes("coin")
         if (pre) {
             //加载金币并发送消除金币事件
+            // let node = await PoolManager.Inst.getNode(pre,this.node);
             let node = instantiate(pre) as Node;
             this.node.addChild(node);
             let idx = node.getComponent(coin).index;

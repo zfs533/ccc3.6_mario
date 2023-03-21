@@ -34,12 +34,12 @@ export class joystick extends Component {
 
     _init() {
         this._isFinished = false;
-        Constant.FinishedGame = true;
+        Constant.FinishedGame = false;
         this._addListener();
     }
 
     private _touchStart(event: EventTouch) {
-        if(this._isFinished)return;
+        if(this._isFinished || !Constant.CurMap.physicsStatus)return;
         let touchPos = event.getUILocation();
         let pos = new Vec3(touchPos.x, touchPos.y, 0);
         pos = this.node.parent?.getComponent(UITransform)?.convertToNodeSpaceAR(pos) as Vec3;
@@ -53,7 +53,7 @@ export class joystick extends Component {
     }
 
     private _touchMove(event: EventTouch) {
-        if (!this._isUseful) {
+        if (!this._isUseful || !Constant.CurMap.physicsStatus) {
             return;
         }
         let touchPos = event.getUILocation();
@@ -79,14 +79,14 @@ export class joystick extends Component {
     }
 
     private _touchEnd(event: EventTouch) {
-        if (!this._isUseful) return;
+        if (!this._isUseful || !Constant.CurMap.physicsStatus) return;
         this._isUseful = false;
         this.joystickBg.setPosition(this._originPos);
         this.joystickBar.setPosition(new Vec3());
         clientEvent.dispatchEvent(Constant.EVENT_TYPE.Stop);
     }
     private _onKeyDown(e: EventKeyboard) {
-        if(this._isFinished)return;
+        if(this._isFinished || !Constant.CurMap.physicsStatus)return;
         switch (e.keyCode) {
             case KeyCode.KEY_A:
                 clientEvent.dispatchEvent(Constant.EVENT_TYPE.Move, new Vec3(-1, 0, 0));
@@ -100,7 +100,7 @@ export class joystick extends Component {
         }
     }
     private _onKeyUp(e: EventKeyboard) {
-        if(this._isFinished)return;
+        if(this._isFinished || !Constant.CurMap.physicsStatus)return;
         switch (e.keyCode) {
             case KeyCode.KEY_A:
                 clientEvent.dispatchEvent(Constant.EVENT_TYPE.Stop);
@@ -132,6 +132,7 @@ export class joystick extends Component {
     }
 
     private jump() {
+        if(this._isFinished)return;
         AudioManager.instance.playSound("smb_jumpsmall",false);
         clientEvent.dispatchEvent(Constant.EVENT_TYPE.Jump);
     }

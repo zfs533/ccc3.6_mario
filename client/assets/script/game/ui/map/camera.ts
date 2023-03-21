@@ -15,7 +15,7 @@ export class camera extends Component {
     }
 
     private _init() {
-        console.log("camera pos: "+this.node.getPosition());
+        // console.log("camera pos: "+this.node.getPosition());
     }
 
     private _addListener() {
@@ -30,9 +30,13 @@ export class camera extends Component {
         clientEvent.off(Constant.EVENT_TYPE.StopCamera, this._evtStopCamera, this);
     }
 
+    /**
+     * 初始化摄像机位置,初始化顺序在角色登场之后
+     * @param rolePos 
+     */
     private _evtInitCameraPos(rolePos:Vec3){
-        let pos = v3(rolePos.x-400,this._originPos.y,this._originPos.z);
-        this.node.setPosition(pos);
+        this._handleCameraPos(rolePos);
+        let pos = this.node.getPosition();
         clientEvent.dispatchEvent(Constant.EVENT_TYPE.MoveJoystick, pos);
     }
 
@@ -42,9 +46,11 @@ export class camera extends Component {
      */
     private _evtMoveCamera(params: any[]) {
         let rolePos = params[0];
-        let offset: number = params[1];
+        this._handleCameraPos(rolePos);
+    }
+
+    private _handleCameraPos(rolePos:Vec3){
         let pos = this.node.getPosition();
-        
         let gap = this._winSize.width/2;
         if(pos.x>=0 && rolePos.x>=400){
             pos.x = rolePos.x-gap+280;
@@ -58,16 +64,7 @@ export class camera extends Component {
             this.node.setPosition(v3(0,pos.y,pos.z));
         }
     }
-
-    private _startMove(offset: number) {
-        let pos = this.node.getPosition();
-        pos.x += offset;
-        if(pos.x>= Constant.CurMapWidth-this._winSize.width){
-            pos.x = Constant.CurMapWidth - this._winSize.width;
-        }
-        this.node.setPosition(pos);
-        clientEvent.dispatchEvent(Constant.EVENT_TYPE.MoveJoystick, offset);
-    }
+    
     private _evtStopCamera() {
 
     }

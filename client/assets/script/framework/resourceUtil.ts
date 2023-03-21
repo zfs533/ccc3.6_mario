@@ -1,4 +1,4 @@
-import { _decorator, Prefab, Node, SpriteComponent, SpriteFrame, Rect, ImageAsset, resources, error, Texture2D, instantiate, isValid, find, loader, Color } from "cc";
+import { _decorator, Prefab, Node, SpriteComponent, SpriteFrame, Rect, ImageAsset, resources, error, Texture2D, instantiate, isValid, find, loader, Color, Primitive, Sprite } from "cc";
 const { ccclass } = _decorator;
 
 @ccclass("resourceUtil")
@@ -22,9 +22,23 @@ export class resourceUtil {
         })
     }
 
-    public static loadPiecesPriefabRes(modulePath: string) {
+    public static loadPiecesPriefabRes(modulePath: string):Promise<Prefab> {
         return new Promise((resolve, reject) => {
             this.loadRes(`prefab/pieces/${modulePath}`, Prefab, (err: any, prefab: Prefab) => {
+                if (err) {
+                    console.error('effect load failed', modulePath);
+                    reject && reject();
+                    return;
+                }
+
+                resolve && resolve(prefab);
+            })
+        })
+    }
+
+    public static loadEnemyPrefabRes(modulePath: string):Promise<Prefab> {
+        return new Promise((resolve, reject) => {
+            this.loadRes(`prefab/enemy/${modulePath}`, Prefab, (err: any, prefab: Prefab) => {
                 if (err) {
                     console.error('effect load failed', modulePath);
                     reject && reject();
@@ -52,7 +66,7 @@ export class resourceUtil {
 
     public static loadMapModelRes(modulePath: string) {
         return new Promise((resolve, reject) => {
-            this.loadRes(`map/${modulePath}`, Prefab, (err: any, prefab: Prefab) => {
+            this.loadRes(`prefab/map/${modulePath}`, Prefab, (err: any, prefab: Prefab) => {
                 if (err) {
                     console.error("map model load failed", modulePath);
                     reject && reject();
@@ -63,6 +77,25 @@ export class resourceUtil {
             })
         })
     }
+
+    public static getMapPrefabRes(prefabPath: string, cb?: Function) {
+        this.loadRes("prefab/map/" + prefabPath, Prefab, cb);
+    }
+
+    public static createMap(path: string, cb?: Function, parent?: Node) {
+        this.getMapPrefabRes(path, function (err, prefab) {
+            if (err) return;
+            var node = instantiate(prefab);
+            // node.setPosition(0, 0, 0);
+            if (!parent) {
+                parent = find("Canvas") as Node;
+            }
+
+            parent.addChild(node);
+            cb && cb(null, node);
+        });
+    }
+
     public static loadSpriteFrameRes(path: string) {
         return new Promise((resolve, reject) => {
             this.loadRes(path, SpriteFrame, (err: any, img: ImageAsset) => {
@@ -83,8 +116,8 @@ export class resourceUtil {
         })
     }
 
-    public static setAvatarIcon(name: string, sprite: SpriteComponent, cb?: Function) {
-        this.loadSpriteFrameRes(`textures/avatar/${name}`).then((sf) => {
+    public static setSpriteIcon(path: string, sprite: Sprite, cb?: Function) {
+        this.loadSpriteFrameRes(path).then((sf) => {
             if (sprite && isValid(sprite)) {
                 sprite.spriteFrame = sf as SpriteFrame;
                 cb && cb();
@@ -140,7 +173,7 @@ export class resourceUtil {
         this.getUIPrefabRes(path, function (err, prefab) {
             if (err) return;
             var node = instantiate(prefab);
-            node.setPosition(0, 0, 0);
+            // node.setPosition(0, 0, 0);
             if (!parent) {
                 parent = find("Canvas") as Node;
             }
