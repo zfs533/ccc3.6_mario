@@ -1,4 +1,4 @@
-import { _decorator, Component, Node } from "cc";
+import { _decorator, Component, Node, Collider2D, RigidBody2D } from "cc";
 const { ccclass, property } = _decorator;
 
 @ccclass("util")
@@ -986,5 +986,46 @@ export class util {
     public static getRandomDirector() {
         let v = Math.random();
         return v > 0.5 ? 1 : -1
+    }
+
+    /**
+     * 销毁碰撞体积物体
+     * @param collider 
+     */
+    public static destoryPhysicCollider(collider:Collider2D){
+        if(collider){
+            setTimeout(()=>{
+                collider.node.destroy();
+            },100);
+        }
+    }
+
+    /**
+     * 销毁刚体物体
+     * @param rigidbody 
+     */
+    public static destoryPhysicRigidbody(rigidbody:RigidBody2D){
+        if(rigidbody){
+            setTimeout(()=>{
+                rigidbody.node.destroy();
+            },100);
+        }
+    }
+
+    /**
+     * 取消和恢复物理刚体碰撞体属性
+     * 
+     * @param node 
+     * @param bool 
+     */
+    public static setPhysicStatus(node:Node,bool:boolean = true){
+        let collider = node.getComponent(Collider2D);
+        let rigidbody = node.getComponent(RigidBody2D)
+        if(collider && rigidbody){
+            setTimeout(()=>{
+                collider.enabled = bool;
+                rigidbody.enabled = bool;
+            },100);
+        }
     }
 }
