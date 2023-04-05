@@ -1,7 +1,7 @@
-import { _decorator, Component, Node, Collider2D, IPhysics2DContact, v3, tween, UITransform, RigidBody2D, BoxCollider2D, math, ERigidBody2DType } from 'cc';
+import { _decorator, Component, Animation, Collider2D, IPhysics2DContact, v3, tween, UITransform, RigidBody2D, BoxCollider2D, math, ERigidBody2DType } from 'cc';
 import { clientEvent } from '../../framework/clientEvent';
 import { Constant } from '../../framework/constant';
-import { EnumPhysicsGroup } from '../../framework/enum';
+import { EnumMushroom, EnumPhysicsGroup, MarioBodyStatus } from '../../framework/enum';
 import { baseCollider } from '../collider/baseCollider';
 const { ccclass, property } = _decorator;
 
@@ -11,9 +11,12 @@ export class mushroom extends baseCollider {
     private _normalX: number = 0;
     private _isActive: boolean = false;
     private _group: number = 0;
+    private _animNameArr:any[] = ["mushroom","mushroom1"];
+    private _type:EnumMushroom = EnumMushroom.mushroom;
     start() {
         super.start();
         this._addListener();
+        this._type = Constant.BodyStatus == MarioBodyStatus.normal ? EnumMushroom.mushroom : EnumMushroom.floower;
         this._init();
         this.setPhysicsGroup(EnumPhysicsGroup.mushroom);
         clientEvent.on(Constant.EVENT_TYPE.MushRoomDestroy,this._evtMushRoomDestroy,this);
@@ -26,16 +29,18 @@ export class mushroom extends baseCollider {
     }
 
     private _init() {
+        this.node.getComponent(Animation).play(this._animNameArr[this._type]);
         this._speed = Constant.MoveSpeed / 3;
         this.node.setScale(v3(Constant.MapScale, Constant.MapScale, 1));
         let bc = this.node.getComponent(BoxCollider2D);
         this._group = bc.group;
+        //要做tween动画,先把刚体组件冻结了
         this._removePhysics();
         let pos = this.node.getWorldPosition();
         let height = this.node.getComponent(UITransform).height * Constant.MapScale;
         this.node.setWorldPosition(v3(pos.x, pos.y - (height / Constant.MapScale), pos.z));
         pos = this.node.getWorldPosition();
-        this.node.setWorldPosition(v3(pos.x, pos.y - (height), pos.z))
+        this.node.setWorldPosition(v3(pos.x, pos.y - (height/2), pos.z))
         // this.node.setSiblingIndex(3);
 
         tween(this.node).to(1, { worldPosition: v3(pos.x, pos.y, pos.z) }).call(() => {
@@ -77,6 +82,7 @@ export class mushroom extends baseCollider {
 
     update(deltaTime: number) {
         if (!this._isActive || !Constant.CurMap.physicsStatus) return;
+        if(this._type == EnumMushroom.floower)return;
         let pos = this.node.getPosition();
         pos.x += this._speed;
         this.node.setPosition(pos);

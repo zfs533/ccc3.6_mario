@@ -936,7 +936,10 @@
     "url": "db://assets/resources/prefab/pieces/mushroom.prefab",
     "value": {
       "depends": [
-        "ff43241f-da8d-47bc-8f01-202c19e09620@f9941"
+        "45a175c8-0985-4dc3-ac5e-f9b2cf2ce577@f9941",
+        "c6ce6ac3-1ee0-4d0c-be45-23badeed483e",
+        "3385ef8c-e5a8-4592-9221-af9fb82b1e68",
+        "c6ce6ac3-1ee0-4d0c-be45-23badeed483e"
       ]
     }
   },
@@ -5281,6 +5284,92 @@
     "value": {
       "depends": [
         "149bb017-aa3a-42ec-a020-511d2970a2c0@6c48a"
+      ]
+    }
+  },
+  "c6ce6ac3-1ee0-4d0c-be45-23badeed483e": {
+    "url": "db://assets/res/animations/pieces/mushroom.anim",
+    "value": {
+      "depends": [
+        "45a175c8-0985-4dc3-ac5e-f9b2cf2ce577@f9941",
+        "5351e3a3-3ffb-4cb7-9f6f-cf4231f17729@f9941",
+        "45a175c8-0985-4dc3-ac5e-f9b2cf2ce577@f9941"
+      ]
+    }
+  },
+  "27657b38-2f21-40b4-9a5a-551fc4d14b4a": {
+    "url": "db://assets/res/textures/pieces/flower.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "45a175c8-0985-4dc3-ac5e-f9b2cf2ce577": {
+    "url": "db://assets/res/textures/pieces/mushroom1.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "5351e3a3-3ffb-4cb7-9f6f-cf4231f17729": {
+    "url": "db://assets/res/textures/pieces/mushroom2.png",
+    "value": {
+      "depends": []
+    }
+  },
+  "45a175c8-0985-4dc3-ac5e-f9b2cf2ce577@6c48a": {
+    "url": "db://assets/res/textures/pieces/mushroom1.png@6c48a",
+    "value": {
+      "depends": [
+        "45a175c8-0985-4dc3-ac5e-f9b2cf2ce577"
+      ]
+    }
+  },
+  "27657b38-2f21-40b4-9a5a-551fc4d14b4a@6c48a": {
+    "url": "db://assets/res/textures/pieces/flower.png@6c48a",
+    "value": {
+      "depends": [
+        "27657b38-2f21-40b4-9a5a-551fc4d14b4a"
+      ]
+    }
+  },
+  "45a175c8-0985-4dc3-ac5e-f9b2cf2ce577@f9941": {
+    "url": "db://assets/res/textures/pieces/mushroom1.png@f9941",
+    "value": {
+      "depends": [
+        "45a175c8-0985-4dc3-ac5e-f9b2cf2ce577@6c48a"
+      ]
+    }
+  },
+  "5351e3a3-3ffb-4cb7-9f6f-cf4231f17729@6c48a": {
+    "url": "db://assets/res/textures/pieces/mushroom2.png@6c48a",
+    "value": {
+      "depends": [
+        "5351e3a3-3ffb-4cb7-9f6f-cf4231f17729"
+      ]
+    }
+  },
+  "5351e3a3-3ffb-4cb7-9f6f-cf4231f17729@f9941": {
+    "url": "db://assets/res/textures/pieces/mushroom2.png@f9941",
+    "value": {
+      "depends": [
+        "5351e3a3-3ffb-4cb7-9f6f-cf4231f17729@6c48a"
+      ]
+    }
+  },
+  "3385ef8c-e5a8-4592-9221-af9fb82b1e68": {
+    "url": "db://assets/res/animations/pieces/mushroom1.anim",
+    "value": {
+      "depends": [
+        "27657b38-2f21-40b4-9a5a-551fc4d14b4a@f9941",
+        "27657b38-2f21-40b4-9a5a-551fc4d14b4a@f9941",
+        "27657b38-2f21-40b4-9a5a-551fc4d14b4a@f9941"
+      ]
+    }
+  },
+  "27657b38-2f21-40b4-9a5a-551fc4d14b4a@f9941": {
+    "url": "db://assets/res/textures/pieces/flower.png@f9941",
+    "value": {
+      "depends": [
+        "27657b38-2f21-40b4-9a5a-551fc4d14b4a@6c48a"
       ]
     }
   }

@@ -29,5 +29,6 @@ export class Constant {
     public static CurMap: map = null;
     public static CurMapWidth:number = 0;
     public static FinishedGame:boolean = false;
+    //当前是否是变大状态
     public static BodyStatus:MarioBodyStatus = MarioBodyStatus.normal;
 }

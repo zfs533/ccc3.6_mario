@@ -77,3 +77,9 @@ export enum EnumEnemyStatus {
     run   = 2,
     death = 3,
 }
+
+//蘑菇的状态
+export enum EnumMushroom {
+    mushroom = 0,
+    floower  = 1,
+}

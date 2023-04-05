@@ -46,6 +46,13 @@ export class mario extends baseCollider {
     }
 
     private _init() {
+        //过关卡的时候下一关初始化需要判断当前角色的状态
+        if(Constant.BodyStatus == MarioBodyStatus.normal){
+            this.node.setScale(v3(this._scale1,this._scale1,this._scale1));
+        }
+        else if(Constant.BodyStatus == MarioBodyStatus.huge){
+            this.node.setScale(v3(this._scale2,this._scale2,this._scale2));
+        }
         this._speed = Constant.MoveSpeed / 2;
         this._loadAnimComponent();
         this._loadRigidBody2d();
@@ -153,6 +160,7 @@ export class mario extends baseCollider {
         else {
             this._rigidbody2d.applyForce(v2(0, 1300), v2(0, 0), true);
         }
+        Constant.BodyStatus = MarioBodyStatus.normal;
         //刷新复活点
         roleManager.Inst.updateAlivePoint(pos)
         //先让他复活
@@ -318,7 +326,12 @@ export class mario extends baseCollider {
         }
         if(name2.includes("mushroom")){
             otherCollider.node.setScale(v3(0,0,0))
-            this.handleMushroom();
+            if(Constant.BodyStatus == MarioBodyStatus.normal){
+                this.handleMushroom();
+            }
+            else{
+                this.addChangeBodyAddBullet();
+            }
         }
     }
 
@@ -359,7 +372,7 @@ export class mario extends baseCollider {
                 Constant.BodyStatus = MarioBodyStatus.huge;
             })
             .start();
-        } else if(Constant.BodyStatus == MarioBodyStatus.huge){//变大
+        } else if(Constant.BodyStatus == MarioBodyStatus.huge){//变小
             let scalex1 = scale.x>0 ? 2.5 : -2.5;
             let scalex2 = scale.x>0 ? 2.8 : -2.8;
             let scalex3 = scale.x>0 ? 4 : -4;
@@ -383,6 +396,11 @@ export class mario extends baseCollider {
             })
             .start();
         }
+    }
+
+    //发射子弹变身
+    private addChangeBodyAddBullet(){
+
     }
 
     private _check_gameOver(){

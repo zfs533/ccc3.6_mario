@@ -1,7 +1,7 @@
 {
   "modules": {
     "cce:/internal/x/cc": {
-      "mTimestamp": 21400.315128326416,
+      "mTimestamp": 16458.175814002752,
       "chunkId": "86ea51a86e5d858891ef07385334b7b1017d7ca2",
       "imports": [
         {
@@ -598,11 +598,11 @@
       ]
     },
     "cce:/internal/x/prerequisite-imports": {
-      "mTimestamp": 39105.40005731583,
+      "mTimestamp": 3458796.4070139974,
       "chunkId": "aa76bc2d25a71b26ca613a26b2d47008fac13c7b",
       "imports": [
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/config/cfgEnemy.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgEnemy.ts",
           "resolved": "__unresolved_0",
           "loc": {
             "start": {
@@ -611,12 +611,12 @@
             },
             "end": {
               "line": 4,
-              "column": 82
+              "column": 91
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/config/cfgHole.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgHole.ts",
           "resolved": "__unresolved_1",
           "loc": {
             "start": {
@@ -625,12 +625,12 @@
             },
             "end": {
               "line": 5,
-              "column": 81
+              "column": 90
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/config/cfgLevel.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgLevel.ts",
           "resolved": "__unresolved_2",
           "loc": {
             "start": {
@@ -639,12 +639,12 @@
             },
             "end": {
               "line": 6,
-              "column": 82
+              "column": 91
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/config/lifePoint.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/lifePoint.ts",
           "resolved": "__unresolved_3",
           "loc": {
             "start": {
@@ -653,12 +653,12 @@
             },
             "end": {
               "line": 7,
-              "column": 83
+              "column": 92
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/audioManager.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/audioManager.ts",
           "resolved": "__unresolved_4",
           "loc": {
             "start": {
@@ -667,12 +667,12 @@
             },
             "end": {
               "line": 8,
-              "column": 89
+              "column": 98
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/clientEvent.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts",
           "resolved": "__unresolved_5",
           "loc": {
             "start": {
@@ -681,12 +681,12 @@
             },
             "end": {
               "line": 9,
-              "column": 88
+              "column": 97
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/constant.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts",
           "resolved": "__unresolved_6",
           "loc": {
             "start": {
@@ -695,12 +695,12 @@
             },
             "end": {
               "line": 10,
-              "column": 85
+              "column": 94
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/csvManager.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/csvManager.ts",
           "resolved": "__unresolved_7",
           "loc": {
             "start": {
@@ -709,12 +709,12 @@
             },
             "end": {
               "line": 11,
-              "column": 87
+              "column": 96
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/enum.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts",
           "resolved": "__unresolved_8",
           "loc": {
             "start": {
@@ -723,12 +723,12 @@
             },
             "end": {
               "line": 12,
-              "column": 81
+              "column": 90
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/localConfig.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/localConfig.ts",
           "resolved": "__unresolved_9",
           "loc": {
             "start": {
@@ -737,12 +737,12 @@
             },
             "end": {
               "line": 13,
-              "column": 88
+              "column": 97
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/lodash.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/lodash.ts",
           "resolved": "__unresolved_10",
           "loc": {
             "start": {
@@ -751,12 +751,12 @@
             },
             "end": {
               "line": 14,
-              "column": 83
+              "column": 92
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/poolManager.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/poolManager.ts",
           "resolved": "__unresolved_11",
           "loc": {
             "start": {
@@ -765,12 +765,12 @@
             },
             "end": {
               "line": 15,
-              "column": 88
+              "column": 97
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/resourceUtil.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/resourceUtil.ts",
           "resolved": "__unresolved_12",
           "loc": {
             "start": {
@@ -779,12 +779,12 @@
             },
             "end": {
               "line": 16,
-              "column": 89
+              "column": 98
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/storageManager.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/storageManager.ts",
           "resolved": "__unresolved_13",
           "loc": {
             "start": {
@@ -793,12 +793,12 @@
             },
             "end": {
               "line": 17,
-              "column": 91
+              "column": 100
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/util.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/util.ts",
           "resolved": "__unresolved_14",
           "loc": {
             "start": {
@@ -807,12 +807,12 @@
             },
             "end": {
               "line": 18,
-              "column": 81
+              "column": 90
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/collider/baseCollider.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/collider/baseCollider.ts",
           "resolved": "__unresolved_15",
           "loc": {
             "start": {
@@ -821,12 +821,12 @@
             },
             "end": {
               "line": 19,
-              "column": 93
+              "column": 102
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/common/translateScens.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/common/translateScens.ts",
           "resolved": "__unresolved_16",
           "loc": {
             "start": {
@@ -835,12 +835,12 @@
             },
             "end": {
               "line": 20,
-              "column": 93
+              "column": 102
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/common/user.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/common/user.ts",
           "resolved": "__unresolved_17",
           "loc": {
             "start": {
@@ -849,12 +849,12 @@
             },
             "end": {
               "line": 21,
-              "column": 83
+              "column": 92
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/brick.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/brick.ts",
           "resolved": "__unresolved_18",
           "loc": {
             "start": {
@@ -863,12 +863,12 @@
             },
             "end": {
               "line": 22,
-              "column": 84
+              "column": 93
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/cloud.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/cloud.ts",
           "resolved": "__unresolved_19",
           "loc": {
             "start": {
@@ -877,12 +877,12 @@
             },
             "end": {
               "line": 23,
-              "column": 84
+              "column": 93
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/coin.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/coin.ts",
           "resolved": "__unresolved_20",
           "loc": {
             "start": {
@@ -891,12 +891,12 @@
             },
             "end": {
               "line": 24,
-              "column": 83
+              "column": 92
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/hole.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/hole.ts",
           "resolved": "__unresolved_21",
           "loc": {
             "start": {
@@ -905,12 +905,12 @@
             },
             "end": {
               "line": 25,
-              "column": 83
+              "column": 92
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/mushroom.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/mushroom.ts",
           "resolved": "__unresolved_22",
           "loc": {
             "start": {
@@ -919,12 +919,12 @@
             },
             "end": {
               "line": 26,
-              "column": 87
+              "column": 96
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/whyBrick.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/whyBrick.ts",
           "resolved": "__unresolved_23",
           "loc": {
             "start": {
@@ -933,12 +933,12 @@
             },
             "end": {
               "line": 27,
-              "column": 87
+              "column": 96
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/enemy/enemy.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemy.ts",
           "resolved": "__unresolved_24",
           "loc": {
             "start": {
@@ -947,12 +947,12 @@
             },
             "end": {
               "line": 28,
-              "column": 89
+              "column": 98
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/enemy/enemyBlack.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemyBlack.ts",
           "resolved": "__unresolved_25",
           "loc": {
             "start": {
@@ -961,12 +961,12 @@
             },
             "end": {
               "line": 29,
-              "column": 94
+              "column": 103
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/enemy/enemyTortoise.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemyTortoise.ts",
           "resolved": "__unresolved_26",
           "loc": {
             "start": {
@@ -975,12 +975,12 @@
             },
             "end": {
               "line": 30,
-              "column": 97
+              "column": 106
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/mario/mario.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/mario/mario.ts",
           "resolved": "__unresolved_27",
           "loc": {
             "start": {
@@ -989,12 +989,12 @@
             },
             "end": {
               "line": 31,
-              "column": 89
+              "column": 98
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/roleManager.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/roleManager.ts",
           "resolved": "__unresolved_28",
           "loc": {
             "start": {
@@ -1003,12 +1003,12 @@
             },
             "end": {
               "line": 32,
-              "column": 89
+              "column": 98
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/status/baseStatus.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/status/baseStatus.ts",
           "resolved": "__unresolved_29",
           "loc": {
             "start": {
@@ -1017,12 +1017,12 @@
             },
             "end": {
               "line": 33,
-              "column": 95
+              "column": 104
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/status/playerStatus.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/status/playerStatus.ts",
           "resolved": "__unresolved_30",
           "loc": {
             "start": {
@@ -1031,12 +1031,12 @@
             },
             "end": {
               "line": 34,
-              "column": 97
+              "column": 106
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/ui/joystick/joystick.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/joystick/joystick.ts",
           "resolved": "__unresolved_31",
           "loc": {
             "start": {
@@ -1045,12 +1045,12 @@
             },
             "end": {
               "line": 35,
-              "column": 92
+              "column": 101
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/ui/map/camera.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/map/camera.ts",
           "resolved": "__unresolved_32",
           "loc": {
             "start": {
@@ -1059,12 +1059,12 @@
             },
             "end": {
               "line": 36,
-              "column": 85
+              "column": 94
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/ui/map/map.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/map/map.ts",
           "resolved": "__unresolved_33",
           "loc": {
             "start": {
@@ -1073,12 +1073,12 @@
             },
             "end": {
               "line": 37,
-              "column": 82
+              "column": 91
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/game/ui/uiManager.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/uiManager.ts",
           "resolved": "__unresolved_34",
           "loc": {
             "start": {
@@ -1087,12 +1087,12 @@
             },
             "end": {
               "line": 38,
-              "column": 84
+              "column": 93
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/main.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/main.ts",
           "resolved": "__unresolved_35",
           "loc": {
             "start": {
@@ -1101,12 +1101,12 @@
             },
             "end": {
               "line": 39,
-              "column": 71
+              "column": 80
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/net/dataviewUtils.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/dataviewUtils.ts",
           "resolved": "__unresolved_36",
           "loc": {
             "start": {
@@ -1115,12 +1115,12 @@
             },
             "end": {
               "line": 40,
-              "column": 84
+              "column": 93
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/net/err.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/err.ts",
           "resolved": "__unresolved_37",
           "loc": {
             "start": {
@@ -1129,12 +1129,12 @@
             },
             "end": {
               "line": 41,
-              "column": 74
+              "column": 83
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/net/globalUtils.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/globalUtils.ts",
           "resolved": "__unresolved_38",
           "loc": {
             "start": {
@@ -1143,12 +1143,12 @@
             },
             "end": {
               "line": 42,
-              "column": 82
+              "column": 91
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/net/net.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/net.ts",
           "resolved": "__unresolved_39",
           "loc": {
             "start": {
@@ -1157,12 +1157,12 @@
             },
             "end": {
               "line": 43,
-              "column": 74
+              "column": 83
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/net/routers.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/routers.ts",
           "resolved": "__unresolved_40",
           "loc": {
             "start": {
@@ -1171,12 +1171,12 @@
             },
             "end": {
               "line": 44,
-              "column": 78
+              "column": 87
             }
           }
         },
         {
-          "value": "file:///E:/CocosCreator/git/mario/client/assets/script/net/util.ts",
+          "value": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/util.ts",
           "resolved": "__unresolved_41",
           "loc": {
             "start": {
@@ -1185,7 +1185,7 @@
             },
             "end": {
               "line": 45,
-              "column": 75
+              "column": 84
             }
           }
         }
@@ -1195,294 +1195,294 @@
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/config/cfgEnemy.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgEnemy.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/config/cfgHole.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgHole.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/config/cfgLevel.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgLevel.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/config/lifePoint.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/lifePoint.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/audioManager.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/audioManager.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/clientEvent.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/constant.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/csvManager.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/csvManager.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/enum.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/localConfig.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/localConfig.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/lodash.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/lodash.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/poolManager.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/poolManager.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/resourceUtil.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/resourceUtil.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/storageManager.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/storageManager.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/framework/util.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/util.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/collider/baseCollider.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/collider/baseCollider.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/common/translateScens.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/common/translateScens.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/common/user.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/common/user.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/brick.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/brick.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/cloud.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/cloud.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/coin.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/coin.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/hole.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/hole.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/mushroom.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/mushroom.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/pieces/whyBrick.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/whyBrick.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/enemy/enemy.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemy.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/enemy/enemyBlack.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemyBlack.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/enemy/enemyTortoise.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemyTortoise.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/mario/mario.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/mario/mario.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/roleManager.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/roleManager.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/status/baseStatus.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/status/baseStatus.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/status/playerStatus.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/status/playerStatus.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/ui/joystick/joystick.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/joystick/joystick.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/ui/map/camera.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/map/camera.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/ui/map/map.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/map/map.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/ui/uiManager.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/uiManager.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/main.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/main.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/net/dataviewUtils.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/dataviewUtils.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/net/err.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/err.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/net/globalUtils.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/globalUtils.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/net/net.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/net.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/net/routers.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/routers.ts"
           },
           "messages": []
         },
         {
           "resolved": {
             "type": "module",
-            "url": "file:///E:/CocosCreator/git/mario/client/assets/script/net/util.ts"
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/util.ts"
           },
           "messages": []
         }
@@ -1738,7 +1738,7 @@
       ]
     },
     "cce:/internal/code-quality/cr.mjs": {
-      "mTimestamp": 1679312646558,
+      "mTimestamp": 1680701705316,
       "chunkId": "cceb4f795e6e637cc67c120b5b44ef3a584b486a",
       "imports": [],
       "type": "esm",
@@ -31365,6 +31365,3913 @@
           "resolved": {
             "type": "module",
             "url": "file:///E:/CocosCreator/git/mario/client/assets/script/game/roles/enemy/enemy.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgEnemy.ts": {
+      "mTimestamp": {
+        "mtime": 1678715488414.4502,
+        "uuid": "354405ab-3141-4cb3-9651-f45cf8f43fe4"
+      },
+      "chunkId": "b06644255ce3c0bcdd3b542191d6b6c925bef10c",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 48
+            },
+            "end": {
+              "line": 1,
+              "column": 52
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgHole.ts": {
+      "mTimestamp": {
+        "mtime": 1671451752681.808,
+        "uuid": "a87f468b-ed3e-4187-a2b7-e2d1e7af1713"
+      },
+      "chunkId": "b8ebaf53f8cdfac03118293637fc5271c9906305",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 19
+            },
+            "end": {
+              "line": 2,
+              "column": 23
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgLevel.ts": {
+      "mTimestamp": {
+        "mtime": 1671450175086.1316,
+        "uuid": "c65c57ef-a36d-4452-aa3c-b5720fe06973"
+      },
+      "chunkId": "d52474c94399eed566a9ff14c2ac60cac74c59fe",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 19
+            },
+            "end": {
+              "line": 1,
+              "column": 23
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/lifePoint.ts": {
+      "mTimestamp": {
+        "mtime": 1670245940070.5188,
+        "uuid": "2537a5cf-c3d5-4735-a4b0-a65d8a3619c5"
+      },
+      "chunkId": "7b7edde09542232855ae68b7e8708cf035ac8bb1",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 48
+            },
+            "end": {
+              "line": 1,
+              "column": 52
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/audioManager.ts": {
+      "mTimestamp": {
+        "mtime": 1674999624937.7915,
+        "uuid": "46b691e0-757d-4654-a051-68f4711dd08b"
+      },
+      "chunkId": "773f056ed37c6d84c4ea3505c57e17d9b340b22c",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 51
+            },
+            "end": {
+              "line": 2,
+              "column": 55
+            }
+          }
+        },
+        {
+          "value": "./storageManager",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 31
+            },
+            "end": {
+              "line": 3,
+              "column": 49
+            }
+          }
+        },
+        {
+          "value": "./resourceUtil",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 29
+            },
+            "end": {
+              "line": 4,
+              "column": 45
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/storageManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/resourceUtil.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/storageManager.ts": {
+      "mTimestamp": {
+        "mtime": 1669989182581.258,
+        "uuid": "89c46d87-9faf-4e12-bfcf-64a1da4e0d23"
+      },
+      "chunkId": "cdec506445fe187125b13e0c82ba95b633d78501",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 37
+            },
+            "end": {
+              "line": 1,
+              "column": 41
+            }
+          }
+        },
+        {
+          "value": "./util",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 21
+            },
+            "end": {
+              "line": 2,
+              "column": 29
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/util.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/util.ts": {
+      "mTimestamp": {
+        "mtime": 1679406973368.8972,
+        "uuid": "f7facb24-dcbb-4d34-a42e-4a1501ea327f"
+      },
+      "chunkId": "5a1276efada5398c1d169800b8486f61e9abb280",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 69
+            },
+            "end": {
+              "line": 1,
+              "column": 73
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/resourceUtil.ts": {
+      "mTimestamp": {
+        "mtime": 1678882617105.7783,
+        "uuid": "7844ed5b-3b06-4afb-b24c-62310d414e6f"
+      },
+      "chunkId": "750d98633ec4b3d1a43f14c7344bdb656871ecf9",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 180
+            },
+            "end": {
+              "line": 1,
+              "column": 184
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts": {
+      "mTimestamp": {
+        "mtime": 1671026682223.2976,
+        "uuid": "15bf209b-2bf9-4986-9664-895c76ba7f80"
+      },
+      "chunkId": "71061baccade77e5c219613f05299d1a5d70a938",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 27
+            },
+            "end": {
+              "line": 1,
+              "column": 31
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts": {
+      "mTimestamp": {
+        "mtime": 1680704269872.188,
+        "uuid": "4d5edd13-d8d0-418b-a3ae-fbb3e34570a9"
+      },
+      "chunkId": "4658c011699d3eea033e49b1d6a4fc18217689d9",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "./enum",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 32
+            },
+            "end": {
+              "line": 2,
+              "column": 40
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts": {
+      "mTimestamp": {
+        "mtime": 1680703502473.5425,
+        "uuid": "ede0fbdc-2795-426f-941e-25852cb75993"
+      },
+      "chunkId": "22cabd433ed26e031f53e811d639b9913db86811",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/csvManager.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702337.001,
+        "uuid": "d755406e-aa72-4b00-a89b-c15516b5ee4f"
+      },
+      "chunkId": "162d31c99f24473d065d7302a8afe619a38c6497",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 51
+            },
+            "end": {
+              "line": 1,
+              "column": 55
+            }
+          }
+        },
+        {
+          "value": "./resourceUtil",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 29
+            },
+            "end": {
+              "line": 2,
+              "column": 45
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/resourceUtil.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/localConfig.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702339.0024,
+        "uuid": "12fac499-8454-4621-86bb-cb188b5433a9"
+      },
+      "chunkId": "28d240ea93d075a0f681f65397d4910da8fac902",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 26
+            },
+            "end": {
+              "line": 1,
+              "column": 30
+            }
+          }
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 38
+            },
+            "end": {
+              "line": 2,
+              "column": 42
+            }
+          }
+        },
+        {
+          "value": "./csvManager",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 27
+            },
+            "end": {
+              "line": 3,
+              "column": 41
+            }
+          }
+        },
+        {
+          "value": "./resourceUtil",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 29
+            },
+            "end": {
+              "line": 4,
+              "column": 45
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/csvManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/resourceUtil.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/lodash.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702340.0037,
+        "uuid": "cfcc6b00-6241-4635-8a52-825b41eafa67"
+      },
+      "chunkId": "427b450b7985b8f049b5dbab4b052ff1d9fabd7c",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 27
+            },
+            "end": {
+              "line": 1,
+              "column": 31
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/poolManager.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702341.2847,
+        "uuid": "e4062031-76bb-4893-90da-90af839dd648"
+      },
+      "chunkId": "522e1875c0eb4271b7a0323835db6be7deb7c50d",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 64
+            },
+            "end": {
+              "line": 1,
+              "column": 68
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/collider/baseCollider.ts": {
+      "mTimestamp": {
+        "mtime": 1675003158555.7383,
+        "uuid": "2368a0bd-c015-4de9-a19e-5a93a1b21e3f"
+      },
+      "chunkId": "e1520370c7b87b8684e40e932ecb76ab857b1401",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 134
+            },
+            "end": {
+              "line": 1,
+              "column": 138
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/common/translateScens.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702348.1655,
+        "uuid": "ff413655-465d-43f3-9eba-476dfdb2d204"
+      },
+      "chunkId": "2f10b43ffc6584da80736e332109b2d893971fc8",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 54
+            },
+            "end": {
+              "line": 1,
+              "column": 58
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/common/user.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702349.1665,
+        "uuid": "14bb36c0-d7a7-4dc5-afb6-4d93a40a302c"
+      },
+      "chunkId": "1d556d340a4fd8906130267081312139d4f6bbe1",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 44
+            },
+            "end": {
+              "line": 1,
+              "column": 48
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/brick.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702351.1677,
+        "uuid": "6654fdbe-914d-4557-916d-8ff7f88f03d6"
+      },
+      "chunkId": "d7881248eb7c5d780bfc76d25546c676209eb052",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 66
+            },
+            "end": {
+              "line": 1,
+              "column": 70
+            }
+          }
+        },
+        {
+          "value": "../../framework/clientEvent",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 28
+            },
+            "end": {
+              "line": 2,
+              "column": 57
+            }
+          }
+        },
+        {
+          "value": "../../framework/constant",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 25
+            },
+            "end": {
+              "line": 3,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "../../net/util",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 30
+            },
+            "end": {
+              "line": 4,
+              "column": 46
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/util.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/util.ts": {
+      "mTimestamp": {
+        "mtime": 1671022559892.1384,
+        "uuid": "d5c2457a-6ad6-42c4-bf94-5e5e22d38a14"
+      },
+      "chunkId": "0bb6424ded67464ae6b2290161cd1cf7e6f9c97d",
+      "imports": [
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 21
+            },
+            "end": {
+              "line": 1,
+              "column": 25
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/cloud.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702352.1687,
+        "uuid": "0ed13c13-a273-49a8-a9f8-d02d18db13c3"
+      },
+      "chunkId": "9aebfe4ebe2781236b627bea7f616d7dd5f8cfd2",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 61
+            },
+            "end": {
+              "line": 1,
+              "column": 65
+            }
+          }
+        },
+        {
+          "value": "../../net/util",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 30
+            },
+            "end": {
+              "line": 2,
+              "column": 46
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/util.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/coin.ts": {
+      "mTimestamp": {
+        "mtime": 1671026955892.3064,
+        "uuid": "2f1c3378-026a-4c3a-9815-a7753ffe279d"
+      },
+      "chunkId": "f3741a25de90989bd361bb2981cc9d66a767bcab",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 118
+            },
+            "end": {
+              "line": 1,
+              "column": 122
+            }
+          }
+        },
+        {
+          "value": "../../framework/audioManager",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 29
+            },
+            "end": {
+              "line": 2,
+              "column": 59
+            }
+          }
+        },
+        {
+          "value": "../../framework/clientEvent",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 28
+            },
+            "end": {
+              "line": 3,
+              "column": 57
+            }
+          }
+        },
+        {
+          "value": "../../framework/constant",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 25
+            },
+            "end": {
+              "line": 4,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "../../net/util",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 30
+            },
+            "end": {
+              "line": 6,
+              "column": 46
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/audioManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/util.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/hole.ts": {
+      "mTimestamp": {
+        "mtime": 1675005094768.1865,
+        "uuid": "8d532fe9-c699-43f9-a7b5-aefd70fcefb4"
+      },
+      "chunkId": "2cef1a98b4f8a93f3b10f7c5bd56a2d2a17b79f5",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 128
+            },
+            "end": {
+              "line": 1,
+              "column": 132
+            }
+          }
+        },
+        {
+          "value": "../../config/cfgHole",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 20
+            },
+            "end": {
+              "line": 2,
+              "column": 42
+            }
+          }
+        },
+        {
+          "value": "../../framework/clientEvent",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 28
+            },
+            "end": {
+              "line": 3,
+              "column": 57
+            }
+          }
+        },
+        {
+          "value": "../../framework/constant",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 25
+            },
+            "end": {
+              "line": 4,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "../../framework/enum",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 56
+            },
+            "end": {
+              "line": 5,
+              "column": 78
+            }
+          }
+        },
+        {
+          "value": "../collider/baseCollider",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 29
+            },
+            "end": {
+              "line": 6,
+              "column": 55
+            }
+          }
+        },
+        {
+          "value": "../roles/roleManager",
+          "resolved": "__unresolved_6",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 28
+            },
+            "end": {
+              "line": 7,
+              "column": 50
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgHole.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/collider/baseCollider.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/roleManager.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/roleManager.ts": {
+      "mTimestamp": {
+        "mtime": 1674999954282.0366,
+        "uuid": "9856f82f-932e-44dd-b7e9-2873caf56347"
+      },
+      "chunkId": "c5f31a3ea30954beab63d88eda7ca5423d0d3721",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 76
+            },
+            "end": {
+              "line": 1,
+              "column": 80
+            }
+          }
+        },
+        {
+          "value": "../../config/cfgLevel",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 21
+            },
+            "end": {
+              "line": 3,
+              "column": 44
+            }
+          }
+        },
+        {
+          "value": "../../framework/clientEvent",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 28
+            },
+            "end": {
+              "line": 4,
+              "column": 57
+            }
+          }
+        },
+        {
+          "value": "../../framework/constant",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 25
+            },
+            "end": {
+              "line": 5,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "../../framework/enum",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 25
+            },
+            "end": {
+              "line": 6,
+              "column": 47
+            }
+          }
+        },
+        {
+          "value": "../../framework/resourceUtil",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 29
+            },
+            "end": {
+              "line": 7,
+              "column": 59
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgLevel.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/resourceUtil.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/mushroom.ts": {
+      "mTimestamp": {
+        "mtime": 1680704371000.0742,
+        "uuid": "8e6c03dc-5dbc-4917-b151-60f2a3e92a8c"
+      },
+      "chunkId": "1e01c0d1634c6ebf824fea2b4ab2c57afbeab813",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 156
+            },
+            "end": {
+              "line": 1,
+              "column": 160
+            }
+          }
+        },
+        {
+          "value": "../../framework/clientEvent",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 28
+            },
+            "end": {
+              "line": 2,
+              "column": 57
+            }
+          }
+        },
+        {
+          "value": "../../framework/constant",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 25
+            },
+            "end": {
+              "line": 3,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "../../framework/enum",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 64
+            },
+            "end": {
+              "line": 4,
+              "column": 86
+            }
+          }
+        },
+        {
+          "value": "../collider/baseCollider",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 29
+            },
+            "end": {
+              "line": 5,
+              "column": 55
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/collider/baseCollider.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/whyBrick.ts": {
+      "mTimestamp": {
+        "mtime": 1674999327395.0022,
+        "uuid": "b7c6d389-9cf0-4ea7-9885-ba090179bea8"
+      },
+      "chunkId": "5eccc864c6de31c1c90d130965c03d1f8d5eb1bd",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 139
+            },
+            "end": {
+              "line": 1,
+              "column": 143
+            }
+          }
+        },
+        {
+          "value": "../../framework/clientEvent",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 28
+            },
+            "end": {
+              "line": 2,
+              "column": 57
+            }
+          }
+        },
+        {
+          "value": "../../framework/constant",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 25
+            },
+            "end": {
+              "line": 3,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "../../framework/enum",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 38
+            },
+            "end": {
+              "line": 4,
+              "column": 60
+            }
+          }
+        },
+        {
+          "value": "../../framework/resourceUtil",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 29
+            },
+            "end": {
+              "line": 6,
+              "column": 59
+            }
+          }
+        },
+        {
+          "value": "../../net/util",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 7,
+              "column": 30
+            },
+            "end": {
+              "line": 7,
+              "column": 46
+            }
+          }
+        },
+        {
+          "value": "./coin",
+          "resolved": "__unresolved_6",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 21
+            },
+            "end": {
+              "line": 8,
+              "column": 29
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/resourceUtil.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/util.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/coin.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemy.ts": {
+      "mTimestamp": {
+        "mtime": 1678970653256.7642,
+        "uuid": "978b6a84-fc5e-4891-867f-d3abf1275b30"
+      },
+      "chunkId": "8ded218be9ee3ec4e04d8415c266b577eef0a588",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 103
+            },
+            "end": {
+              "line": 1,
+              "column": 107
+            }
+          }
+        },
+        {
+          "value": "../../../config/cfgEnemy",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 36
+            },
+            "end": {
+              "line": 2,
+              "column": 62
+            }
+          }
+        },
+        {
+          "value": "../../../framework/constant",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 25
+            },
+            "end": {
+              "line": 3,
+              "column": 54
+            }
+          }
+        },
+        {
+          "value": "../../../framework/enum",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 50
+            },
+            "end": {
+              "line": 4,
+              "column": 75
+            }
+          }
+        },
+        {
+          "value": "../../collider/baseCollider",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 29
+            },
+            "end": {
+              "line": 5,
+              "column": 58
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/config/cfgEnemy.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/collider/baseCollider.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemyBlack.ts": {
+      "mTimestamp": {
+        "mtime": 1675177681983.6465,
+        "uuid": "38043232-7212-495d-b280-96df6d597ba7"
+      },
+      "chunkId": "2fa6139626414f287bf94981ac016ee3ae2f8046",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 116
+            },
+            "end": {
+              "line": 1,
+              "column": 120
+            }
+          }
+        },
+        {
+          "value": "../../../framework/clientEvent",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 28
+            },
+            "end": {
+              "line": 2,
+              "column": 60
+            }
+          }
+        },
+        {
+          "value": "../../../framework/constant",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 25
+            },
+            "end": {
+              "line": 3,
+              "column": 54
+            }
+          }
+        },
+        {
+          "value": "../../../framework/enum",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 32
+            },
+            "end": {
+              "line": 4,
+              "column": 57
+            }
+          }
+        },
+        {
+          "value": "./enemy",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 22
+            },
+            "end": {
+              "line": 5,
+              "column": 31
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemy.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemyTortoise.ts": {
+      "mTimestamp": {
+        "mtime": 1678890294837.931,
+        "uuid": "32e8aa7b-875f-47cf-a912-7e1b5091ca5d"
+      },
+      "chunkId": "ab9fea51e2599280db28edf5f5a10822a411374d",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 96
+            },
+            "end": {
+              "line": 1,
+              "column": 100
+            }
+          }
+        },
+        {
+          "value": "../../../framework/clientEvent",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 28
+            },
+            "end": {
+              "line": 2,
+              "column": 60
+            }
+          }
+        },
+        {
+          "value": "../../../framework/constant",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 25
+            },
+            "end": {
+              "line": 3,
+              "column": 54
+            }
+          }
+        },
+        {
+          "value": "../../../framework/enum",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 45
+            },
+            "end": {
+              "line": 4,
+              "column": 70
+            }
+          }
+        },
+        {
+          "value": "./enemy",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 22
+            },
+            "end": {
+              "line": 6,
+              "column": 31
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/enemy/enemy.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/mario/mario.ts": {
+      "mTimestamp": {
+        "mtime": 1680705147648.128,
+        "uuid": "ac806470-6c44-4443-874d-566fecf9b2c8"
+      },
+      "chunkId": "8dbb307fafb33f6b171940ad85025fa5a695d0b2",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 161
+            },
+            "end": {
+              "line": 1,
+              "column": 165
+            }
+          }
+        },
+        {
+          "value": "../../../framework/clientEvent",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 28
+            },
+            "end": {
+              "line": 2,
+              "column": 60
+            }
+          }
+        },
+        {
+          "value": "../../../framework/constant",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 25
+            },
+            "end": {
+              "line": 3,
+              "column": 54
+            }
+          }
+        },
+        {
+          "value": "../../../framework/enum",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 74
+            },
+            "end": {
+              "line": 4,
+              "column": 99
+            }
+          }
+        },
+        {
+          "value": "../../collider/baseCollider",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 29
+            },
+            "end": {
+              "line": 5,
+              "column": 58
+            }
+          }
+        },
+        {
+          "value": "../../pieces/brick",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 22
+            },
+            "end": {
+              "line": 6,
+              "column": 42
+            }
+          }
+        },
+        {
+          "value": "../../pieces/whyBrick",
+          "resolved": "__unresolved_6",
+          "loc": {
+            "start": {
+              "line": 8,
+              "column": 25
+            },
+            "end": {
+              "line": 8,
+              "column": 48
+            }
+          }
+        },
+        {
+          "value": "../roleManager",
+          "resolved": "__unresolved_7",
+          "loc": {
+            "start": {
+              "line": 9,
+              "column": 28
+            },
+            "end": {
+              "line": 9,
+              "column": 44
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/collider/baseCollider.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/brick.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/pieces/whyBrick.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/roleManager.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/status/baseStatus.ts": {
+      "mTimestamp": {
+        "mtime": 1669989102704.275,
+        "uuid": "aa9baa30-942b-423c-b9d9-7654d55100ad"
+      },
+      "chunkId": "3383e4964388c010824922c773212ed98b684313",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 44
+            },
+            "end": {
+              "line": 1,
+              "column": 48
+            }
+          }
+        },
+        {
+          "value": "../../../framework/enum",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 33
+            },
+            "end": {
+              "line": 2,
+              "column": 58
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/status/playerStatus.ts": {
+      "mTimestamp": {
+        "mtime": 1669989113669.587,
+        "uuid": "a27a181a-b403-438b-8d3d-3b5ce4f72252"
+      },
+      "chunkId": "450a3751ee530ff71aefe710cf587e9f380d8669",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 44
+            },
+            "end": {
+              "line": 1,
+              "column": 48
+            }
+          }
+        },
+        {
+          "value": "../../../framework/enum",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 33
+            },
+            "end": {
+              "line": 2,
+              "column": 58
+            }
+          }
+        },
+        {
+          "value": "./baseStatus",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 27
+            },
+            "end": {
+              "line": 4,
+              "column": 41
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/enum.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/status/baseStatus.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/joystick/joystick.ts": {
+      "mTimestamp": {
+        "mtime": 1678977360146.0222,
+        "uuid": "89e6ebbe-1cf2-496e-af4b-8bb6dbf81915"
+      },
+      "chunkId": "207ef0f3bd20c086c7c5263c3d8590fc82af39e7",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 119
+            },
+            "end": {
+              "line": 1,
+              "column": 123
+            }
+          }
+        },
+        {
+          "value": "../../../framework/audioManager",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 29
+            },
+            "end": {
+              "line": 2,
+              "column": 62
+            }
+          }
+        },
+        {
+          "value": "../../../framework/clientEvent",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 28
+            },
+            "end": {
+              "line": 3,
+              "column": 60
+            }
+          }
+        },
+        {
+          "value": "../../../framework/constant",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 25
+            },
+            "end": {
+              "line": 4,
+              "column": 54
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/audioManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/map/camera.ts": {
+      "mTimestamp": {
+        "mtime": 1671026983190.2852,
+        "uuid": "492262d6-3017-4c20-ba8f-b51c7525324a"
+      },
+      "chunkId": "085d491b06a15e2dc2169dcaf7e547b691040897",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 81
+            },
+            "end": {
+              "line": 1,
+              "column": 85
+            }
+          }
+        },
+        {
+          "value": "../../../framework/clientEvent",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 28
+            },
+            "end": {
+              "line": 2,
+              "column": 60
+            }
+          }
+        },
+        {
+          "value": "../../../framework/constant",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 25
+            },
+            "end": {
+              "line": 3,
+              "column": 54
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/map/map.ts": {
+      "mTimestamp": {
+        "mtime": 1678970619920.0063,
+        "uuid": "7c8c768e-a4c6-4c16-b7cd-43e13d9159bf"
+      },
+      "chunkId": "f16be35170c91a4db3ff6ff4919367d8c590bc23",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 170
+            },
+            "end": {
+              "line": 1,
+              "column": 174
+            }
+          }
+        },
+        {
+          "value": "../../../framework/audioManager",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 29
+            },
+            "end": {
+              "line": 2,
+              "column": 62
+            }
+          }
+        },
+        {
+          "value": "../../../framework/clientEvent",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 28
+            },
+            "end": {
+              "line": 3,
+              "column": 60
+            }
+          }
+        },
+        {
+          "value": "../../../framework/constant",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 25
+            },
+            "end": {
+              "line": 4,
+              "column": 54
+            }
+          }
+        },
+        {
+          "value": "../../roles/roleManager",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 28
+            },
+            "end": {
+              "line": 5,
+              "column": 53
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/audioManager.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/roleManager.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/ui/uiManager.ts": {
+      "mTimestamp": {
+        "mtime": 1671024601001.7927,
+        "uuid": "0d2d02cd-4dff-474d-aa28-385f7b5668a7"
+      },
+      "chunkId": "fd9274478109110ca6fc77772648934c88254893",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 72
+            },
+            "end": {
+              "line": 1,
+              "column": 76
+            }
+          }
+        },
+        {
+          "value": "../../framework/clientEvent",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 28
+            },
+            "end": {
+              "line": 3,
+              "column": 57
+            }
+          }
+        },
+        {
+          "value": "../../framework/constant",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 25
+            },
+            "end": {
+              "line": 4,
+              "column": 51
+            }
+          }
+        },
+        {
+          "value": "../../framework/resourceUtil",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 29
+            },
+            "end": {
+              "line": 5,
+              "column": 59
+            }
+          }
+        },
+        {
+          "value": "../roles/roleManager",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 28
+            },
+            "end": {
+              "line": 6,
+              "column": 50
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/constant.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/resourceUtil.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/roles/roleManager.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/main.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702369.0298,
+        "uuid": "8865b525-ed41-4951-a116-8381c8c43168"
+      },
+      "chunkId": "5039830efc32e959deaabcb61e4cb106ff412449",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "cc",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 44
+            },
+            "end": {
+              "line": 2,
+              "column": 48
+            }
+          }
+        },
+        {
+          "value": "./framework/localConfig",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 3,
+              "column": 28
+            },
+            "end": {
+              "line": 3,
+              "column": 53
+            }
+          }
+        },
+        {
+          "value": "./net/net",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 21
+            },
+            "end": {
+              "line": 4,
+              "column": 32
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/localConfig.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/net.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/net.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702374.1343,
+        "uuid": "05fc56c2-6633-42e9-a2d8-db327981c497"
+      },
+      "chunkId": "9cd173a635fbc2dc7a6eb50cde893bfec5fc50e6",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        },
+        {
+          "value": "./dataviewUtils",
+          "resolved": "__unresolved_1",
+          "loc": {
+            "start": {
+              "line": 1,
+              "column": 26
+            },
+            "end": {
+              "line": 1,
+              "column": 43
+            }
+          }
+        },
+        {
+          "value": "./routers",
+          "resolved": "__unresolved_2",
+          "loc": {
+            "start": {
+              "line": 2,
+              "column": 23
+            },
+            "end": {
+              "line": 2,
+              "column": 34
+            }
+          }
+        },
+        {
+          "value": "./util",
+          "resolved": "__unresolved_3",
+          "loc": {
+            "start": {
+              "line": 4,
+              "column": 30
+            },
+            "end": {
+              "line": 4,
+              "column": 38
+            }
+          }
+        },
+        {
+          "value": "../framework/clientEvent",
+          "resolved": "__unresolved_4",
+          "loc": {
+            "start": {
+              "line": 5,
+              "column": 28
+            },
+            "end": {
+              "line": 5,
+              "column": 54
+            }
+          }
+        },
+        {
+          "value": "../game/common/user",
+          "resolved": "__unresolved_5",
+          "loc": {
+            "start": {
+              "line": 6,
+              "column": 21
+            },
+            "end": {
+              "line": 6,
+              "column": 42
+            }
+          }
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/dataviewUtils.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/routers.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/util.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/framework/clientEvent.ts"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/game/common/user.ts"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/dataviewUtils.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702371.0325,
+        "uuid": "ed5c22e1-e80c-46f5-a28a-21a754482027"
+      },
+      "chunkId": "b93b3067beec13165786e00d4d642667a3e45cff",
+      "imports": [
+        {
+          "value": "cce:/internal/code-quality/cr.mjs",
+          "resolved": "__unresolved_0"
+        },
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/code-quality/cr.mjs"
+          },
+          "messages": []
+        },
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/routers.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702375.0872,
+        "uuid": "6bcd0e0f-990d-410e-8ccc-543bae5358ac"
+      },
+      "chunkId": "8f5db58195a025aa6b3f0268b3fa661a868fdecc",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/err.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702372.04,
+        "uuid": "2ea793b1-6402-4b7e-87d4-a03527fe4da8"
+      },
+      "chunkId": "c17adf672485d972016fc5fd257cd524507bf21e",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
+          },
+          "messages": []
+        }
+      ]
+    },
+    "file:///E:/CocosCreator/mario/ccc3.6_mario/client/assets/script/net/globalUtils.ts": {
+      "mTimestamp": {
+        "mtime": 1667379702373.2683,
+        "uuid": "0e1feeb1-d12c-4217-9995-eae144dbc5c9"
+      },
+      "chunkId": "48cd3349b133b7ab81f2665afbf7a5c6d11bcf1b",
+      "imports": [
+        {
+          "value": "cc"
+        }
+      ],
+      "type": "esm",
+      "resolutions": [
+        {
+          "resolved": {
+            "type": "module",
+            "url": "cce:/internal/x/cc"
           },
           "messages": []
         }
